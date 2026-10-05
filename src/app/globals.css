@@ -15,6 +15,19 @@
   --color-red: #ff3b30;
   /* Unlit dots in progress bars, rings and the streak strip. */
   --color-dot-off: #262626;
+  /* Chess board squares (/extras/chess). "sq" follows the app theme; wood and green are the classic boards. */
+  --color-sq-light: #262626;
+  --color-sq-dark: #141414;
+  --color-board-wood-light: #f0d9b5;
+  --color-board-wood-dark: #b58863;
+  --color-board-green-light: #ebecd0;
+  --color-board-green-dark: #779556;
+  /* Move hints and last-move tint on the classic boards. */
+  --color-board-hint: rgb(20 20 20 / 0.28);
+  --color-board-move: rgb(255 238 88 / 0.42);
+  /* White dot/letter pieces on the light classic boards: near-white with a dark edge. */
+  --color-board-piece-light: #fafafa;
+  --color-board-outline: rgb(0 0 0 / 0.6);
 
   /* Subject colours: only used for the nav and tiny markers. */
   --color-phy: #8f7cff;
@@ -50,6 +63,8 @@ html[data-theme="paper"] {
   --color-dim: #9a8d71;
   --color-red: #d2361f;
   --color-dot-off: #ddd0ad;
+  --color-sq-light: #efe4c4;
+  --color-sq-dark: #d9c79a;
   --color-phy: #6a55e0;
   --color-chem: #5e8f10;
   --color-math: #d9561c;
@@ -68,6 +83,8 @@ html[data-theme="sepia"] {
   --color-dim: #8d7c57;
   --color-red: #c4301a;
   --color-dot-off: #cfbc8c;
+  --color-sq-light: #e4d2a4;
+  --color-sq-dark: #c9b07c;
   --color-phy: #5c47cc;
   --color-chem: #557f0d;
   --color-math: #c84d15;

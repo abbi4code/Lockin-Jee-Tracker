@@ -71,6 +71,10 @@ function Nav() {
             </Link>
           );
         })}
+        {/* The secret: a barely-there dot at the end of the pill opens /extras. */}
+        <Link href="/extras" aria-label="extras" className="group -ml-0.5 grid h-10 w-4 place-items-center lg:w-5">
+          <span className={`size-1 rounded-full transition-colors ${pathname.startsWith("/extras") ? "bg-red" : "bg-dim/50 group-hover:bg-red"}`} />
+        </Link>
       </motion.div>
     </nav>
   );
