@@ -1,0 +1,1765 @@
+{
+  "main_marks_vs_percentile": [
+    {
+      "year": 2023,
+      "session": "combined",
+      "basis": "BYJU'S table titled 'JEE Main 2023 Marks vs Percentile' (single table, no shift/session stated; presented as overall). The same numbers are republished unlabelled by Allen and relabelled '2025' by Vedantu. Its companion percentile-to-rank table implies ~9.2 lakh candidates, below NTA's 2023 count of 11.13 lakh, so the year label is doubtful. Source band 250-262 overlapped 241-250 at 250; upper band recorded here as 251-262.",
+      "source_type": "coaching_analysis",
+      "source": "https://byjus.com/jee/jee-main-marks-vs-rank/",
+      "bands": [
+        {
+          "marks_min": 281,
+          "marks_max": 300,
+          "percentile_min": 99.99989145,
+          "percentile_max": 100
+        },
+        {
+          "marks_min": 271,
+          "marks_max": 280,
+          "percentile_min": 99.994681,
+          "percentile_max": 99.997394
+        },
+        {
+          "marks_min": 263,
+          "marks_max": 270,
+          "percentile_min": 99.99099,
+          "percentile_max": 99.994029
+        },
+        {
+          "marks_min": 251,
+          "marks_max": 262,
+          "percentile_min": 99.977205,
+          "percentile_max": 99.988819
+        },
+        {
+          "marks_min": 241,
+          "marks_max": 250,
+          "percentile_min": 99.960163,
+          "percentile_max": 99.975034
+        },
+        {
+          "marks_min": 231,
+          "marks_max": 240,
+          "percentile_min": 99.93498,
+          "percentile_max": 99.956364
+        },
+        {
+          "marks_min": 221,
+          "marks_max": 230,
+          "percentile_min": 99.901113,
+          "percentile_max": 99.928901
+        },
+        {
+          "marks_min": 211,
+          "marks_max": 220,
+          "percentile_min": 99.851616,
+          "percentile_max": 99.893732
+        },
+        {
+          "marks_min": 201,
+          "marks_max": 210,
+          "percentile_min": 99.795063,
+          "percentile_max": 99.845212
+        },
+        {
+          "marks_min": 191,
+          "marks_max": 200,
+          "percentile_min": 99.710831,
+          "percentile_max": 99.782472
+        },
+        {
+          "marks_min": 181,
+          "marks_max": 190,
+          "percentile_min": 99.597399,
+          "percentile_max": 99.688579
+        },
+        {
+          "marks_min": 171,
+          "marks_max": 180,
+          "percentile_min": 99.456939,
+          "percentile_max": 99.573193
+        },
+        {
+          "marks_min": 161,
+          "marks_max": 170,
+          "percentile_min": 99.272084,
+          "percentile_max": 99.431214
+        },
+        {
+          "marks_min": 151,
+          "marks_max": 160,
+          "percentile_min": 99.028614,
+          "percentile_max": 99.239737
+        },
+        {
+          "marks_min": 141,
+          "marks_max": 150,
+          "percentile_min": 98.732389,
+          "percentile_max": 98.990296
+        },
+        {
+          "marks_min": 131,
+          "marks_max": 140,
+          "percentile_min": 98.317414,
+          "percentile_max": 98.666935
+        },
+        {
+          "marks_min": 121,
+          "marks_max": 130,
+          "percentile_min": 97.81126,
+          "percentile_max": 98.254132
+        },
+        {
+          "marks_min": 111,
+          "marks_max": 120,
+          "percentile_min": 97.142937,
+          "percentile_max": 97.685672
+        },
+        {
+          "marks_min": 101,
+          "marks_max": 110,
+          "percentile_min": 96.20455,
+          "percentile_max": 96.978272
+        },
+        {
+          "marks_min": 91,
+          "marks_max": 100,
+          "percentile_min": 94.998594,
+          "percentile_max": 96.06485
+        },
+        {
+          "marks_min": 81,
+          "marks_max": 90,
+          "percentile_min": 93.471231,
+          "percentile_max": 94.749479
+        },
+        {
+          "marks_min": 71,
+          "marks_max": 80,
+          "percentile_min": 91.072128,
+          "percentile_max": 93.152971
+        },
+        {
+          "marks_min": 61,
+          "marks_max": 70,
+          "percentile_min": 87.512225,
+          "percentile_max": 90.7022
+        },
+        {
+          "marks_min": 51,
+          "marks_max": 60,
+          "percentile_min": 82.016062,
+          "percentile_max": 86.907944
+        },
+        {
+          "marks_min": 41,
+          "marks_max": 50,
+          "percentile_min": 73.287808,
+          "percentile_max": 80.982153
+        },
+        {
+          "marks_min": 31,
+          "marks_max": 40,
+          "percentile_min": 58.15149,
+          "percentile_max": 71.302052
+        },
+        {
+          "marks_min": 21,
+          "marks_max": 30,
+          "percentile_min": 37.694529,
+          "percentile_max": 56.56931
+        },
+        {
+          "marks_min": 11,
+          "marks_max": 20,
+          "percentile_min": 13.495849,
+          "percentile_max": 33.229128
+        },
+        {
+          "marks_min": 0,
+          "marks_max": 10,
+          "percentile_min": 0.8435177,
+          "percentile_max": 9.6954066
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "session": "jan",
+      "basis": "Average across all 10 Jan 2024 shifts (27 Jan-1 Feb) of Sri Chaitanya's shift-wise score-vs-percentile prediction, published by Careers360 News on 2 Feb 2024, BEFORE NTA released results (12 Feb 2024). Pre-result prediction, not observed data. Each band edge is the arithmetic mean (rounded) of the per-shift marks the source lists for that percentile; band runs from the mean marks at the lower percentile to one mark below the mean at the next higher percentile. Only the percentile range the source covers is included (no open-ended top/bottom bands). Individual shifts differ from this mean by up to ~±25 marks.",
+      "source_type": "estimate",
+      "source": "https://news.careers360.com/jee-main-2024-session-1-check-score-vs-percentile-shift-wise-analysis/amp",
+      "bands": [
+        {
+          "marks_min": 177,
+          "marks_max": 191,
+          "percentile_min": 99,
+          "percentile_max": 99.5
+        },
+        {
+          "marks_min": 157,
+          "marks_max": 176,
+          "percentile_min": 98,
+          "percentile_max": 99
+        },
+        {
+          "marks_min": 140,
+          "marks_max": 156,
+          "percentile_min": 97,
+          "percentile_max": 98
+        },
+        {
+          "marks_min": 126,
+          "marks_max": 139,
+          "percentile_min": 96,
+          "percentile_max": 97
+        },
+        {
+          "marks_min": 115,
+          "marks_max": 125,
+          "percentile_min": 95,
+          "percentile_max": 96
+        },
+        {
+          "marks_min": 106,
+          "marks_max": 114,
+          "percentile_min": 94,
+          "percentile_max": 95
+        },
+        {
+          "marks_min": 99,
+          "marks_max": 105,
+          "percentile_min": 93,
+          "percentile_max": 94
+        },
+        {
+          "marks_min": 94,
+          "marks_max": 98,
+          "percentile_min": 92,
+          "percentile_max": 93
+        },
+        {
+          "marks_min": 90,
+          "marks_max": 93,
+          "percentile_min": 91,
+          "percentile_max": 92
+        },
+        {
+          "marks_min": 86,
+          "marks_max": 89,
+          "percentile_min": 90,
+          "percentile_max": 91
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "session": "jan",
+      "basis": "Average across all 10 Jan 2025 shifts (22-29 Jan) of the post-result shift-wise percentile-vs-marks table published identically by Vedantu, PW and jeepredictor.in. 99th percentile ranged 148 (28 Jan S1) to 200 (24 Jan S2) marks across shifts. Each band edge is the arithmetic mean (rounded) of the per-shift marks the source lists for that percentile; band runs from the mean marks at the lower percentile to one mark below the mean at the next higher percentile. Only the percentile range the source covers is included (no open-ended top/bottom bands). Individual shifts differ from this mean by up to ~±25 marks.",
+      "source_type": "estimate",
+      "source": "https://www.vedantu.com/jee-main/jee-main-marks-vs-percentile-2025",
+      "bands": [
+        {
+          "marks_min": 163,
+          "marks_max": 175,
+          "percentile_min": 98.5,
+          "percentile_max": 99
+        },
+        {
+          "marks_min": 153,
+          "marks_max": 162,
+          "percentile_min": 98,
+          "percentile_max": 98.5
+        },
+        {
+          "marks_min": 146,
+          "marks_max": 152,
+          "percentile_min": 97.5,
+          "percentile_max": 98
+        },
+        {
+          "marks_min": 140,
+          "marks_max": 145,
+          "percentile_min": 97,
+          "percentile_max": 97.5
+        },
+        {
+          "marks_min": 135,
+          "marks_max": 139,
+          "percentile_min": 96.5,
+          "percentile_max": 97
+        },
+        {
+          "marks_min": 130,
+          "marks_max": 134,
+          "percentile_min": 96,
+          "percentile_max": 96.5
+        },
+        {
+          "marks_min": 125,
+          "marks_max": 129,
+          "percentile_min": 95.5,
+          "percentile_max": 96
+        },
+        {
+          "marks_min": 121,
+          "marks_max": 124,
+          "percentile_min": 95,
+          "percentile_max": 95.5
+        },
+        {
+          "marks_min": 113,
+          "marks_max": 120,
+          "percentile_min": 94,
+          "percentile_max": 95
+        },
+        {
+          "marks_min": 108,
+          "marks_max": 112,
+          "percentile_min": 93,
+          "percentile_max": 94
+        },
+        {
+          "marks_min": 103,
+          "marks_max": 107,
+          "percentile_min": 92,
+          "percentile_max": 93
+        },
+        {
+          "marks_min": 96,
+          "marks_max": 102,
+          "percentile_min": 91,
+          "percentile_max": 92
+        },
+        {
+          "marks_min": 91,
+          "marks_max": 95,
+          "percentile_min": 90,
+          "percentile_max": 91
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "session": "apr",
+      "basis": "Average across all 9 Apr 2025 shifts (2-8 Apr) of Vedantu's shift-wise percentile-vs-marks table (92-99 percentile; the source's 93.1 row was dropped). 99th percentile ranged 173 (2 Apr S1) to 203 (2 Apr S2) marks. Each band edge is the arithmetic mean (rounded) of the per-shift marks the source lists for that percentile; band runs from the mean marks at the lower percentile to one mark below the mean at the next higher percentile. Only the percentile range the source covers is included (no open-ended top/bottom bands). Individual shifts differ from this mean by up to ~±25 marks.",
+      "source_type": "estimate",
+      "source": "https://www.vedantu.com/jee-main/jee-main-marks-vs-percentile-2025",
+      "bands": [
+        {
+          "marks_min": 171,
+          "marks_max": 182,
+          "percentile_min": 98.5,
+          "percentile_max": 99
+        },
+        {
+          "marks_min": 162,
+          "marks_max": 170,
+          "percentile_min": 98,
+          "percentile_max": 98.5
+        },
+        {
+          "marks_min": 155,
+          "marks_max": 161,
+          "percentile_min": 97.5,
+          "percentile_max": 98
+        },
+        {
+          "marks_min": 149,
+          "marks_max": 154,
+          "percentile_min": 97,
+          "percentile_max": 97.5
+        },
+        {
+          "marks_min": 144,
+          "marks_max": 148,
+          "percentile_min": 96.5,
+          "percentile_max": 97
+        },
+        {
+          "marks_min": 140,
+          "marks_max": 143,
+          "percentile_min": 96,
+          "percentile_max": 96.5
+        },
+        {
+          "marks_min": 135,
+          "marks_max": 139,
+          "percentile_min": 95.5,
+          "percentile_max": 96
+        },
+        {
+          "marks_min": 131,
+          "marks_max": 134,
+          "percentile_min": 95,
+          "percentile_max": 95.5
+        },
+        {
+          "marks_min": 124,
+          "marks_max": 130,
+          "percentile_min": 94,
+          "percentile_max": 95
+        },
+        {
+          "marks_min": 118,
+          "marks_max": 123,
+          "percentile_min": 93,
+          "percentile_max": 94
+        },
+        {
+          "marks_min": 113,
+          "marks_max": 117,
+          "percentile_min": 92,
+          "percentile_max": 93
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "session": "jan",
+      "basis": "Average across all 10 Jan 2026 shifts (21-28 Jan) of Careers360's shift-wise percentile-vs-marks tables (90-99.9 percentile). 99th percentile ranged 155 (22 Jan S2) to 171 (21 Jan S2) marks. Each band edge is the arithmetic mean (rounded) of the per-shift marks the source lists for that percentile; band runs from the mean marks at the lower percentile to one mark below the mean at the next higher percentile. Only the percentile range the source covers is included (no open-ended top/bottom bands). Individual shifts differ from this mean by up to ~±25 marks.",
+      "source_type": "estimate",
+      "source": "https://engineering.careers360.com/articles/jee-mains-2026-marks-vs-percentile",
+      "bands": [
+        {
+          "marks_min": 209,
+          "marks_max": 225,
+          "percentile_min": 99.8,
+          "percentile_max": 99.9
+        },
+        {
+          "marks_min": 198,
+          "marks_max": 208,
+          "percentile_min": 99.7,
+          "percentile_max": 99.8
+        },
+        {
+          "marks_min": 189,
+          "marks_max": 197,
+          "percentile_min": 99.6,
+          "percentile_max": 99.7
+        },
+        {
+          "marks_min": 183,
+          "marks_max": 188,
+          "percentile_min": 99.5,
+          "percentile_max": 99.6
+        },
+        {
+          "marks_min": 177,
+          "marks_max": 182,
+          "percentile_min": 99.4,
+          "percentile_max": 99.5
+        },
+        {
+          "marks_min": 173,
+          "marks_max": 176,
+          "percentile_min": 99.3,
+          "percentile_max": 99.4
+        },
+        {
+          "marks_min": 169,
+          "marks_max": 172,
+          "percentile_min": 99.2,
+          "percentile_max": 99.3
+        },
+        {
+          "marks_min": 165,
+          "marks_max": 168,
+          "percentile_min": 99.1,
+          "percentile_max": 99.2
+        },
+        {
+          "marks_min": 162,
+          "marks_max": 164,
+          "percentile_min": 99,
+          "percentile_max": 99.1
+        },
+        {
+          "marks_min": 149,
+          "marks_max": 161,
+          "percentile_min": 98.5,
+          "percentile_max": 99
+        },
+        {
+          "marks_min": 139,
+          "marks_max": 148,
+          "percentile_min": 98,
+          "percentile_max": 98.5
+        },
+        {
+          "marks_min": 131,
+          "marks_max": 138,
+          "percentile_min": 97.5,
+          "percentile_max": 98
+        },
+        {
+          "marks_min": 125,
+          "marks_max": 130,
+          "percentile_min": 97,
+          "percentile_max": 97.5
+        },
+        {
+          "marks_min": 120,
+          "marks_max": 124,
+          "percentile_min": 96.5,
+          "percentile_max": 97
+        },
+        {
+          "marks_min": 115,
+          "marks_max": 119,
+          "percentile_min": 96,
+          "percentile_max": 96.5
+        },
+        {
+          "marks_min": 110,
+          "marks_max": 114,
+          "percentile_min": 95.5,
+          "percentile_max": 96
+        },
+        {
+          "marks_min": 106,
+          "marks_max": 109,
+          "percentile_min": 95,
+          "percentile_max": 95.5
+        },
+        {
+          "marks_min": 100,
+          "marks_max": 105,
+          "percentile_min": 94,
+          "percentile_max": 95
+        },
+        {
+          "marks_min": 94,
+          "marks_max": 99,
+          "percentile_min": 93,
+          "percentile_max": 94
+        },
+        {
+          "marks_min": 89,
+          "marks_max": 93,
+          "percentile_min": 92,
+          "percentile_max": 93
+        },
+        {
+          "marks_min": 84,
+          "marks_max": 88,
+          "percentile_min": 91,
+          "percentile_max": 92
+        },
+        {
+          "marks_min": 80,
+          "marks_max": 83,
+          "percentile_min": 90,
+          "percentile_max": 91
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "session": "apr",
+      "basis": "Average across 9 Apr 2026 shifts (2-8 Apr) of jeepredictor.in's 'expected' shift-wise table, which it says is modelled from 47,220 student score submissions and recalibrated after the answer key; a model, not NTA data. 99th percentile ranged 160 (8 Apr S2) to 195 (6 Apr S2) marks. Each band edge is the arithmetic mean (rounded) of the per-shift marks the source lists for that percentile; band runs from the mean marks at the lower percentile to one mark below the mean at the next higher percentile. Only the percentile range the source covers is included (no open-ended top/bottom bands). Individual shifts differ from this mean by up to ~±25 marks.",
+      "source_type": "estimate",
+      "source": "https://jeepredictor.in/articles/jee-mains-marks-vs-percentile-vs-rank-2026",
+      "bands": [
+        {
+          "marks_min": 160,
+          "marks_max": 179,
+          "percentile_min": 98,
+          "percentile_max": 99
+        },
+        {
+          "marks_min": 145,
+          "marks_max": 159,
+          "percentile_min": 97,
+          "percentile_max": 98
+        },
+        {
+          "marks_min": 136,
+          "marks_max": 144,
+          "percentile_min": 96,
+          "percentile_max": 97
+        },
+        {
+          "marks_min": 128,
+          "marks_max": 135,
+          "percentile_min": 95,
+          "percentile_max": 96
+        },
+        {
+          "marks_min": 121,
+          "marks_max": 127,
+          "percentile_min": 94,
+          "percentile_max": 95
+        },
+        {
+          "marks_min": 114,
+          "marks_max": 120,
+          "percentile_min": 93,
+          "percentile_max": 94
+        },
+        {
+          "marks_min": 108,
+          "marks_max": 113,
+          "percentile_min": 92,
+          "percentile_max": 93
+        },
+        {
+          "marks_min": 102,
+          "marks_max": 107,
+          "percentile_min": 91,
+          "percentile_max": 92
+        },
+        {
+          "marks_min": 96,
+          "marks_max": 101,
+          "percentile_min": 90,
+          "percentile_max": 91
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "session": "combined",
+      "basis": "Careers360 'JEE Main Marks vs Percentile vs Rank 2026' table, labelled 'expected' on one Careers360 page and 'depth analysis' on another; no shift or session stated. Its rank column fits rank = (100 - percentile) x 14,75,103 / 100 exactly, and 14,75,103 is NTA's 2025 unique-candidate count, so this is likely 2025-based. Source bands 300-291 and 292-280 overlapped; second band recorded as 280-290. Source has no 269-270 band.",
+      "source_type": "coaching_analysis",
+      "source": "https://engineering.careers360.com/articles/jee-main-marks-vs-percentile",
+      "bands": [
+        {
+          "marks_min": 291,
+          "marks_max": 300,
+          "percentile_min": 99.999,
+          "percentile_max": 100
+        },
+        {
+          "marks_min": 280,
+          "marks_max": 290,
+          "percentile_min": 99.99617561,
+          "percentile_max": 99.99890732
+        },
+        {
+          "marks_min": 271,
+          "marks_max": 279,
+          "percentile_min": 99.99153171,
+          "percentile_max": 99.99417236
+        },
+        {
+          "marks_min": 259,
+          "marks_max": 268,
+          "percentile_min": 99.97687156,
+          "percentile_max": 99.99034797
+        },
+        {
+          "marks_min": 250,
+          "marks_max": 258,
+          "percentile_min": 99.95228621,
+          "percentile_max": 99.97413985
+        },
+        {
+          "marks_min": 240,
+          "marks_max": 249,
+          "percentile_min": 99.91549924,
+          "percentile_max": 99.95028296
+        },
+        {
+          "marks_min": 230,
+          "marks_max": 239,
+          "percentile_min": 99.87060821,
+          "percentile_max": 99.91395128
+        },
+        {
+          "marks_min": 220,
+          "marks_max": 229,
+          "percentile_min": 99.78191884,
+          "percentile_max": 99.86150253
+        },
+        {
+          "marks_min": 210,
+          "marks_max": 219,
+          "percentile_min": 99.69159044,
+          "percentile_max": 99.77499852
+        },
+        {
+          "marks_min": 200,
+          "marks_max": 209,
+          "percentile_min": 99.57503767,
+          "percentile_max": 99.68494329
+        },
+        {
+          "marks_min": 190,
+          "marks_max": 199,
+          "percentile_min": 99.40858575,
+          "percentile_max": 99.56019541
+        },
+        {
+          "marks_min": 180,
+          "marks_max": 189,
+          "percentile_min": 99.17311273,
+          "percentile_max": 99.39319714
+        },
+        {
+          "marks_min": 170,
+          "marks_max": 179,
+          "percentile_min": 98.87981861,
+          "percentile_max": 99.1567225
+        },
+        {
+          "marks_min": 160,
+          "marks_max": 169,
+          "percentile_min": 98.52824811,
+          "percentile_max": 98.85149993
+        },
+        {
+          "marks_min": 150,
+          "marks_max": 159,
+          "percentile_min": 98.09290531,
+          "percentile_max": 98.49801724
+        },
+        {
+          "marks_min": 140,
+          "marks_max": 149,
+          "percentile_min": 97.54301298,
+          "percentile_max": 98.07460288
+        },
+        {
+          "marks_min": 130,
+          "marks_max": 139,
+          "percentile_min": 96.87838902,
+          "percentile_max": 97.4927496
+        },
+        {
+          "marks_min": 120,
+          "marks_max": 129,
+          "percentile_min": 96.0687115,
+          "percentile_max": 96.80927687
+        },
+        {
+          "marks_min": 110,
+          "marks_max": 119,
+          "percentile_min": 95.05625037,
+          "percentile_max": 95.983027
+        },
+        {
+          "marks_min": 100,
+          "marks_max": 109,
+          "percentile_min": 93.8020333,
+          "percentile_max": 94.96737888
+        },
+        {
+          "marks_min": 90,
+          "marks_max": 99,
+          "percentile_min": 92.21882783,
+          "percentile_max": 93.67910655
+        },
+        {
+          "marks_min": 80,
+          "marks_max": 89,
+          "percentile_min": 90.27631202,
+          "percentile_max": 92.05811248
+        },
+        {
+          "marks_min": 70,
+          "marks_max": 79,
+          "percentile_min": 87.51810893,
+          "percentile_max": 90.0448455
+        },
+        {
+          "marks_min": 60,
+          "marks_max": 69,
+          "percentile_min": 83.89085926,
+          "percentile_max": 87.33654157
+        },
+        {
+          "marks_min": 50,
+          "marks_max": 59,
+          "percentile_min": 78.35114254,
+          "percentile_max": 83.5119717
+        },
+        {
+          "marks_min": 40,
+          "marks_max": 49,
+          "percentile_min": 69.5797271,
+          "percentile_max": 77.81927947
+        },
+        {
+          "marks_min": 30,
+          "marks_max": 39,
+          "percentile_min": 56.09102043,
+          "percentile_max": 68.80219265
+        },
+        {
+          "marks_min": 20,
+          "marks_max": 29,
+          "percentile_min": 36.58463962,
+          "percentile_max": 54.01037138
+        },
+        {
+          "marks_min": 10,
+          "marks_max": 19,
+          "percentile_min": 18.16647924,
+          "percentile_max": 35.2885364
+        },
+        {
+          "marks_min": 0,
+          "marks_max": 9,
+          "percentile_min": 5.71472799,
+          "percentile_max": 17.14582299
+        }
+      ]
+    }
+  ],
+  "main_percentile_vs_rank": [
+    {
+      "year": 2023,
+      "basis": "Computed, not observed: rank = (100 - percentile) x N / 100, with N = NTA press release 29 Apr 2023: 11,13,325 unique candidates appeared in Paper 1 across both sessions. Approximates final CRL using the best of both sessions. Observed CRL ranks run roughly 4-5% higher (worse) than this formula; see uncertainties.",
+      "source_type": "estimate",
+      "source": "http://nta.ac.in/Download/Notice/Notice_20230502163550.pdf",
+      "bands": [
+        {
+          "percentile_min": 99.99,
+          "percentile_max": 100,
+          "rank_min": 1,
+          "rank_max": 111
+        },
+        {
+          "percentile_min": 99.95,
+          "percentile_max": 99.99,
+          "rank_min": 112,
+          "rank_max": 557
+        },
+        {
+          "percentile_min": 99.9,
+          "percentile_max": 99.95,
+          "rank_min": 558,
+          "rank_max": 1113
+        },
+        {
+          "percentile_min": 99.8,
+          "percentile_max": 99.9,
+          "rank_min": 1114,
+          "rank_max": 2227
+        },
+        {
+          "percentile_min": 99.5,
+          "percentile_max": 99.8,
+          "rank_min": 2228,
+          "rank_max": 5567
+        },
+        {
+          "percentile_min": 99,
+          "percentile_max": 99.5,
+          "rank_min": 5568,
+          "rank_max": 11133
+        },
+        {
+          "percentile_min": 98.5,
+          "percentile_max": 99,
+          "rank_min": 11134,
+          "rank_max": 16700
+        },
+        {
+          "percentile_min": 98,
+          "percentile_max": 98.5,
+          "rank_min": 16701,
+          "rank_max": 22266
+        },
+        {
+          "percentile_min": 97,
+          "percentile_max": 98,
+          "rank_min": 22267,
+          "rank_max": 33400
+        },
+        {
+          "percentile_min": 96,
+          "percentile_max": 97,
+          "rank_min": 33401,
+          "rank_max": 44533
+        },
+        {
+          "percentile_min": 95,
+          "percentile_max": 96,
+          "rank_min": 44534,
+          "rank_max": 55666
+        },
+        {
+          "percentile_min": 93,
+          "percentile_max": 95,
+          "rank_min": 55667,
+          "rank_max": 77933
+        },
+        {
+          "percentile_min": 90,
+          "percentile_max": 93,
+          "rank_min": 77934,
+          "rank_max": 111332
+        },
+        {
+          "percentile_min": 85,
+          "percentile_max": 90,
+          "rank_min": 111333,
+          "rank_max": 166999
+        },
+        {
+          "percentile_min": 80,
+          "percentile_max": 85,
+          "rank_min": 167000,
+          "rank_max": 222665
+        },
+        {
+          "percentile_min": 70,
+          "percentile_max": 80,
+          "rank_min": 222666,
+          "rank_max": 333998
+        },
+        {
+          "percentile_min": 60,
+          "percentile_max": 70,
+          "rank_min": 333999,
+          "rank_max": 445330
+        },
+        {
+          "percentile_min": 50,
+          "percentile_max": 60,
+          "rank_min": 445331,
+          "rank_max": 556662
+        },
+        {
+          "percentile_min": 0,
+          "percentile_max": 50,
+          "rank_min": 556663,
+          "rank_max": 1113325
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "basis": "Computed, not observed: rank = (100 - percentile) x N / 100, with N = 14,15,110 unique candidates appeared in Paper 1 across both sessions (NTA figure as reported by Allen News; the NTA PDF itself was not opened). Approximates final CRL using the best of both sessions. Observed CRL ranks run roughly 4-5% higher (worse) than this formula; see uncertainties.",
+      "source_type": "estimate",
+      "source": "https://news.allen.in/highest-number-students-jee-main-2024/",
+      "bands": [
+        {
+          "percentile_min": 99.99,
+          "percentile_max": 100,
+          "rank_min": 1,
+          "rank_max": 142
+        },
+        {
+          "percentile_min": 99.95,
+          "percentile_max": 99.99,
+          "rank_min": 143,
+          "rank_max": 708
+        },
+        {
+          "percentile_min": 99.9,
+          "percentile_max": 99.95,
+          "rank_min": 709,
+          "rank_max": 1415
+        },
+        {
+          "percentile_min": 99.8,
+          "percentile_max": 99.9,
+          "rank_min": 1416,
+          "rank_max": 2830
+        },
+        {
+          "percentile_min": 99.5,
+          "percentile_max": 99.8,
+          "rank_min": 2831,
+          "rank_max": 7076
+        },
+        {
+          "percentile_min": 99,
+          "percentile_max": 99.5,
+          "rank_min": 7077,
+          "rank_max": 14151
+        },
+        {
+          "percentile_min": 98.5,
+          "percentile_max": 99,
+          "rank_min": 14152,
+          "rank_max": 21227
+        },
+        {
+          "percentile_min": 98,
+          "percentile_max": 98.5,
+          "rank_min": 21228,
+          "rank_max": 28302
+        },
+        {
+          "percentile_min": 97,
+          "percentile_max": 98,
+          "rank_min": 28303,
+          "rank_max": 42453
+        },
+        {
+          "percentile_min": 96,
+          "percentile_max": 97,
+          "rank_min": 42454,
+          "rank_max": 56604
+        },
+        {
+          "percentile_min": 95,
+          "percentile_max": 96,
+          "rank_min": 56605,
+          "rank_max": 70756
+        },
+        {
+          "percentile_min": 93,
+          "percentile_max": 95,
+          "rank_min": 70757,
+          "rank_max": 99058
+        },
+        {
+          "percentile_min": 90,
+          "percentile_max": 93,
+          "rank_min": 99059,
+          "rank_max": 141511
+        },
+        {
+          "percentile_min": 85,
+          "percentile_max": 90,
+          "rank_min": 141512,
+          "rank_max": 212266
+        },
+        {
+          "percentile_min": 80,
+          "percentile_max": 85,
+          "rank_min": 212267,
+          "rank_max": 283022
+        },
+        {
+          "percentile_min": 70,
+          "percentile_max": 80,
+          "rank_min": 283023,
+          "rank_max": 424533
+        },
+        {
+          "percentile_min": 60,
+          "percentile_max": 70,
+          "rank_min": 424534,
+          "rank_max": 566044
+        },
+        {
+          "percentile_min": 50,
+          "percentile_max": 60,
+          "rank_min": 566045,
+          "rank_max": 707555
+        },
+        {
+          "percentile_min": 0,
+          "percentile_max": 50,
+          "rank_min": 707556,
+          "rank_max": 1415110
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "basis": "Computed, not observed: rank = (100 - percentile) x N / 100, with N = NTA press release 18 Apr 2025: 14,75,103 unique candidates appeared in Paper 1 across both sessions. Approximates final CRL using the best of both sessions. Observed CRL ranks run roughly 4-5% higher (worse) than this formula; see uncertainties.",
+      "source_type": "estimate",
+      "source": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/04/2025041920.pdf",
+      "bands": [
+        {
+          "percentile_min": 99.99,
+          "percentile_max": 100,
+          "rank_min": 1,
+          "rank_max": 148
+        },
+        {
+          "percentile_min": 99.95,
+          "percentile_max": 99.99,
+          "rank_min": 149,
+          "rank_max": 738
+        },
+        {
+          "percentile_min": 99.9,
+          "percentile_max": 99.95,
+          "rank_min": 739,
+          "rank_max": 1475
+        },
+        {
+          "percentile_min": 99.8,
+          "percentile_max": 99.9,
+          "rank_min": 1476,
+          "rank_max": 2950
+        },
+        {
+          "percentile_min": 99.5,
+          "percentile_max": 99.8,
+          "rank_min": 2951,
+          "rank_max": 7376
+        },
+        {
+          "percentile_min": 99,
+          "percentile_max": 99.5,
+          "rank_min": 7377,
+          "rank_max": 14751
+        },
+        {
+          "percentile_min": 98.5,
+          "percentile_max": 99,
+          "rank_min": 14752,
+          "rank_max": 22127
+        },
+        {
+          "percentile_min": 98,
+          "percentile_max": 98.5,
+          "rank_min": 22128,
+          "rank_max": 29502
+        },
+        {
+          "percentile_min": 97,
+          "percentile_max": 98,
+          "rank_min": 29503,
+          "rank_max": 44253
+        },
+        {
+          "percentile_min": 96,
+          "percentile_max": 97,
+          "rank_min": 44254,
+          "rank_max": 59004
+        },
+        {
+          "percentile_min": 95,
+          "percentile_max": 96,
+          "rank_min": 59005,
+          "rank_max": 73755
+        },
+        {
+          "percentile_min": 93,
+          "percentile_max": 95,
+          "rank_min": 73756,
+          "rank_max": 103257
+        },
+        {
+          "percentile_min": 90,
+          "percentile_max": 93,
+          "rank_min": 103258,
+          "rank_max": 147510
+        },
+        {
+          "percentile_min": 85,
+          "percentile_max": 90,
+          "rank_min": 147511,
+          "rank_max": 221265
+        },
+        {
+          "percentile_min": 80,
+          "percentile_max": 85,
+          "rank_min": 221266,
+          "rank_max": 295021
+        },
+        {
+          "percentile_min": 70,
+          "percentile_max": 80,
+          "rank_min": 295022,
+          "rank_max": 442531
+        },
+        {
+          "percentile_min": 60,
+          "percentile_max": 70,
+          "rank_min": 442532,
+          "rank_max": 590041
+        },
+        {
+          "percentile_min": 50,
+          "percentile_max": 60,
+          "rank_min": 590042,
+          "rank_max": 737552
+        },
+        {
+          "percentile_min": 0,
+          "percentile_max": 50,
+          "rank_min": 737553,
+          "rank_max": 1475103
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "basis": "Computed, not observed: rank = (100 - percentile) x N / 100, with N = 15,38,474 unique candidates appeared in Paper 1 across both sessions (NTA figure as reported in news; Shiksha's headline says 15,38,468). The NTA Paper 1 PDF itself was not opened. Approximates final CRL using the best of both sessions. Observed CRL ranks run roughly 4-5% higher (worse) than this formula; see uncertainties.",
+      "source_type": "estimate",
+      "source": "https://www.shiksha.com/news/engineering-jee-main-2026-result-statistics-15-38-468-lakh-unique-candidates-appeared-across-both-sessions-blogId-227505",
+      "bands": [
+        {
+          "percentile_min": 99.99,
+          "percentile_max": 100,
+          "rank_min": 1,
+          "rank_max": 154
+        },
+        {
+          "percentile_min": 99.95,
+          "percentile_max": 99.99,
+          "rank_min": 155,
+          "rank_max": 769
+        },
+        {
+          "percentile_min": 99.9,
+          "percentile_max": 99.95,
+          "rank_min": 770,
+          "rank_max": 1538
+        },
+        {
+          "percentile_min": 99.8,
+          "percentile_max": 99.9,
+          "rank_min": 1539,
+          "rank_max": 3077
+        },
+        {
+          "percentile_min": 99.5,
+          "percentile_max": 99.8,
+          "rank_min": 3078,
+          "rank_max": 7692
+        },
+        {
+          "percentile_min": 99,
+          "percentile_max": 99.5,
+          "rank_min": 7693,
+          "rank_max": 15385
+        },
+        {
+          "percentile_min": 98.5,
+          "percentile_max": 99,
+          "rank_min": 15386,
+          "rank_max": 23077
+        },
+        {
+          "percentile_min": 98,
+          "percentile_max": 98.5,
+          "rank_min": 23078,
+          "rank_max": 30769
+        },
+        {
+          "percentile_min": 97,
+          "percentile_max": 98,
+          "rank_min": 30770,
+          "rank_max": 46154
+        },
+        {
+          "percentile_min": 96,
+          "percentile_max": 97,
+          "rank_min": 46155,
+          "rank_max": 61539
+        },
+        {
+          "percentile_min": 95,
+          "percentile_max": 96,
+          "rank_min": 61540,
+          "rank_max": 76924
+        },
+        {
+          "percentile_min": 93,
+          "percentile_max": 95,
+          "rank_min": 76925,
+          "rank_max": 107693
+        },
+        {
+          "percentile_min": 90,
+          "percentile_max": 93,
+          "rank_min": 107694,
+          "rank_max": 153847
+        },
+        {
+          "percentile_min": 85,
+          "percentile_max": 90,
+          "rank_min": 153848,
+          "rank_max": 230771
+        },
+        {
+          "percentile_min": 80,
+          "percentile_max": 85,
+          "rank_min": 230772,
+          "rank_max": 307695
+        },
+        {
+          "percentile_min": 70,
+          "percentile_max": 80,
+          "rank_min": 307696,
+          "rank_max": 461542
+        },
+        {
+          "percentile_min": 60,
+          "percentile_max": 70,
+          "rank_min": 461543,
+          "rank_max": 615390
+        },
+        {
+          "percentile_min": 50,
+          "percentile_max": 60,
+          "rank_min": 615391,
+          "rank_max": 769237
+        },
+        {
+          "percentile_min": 0,
+          "percentile_max": 50,
+          "rank_min": 769238,
+          "rank_max": 1538474
+        }
+      ]
+    }
+  ],
+  "advanced_marks_vs_rank": [
+    {
+      "year": 2023,
+      "max_marks": 360,
+      "basis": "CRL. JIC Report 2023 sec 6.6. CRL size 26,321; last CRL rank scored 86 (= CRL cutoff 86/360). Topper 341/360. Built from the official table 'Aggregate Total Marks with Different Ranks in CRL' (the aggregate score of the candidate at CRL rank 1, 101, 201, ...). A subset of those points was used; each band runs from one mark above the next point's score up to this point's score, ranks from this point's rank to one below the next point's rank. Tied scores mean edge ranks are approximate to within ~100.",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/reports/2023.pdf",
+      "bands": [
+        {
+          "marks_min": 285,
+          "marks_max": 341,
+          "rank_min": 1,
+          "rank_max": 100
+        },
+        {
+          "marks_min": 270,
+          "marks_max": 284,
+          "rank_min": 101,
+          "rank_max": 200
+        },
+        {
+          "marks_min": 258,
+          "marks_max": 269,
+          "rank_min": 201,
+          "rank_max": 300
+        },
+        {
+          "marks_min": 249,
+          "marks_max": 257,
+          "rank_min": 301,
+          "rank_max": 400
+        },
+        {
+          "marks_min": 243,
+          "marks_max": 248,
+          "rank_min": 401,
+          "rank_max": 500
+        },
+        {
+          "marks_min": 233,
+          "marks_max": 242,
+          "rank_min": 501,
+          "rank_max": 700
+        },
+        {
+          "marks_min": 220,
+          "marks_max": 232,
+          "rank_min": 701,
+          "rank_max": 1000
+        },
+        {
+          "marks_min": 204,
+          "marks_max": 219,
+          "rank_min": 1001,
+          "rank_max": 1500
+        },
+        {
+          "marks_min": 192,
+          "marks_max": 203,
+          "rank_min": 1501,
+          "rank_max": 2000
+        },
+        {
+          "marks_min": 182,
+          "marks_max": 191,
+          "rank_min": 2001,
+          "rank_max": 2500
+        },
+        {
+          "marks_min": 175,
+          "marks_max": 181,
+          "rank_min": 2501,
+          "rank_max": 3000
+        },
+        {
+          "marks_min": 163,
+          "marks_max": 174,
+          "rank_min": 3001,
+          "rank_max": 4000
+        },
+        {
+          "marks_min": 154,
+          "marks_max": 162,
+          "rank_min": 4001,
+          "rank_max": 5000
+        },
+        {
+          "marks_min": 147,
+          "marks_max": 153,
+          "rank_min": 5001,
+          "rank_max": 6000
+        },
+        {
+          "marks_min": 141,
+          "marks_max": 146,
+          "rank_min": 6001,
+          "rank_max": 7000
+        },
+        {
+          "marks_min": 135,
+          "marks_max": 140,
+          "rank_min": 7001,
+          "rank_max": 8000
+        },
+        {
+          "marks_min": 126,
+          "marks_max": 134,
+          "rank_min": 8001,
+          "rank_max": 10000
+        },
+        {
+          "marks_min": 119,
+          "marks_max": 125,
+          "rank_min": 10001,
+          "rank_max": 12000
+        },
+        {
+          "marks_min": 110,
+          "marks_max": 118,
+          "rank_min": 12001,
+          "rank_max": 15000
+        },
+        {
+          "marks_min": 102,
+          "marks_max": 109,
+          "rank_min": 15001,
+          "rank_max": 18000
+        },
+        {
+          "marks_min": 87,
+          "marks_max": 101,
+          "rank_min": 18001,
+          "rank_max": 26000
+        },
+        {
+          "marks_min": 86,
+          "marks_max": 86,
+          "rank_min": 26001,
+          "rank_max": 26321
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "max_marks": 360,
+      "basis": "CRL. JIC Report 2024 sec 6.6. Last CRL rank 25,946 scored 109 (CRL cutoff). Topper 355/360. Built from the official table 'Aggregate Total Marks with Different Ranks in CRL' (the aggregate score of the candidate at CRL rank 1, 101, 201, ...). A subset of those points was used; each band runs from one mark above the next point's score up to this point's score, ranks from this point's rank to one below the next point's rank. Tied scores mean edge ranks are approximate to within ~100.",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/reports/2024.pdf",
+      "bands": [
+        {
+          "marks_min": 301,
+          "marks_max": 355,
+          "rank_min": 1,
+          "rank_max": 100
+        },
+        {
+          "marks_min": 282,
+          "marks_max": 300,
+          "rank_min": 101,
+          "rank_max": 200
+        },
+        {
+          "marks_min": 273,
+          "marks_max": 281,
+          "rank_min": 201,
+          "rank_max": 300
+        },
+        {
+          "marks_min": 266,
+          "marks_max": 272,
+          "rank_min": 301,
+          "rank_max": 400
+        },
+        {
+          "marks_min": 259,
+          "marks_max": 265,
+          "rank_min": 401,
+          "rank_max": 500
+        },
+        {
+          "marks_min": 247,
+          "marks_max": 258,
+          "rank_min": 501,
+          "rank_max": 700
+        },
+        {
+          "marks_min": 234,
+          "marks_max": 246,
+          "rank_min": 701,
+          "rank_max": 1000
+        },
+        {
+          "marks_min": 220,
+          "marks_max": 233,
+          "rank_min": 1001,
+          "rank_max": 1500
+        },
+        {
+          "marks_min": 208,
+          "marks_max": 219,
+          "rank_min": 1501,
+          "rank_max": 2000
+        },
+        {
+          "marks_min": 200,
+          "marks_max": 207,
+          "rank_min": 2001,
+          "rank_max": 2500
+        },
+        {
+          "marks_min": 193,
+          "marks_max": 199,
+          "rank_min": 2501,
+          "rank_max": 3000
+        },
+        {
+          "marks_min": 182,
+          "marks_max": 192,
+          "rank_min": 3001,
+          "rank_max": 4000
+        },
+        {
+          "marks_min": 173,
+          "marks_max": 181,
+          "rank_min": 4001,
+          "rank_max": 5000
+        },
+        {
+          "marks_min": 166,
+          "marks_max": 172,
+          "rank_min": 5001,
+          "rank_max": 6000
+        },
+        {
+          "marks_min": 160,
+          "marks_max": 165,
+          "rank_min": 6001,
+          "rank_max": 7000
+        },
+        {
+          "marks_min": 155,
+          "marks_max": 159,
+          "rank_min": 7001,
+          "rank_max": 8000
+        },
+        {
+          "marks_min": 147,
+          "marks_max": 154,
+          "rank_min": 8001,
+          "rank_max": 10000
+        },
+        {
+          "marks_min": 139,
+          "marks_max": 146,
+          "rank_min": 10001,
+          "rank_max": 12000
+        },
+        {
+          "marks_min": 131,
+          "marks_max": 138,
+          "rank_min": 12001,
+          "rank_max": 15000
+        },
+        {
+          "marks_min": 124,
+          "marks_max": 130,
+          "rank_min": 15001,
+          "rank_max": 18000
+        },
+        {
+          "marks_min": 116,
+          "marks_max": 123,
+          "rank_min": 18001,
+          "rank_max": 22000
+        },
+        {
+          "marks_min": 109,
+          "marks_max": 115,
+          "rank_min": 22001,
+          "rank_max": 25946
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "max_marks": 360,
+      "basis": "CRL. JIC Report 2025 sec 6.8. Last CRL rank 33,859 scored 74 (= CRL cutoff 74/360, per the 2025 results press release). Topper 332/360. Built from the official table 'Aggregate Total Marks with Different Ranks in CRL' (the aggregate score of the candidate at CRL rank 1, 101, 201, ...). A subset of those points was used; each band runs from one mark above the next point's score up to this point's score, ranks from this point's rank to one below the next point's rank. Tied scores mean edge ranks are approximate to within ~100.",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/reports/2025.pdf",
+      "bands": [
+        {
+          "marks_min": 279,
+          "marks_max": 332,
+          "rank_min": 1,
+          "rank_max": 100
+        },
+        {
+          "marks_min": 263,
+          "marks_max": 278,
+          "rank_min": 101,
+          "rank_max": 200
+        },
+        {
+          "marks_min": 250,
+          "marks_max": 262,
+          "rank_min": 201,
+          "rank_max": 300
+        },
+        {
+          "marks_min": 242,
+          "marks_max": 249,
+          "rank_min": 301,
+          "rank_max": 400
+        },
+        {
+          "marks_min": 235,
+          "marks_max": 241,
+          "rank_min": 401,
+          "rank_max": 500
+        },
+        {
+          "marks_min": 223,
+          "marks_max": 234,
+          "rank_min": 501,
+          "rank_max": 700
+        },
+        {
+          "marks_min": 209,
+          "marks_max": 222,
+          "rank_min": 701,
+          "rank_max": 1000
+        },
+        {
+          "marks_min": 194,
+          "marks_max": 208,
+          "rank_min": 1001,
+          "rank_max": 1500
+        },
+        {
+          "marks_min": 182,
+          "marks_max": 193,
+          "rank_min": 1501,
+          "rank_max": 2000
+        },
+        {
+          "marks_min": 173,
+          "marks_max": 181,
+          "rank_min": 2001,
+          "rank_max": 2500
+        },
+        {
+          "marks_min": 166,
+          "marks_max": 172,
+          "rank_min": 2501,
+          "rank_max": 3000
+        },
+        {
+          "marks_min": 155,
+          "marks_max": 165,
+          "rank_min": 3001,
+          "rank_max": 4000
+        },
+        {
+          "marks_min": 146,
+          "marks_max": 154,
+          "rank_min": 4001,
+          "rank_max": 5000
+        },
+        {
+          "marks_min": 139,
+          "marks_max": 145,
+          "rank_min": 5001,
+          "rank_max": 6000
+        },
+        {
+          "marks_min": 134,
+          "marks_max": 138,
+          "rank_min": 6001,
+          "rank_max": 7000
+        },
+        {
+          "marks_min": 129,
+          "marks_max": 133,
+          "rank_min": 7001,
+          "rank_max": 8000
+        },
+        {
+          "marks_min": 121,
+          "marks_max": 128,
+          "rank_min": 8001,
+          "rank_max": 10000
+        },
+        {
+          "marks_min": 114,
+          "marks_max": 120,
+          "rank_min": 10001,
+          "rank_max": 12000
+        },
+        {
+          "marks_min": 105,
+          "marks_max": 113,
+          "rank_min": 12001,
+          "rank_max": 15000
+        },
+        {
+          "marks_min": 99,
+          "marks_max": 104,
+          "rank_min": 15001,
+          "rank_max": 18000
+        },
+        {
+          "marks_min": 91,
+          "marks_max": 98,
+          "rank_min": 18001,
+          "rank_max": 22000
+        },
+        {
+          "marks_min": 85,
+          "marks_max": 90,
+          "rank_min": 22001,
+          "rank_max": 26000
+        },
+        {
+          "marks_min": 79,
+          "marks_max": 84,
+          "rank_min": 26001,
+          "rank_max": 30000
+        },
+        {
+          "marks_min": 74,
+          "marks_max": 78,
+          "rank_min": 30001,
+          "rank_max": 33859
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "max_marks": 360,
+      "basis": "CRL. Only the official top-10 list is available: CRL 1 scored 330, CRL 10 scored 311 (JEE Advanced 2026 results press release, IIT Roorkee, 1 Jun 2026). CRL cutoff 92/360 (min 8 per subject). The JIC Report 2026 with the full marks-vs-rank table was not yet online (jeeadv.ac.in/reports/2026.pdf returned 404 on 2026-10-01).",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/documents/Result2026PressRelease.pdf",
+      "bands": [
+        {
+          "marks_min": 311,
+          "marks_max": 330,
+          "rank_min": 1,
+          "rank_max": 10
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "NTA does not publish marks-vs-percentile tables. Every JEE Main marks-to-percentile table here is either a coaching compilation or Claude's average of coaching shift-wise data. Percentile is normalised per shift, and the same marks gave very different percentiles in different shifts: in Jan 2025 the 99th percentile needed 148 to 200 marks; in Apr 2025, 173 to 203; in Jan 2026, 155 to 171.",
+    "Coaching sites recycle the same tables under different year labels. The 'BYJU'S 2023' marks/percentile table is identical to Vedantu's '2025' table and Allen's unlabelled table. Careers360's percentile-rank tables all fit rank = (100 - p) x N / 100 exactly, but with a different N in each: its '2026' table uses N = 14,75,103 (NTA's 2025 count), its '2025' table N ~ 14.15 lakh (2024's count), its '2024' table N ~ 10.98 lakh, and BYJU'S '2023' N ~ 9.21 lakh. Their rank columns are therefore formula outputs, not observed ranks, and their year labels are unreliable. So only formula estimates using official NTA candidate counts are included as main_percentile_vs_rank.",
+    "Observed 2025 CRL ranks are worse than the formula gives. CollegePravesh data points, seen only in a search-result excerpt because the page blocks automated fetching: 99.41 percentile = rank 9,100; 99.34 = 10,137; 99.25 = 11,596; 99.05 = 14,717. The formula with N = 14,75,103 gives 8,703; 9,736; 11,063; 14,013, about 4-5% better. Treat formula ranks as optimistic.",
+    "Careers360's own 'JEE Main 2025 Marks vs Percentile vs Rank' table was excluded because it is internally inconsistent: overlapping bands (201-222 vs 222-240, 161-180 vs 180-200), the same percentile upper bound in two bands, and the typo rank '210010'. Vedantu's '2026' marks/percentile table was excluded because its percentile ranges run in the wrong direction inside bands. henceprove.com's 2023-2025 table was excluded as implausible (it gives 100 marks = ~50 percentile).",
+    "No post-result shift-wise marks-vs-percentile data was found for JEE Main 2024 (Jan or Apr). The 2024 Jan table is Sri Chaitanya's pre-result prediction. Another figure, 27 Jan S1 needing 236 marks for 99 percentile, appeared only in search excerpts from Scribd and Collegedunia (not fetchable) and conflicts with Sri Chaitanya's 190. No 2024 Apr or 2023 per-session table was found.",
+    "The 2026 Apr session table comes from jeepredictor.in's model of student-reported scores, not NTA data. Careers360's Apr 2026 shift ranges (exact 5-mark steps with identical 20-mark gaps across all shifts) looked synthetic and were not used. jeepredictor.in's own Jan 2026 average for the 99th percentile (162) matches the Careers360-derived average used here (162).",
+    "Rank formula N for 2024 (14,15,110) and 2026 (15,38,474, with a variant of 15,38,468) come from news reports of NTA releases. The NTA PDFs were opened only for 2023 and 2025.",
+    "JEE Advanced 2023-2025 tables are official (JIC reports). Coaching Advanced tables disagree badly. cracku.in's 2026 'expected' table puts 300-329 marks at ranks 11-100 and lists wrong toppers (2024 as 348; official 355). eSaral's 2023 and 2024 tables contradict the official reports (e.g. 2023 rank 501 at 192 marks vs official 242). Careers360's 2026 'expected' Advanced table runs to rank 2.4 lakh and is not a CRL table. None were used.",
+    "JEE Advanced 2026 has only an official top-10 band (311-330 marks gives CRL 1-10) plus the CRL cutoff (92/360). The full 2026 marks-vs-rank table should appear in the JIC Report 2026 at jeeadv.ac.in/reports/ once published. The 2026 CRL cutoff (92) is much higher than 2025's (74), so the 2025 table cannot be reused unchanged for 2026.",
+    "JEE Advanced max marks were 360 in all four years (2023-2026), confirmed in the official reports and press releases. Qualifying cutoffs vary by year: CRL 86 (2023), 109 (2024), 74 (2025), 92 (2026)."
+  ]
+}

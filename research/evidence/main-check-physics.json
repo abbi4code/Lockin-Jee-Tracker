@@ -1,0 +1,246 @@
+{
+ "subject": "physics",
+ "topics": [
+  {
+   "chapter_id": "phy-laws-of-motion",
+   "topic": "Inertial and accelerated frames, pseudo force",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 3,
+   "example": "2026 Jan 28 S2: block sliding on a frictionless incline that accelerates left with a0, find time to reach bottom (also 2026 Apr 5 S1 wedge pulled by 24 N; 2026 Apr 8 S2 pendulum angle in turning car; 2024 Apr 8 S2 ball in groove of rotating table)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/laws-of-motion",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-rotational-motion",
+   "topic": "Rolling without slipping",
+   "main_2024": 7,
+   "main_2025": 7,
+   "main_2026": 3,
+   "example": "2025 Jan 24 S1: solid cylinder rolls from rest down rough 45 deg incline, find acceleration of axis (also slipping-to-rolling transition 2026 Apr 8 S2)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/rotational-motion",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-rotational-motion",
+   "topic": "Collision of point masses with rigid bodies",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 22 S2: point masses m and 2m strike a bar on a smooth table and stick, find v/omega (2024 Feb 1 S2 impulse on end of free rod not counted)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/rotational-motion",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-gravitation",
+   "topic": "Geostationary orbits",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 5 S2: stationary orbit (T = 6 h) around planet of mass M/4, given geostationary radius 4.2e4 km for Earth, find orbit radius",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/gravitation",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-fluids",
+   "topic": "Buoyancy",
+   "main_2024": 4,
+   "main_2025": 4,
+   "main_2026": 5,
+   "example": "2026 Jan 24 S2: cube of density 600 floats in liquid of density 900, find submerged height (count includes floating-body SHM and terminal-velocity questions where the buoyant (rho - sigma) term is needed; floating/Archimedes-only count is 2/2/3)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/properties-of-matter",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-thermal-properties",
+   "topic": "Newton's law of cooling",
+   "main_2024": 0,
+   "main_2025": 2,
+   "main_2026": 0,
+   "example": "2025 Jan 29 S2: coffee cools 90 to 80 C in t min in 20 C room, find time from 80 to 60 C",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-thermal-properties",
+   "topic": "Blackbody radiation and Kirchhoff's law",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-thermal-properties",
+   "topic": "Wien's displacement law and Stefan's law",
+   "main_2024": 0,
+   "main_2025": 2,
+   "main_2026": 1,
+   "example": "2025 Apr 7 S1: filament at 1727 C radiates 94.2 W, find emissivity via Stefan-Boltzmann (all Stefan; no Wien question; 2026 Apr 6 S2 is dimension of Stefan's constant)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-thermodynamics",
+   "topic": "Bulk modulus of gases",
+   "main_2024": 0,
+   "main_2025": 2,
+   "main_2026": 1,
+   "example": "2026 Apr 6 S1: gas isothermally compressed to V/3 with bulk modulus 3e5 N/m2, find work done (also 2025 Jan 22 S1 organ pipes with gases of equal bulk modulus)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/properties-of-matter",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-thermodynamics",
+   "topic": "Carnot engine and its efficiency",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2025 Jan 28 S1: Carnot engine 473-273 K vs two engines in series 473-373 and 373-273 K, compare efficiencies",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-oscillations",
+   "topic": "Angular SHM",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Apr 4 S2: uniform disc oscillating about an off-centre axis (physical pendulum), find period (2025 Apr 4 S1 compares angular accelerations of two pendulums)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/simple-harmonic-motion",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-oscillations",
+   "topic": "Damped and forced oscillations, resonance",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/simple-harmonic-motion",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-waves",
+   "topic": "Doppler effect in sound",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/waves",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-capacitors",
+   "topic": "RC circuits with DC source",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2024 Apr 5 S1: field in 1.5 uF capacitor falls to 1/3 in 6.6 us when plates shorted by wire, find wire resistance (steady-state capacitor-in-DC-circuit questions, 2/1/5 in 2026/2025/2024, not counted)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/capacitor",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-emi",
+   "topic": "LR circuits with DC source",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 3,
+   "example": "2026 Apr 6 S1: 10 mH, 100 ohm inductor switched onto 1 V battery, ratio of inductor voltages at i = 2 mA and 4 mA",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/electromagnetic-induction",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-emi",
+   "topic": "LC oscillations",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Jan 29 S1: 100 uF capacitor at 12 V connected to 6.4 mH inductor, find maximum current",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/alternating-current",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-alternating-current",
+   "topic": "RC, LR and LC circuits with AC source",
+   "main_2024": 6,
+   "main_2025": 2,
+   "main_2026": 2,
+   "example": "2026 Apr 5 S1: series RC on AC, current drops to I/3 when frequency goes to omega/4, find R/X_C (count excludes full series LCR, which Main names)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/alternating-current",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-ray-optics",
+   "topic": "Rectilinear propagation of light",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/geometrical-optics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-ray-optics",
+   "topic": "Dispersion by a prism",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Jan 23 S1: 5 deg prism (n = 1.72) combined with second prism (n = 1.9) for dispersion without deviation, find its angle",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/geometrical-optics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-atoms",
+   "topic": "Continuous and characteristic X-rays",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 24 S1: match-list of EM-wave origin, X-rays from inner-shell transitions vs rapid acceleration of electrons (only EM-spectrum level)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/electromagnetic-waves",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "phy-atoms",
+   "topic": "Moseley's law",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-nuclei",
+   "topic": "Alpha, beta and gamma radiations",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Apr 8 S2: alpha decay of A=200 and A=212 nuclei with same Q = 1 MeV, ratio of alpha energies (2025 Jan 28 S1: pick correct beta-decay equation)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-nuclei",
+   "topic": "Law of radioactive decay, decay constant",
+   "main_2024": 0,
+   "main_2025": 2,
+   "main_2026": 0,
+   "example": "2025 Jan 23 S1: nucleus with 3x decay constant, ratio of undecayed nuclei after one half-life of the other (also 2025 Apr 4 S2 P->Q->R mass-time graph)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "phy-nuclei",
+   "topic": "Half-life and mean life",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2025 Jan 23 S1: ratio of remaining nuclei after one half-life of n1 when lambda2 = 3 lambda1",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+   "confidence": "high"
+  }
+ ],
+ "notes": "Source: questions.examside.com JEE Main Physics chapter pages, scraped in full (all 2024-2026 shifts, both sessions). Coverage checked: per-year totals across all chapters = 600 (2024, 20 shifts x 30), 475 (2025, 19 x 25), 475 (2026, 19 x 25). Each relevant chapter's 2024-26 list was read question by question, and other chapters were keyword-scanned (rolling found in circular-motion and center-of-mass, buoyancy in SHM, X-ray in EM waves). No separate MathonGo or PW cross-check was done because the examside data is complete. Counting was by judgement: a question counts only if the topic is needed to solve it. Borderline calls: buoyancy counts terminal-velocity questions that need the (rho - sigma) term (floating/Archimedes-only count is 2/2/3); pseudo force counts questions whose natural method is a non-inertial frame (accelerating wedge, turning car, rotating table); RC/LR DC counts transients and t=0 analysis only, not steady-state DC circuits with capacitors or inductors (capacitor steady-state 5/1/2 for 2024/2025/2026); 'RC, LR and LC with AC source' counts two-element circuits only (pure L or C and full LCR excluded); Angular SHM counts physical pendulums and angular-acceleration-of-pendulum questions, not ordinary simple-pendulum period questions. Zero in all three years: Blackbody/Kirchhoff, Damped/forced oscillations, Doppler effect, Rectilinear propagation, Moseley's law. Radioactivity (all three nuclei topics) has 0 questions in 2024 and only appears in 2025-2026."
+}

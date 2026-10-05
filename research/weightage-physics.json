@@ -1,0 +1,1361 @@
+{
+  "subject": "physics",
+  "chapters": [
+    {
+      "id": "phy-units-measurements",
+      "main": {
+        "avg_questions_per_shift": 1.0,
+        "by_year": {
+          "2019": 0.81,
+          "2020": 0.75,
+          "2021": 0.81,
+          "2022": 0.74,
+          "2023": 0.75,
+          "2024": 1.0,
+          "2025": 1.11,
+          "2026": 1.05
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 2,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 1.25,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "About 1 Q per Main shift (about 1.5 counting instrument questions) and 1-2 per year in Advanced, from a short chapter",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/units-and-measurements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/units-and-measurements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/practical-physics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-experimental-physics",
+      "main": {
+        "avg_questions_per_shift": 0.42,
+        "by_year": {
+          "2019": 0.19,
+          "2020": 0.31,
+          "2021": 0.38,
+          "2022": 0.48,
+          "2023": 0.08,
+          "2024": 0.65,
+          "2025": 0.26,
+          "2026": 0.53
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 0.88,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Vernier/screw-gauge/error questions are quick to drill and recur every year",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/units-and-measurements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/units-and-measurements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/practical-physics",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-motion-1d",
+      "main": {
+        "avg_questions_per_shift": 0.52,
+        "by_year": {
+          "2019": 0.5,
+          "2020": 0.38,
+          "2021": 0.77,
+          "2022": 0.74,
+          "2023": 0.79,
+          "2024": 0.8,
+          "2025": 0.37,
+          "2026": 0.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.12,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Low recent Main count (about 0.4 per shift), but kinematics underpins all of mechanics",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/motion-in-a-straight-line",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/motion",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-motion-2d",
+      "main": {
+        "avg_questions_per_shift": 1.07,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.62,
+          "2021": 1.23,
+          "2022": 1.48,
+          "2023": 1.38,
+          "2024": 1.3,
+          "2025": 1.11,
+          "2026": 0.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 1,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 0.62,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Projectiles, relative motion and circular kinematics: moderate effort, about 1 Q per shift if circular motion is counted here",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/motion-in-a-plane",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/circular-motion",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/vector-algebra",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/motion",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/motion-in-a-plane",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-laws-of-motion",
+      "main": {
+        "avg_questions_per_shift": 0.7,
+        "by_year": {
+          "2019": 0.56,
+          "2020": 0.31,
+          "2021": 0.96,
+          "2022": 1.09,
+          "2023": 0.67,
+          "2024": 1.2,
+          "2025": 0.42,
+          "2026": 0.63
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 2,
+          "2021": 2,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Under 1 Q per shift in Main; tricky constraint and friction problems take practice",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/laws-of-motion",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/laws-of-motion",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-work-energy-power",
+      "main": {
+        "avg_questions_per_shift": 0.73,
+        "by_year": {
+          "2019": 0.38,
+          "2020": 0.69,
+          "2021": 0.69,
+          "2022": 0.61,
+          "2023": 1.04,
+          "2024": 0.95,
+          "2025": 0.68,
+          "2026": 0.68
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.7 Q per shift; mostly tested inside other mechanics problems",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/work-power-and-energy",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/work-power-and-energy",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-center-of-mass",
+      "main": {
+        "avg_questions_per_shift": 0.51,
+        "by_year": {
+          "2019": 1.19,
+          "2020": 1.06,
+          "2021": 0.85,
+          "2022": 0.7,
+          "2023": 0.46,
+          "2024": 0.5,
+          "2025": 0.37,
+          "2026": 0.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 4,
+          "2022": 0,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Low direct count (about 0.4 per shift) but needed for rotation and collisions",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/center-of-mass",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/impulse-and-momentum",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-rotational-motion",
+      "main": {
+        "avg_questions_per_shift": 1.31,
+        "by_year": {
+          "2019": 2.06,
+          "2020": 1.69,
+          "2021": 1.38,
+          "2022": 0.96,
+          "2023": 1.08,
+          "2024": 1.0,
+          "2025": 1.37,
+          "2026": 1.37
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 2,
+          "2021": 2,
+          "2022": 4,
+          "2023": 4,
+          "2024": 2,
+          "2025": 1,
+          "2026": 5
+        },
+        "avg_questions": 2.62,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Top chapter in Advanced and about 1.3 Q per shift in Main, but slow to master",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/rotational-motion",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/rotational-motion",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-gravitation",
+      "main": {
+        "avg_questions_per_shift": 0.84,
+        "by_year": {
+          "2019": 0.88,
+          "2020": 1.06,
+          "2021": 1.31,
+          "2022": 1.09,
+          "2023": 1.67,
+          "2024": 1.2,
+          "2025": 0.68,
+          "2026": 0.53
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 1.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Short, formula-driven chapter; about 0.5-0.7 Q per Main shift in 2025-26",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/gravitation",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/gravitation",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-solids",
+      "main": {
+        "avg_questions_per_shift": 0.68,
+        "by_year": {
+          "2019": 0.38,
+          "2020": 0.25,
+          "2021": 0.62,
+          "2022": 0.78,
+          "2023": 0.75,
+          "2024": 0.8,
+          "2025": 0.58,
+          "2026": 0.79
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.25,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Very short chapter (Young/bulk modulus) giving roughly 0.6-0.8 Q per Main shift",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/properties-of-matter",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/properties-of-matter",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-fluids",
+      "main": {
+        "avg_questions_per_shift": 1.06,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.88,
+          "2021": 0.54,
+          "2022": 1.09,
+          "2023": 1.08,
+          "2024": 1.25,
+          "2025": 1.05,
+          "2026": 1.05
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 5,
+          "2021": 1,
+          "2022": 2,
+          "2023": 3,
+          "2024": 3,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 2.0,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1 Q per Main shift plus regular Advanced questions; moderate effort",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/properties-of-matter",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/properties-of-matter",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/heat-and-thermodynamics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-thermal-properties",
+      "main": {
+        "avg_questions_per_shift": 0.56,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.69,
+          "2021": 0.62,
+          "2022": 0.65,
+          "2023": 0.58,
+          "2024": 0.2,
+          "2025": 0.79,
+          "2026": 0.47
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 1,
+          "2022": 0,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 1.12,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Calorimetry, expansion and heat transfer: short and formula-based, about 0.6 Q per shift",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/properties-of-matter",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/heat-and-thermodynamics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/properties-of-matter",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-kinetic-theory",
+      "main": {
+        "avg_questions_per_shift": 0.81,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.06,
+          "2021": 1.19,
+          "2022": 1.04,
+          "2023": 0.92,
+          "2024": 1.1,
+          "2025": 0.74,
+          "2026": 0.53
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 2,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.38,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Very short, formula-based chapter giving about 0.5-0.75 Q per Main shift in 2025-26",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/heat-and-thermodynamics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-thermodynamics",
+      "main": {
+        "avg_questions_per_shift": 1.02,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 1.06,
+          "2021": 1.0,
+          "2022": 0.96,
+          "2023": 0.92,
+          "2024": 0.95,
+          "2025": 1.11,
+          "2026": 1.0
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 4,
+          "2020": 3,
+          "2021": 3,
+          "2022": 2,
+          "2023": 3,
+          "2024": 1,
+          "2025": 3,
+          "2026": 3
+        },
+        "avg_questions": 2.75,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1 Q per Main shift and the most-tested thermal chapter in Advanced",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/heat-and-thermodynamics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/heat-and-thermodynamics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-oscillations",
+      "main": {
+        "avg_questions_per_shift": 0.72,
+        "by_year": {
+          "2019": 0.81,
+          "2020": 0.31,
+          "2021": 1.46,
+          "2022": 0.74,
+          "2023": 0.96,
+          "2024": 0.75,
+          "2025": 0.58,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 2,
+          "2023": 0,
+          "2024": 2,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.6 Q per shift; SHM concepts are reused in waves and AC",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/simple-harmonic-motion",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/simple-harmonic-motion",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-waves",
+      "main": {
+        "avg_questions_per_shift": 0.58,
+        "by_year": {
+          "2019": 1.25,
+          "2020": 0.88,
+          "2021": 0.65,
+          "2022": 0.83,
+          "2023": 0.75,
+          "2024": 0.45,
+          "2025": 0.58,
+          "2026": 0.47
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 1,
+          "2021": 1,
+          "2022": 0,
+          "2023": 3,
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 1.5,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "About 0.5 Q per Main shift recently; standing waves and Doppler need practice",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/waves",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/waves",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-electrostatics",
+      "main": {
+        "avg_questions_per_shift": 1.58,
+        "by_year": {
+          "2019": 1.5,
+          "2020": 1.31,
+          "2021": 1.19,
+          "2022": 1.17,
+          "2023": 1.46,
+          "2024": 1.6,
+          "2025": 1.95,
+          "2026": 1.37
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 6,
+          "2021": 2,
+          "2022": 4,
+          "2023": 1,
+          "2024": 4,
+          "2025": 4,
+          "2026": 2
+        },
+        "avg_questions": 3.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "High weight in both exams but conceptually demanding",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/electrostatics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/electrostatics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-capacitors",
+      "main": {
+        "avg_questions_per_shift": 0.79,
+        "by_year": {
+          "2019": 1.19,
+          "2020": 0.81,
+          "2021": 0.92,
+          "2022": 1.09,
+          "2023": 0.79,
+          "2024": 0.7,
+          "2025": 0.84,
+          "2026": 0.68
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 2,
+          "2022": 1,
+          "2023": 2,
+          "2024": 1,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 1.12,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.7-0.8 Q per shift; circuits with dielectrics take practice",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/capacitor",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/capacitor",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-current-electricity",
+      "main": {
+        "avg_questions_per_shift": 1.63,
+        "by_year": {
+          "2019": 2.75,
+          "2020": 1.38,
+          "2021": 1.92,
+          "2022": 2.13,
+          "2023": 2.04,
+          "2024": 2.4,
+          "2025": 1.0,
+          "2026": 1.47
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 1,
+          "2022": 4,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 2
+        },
+        "avg_questions": 1.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "High weight in both exams and fairly mechanical once Kirchhoff is mastered",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/current-electricity",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/current-electricity",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-magnetic-effects",
+      "main": {
+        "avg_questions_per_shift": 1.22,
+        "by_year": {
+          "2019": 1.5,
+          "2020": 1.31,
+          "2021": 0.81,
+          "2022": 1.26,
+          "2023": 1.25,
+          "2024": 1.55,
+          "2025": 1.21,
+          "2026": 1.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 2,
+          "2021": 5,
+          "2022": 2,
+          "2023": 1,
+          "2024": 3,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 2.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "About 1-1.2 Q per Main shift and regular in Advanced; vector-heavy",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/magnetics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/magnetism",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-magnetism-matter",
+      "main": {
+        "avg_questions_per_shift": 0.3,
+        "by_year": {
+          "2019": 0.44,
+          "2020": 0.31,
+          "2021": 0.42,
+          "2022": 0.48,
+          "2023": 0.42,
+          "2024": 0.3,
+          "2025": 0.32,
+          "2026": 0.21
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.0,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Short NCERT-based chapter but only about 0.2-0.3 Q per Main shift; not in Advanced",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/magnetic-properties-of-matter",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-emi",
+      "main": {
+        "avg_questions_per_shift": 0.76,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.88,
+          "2021": 0.65,
+          "2022": 0.61,
+          "2023": 1.0,
+          "2024": 0.85,
+          "2025": 0.42,
+          "2026": 1.05
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 2,
+          "2026": 2
+        },
+        "avg_questions": 1.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.4-1 Q per Main shift and 1-2 in Advanced; concept-heavy",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/electromagnetic-induction",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/electromagnetic-induction",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-alternating-current",
+      "main": {
+        "avg_questions_per_shift": 0.8,
+        "by_year": {
+          "2019": 0.62,
+          "2020": 0.5,
+          "2021": 1.5,
+          "2022": 1.39,
+          "2023": 1.08,
+          "2024": 1.3,
+          "2025": 0.58,
+          "2026": 0.53
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 2,
+          "2022": 0,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.62,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Short, formula-based; about 0.5-0.6 Q per Main shift recently",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/alternating-current",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/alternating-current",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-em-waves",
+      "main": {
+        "avg_questions_per_shift": 0.77,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.94,
+          "2021": 0.92,
+          "2022": 1.04,
+          "2023": 0.92,
+          "2024": 0.75,
+          "2025": 0.53,
+          "2026": 0.89
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Very short, NCERT-theory chapter giving about 0.7 Q per Main shift",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/electromagnetic-waves",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/electromagnetic-waves",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-ray-optics",
+      "main": {
+        "avg_questions_per_shift": 1.67,
+        "by_year": {
+          "2019": 1.38,
+          "2020": 1.25,
+          "2021": 1.23,
+          "2022": 1.26,
+          "2023": 1.38,
+          "2024": 1.05,
+          "2025": 2.16,
+          "2026": 1.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 4,
+          "2020": 2,
+          "2021": 3,
+          "2022": 5,
+          "2023": 3,
+          "2024": 3,
+          "2025": 2,
+          "2026": 3
+        },
+        "avg_questions": 3.12,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "Highest recent Main count (about 1.8-2 Q per shift) and 2-5 per year in Advanced",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/geometrical-optics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/geometrical-optics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-wave-optics",
+      "main": {
+        "avg_questions_per_shift": 1.09,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.88,
+          "2021": 0.69,
+          "2022": 0.78,
+          "2023": 0.71,
+          "2024": 1.15,
+          "2025": 1.11,
+          "2026": 1.21
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 3,
+          "2025": 3,
+          "2026": 2
+        },
+        "avg_questions": 1.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1.1-1.2 Q per Main shift in 2024-26 from a compact chapter",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/wave-optics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/wave-optics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-dual-nature",
+      "main": {
+        "avg_questions_per_shift": 1.04,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.12,
+          "2021": 1.31,
+          "2022": 0.96,
+          "2023": 1.12,
+          "2024": 1.15,
+          "2025": 1.11,
+          "2026": 0.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 2,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Short, formula-based; about 1 Q per Main shift",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/dual-nature-of-radiation",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/dual-nature-of-radiation",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-atoms",
+      "main": {
+        "avg_questions_per_shift": 0.66,
+        "by_year": {
+          "2019": 0.62,
+          "2020": 0.44,
+          "2021": 0.58,
+          "2022": 0.61,
+          "2023": 0.79,
+          "2024": 1.05,
+          "2025": 0.58,
+          "2026": 0.53
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 2,
+          "2021": 1,
+          "2022": 0,
+          "2023": 0,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Bohr-model questions are formulaic; about 0.6 Q per Main shift",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/atoms-and-nuclei",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-nuclei",
+      "main": {
+        "avg_questions_per_shift": 0.71,
+        "by_year": {
+          "2019": 0.56,
+          "2020": 0.56,
+          "2021": 0.81,
+          "2022": 0.96,
+          "2023": 1.08,
+          "2024": 0.95,
+          "2025": 0.47,
+          "2026": 0.74
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 0,
+          "2021": 2,
+          "2022": 3,
+          "2023": 2,
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 1.25,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "Short chapter with direct numericals; about 0.5-0.7 Q per Main shift and 0-3 per year in Advanced",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/atoms-and-nuclei",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics/atoms-and-nuclei",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    },
+    {
+      "id": "phy-semiconductors",
+      "main": {
+        "avg_questions_per_shift": 1.09,
+        "by_year": {
+          "2019": 1.06,
+          "2020": 1.12,
+          "2021": 1.62,
+          "2022": 1.3,
+          "2023": 1.08,
+          "2024": 1.1,
+          "2025": 0.95,
+          "2026": 1.11
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.0,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "Main-only, NCERT-based; about 1 Q per Main shift for little effort",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/physics",
+        "https://questions.examside.com/past-years/jee/jee-main/physics/electronic-devices",
+        "https://questions.examside.com/past-years/jee/jee-advanced/physics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.vedantu.com/jee-main/weightage",
+        "https://jee.rhovecs.com/reference/physics/weightage"
+      ]
+    }
+  ],
+  "method_notes": "PRIMARY SOURCE: ExamSIDE (questions.examside.com), which lists every JEE Main and JEE Advanced physics PYQ chapter by chapter, each tagged with its paper/shift. I downloaded every physics chapter page (28 Main, 24 Advanced) and counted questions per year from the paper labels. Completeness check: summed over all ExamSIDE chapters, Main totals are 480/398/780/690/720/600/475/475 for 2019-2026, which equals shifts x questions per shift (16x30, 16x25, 26x30, 23x30, 24x30, 20x30, 19x25, 19x25; 2020 is 2 short of 400); Advanced totals are 36/36/38/36/34/34/32/34 for 2019-2026, matching the physics question counts of Paper 1 + Paper 2. MAIN by_year = questions in that chapter that year / number of shifts that year (shifts counted from distinct paper labels: 2019:16, 2020:16, 2021:26, 2022:23, 2023:24, 2024:20, 2025:19, 2026:19). These match ExamSIDE's own 'Avg' per-paper column. Caveat: 2019 and 2021-2024 shifts had 30 physics questions (2021-2024: 10 numericals of which only 5 had to be attempted), while 2020, 2025 and 2026 had 25, so pre-2025 per-shift values run roughly 20% higher for the same share of the paper; by_year values are NOT rescaled. MAIN avg_questions_per_shift = weighted mean of by_year with weights 2026: 0.30, 2025: 0.30, 2024: 0.20, and 0.04 each for 2019-2023 (80% on the post-2024-syllabus-cut years, 60% on the current 25-question format). ADVANCED by_year = total physics questions in Paper 1 + Paper 2 (each paragraph sub-question counts as one question, as ExamSIDE lists them); avg_questions = plain mean of 2019-2026. CHAPTER MAPPING: ExamSIDE chapters mapped 1:1 where possible (Geometrical Optics -> ray optics, Magnetic Effect of Current/Magnetism -> moving charges, Electronic Devices -> semiconductors, Impulse & Momentum (Adv) -> centre of mass). phy-motion-2d (Main) = ExamSIDE Motion in a Plane + Circular Motion + Vector Algebra (the app puts uniform circular motion and vectors in this chapter); Circular Motion alone was 3,3,9,13,14,11,8,7 questions for 2019-2026, part of which coaching tables put under Laws of Motion. SPLIT CHAPTERS (source_type 'estimate'): ExamSIDE groups Heat & Thermodynamics, Properties of Matter (which also holds some calorimetry and Newton's-cooling questions), Atoms & Nuclei, and Units & Measurements (which includes Vernier/screw gauge/experiment questions). For Main I split these by assigning each real ExamSIDE question to one app chapter using keyword rules on the question text (e.g. Young's/bulk modulus -> solids; surface tension, viscosity, Bernoulli, buoyancy -> fluids; expansion, calorimetry, conduction, radiation, cooling -> thermal properties; rms speed, mean free path, degrees of freedom, ideal-gas-law -> KTG; processes, cycles, engines, internal energy -> thermodynamics; Bohr, spectra, X-rays -> atoms; decay, half-life, binding energy, fission/fusion -> nuclei; Vernier, screw gauge, travelling microscope, 'in an experiment' -> experimental physics), then spot-checked the 2024-2026 assignments by hand. For Advanced (about 70 questions in these groups) I read and assigned every question by hand. So the yearly totals are real counts, but the split between sibling chapters is my classification. Experimental-physics counts only include the measurement/instrument questions ExamSIDE files under Units & Measurements (plus 1 'Practical Physics' Advanced question in 2026); experiment-style questions filed under other chapters (e.g. metre bridge under Current Electricity) stay there, so experimental physics is undercounted. CROSS-CHECKS: (1) PW and Vedantu publish the same JEE Main 2025 table of chapter counts for January (10 shifts, 250 Q) and April (9 shifts, 225 Q). Against it, most chapters agree within about 2-3 questions for the year: ray optics 41 vs 42, rotation 26 vs 27, moving charges 23 vs 24, semiconductors 18 vs 19, thermodynamics 21 vs 22, KTG 14 vs 12, thermal 15 vs 13, atoms 11 vs 12, nuclei 9 vs 8. Larger disagreements come from taxonomy: units + experimental 26 vs 33, fluids 20 vs 26 and solids 11 vs 7 (ExamSIDE puts bulk modulus of liquids under elasticity), motion in a plane 21 vs 11 (circular motion), laws of motion 8 vs 11, EM waves 10 vs 14, magnetism and matter 6 vs 3. PW splits electrostatics as 'Electric Charges and Fields' 27 + 'Potential and Capacitance' 21 = 48 vs ExamSIDE 37 + 16 = 53, so field/potential vs capacitance can't be compared one-to-one. PW and Vedantu are probably not independent (identical tables). (2) A Careers360 JEE Advanced table (34 questions, year not labelled, matches the 2026 pattern) agrees with my 2026 Advanced counts for rotation 5, thermodynamics 3, current 2, electric field 2, moving charges 2, wave optics 2, atoms 1, nuclei 1, thermal properties 1, motion in a plane 1, waves 1, capacitance 1. It differs on ray optics (4 vs 3), EMI (3 vs 2), fluids (2 vs 1) and laws of motion (1 vs 0), and it omits the gravitation, SHM and EM-waves questions. (3) Rhovecs (118 Main papers 2020-2025, grouped by NTA unit) gives the same top units: electrostatics, optics, properties of matter, current electricity, EMI+AC. (4) A Scribd-hosted analysis of the January 2024 shifts reports 30 Current Electricity and 15 Moving Charges questions; ExamSIDE has 25 and 13 for that session. CONFIDENCE: 'high' = direct ExamSIDE mapping and agrees with the 2025 PW/Vedantu table; 'medium' = keyword-split chapter that agrees with PW, or direct mapping with a noticeable taxonomy disagreement; 'low' = split chapter with a disagreement or a structural undercount. Advanced numbers come from ExamSIDE only, with a cross-check only for 2026. high_yield = in the top 9 of 30 (top ~30%) by Main weighted average or by Advanced average. roi is a judgement from the question counts plus chapter length/difficulty, the way coaching teachers usually rank chapters; it is not a measured quantity.",
+  "uncertainties": [
+    "ExamSIDE is a single primary source; its chapter tagging is its own. Only the JEE Main 2025 counts (PW/Vedantu) and the JEE Advanced 2026 counts (Careers360, year not stated on the page) were cross-checked independently.",
+    "Splits within Heat & Thermodynamics, Properties of Matter, Atoms & Nuclei and Units & Measurements (Main) are keyword-based classifications of real questions and may misassign a few questions per year, especially ideal-gas-law questions (counted as KTG) and bulk-modulus-of-liquid questions (counted as solids).",
+    "Advanced splits (units vs experimental, 1D vs 2D motion, solids/fluids/thermal/KTG/thermodynamics, atoms vs nuclei) were assigned by hand. Ambiguous examples: 2021 Cartesian-diver pair counted as KTG; 2023 chimney paragraph (2 Q) and 2024 soap-bubble question counted as fluids; 2025 List-match on Z-dependence (X-rays + nuclear binding) counted as atoms; 2026 liquid-dielectric capacitor-draining question counted as fluids.",
+    "Experimental physics is undercounted: experiment-style questions filed by ExamSIDE under topic chapters (metre bridge, Ohm's law, focal length, etc.) are not moved; only instrument/measurement questions under Units & Measurements are counted.",
+    "Circular motion (ExamSIDE separate chapter, 7-14 Main questions/year since 2021) is counted under phy-motion-2d; coaching tables (PW 2025) appear to put much of it under Laws of Motion, so phy-motion-2d may be overstated and phy-laws-of-motion understated.",
+    "Per-shift values for 2019 and 2021-2024 are based on 30-question physics sections (10 numericals, 5 to attempt); 2020, 2025 and 2026 had 25. Year-to-year values are not directly comparable and were not rescaled.",
+    "Magnetism and Matter still appears in JEE Main every year: 7, 5, 11, 11, 10, 6, 6, 4 questions for 2019-2026 (about 0.2-0.5 per shift). ExamSIDE shows no JEE Advanced question on magnetic materials or bar magnets for 2016-2026, so Advanced counts are 0.",
+    "Semiconductor Electronics remains steady in JEE Main (17-42 questions/year, about 1-1.6 per shift, 21 in 2026). ExamSIDE has no Advanced semiconductor chapter, and a text search of all its Advanced physics questions for 2016-2026 found no diode/transistor/logic-gate questions, so Advanced counts are 0.",
+    "Communication Systems (removed from the syllabus) had 14, 1, 25, 23 and 24 Main questions in 2019-2023 and 0 in 2024, 2025 and 2026 (ExamSIDE). It is excluded from all chapters here, which is why mapped Main totals for 2019-2023 are below the paper totals.",
+    "Electrostatics vs Capacitance follows ExamSIDE's split (field/potential vs capacitor). NCERT-based tables combine potential and capacitance, so those two chapters could only be checked together (53 vs 48 in 2025).",
+    "Two 2020 Main questions are missing from ExamSIDE (398 of 400 listed).",
+    "JEE Advanced 2026 and JEE Main 2026 counts reflect ExamSIDE as of 2026-10-01; no other full 2026 chapter-wise table was found for Main."
+  ]
+}

@@ -1,0 +1,1358 @@
+{
+  "subject": "physics",
+  "chapters": [
+    {
+      "id": "phy-units-measurements",
+      "topics": [
+        {
+          "name": "Units, SI system, fundamental and derived units",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dimensions of physical quantities",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dimensional analysis and its applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Least count of measuring instruments",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Significant figures",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Errors in measurement and error analysis",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-experimental-physics",
+      "topics": [
+        {
+          "name": "Vernier calipers and screw gauge",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Simple pendulum: g and energy dissipation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Metre scale: mass by principle of moments",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Young's modulus of a metallic wire",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Surface tension of water by capillary rise",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Viscosity by terminal velocity of a sphere",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Speed of sound using resonance tube",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Specific heat by method of mixtures",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ohm's law, metre bridge and post office box",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Galvanometer figure of merit; diode and Zener curves",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Focal length of mirrors and convex lens",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Prism i-δ curve; glass slab by travelling microscope",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "phy-motion-1d",
+      "topics": [
+        {
+          "name": "Frame of reference, position and displacement",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Speed and velocity: average and instantaneous",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Uniform and non-uniform motion, acceleration",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equations of uniformly accelerated motion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Position-time and velocity-time graphs",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relative velocity in one dimension",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-motion-2d",
+      "topics": [
+        {
+          "name": "Position, velocity and acceleration in a plane",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Motion in a plane with constant acceleration",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Projectile motion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relative velocity in two dimensions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Uniform circular motion",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-laws-of-motion",
+      "topics": [
+        {
+          "name": "Force, inertia and Newton's first law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Momentum and Newton's second law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Newton's third law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equilibrium of concurrent forces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Inertial and accelerated frames, pseudo force",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 4,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (4 questions)."
+        },
+        {
+          "name": "Static and kinetic friction, laws of friction",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Rolling friction",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Dynamics of uniform circular motion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Vehicle on level and banked roads",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-work-energy-power",
+      "topics": [
+        {
+          "name": "Work done by constant and variable forces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Kinetic energy and work-energy theorem",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conservative and non-conservative forces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Potential energy, including spring PE",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conservation of mechanical energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Power",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Motion in a vertical circle",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-center-of-mass",
+      "topics": [
+        {
+          "name": "Centre of mass of particles and rigid bodies",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Motion of the centre of mass",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conservation of linear momentum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Impulse",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Elastic and inelastic collisions in 1D",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Collisions in two dimensions",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-rotational-motion",
+      "topics": [
+        {
+          "name": "Rigid body and basic concepts of rotation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Moment of force (torque)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Moment of inertia and radius of gyration",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "MI of simple geometrical bodies",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parallel and perpendicular axes theorems",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Fixed-axis rotation and equations of rotation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equilibrium of rigid bodies",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Angular momentum and its conservation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Rolling without slipping",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 17,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (17 questions)."
+        },
+        {
+          "name": "Collision of point masses with rigid bodies",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        }
+      ]
+    },
+    {
+      "id": "phy-gravitation",
+      "topics": [
+        {
+          "name": "Universal law of gravitation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Gravitational field and acceleration due to gravity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Variation of g with altitude and depth",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Gravitational potential energy and potential",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Kepler's laws of planetary motion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Escape velocity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Satellites: orbital velocity, period and energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Geostationary orbits",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        }
+      ]
+    },
+    {
+      "id": "phy-solids",
+      "topics": [
+        {
+          "name": "Elastic behaviour, stress and strain",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Stress-strain relationship and Hooke's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Young's modulus",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bulk modulus and modulus of rigidity",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-fluids",
+      "topics": [
+        {
+          "name": "Pressure in a fluid column, effect of gravity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Pascal's law and its applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Buoyancy",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 13,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (13 questions)."
+        },
+        {
+          "name": "Streamline flow and equation of continuity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Turbulent flow and critical velocity",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Bernoulli's theorem and its applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Viscosity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Stokes' law and terminal velocity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Surface energy and surface tension",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Angle of contact and capillary rise",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Excess pressure in drops and bubbles",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-thermal-properties",
+      "topics": [
+        {
+          "name": "Heat and temperature",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Thermal expansion of solids, liquids and gases",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Specific heat capacity and calorimetry",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Change of state and latent heat",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Heat conduction in one dimension",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Convection and radiation (elementary)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Newton's law of cooling",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Blackbody radiation and Kirchhoff's law",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Wien's displacement law and Stefan's law",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        }
+      ]
+    },
+    {
+      "id": "phy-kinetic-theory",
+      "topics": [
+        {
+          "name": "Ideal gas laws and equation of state",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Kinetic theory assumptions and gas pressure",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Kinetic interpretation of temperature",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "RMS speed of gas molecules",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Degrees of freedom and equipartition of energy",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Specific heats Cv and Cp of mono/diatomic gases",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Mean free path",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Avogadro's number",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "phy-thermodynamics",
+      "topics": [
+        {
+          "name": "Thermal equilibrium and zeroth law",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Heat, work and internal energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Work done by or on a gas",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "First law of thermodynamics",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Isothermal and adiabatic processes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bulk modulus of gases",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Second law; reversible and irreversible processes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Carnot engine and its efficiency",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        }
+      ]
+    },
+    {
+      "id": "phy-oscillations",
+      "topics": [
+        {
+          "name": "Periodic motion: period, frequency, displacement",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "SHM and its equation; phase",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Spring oscillations: restoring force, constant",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Energy in SHM",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Simple pendulum and its time period",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Angular SHM",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Damped and forced oscillations, resonance",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "phy-waves",
+      "topics": [
+        {
+          "name": "Wave motion: longitudinal and transverse waves",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Speed of waves; speed of sound in gases",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Displacement relation for a progressive wave",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Superposition and reflection of waves",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Standing waves in strings",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Organ pipes, harmonics and resonance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Beats",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Doppler effect in sound",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "phy-electrostatics",
+      "topics": [
+        {
+          "name": "Electric charge and its conservation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Coulomb's law and superposition",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Continuous charge distributions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electric field and field lines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electric dipole: field and torque",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electric flux and Gauss's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Gauss's law: wire, plane sheet, spherical shell",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electric potential: point charge, dipole, system",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equipotential surfaces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Potential energy of charges and dipoles",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conductors and insulators",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-capacitors",
+      "topics": [
+        {
+          "name": "Capacitors and capacitance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parallel plate capacitor",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dielectrics, polarization; capacitor with dielectric",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Capacitors in series and parallel",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Energy stored in a capacitor",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "RC circuits with DC source",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        }
+      ]
+    },
+    {
+      "id": "phy-current-electricity",
+      "topics": [
+        {
+          "name": "Electric current and Ohm's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Drift velocity and mobility",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Resistance, resistivity and conductivity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "I-V characteristics of ohmic, non-ohmic conductors",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Temperature dependence of resistance",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Series and parallel combinations of resistors",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "EMF, internal resistance and terminal voltage",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Cells in series and parallel",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Kirchhoff's laws and applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Wheatstone bridge and metre bridge",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrical energy, power and heating effect",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-magnetic-effects",
+      "topics": [
+        {
+          "name": "Biot-Savart law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Field of straight wire and circular loop axis",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ampere's law: long wire and solenoid",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Force on a moving charge in B and E fields",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Force on a current-carrying conductor",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Force between parallel currents; the ampere",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Current loop as magnetic dipole; torque on it",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Moving coil galvanometer and sensitivity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conversion to ammeter and voltmeter",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-magnetism-matter",
+      "topics": [
+        {
+          "name": "Bar magnet as an equivalent solenoid",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Magnetic field lines",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Field of a bar magnet: axial and equatorial",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Torque on a magnetic dipole in uniform field",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Para-, dia- and ferromagnetic substances",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Effect of temperature on magnetic properties",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "phy-emi",
+      "topics": [
+        {
+          "name": "Faraday's law, induced emf and current",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Lenz's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Motional emf",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Eddy currents",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Self inductance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Mutual inductance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "LR circuits with DC source",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 4,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (4 questions)."
+        },
+        {
+          "name": "LC oscillations",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        }
+      ]
+    },
+    {
+      "id": "phy-alternating-current",
+      "topics": [
+        {
+          "name": "Alternating current: peak and RMS values",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reactance and impedance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "RC, LR and LC circuits with AC source",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 10,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (10 questions)."
+        },
+        {
+          "name": "Series LCR circuit",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Resonance in LCR circuit",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Power in AC circuits and power factor",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Wattless current",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "AC generator",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Transformer",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "phy-em-waves",
+      "topics": [
+        {
+          "name": "Displacement current",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Electromagnetic waves and their characteristics",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Transverse nature of EM waves",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electromagnetic spectrum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Uses of electromagnetic waves",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-ray-optics",
+      "topics": [
+        {
+          "name": "Rectilinear propagation of light",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Reflection: plane and spherical mirrors",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Refraction at plane surfaces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Total internal reflection and applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Refraction at spherical surfaces",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Thin lens formula and lens maker's formula",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Magnification and power of a lens",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Combinations of thin lenses and mirrors",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Refraction and deviation through a prism",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dispersion by a prism",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Microscope and astronomical telescope",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "phy-wave-optics",
+      "topics": [
+        {
+          "name": "Wavefront and Huygens' principle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reflection and refraction by Huygens' principle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Coherent sources and sustained interference",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Young's double-slit experiment, fringe width",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Single-slit diffraction, central maximum width",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Plane-polarized light and Brewster's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Polaroids and their uses",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-dual-nature",
+      "topics": [
+        {
+          "name": "Particle nature of light: photons",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Photoelectric effect: Hertz and Lenard",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Einstein's photoelectric equation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Matter waves and de Broglie relation",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-atoms",
+      "topics": [
+        {
+          "name": "Alpha-particle scattering, Rutherford model",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Bohr model of hydrogen-like atoms",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Energy levels",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hydrogen spectrum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Continuous and characteristic X-rays",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Moseley's law",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "phy-nuclei",
+      "topics": [
+        {
+          "name": "Composition and size of the nucleus",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Atomic masses and mass-energy relation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Mass defect and binding energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Binding energy per nucleon vs mass number",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Alpha, beta and gamma radiations",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Law of radioactive decay, decay constant",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Half-life and mean life",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Nuclear fission and fusion; energy released",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "phy-semiconductors",
+      "topics": [
+        {
+          "name": "Semiconductors",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "p-n junction diode: forward and reverse bias I-V",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Diode as a rectifier",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "LED, photodiode and solar cell",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Zener diode as a voltage regulator",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Logic gates: OR, AND, NOT, NAND, NOR",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Sources: JEE Main 2026 (NTA) and JEE Advanced 2026 (IIT brochure) texts; the 2027 syllabi were not yet published. Every chapter's Main/Adv flag in the chapter list agrees with these texts (phy-magnetism-matter and phy-semiconductors are Main-only; the Advanced text covers only current-loop magnetic moment, no magnetic materials or bar magnet).",
+    "Rolling without slipping is flagged Advanced-only because the Main 2026 Unit 5 text does not name rolling. Main papers still set rolling questions under 'rigid body rotation', so study it for Main too.",
+    "Some topics are flagged both because the Advanced text covers them through broader headings, not by name: equilibrium of concurrent forces, banked roads, vertical circle (Newton's laws/energy); motion of centre of mass and impulse (Main via momentum conservation); equipotentials and conductors (electric potential, Gauss); power factor and LCR resonance (LCR with a.c.); speed of sound (Main via resonance tube experiment); motional emf (Faraday's law).",
+    "Combined experiment topics hide mixed flags: post office box is Advanced-only and galvanometer/diode/Zener/component identification are Main-only; simple pendulum is energy dissipation in Main but g in Advanced; focal length uses parallax in Main but u-v method in Advanced. Experiments were grouped to stay within 12 topics.",
+    "Kinetic theory: Advanced Physics names only ideal gas laws and Cv/Cp of monoatomic/diatomic gases, so pressure, rms speed, degrees of freedom/equipartition and mean free path are Main-only here. Cv/Cp in Advanced implicitly needs equipartition, and rms/average speeds appear in the Advanced Chemistry syllabus.",
+    "Placement choices: Main lists impulse and momentum conservation under Laws of Motion (placed in phy-center-of-mass), centre of mass under Rotational Motion (placed in phy-center-of-mass), work done on compressing a gas under Kinetic Theory (placed in phy-thermodynamics), and current loop as a magnetic dipole under Magnetism (placed in phy-magnetic-effects). Advanced 'RC, LR, LC and LCR circuits with d.c. and a.c.' is split across phy-capacitors (RC, d.c.), phy-emi (LR, LC) and phy-alternating-current (a.c.).",
+    "Vectors (addition, resolution, products) are not named in either 2026 text, so no vector topic was added to phy-motion-2d; they are needed throughout.",
+    "Binding energy per nucleon curve is flagged Main-only because Advanced names only 'binding energy and its calculation'."
+  ]
+}

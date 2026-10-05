@@ -1,0 +1,586 @@
+{
+ "subject": "maths",
+ "topics": [
+  {
+   "chapter_id": "math-sets-relations",
+   "topic": "Difference and symmetric difference of sets",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Feb 1 S1: number of elements in R1 - R2 (set difference of two relations); 2026 Jan 21 S2 options test A - B",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/sets-and-relations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-sets-relations",
+   "topic": "Practical problems on sets (Venn diagram counting)",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 4 S1: survey of 220 students, least/most studying all three subjects (Venn bounds); 2024 Apr 6 S1: n in [100,700] multiple of neither 3 nor 4",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/sets-and-relations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-logarithms",
+   "topic": "Laws of logarithms (product, quotient, power)",
+   "main_2024": 1,
+   "main_2025": 2,
+   "main_2026": 3,
+   "example": "2025 Jan 22 S1: product of solutions of e^(5(ln x)^2+3)=x^8; 2024 Jan 29 S2: ln a, ln b, ln c in A.P. and ln a - ln 2b, ... in A.P.",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/logarithm",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-logarithms",
+   "topic": "Change of base formula",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 4,
+   "example": "2026 Jan 23 S2: log_(x+3)(6x^2+28x+30)=5-2log_(6x+10)(x^2+6x+9), sum of real solutions",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/logarithm",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-logarithms",
+   "topic": "Equations and inequalities using log properties",
+   "main_2024": 0,
+   "main_2025": 5,
+   "main_2026": 6,
+   "example": "2025 Apr 3 S2: domain of log_7(1-log_4(x^2-9x+18)) (nested log inequality); 2026 Apr 8 S2: log_(x+1)(2x^2+5x+3)=4-log_(2x+3)(x^2+2x+1)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/logarithm",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-quadratic-equations",
+   "topic": "Symmetric functions of roots",
+   "main_2024": 7,
+   "main_2025": 3,
+   "main_2026": 2,
+   "example": "2024 Apr 9 S1: quadratic with roots a^4+b^4 and (a^6+b^6)/10 where a,b are roots of x^2+2sqrt2 x-1=0",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/quadratic-equation-and-inequalities",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-quadratic-equations",
+   "topic": "Fundamental theorem of algebra (statement)",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/quadratic-equation-and-inequalities",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-complex-numbers",
+   "topic": "Polar representation",
+   "main_2024": 3,
+   "main_2025": 2,
+   "main_2026": 2,
+   "example": "2026 Jan 23 S2: (z^201 - i)^8 for z=sqrt3/2 + i/2; 2024 Jan 29 S2: alpha^99/beta + alpha^98 for roots of x^2-sqrt6 x+3=0",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/complex-numbers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-complex-numbers",
+   "topic": "Properties of modulus; triangle inequality",
+   "main_2024": 5,
+   "main_2025": 2,
+   "main_2026": 4,
+   "example": "2026 Apr 2 S2: max|z1-z2| for z1 on |z|=r, z2 on |z-3-4i|=5 given min is 2; 2024 Apr 5 S1: statement on (|z1|+|z2|)|z1/|z1|+z2/|z2||",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/complex-numbers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-complex-numbers",
+   "topic": "Cube roots of unity",
+   "main_2024": 2,
+   "main_2025": 3,
+   "main_2026": 2,
+   "example": "2025 Apr 4 S2: sum_(k=1..n)(alpha^k+1/alpha^k)^2=20 where alpha^2+alpha+1=0",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/complex-numbers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-complex-numbers",
+   "topic": "Geometric interpretations of complex numbers",
+   "main_2024": 10,
+   "main_2025": 9,
+   "main_2026": 8,
+   "example": "2025 Jan 22 S2: line z(1+i)+zbar(1-i)=4 divides disc |z-3|<=1, find |area difference|",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/complex-numbers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-sequences-series",
+   "topic": "Infinite geometric series",
+   "main_2024": 5,
+   "main_2025": 4,
+   "main_2026": 3,
+   "example": "2024 Apr 9 S2: sum a r^n = 57 and sum a^3 r^3n = 9747; 2025 Jan 24 S1: A and B alternately throw dice (probability as infinite GP)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/sequences-and-series",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-sequences-series",
+   "topic": "Sums of first n natural numbers, squares and cubes",
+   "main_2024": 5,
+   "main_2025": 2,
+   "main_2026": 6,
+   "example": "2026 Apr 6 S1: 1^3-2^3+3^3-...+15^3; 2024 Jan 30 S1: 1^2+4^2+8^2+13^2+... with sum n^4",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/sequences-and-series",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-binomial-theorem",
+   "topic": "Properties of binomial coefficients",
+   "main_2024": 3,
+   "main_2025": 3,
+   "main_2026": 3,
+   "example": "2026 Apr 2 S2: 30C(30-r)+3*30C(31-r)+3*30C(32-r)+30C(33-r)=mCr (Pascal rule); 2025 Jan 24 S1: largest coefficient of (1+x)^(n+4)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/binomial-theorem",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-binomial-theorem",
+   "topic": "Sums of series of binomial coefficients",
+   "main_2024": 7,
+   "main_2025": 9,
+   "main_2026": 6,
+   "example": "2025 Apr 4 S2: sum r^2 * 15Cr = 2^m 3^n 5^k; 2026 Jan 23 S1: sum_(k=50..100) 100Ck/(k+1)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/binomial-theorem",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-matrices",
+   "topic": "Elementary row and column transformations",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/matrices-and-determinants",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-determinants",
+   "topic": "Properties of determinants",
+   "main_2024": 11,
+   "main_2025": 10,
+   "main_2026": 9,
+   "example": "2026 Jan 22 S1: det(A^2025-3A^2024+A^2023); 2024 Apr 8 S2: |alpha b c; a beta c; a b gamma|=0 via row operations",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/matrices-and-determinants",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-trigonometric-equations",
+   "topic": "Trigonometric equations; principal solutions",
+   "main_2024": 10,
+   "main_2025": 7,
+   "main_2026": 6,
+   "example": "2026 Jan 23 S1: number of solutions of sqrt3 cos2t+8cos t+3sqrt3=0 in [-3pi,2pi]",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-trigonometric-equations",
+   "topic": "General solutions of sin x = k, cos x = k, tan x = k",
+   "main_2024": 3,
+   "main_2025": 6,
+   "main_2026": 5,
+   "example": "2025 Apr 2 S1: number of solutions of 2sqrt2 cos^2 t+(2-sqrt6)cos t-sqrt3=0 in [-2pi,2pi]",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-trigonometric-equations",
+   "topic": "Equations solved by factorising or as quadratics",
+   "main_2024": 6,
+   "main_2025": 5,
+   "main_2026": 3,
+   "example": "2025 Apr 2 S2: sqrt3 cosec^2 t-2(sqrt3-1)cosec t-4=0 (quadratic in cosec)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-trigonometric-equations",
+   "topic": "Equations of the form a cos x + b sin x = c",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 2,
+   "example": "2026 Apr 6 S1: cos t+1=sqrt3 sin t on (-2pi,2pi), sum of roots; 2024 Jan 29 S1: 4cos t+5sin t=1",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-trigonometric-equations",
+   "topic": "Number of solutions in an interval (graphical)",
+   "main_2024": 5,
+   "main_2025": 5,
+   "main_2026": 4,
+   "example": "2025 Apr 3 S1: number of solutions of 2x+3tan x=pi in [-2pi,2pi] (graphical)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-functions",
+   "topic": "Absolute value, greatest integer and power functions",
+   "main_2024": 16,
+   "main_2025": 13,
+   "main_2026": 20,
+   "example": "2026 Apr 4 S1: domain of cos^-1((4x+2[x])/3) with greatest integer; 2025 Apr 7 S1: discontinuities of [x^2/2]-[sqrt x]",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/functions",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-functions",
+   "topic": "Even and odd functions",
+   "main_2024": 7,
+   "main_2025": 3,
+   "main_2026": 5,
+   "example": "2024 Apr 5 S1: integral_(-pi..pi) 2y(1+sin y)/(1+cos^2 y) dy (odd part vanishes) - all hits are in Definite Integration",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/functions",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-limits",
+   "topic": "L'Hospital's rule",
+   "main_2024": 12,
+   "main_2025": 7,
+   "main_2026": 5,
+   "example": "2026 Apr 6 S1: lim x^2 sin^2x/(x^2-sin^2x); 2024 Apr 9 S2: limit of an integral quotient (needs L'Hospital + Leibniz)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/limits-continuity-and-differentiability",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-continuity-differentiability",
+   "topic": "Continuity of composite functions",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 2,
+   "example": "2026 Apr 6 S2: number of points where g o f is discontinuous (piecewise f, g)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/limits-continuity-and-differentiability",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-continuity-differentiability",
+   "topic": "Intermediate value property",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 29 S1: f(x)=4sqrt2 x^3-3sqrt2 x-1 on [1/2,1] meets x-axis exactly once",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/application-of-derivatives",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-application-of-derivatives",
+   "topic": "Geometric meaning of derivative; tangents and normals",
+   "main_2024": 3,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 30 S2 (Definite Integration chapter): tangents to y=f(x) at x=1,3 make angles pi/6, pi/4; no tangent/normal questions in the AOD chapter 2024-26",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/application-of-derivatives",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-application-of-derivatives",
+   "topic": "Rolle's theorem and its geometric interpretation",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 4 S2: minimum number of zeros of (3f'f''+ff''')(x) given f(0..4) (repeated Rolle)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/differentiation",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-application-of-derivatives",
+   "topic": "Lagrange's mean value theorem and its interpretation",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/application-of-derivatives",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-definite-integration",
+   "topic": "Definite integral as the limit of a sum",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Jan 30 S1: lim n->inf sum n^3/((n^2+k^2)(n^2+3k^2))",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/definite-integration",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-differential-equations",
+   "topic": "Formation of differential equations",
+   "main_2024": 3,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 5 S2: differential equation of family of circles through origin with centre on y=x",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/differential-equations",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-straight-lines",
+   "topic": "Shift of origin",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/straight-lines-and-pair-of-straight-lines",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-straight-lines",
+   "topic": "Lines through the intersection of two given lines",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2025 Apr 3 S2: lines x(3lambda+1)+y(7lambda+2)=17lambda+5 through fixed point P, line farthest from origin",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/straight-lines-and-pair-of-straight-lines",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-straight-lines",
+   "topic": "Bisectors of the angle between two lines",
+   "main_2024": 2,
+   "main_2025": 1,
+   "main_2026": 3,
+   "example": "2026 Jan 24 S1: equation of bisector of angle ABC; 2024 Jan 30 S2: locus equidistant from two lines",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/straight-lines-and-pair-of-straight-lines",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-straight-lines",
+   "topic": "Incentre of a triangle",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Apr 2 S1: incentre of triangle given midpoints of sides",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/straight-lines-and-pair-of-straight-lines",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-circles",
+   "topic": "Parametric equations of a circle",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Jan 28 S2: P(2cos a,2sin a), Q(2cos b,2sin b) on x^2+y^2=4, locus of AQ and BP intersection",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-circles",
+   "topic": "Tangent and normal to a circle",
+   "main_2024": 5,
+   "main_2025": 7,
+   "main_2026": 2,
+   "example": "2025 Apr 2 S1: circles through (-9,4) touching x+y=3 and x-y=3; 2026 Jan 21 S1: locus of intersection of tangents at A,B",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-circles",
+   "topic": "Equation of a chord",
+   "main_2024": 3,
+   "main_2025": 1,
+   "main_2026": 3,
+   "example": "2026 Apr 4 S1: two chords from (1,2) bisected by y-axis; 2025 Jan 29 S2: chord with midpoint (1,2)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-circles",
+   "topic": "Intersection of two circles",
+   "main_2024": 6,
+   "main_2025": 2,
+   "main_2026": 1,
+   "example": "2026 Jan 22 S1: values of r for which two circles intersect at two points; 2024 Apr 5 S2: common chord of C1, C2",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-circles",
+   "topic": "Circle through intersection of two circles / circle-line",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-parabola",
+   "topic": "Parametric equations of a parabola",
+   "main_2024": 4,
+   "main_2025": 6,
+   "main_2026": 10,
+   "example": "2026 Jan 22 S1: chord of y^2=12x subtending right angle at vertex; 2025 Jan 22 S2: focal chord of y^2=4ax",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/parabola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-parabola",
+   "topic": "Tangent to a parabola",
+   "main_2024": 3,
+   "main_2025": 3,
+   "main_2026": 0,
+   "example": "2024 Apr 6 S1: tangents from P(0,1) to 9x^2+12x+18y-14=0; 2025 Apr 4 S2: line from (-2,0) touching y^2=x-2",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/parabola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-parabola",
+   "topic": "Normal to a parabola",
+   "main_2024": 2,
+   "main_2025": 3,
+   "main_2026": 0,
+   "example": "2025 Jan 23 S2: shortest distance from (a,0) to y^2=4x is 4 (normal); 2025 Apr 8 S2: circle touching y^2=9x at (4,6)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/parabola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-ellipse",
+   "topic": "Parametric equations of an ellipse",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Apr 4 S1: P(3cos a,2sin a) on x^2/9+y^2/4=1 with centroid condition",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/ellipse",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-ellipse",
+   "topic": "Tangent to an ellipse",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Jan 21 S2: line ax+4y=sqrt7 touches 3x^2+4y^2=1 at P, focal distance of P",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/ellipse",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-ellipse",
+   "topic": "Normal to an ellipse",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/ellipse",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-hyperbola",
+   "topic": "Parametric equations of a hyperbola",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Apr 2 S2: P, Q on xy=12 with midpoint (1/2,-1/2), area of OPQ",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/hyperbola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-hyperbola",
+   "topic": "Tangent to a hyperbola",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 22 S1: line ax+2y=1 does not meet x^2-9y^2=9; 2024 Apr 6 S2: line touches hyperbola at (x0,y0)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/hyperbola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-hyperbola",
+   "topic": "Normal to a hyperbola",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/hyperbola",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-vector-algebra",
+   "topic": "Scalar triple product; geometric meaning",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2024 Apr 4 S2: find (a x b).c; 2025 Jan 23 S1: altitude of tetrahedron (volume via box product)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/vector-algebra",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-vector-algebra",
+   "topic": "Vector triple product",
+   "main_2024": 2,
+   "main_2025": 2,
+   "main_2026": 1,
+   "example": "2026 Jan 23 S1: c=a x b, d=c x a, find (a-b).d; 2024 Feb 1 S1: (((a x b) x i) x i) x i",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/vector-algebra",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "math-3d-geometry",
+   "topic": "Coplanar lines",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/3d-geometry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-3d-geometry",
+   "topic": "Equation of a plane",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/3d-geometry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-3d-geometry",
+   "topic": "Distance of a point from a plane",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/3d-geometry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-3d-geometry",
+   "topic": "Angle between two planes; between a line and a plane",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/3d-geometry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-statistics",
+   "topic": "Comparing distributions: same mean, different variance",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/statistics",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "math-conditional-probability",
+   "topic": "Mean and variance of a random variable",
+   "main_2024": 6,
+   "main_2025": 5,
+   "main_2026": 2,
+   "example": "2025 Apr 7 S2: X takes 0..3 with E(X^2)=2E(X); 2024 Apr 6 S2: variance of number of defectives in sample",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/mathematics/probability",
+   "confidence": "high"
+  }
+ ],
+ "notes": "Method: parsed the ExamSIDE JEE Main Mathematics chapter pages (questions.examside.com/past-years/jee/jee-main/mathematics/<chapter>, saved in this session's scratchpad as esm/*.html). I rebuilt the MathJax math in each question and read every 2024-2026 question in the relevant chapters (2024: 600, 2025: 475, 2026: 474; this is every shift of both sessions, matching 30 or 25 questions per shift). I also searched other chapters by keyword for topics that cross chapters: greatest integer and modulus, even/odd integrals, infinite GP, log equations, omega, tangency, limit of a sum, L'Hospital limits. I opened 3 individual ExamSIDE question pages to check options (2026 Jan 21 S2 sets question = A-B, so it counts; 2024 Apr 5 S2 and 2024 Feb 1 S1 composite-function questions ask about one-one/onto, not continuity, so they do not count). As a cross-check, MathonGo chapter PDFs (Jan 2024, Apr 2024, Jan 2026) also have zero plane questions in 3D and zero tangent/normal questions in AOD. A question counts only if the topic is needed to solve it, so the counts involve judgement. The ones marked 'medium' depend most on judgement: (1) Log laws, change of base and log inequalities count only questions where log manipulation is the core step (mostly nested-log domain questions and log equations), not every question that mentions log. (2) 'Absolute value, greatest integer and power functions' is counted across chapters: Functions, Definite Integration with [x], continuity with [x]/|x|, and modulus equations in Quadratics (4 per year). It is a lower bound. (3) 'Properties of determinants' includes |kA|=k^n|A|, |AB|=|A||B| and |adj A|=|A|^(n-1) chains, as well as row/column-operation simplifications. NTA does name 'adjoint', so a narrower reading (row/column properties only) would give roughly 3-4 per year. (4) L'Hospital counts 0/0 limits where the standard limits are not enough (order 3 and above with unknown constants, or limits of integrals). These can also be done by series expansion. (5) Triple products count vector-chapter questions where the box product or the a x (b x c) expansion is the intended route. Strong zeros: no 2024-2026 Main question on planes (equation, point-plane distance, angles), coplanar lines, shift of origin, family of circles, normals to ellipse/hyperbola, LMVT, elementary row operations, comparing distributions (coefficient of variation), or the fundamental theorem of algebra. This fits NTA's 2024 syllabus cut, which removed planes and tangents/normals/MVT. Trig-equation topics overlap: one question can count under several of the 5 sub-topics. Every topic was checked, so there are no null counts."
+}

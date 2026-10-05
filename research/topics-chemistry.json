@@ -1,0 +1,1897 @@
+{
+  "subject": "chemistry",
+  "chapters": [
+    {
+      "id": "chem-mole-concept",
+      "topics": [
+        {
+          "name": "Matter and laws of chemical combination",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Dalton's atomic theory; atoms and molecules",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Atomic and molecular masses; mole concept",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Percentage composition; empirical and molecular formulae",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Chemical equations and stoichiometry",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Concentration: molarity, molality, mole fraction, %",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Normality and equivalent concept",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Stoichiometry of neutralisation and displacement",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-redox",
+      "topics": [
+        {
+          "name": "Oxidation and reduction: electronic concept",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Oxidation number and rules for assigning it",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Types of redox reactions, incl. displacement",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Balancing redox equations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Redox titrations: KMnO4 vs oxalic acid, Mohr's salt",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-atomic-structure",
+      "topics": [
+        {
+          "name": "Electromagnetic radiation and photoelectric effect",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Spectrum of the hydrogen atom",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bohr model: radii, energies and limitations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dual nature of matter; de Broglie relation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Heisenberg uncertainty principle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Quantum mechanical model; orbitals as wave functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Plots of psi and psi^2 vs r (1s, 2s)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Quantum numbers and their significance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Shapes of s, p and d orbitals",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Aufbau principle, Pauli exclusion and Hund's rule",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electronic configuration; half/fully filled stability",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-states-of-matter",
+      "topics": [
+        {
+          "name": "Gas laws, ideal gas equation, absolute temperature",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 9,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (9 questions)."
+        },
+        {
+          "name": "Dalton's law of partial pressures",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Diffusion of gases (Graham's law)",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Kinetic theory of gases",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Average, rms and most probable speeds",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Deviation from ideality; real gases",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "van der Waals equation",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Intermolecular forces: types and distance dependence",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Liquids: vapour pressure, surface tension, viscosity",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-thermodynamics",
+      "topics": [
+        {
+          "name": "System, surroundings, state functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Intensive and extensive properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Work (PV), heat and types of processes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "First law; internal energy and enthalpy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Heat capacity and molar heat capacity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hess's law; enthalpy of reaction, fusion, vaporisation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bond, atomisation, hydration and solution enthalpies",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Second law and entropy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Gibbs energy; criteria for spontaneity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Practical: enthalpy of solution and neutralisation",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-equilibrium",
+      "topics": [
+        {
+          "name": "Dynamic equilibrium; equilibria in physical processes",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Law of mass action; Kc and Kp",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reaction quotient and equilibrium calculations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Delta G, Delta G standard and equilibrium constant",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Le Chatelier's principle: conc., pressure, temperature",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Effect of catalyst on equilibrium",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-ionic-equilibrium",
+      "topics": [
+        {
+          "name": "Strong and weak electrolytes; degree of ionisation",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Acid-base concepts: Arrhenius, Bronsted-Lowry, Lewis",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ionisation of water and the pH scale",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Weak acids/bases: Ka, Kb, multistage ionisation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Common ion effect",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hydrolysis of salts and pH of their solutions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Buffer solutions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Solubility product and its applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Practical: acid-base titrations and indicators",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-solid-state",
+      "topics": [
+        {
+          "name": "Classification of solids; crystalline state",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Unit cells and seven crystal systems",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Close packing: cubic and hexagonal; voids",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Packing in fcc, bcc and hcp lattices",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Nearest neighbours and coordination number",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Ionic radii and radius ratio",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Point defects",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-solutions",
+      "topics": [
+        {
+          "name": "Henry's law: solubility of gases",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Vapour pressure; Raoult's law and ideal solutions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Non-ideal solutions; VP-composition plots",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Relative lowering of vapour pressure",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Elevation of b.p. and depression of f.p.",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Osmotic pressure",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Molar mass from colligative properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Abnormal molar mass and van't Hoff factor",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-electrochemistry",
+      "topics": [
+        {
+          "name": "Galvanic and electrolytic cells; electrodes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Standard electrode potential; electrochemical series",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "EMF of a galvanic cell",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Nernst equation and its applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Cell potential and Gibbs energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Faraday's laws of electrolysis",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 10,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (10 questions)."
+        },
+        {
+          "name": "Electrolytic conductance; conductivity, molar conductivity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equivalent conductivity",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Variation with concentration; Kohlrausch's law",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Batteries (dry cell, lead accumulator) and fuel cells",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Corrosion",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-kinetics",
+      "topics": [
+        {
+          "name": "Rate of reaction and factors affecting it",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Order and molecularity; elementary/complex reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Rate law, rate constant and its units",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integrated rate laws: zero and first order",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Half-life",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Arrhenius equation and activation energy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Collision theory of bimolecular gaseous reactions",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Catalysis: homogeneous and heterogeneous",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Activity and selectivity of solid catalysts",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Enzyme catalysis and its mechanism",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Practical: kinetics of iodide with H2O2",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-surface-chemistry",
+      "topics": [
+        {
+          "name": "Adsorption: physisorption and chemisorption",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Freundlich adsorption isotherm",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Colloids: types and classification",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Methods of preparing colloids",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Practical: preparing lyophilic and lyophobic sols",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "General properties of colloids",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Emulsions",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Surfactants and micelles",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-periodic-table",
+      "topics": [
+        {
+          "name": "Modern periodic law and present periodic table",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "s, p, d, f blocks and electronic configuration",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Atomic and ionic radii",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ionisation enthalpy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electron gain enthalpy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electronegativity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Valence and oxidation states",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Trends in chemical reactivity",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-bonding",
+      "topics": [
+        {
+          "name": "Kossel-Lewis approach; ionic and covalent bonds",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Ionic bond formation and lattice enthalpy",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Fajans' rule",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Polarity of bonds and dipole moment",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "VSEPR theory and shapes of molecules",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Valence bond theory; orbital overlap, sigma and pi",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hybridisation involving s, p and d orbitals",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Resonance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "MOT: homonuclear diatomics, bond order",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Metallic bonding (elementary)",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Hydrogen bonding and its applications",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-hydrogen",
+      "topics": [
+        {
+          "name": "Position in periodic table; occurrence; isotopes",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Dihydrogen: preparation, properties and uses",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Hydrides: ionic, covalent and interstitial",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Water: physical and chemical properties",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Heavy water",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Hydrogen peroxide: preparation, reactions, structure",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Hydrogen as a fuel",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-s-block",
+      "topics": [
+        {
+          "name": "Reactivity with air, water, H2, halogens, acids",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Reducing nature; solutions in liquid ammonia",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Oxides, hydroxides, halides and oxoacid salts",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Anomalous behaviour of lithium and beryllium",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Uses of alkali and alkaline earth metals",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Sodium compounds: Na2CO3, NaCl, NaOH, NaHCO3",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Calcium compounds: CaO, Ca(OH)2, CaCO3, CaSO4",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-p-block-13-14",
+      "topics": [
+        {
+          "name": "Group 13: configuration, oxidation states, trends",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Anomalous behaviour of boron",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Borax and orthoboric acid",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Diborane and boron trifluoride",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Aluminium chloride; uses of boron and aluminium",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Alums, incl. preparation of potash alum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Group 14: configuration, oxidation states, trends",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Anomalous behaviour of carbon",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Allotropes of carbon and uses of carbon",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Oxides: CO, CO2 and SiO2",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Silicones, silicates and zeolites",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-p-block-15-18",
+      "topics": [
+        {
+          "name": "Group 15: trends; anomalous behaviour of nitrogen",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "N2, NH3, HNO3 and oxides of nitrogen",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Phosphorus allotropes, PH3, PCl3, PCl5",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Oxoacids of phosphorus",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Group 16: trends; anomalous behaviour of oxygen",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dioxygen, simple oxides and ozone",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Sulphur: allotropes, SO2, H2SO4, oxoacids",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Group 17: trends; anomalous behaviour of fluorine",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Chlorine, HCl and bleaching powder",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Interhalogens and oxoacids of halogens",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 22,
+          "main_note": "Not named in the NTA 2026 syllabus, but their shapes/hybridisation (ClF3, BrF5, IF7, ICl4−, I3−) are asked via VSEPR in JEE Main 2024–26 (22 questions). Learn the structures, not the preparation."
+        },
+        {
+          "name": "Group 18: trends, properties and uses",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Xenon fluorides and oxides",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 13,
+          "main_note": "Not named in the NTA 2026 syllabus, but their shapes/hybridisation (XeF2, XeF4, XeO3, XeOF4, XeO2F2) are asked via VSEPR in JEE Main 2024–26 (13 questions). Learn the structures, not the preparation."
+        }
+      ]
+    },
+    {
+      "id": "chem-d-f-block",
+      "topics": [
+        {
+          "name": "Transition elements: configuration and occurrence",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Trends: atomic radii, ionisation enthalpy",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Oxidation states and their stability",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Standard electrode potentials of 3d metals",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Colour, magnetic properties, complex formation",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Catalytic properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Interstitial compounds, alloys and applications",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "K2Cr2O7 and KMnO4: preparation, structure, reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Practical: preparation of Mohr's salt",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Lanthanoids: oxidation states, lanthanoid contraction",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Actinoids: oxidation states, actinoid contraction",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-coordination-compounds",
+      "topics": [
+        {
+          "name": "Werner's theory",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ligands, coordination number, denticity, chelation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "IUPAC nomenclature",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Isomerism: ionisation and cis-trans",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "VBT: hybridisation and geometry",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Crystal field theory (octahedral, tetrahedral)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Spectrochemical series",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Colour and spin-only magnetic moment",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Stability of coordination compounds",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Metal carbonyls",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Importance and applications",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-metallurgy",
+      "topics": [
+        {
+          "name": "Metal ores and their concentration",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Thermodynamic principles of extraction",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Extraction of iron",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Extraction of copper and zinc",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Electrochemical principles: aluminium",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Cyanide process: silver and gold",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Refining of metals",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-qualitative-analysis",
+      "topics": [
+        {
+          "name": "Principles of salt analysis; group reagents",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Pb2+ and Cu2+",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Ag+ and Hg2+",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Al3+, Fe3+ and Zn2+",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Cr3+ and Mn2+",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Ni2+ and NH4+",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Ca2+, Ba2+ and Mg2+",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Anions: carbonate, sulphide, sulphate",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Anions: nitrate and halides (Cl-, Br-, I-)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Anion: nitrite",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Anion: bicarbonate",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-environmental-chemistry",
+      "topics": [
+        {
+          "name": "Atmospheric pollution",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Water pollution",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Soil pollution",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Industrial waste",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Strategies to control environmental pollution",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Green chemistry",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-goc",
+      "topics": [
+        {
+          "name": "Tetravalency, hybridisation, sigma/pi bonds, shapes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Classification, functional groups, homologous series",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "IUPAC nomenclature",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bond fission and reactive intermediates",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrophiles and nucleophiles",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Inductive effect",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electromeric effect",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Resonance and hyperconjugation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Aromaticity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Acidity, basicity and hydrogen bonding effects",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Types of organic reactions",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-isomerism",
+      "topics": [
+        {
+          "name": "Structural isomerism",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Geometrical (cis-trans) isomerism",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Optical isomerism: chirality, enantiomers",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Diastereomers and meso (up to two chiral centres)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conformations of ethane (Newman, sawhorse)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conformations of butane (Newman)",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        }
+      ]
+    },
+    {
+      "id": "chem-practical-organic",
+      "topics": [
+        {
+          "name": "Crystallisation, sublimation and distillation",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Differential extraction and chromatography",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Detection of N, S and halogens",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Detection of phosphorus",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Estimation of C and H; empirical formula",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Estimation of N, halogens, S and P",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Tests for hydroxyl groups (alcoholic, phenolic)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Tests for carbonyl groups (aldehyde, ketone)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Tests for carboxyl and amino groups",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Test for nitro group",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Preparations: acetanilide, p-nitroacetanilide, etc.",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-hydrocarbons",
+      "topics": [
+        {
+          "name": "Alkanes: physical properties and preparation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Alkanes: halogenation mechanism, combustion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Allylic and benzylic halogenation",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Alkenes: preparation by elimination; properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrophilic addition; Markovnikov, peroxide effect",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Alkenes: ozonolysis and KMnO4 oxidation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Polymerisation of alkenes",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Alkynes: acidic character and metal acetylides",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Alkynes: addition, reduction, cyclic polymerisation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Benzene: structure and nomenclature",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrophilic substitution incl. Friedel-Crafts",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Directive influence of substituents",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-haloalkanes-haloarenes",
+      "topics": [
+        {
+          "name": "Nature of C-X bond; physical properties",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Preparation of haloalkanes and haloarenes",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "SN1 and SN2 mechanisms and stereochemistry",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Carbocation rearrangements",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Elimination reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Grignard reagents and their reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Wurtz, Fittig and Wurtz-Fittig reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Nucleophilic aromatic substitution (no benzyne)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrophilic substitution in haloarenes",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "CHCl3, CHI3, freons, DDT: uses and effects",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-alcohols-phenols-ethers",
+      "topics": [
+        {
+          "name": "Alcohols: preparation",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Alcohols: physical properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Alcohols: Na, PX3, SOCl2, esterification",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Lucas test; identifying 1, 2, 3 degree alcohols",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Dehydration of alcohols and its mechanism",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Oxidation to aldehydes, ketones and acids",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Phenols: preparation, properties and acidity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Electrophilic substitution of phenol",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reimer-Tiemann reaction",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Kolbe, aspirin synthesis, phenol oxidation/reduction",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Ethers: Williamson synthesis and C-O cleavage",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-aldehydes-ketones",
+      "topics": [
+        {
+          "name": "Preparation of aldehydes and ketones",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Carbonyl group; nucleophilic addition, reactivity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition of HCN, NaHSO3, alcohols and RMgX",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition of NH3 derivatives: oximes, hydrazones",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Oxidation; tests to distinguish aldehydes, ketones",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reduction: Clemmensen and Wolff-Kishner",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Acidity of alpha-hydrogen; aldol condensation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Cannizzaro reaction",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Haloform reaction",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-carboxylic-acids",
+      "topics": [
+        {
+          "name": "Physical properties of carboxylic acids",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Acidic strength and factors affecting it",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Preparation: nitriles, RMgX, ester/amide hydrolysis",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Benzoic acid from alkylbenzenes",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reduction and halogenation of carboxylic acids",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Formation of esters, acid chlorides and amides",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-amines",
+      "topics": [
+        {
+          "name": "Classification, nomenclature and structure",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Preparation from nitro compounds, nitriles, amides",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hoffmann bromamide and Gabriel phthalimide",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Basic character of amines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Alkylation and acylation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Carbylamine reaction and Hinsberg test",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reaction with nitrous acid",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Diazonium salts: preparation and importance",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Sandmeyer and related reactions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Azo coupling",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "chem-biomolecules",
+      "topics": [
+        {
+          "name": "Carbohydrates: classification; aldoses and ketoses",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Glucose: structure, oxidation and reduction",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Fructose",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Anomers and glycoside formation",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 8,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (8 questions)."
+        },
+        {
+          "name": "Disaccharides: sucrose, maltose, lactose",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Amino acids and peptide bond",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Protein structure: primary and secondary",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Tertiary/quaternary structure; denaturation; enzymes",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Fibrous and globular proteins",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Vitamins: classification and functions",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Nucleic acids: DNA and RNA",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Hormones (general introduction)",
+          "in_main": true,
+          "in_advanced": false
+        }
+      ]
+    },
+    {
+      "id": "chem-polymers",
+      "topics": [
+        {
+          "name": "Addition and condensation polymerisation",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Homopolymers and copolymers",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Natural rubber and cellulose",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Teflon and PVC",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Nylon and Bakelite",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Biodegradable polymers",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Applications of polymers",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "chem-everyday-life",
+      "topics": [
+        {
+          "name": "Drug-target interaction",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Antacids and antihistamines",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Tranquilizers and analgesics",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Antimicrobials",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Antifertility drugs",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Artificial sweeteners (names only)",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Soaps, detergents and cleansing action",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Both 2027 syllabi are unpublished; flags follow the JEE Main 2026 (NTA) and JEE Advanced 2026 (IIT brochure) texts.",
+    "Flags are text-literal. Some basics that Advanced does not name (Kossel-Lewis, Fajans' rule, electrophiles/nucleophiles, electromeric effect, types of organic reactions, preparation of haloalkanes and alcohols, bond/atomisation enthalpies, catalyst effect on equilibrium) are marked Main-only, though coaching teaches them for Advanced anyway.",
+    "chem-surface-chemistry is listed Adv-only, but Main Unit 20 includes preparation of lyophilic and lyophobic sols; that one topic is flagged for both exams. The chapter-level Adv-only flag is otherwise correct.",
+    "Faraday's laws of electrolysis do not appear in the Main 2026 text (Unit 7), so that topic is Advanced-only.",
+    "Carboxylic acids: Main names only acidic strength, but the Unit 17 header ('general methods of preparation, properties, reactions and uses') covers all oxygen compounds, so preparation and reactions are flagged for Main too.",
+    "p-Block: Advanced's 'reactivity towards hydrogen, oxygen, halogens/acids/alkalis' for each group is folded into the group 'trends' topics, which are flagged for both because Main covers general trends in chemical properties. Named compounds are Advanced-only, except alums, since Main Unit 20 includes potash alum preparation.",
+    "Main Unit 20 placement: acid-base titrations and indicators go to ionic equilibrium; KMnO4 titrations go to redox (flagged both, since Advanced names redox stoichiometry); CuSO4 solution and neutralisation enthalpies go to thermodynamics; iodide/H2O2 kinetics goes to kinetics; Mohr's salt preparation goes to d-f block; potash alum goes to p-block 13-14; organic preparations (acetanilide, p-nitroacetanilide, aniline yellow, iodoform) and functional-group tests go to practical organic; salt analysis goes to qualitative analysis.",
+    "Placement choices: concentration terms are in mole concept (Main lists them under Solutions, Advanced under General topics); lattice enthalpy is in chemical bonding (Main Unit 3; Advanced lists it under thermodynamics); aromaticity is in GOC; conformations are in isomerism (Main lists them under hydrocarbons); catalysis is in kinetics, following the Advanced text, not the old NCERT surface chemistry chapter.",
+    "Qualitative analysis ion lists differ: Ag+, Hg2+, Cr3+, Mn2+ and bicarbonate are Advanced-only; Ni2+, NH4+ and nitrite are Main-only.",
+    "Arrhenius acid-base concept is named only in Main, but is folded into a topic flagged for both. Trivial nomenclature (Main only) is folded into IUPAC nomenclature.",
+    "R,S and E,Z configurations and the benzyne mechanism are excluded by Advanced and absent from Main, so they are not listed as topics."
+  ]
+}

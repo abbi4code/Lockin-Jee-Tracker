@@ -1,0 +1,1266 @@
+{
+  "subject": "physics",
+  "chapters": [
+    {
+      "id": "phy-units-measurements",
+      "videos": [
+        {
+          "title": "UNITS & MEASUREMENTS in One Shot | All Concepts & PYQs Covered | Class 11 Physics",
+          "url": "https://www.youtube.com/watch?v=wuI3MWvr0dY",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 7m"
+        },
+        {
+          "title": "Units and Dimensions | Concept & PYQs in 17 min | +4 Marks | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=wdd-wlZF4Hk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "18m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Physics and Measurement – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/physics-and-measurement"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 1 Introduction to Physics (units & dimensions)"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 1",
+          "section": "Units and Dimensions; Measurement and Errors"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Units and Dimensions; Errors"
+        }
+      ]
+    },
+    {
+      "id": "phy-experimental-physics",
+      "videos": [
+        {
+          "title": "TOP 30Q on Experiments by NTA - JEE 2026 | Guaranteed +8 MARKS | Eduniti #12thChallenge",
+          "url": "https://www.youtube.com/watch?v=WPOo4TH3L6E",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "1h 33m"
+        },
+        {
+          "title": "Experimental Physics 🚀JEE Mains 2024 | Practical Physics | Shreyas Sir",
+          "url": "https://www.youtube.com/watch?v=mfjx8cyhywM",
+          "channel": "Vedantu JEE English",
+          "language": "english",
+          "duration": "2h 51m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Vedantu: Experimental Skills Revision Notes (JEE Main)",
+          "url": "https://www.vedantu.com/jee-main/physics-experimental-skills-revision-notes"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Physics Lab Manual (Class 11 & 12)",
+          "section": "Experiments listed in the JEE Main 'Experimental Skills' unit"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Measurement / Experimental Physics"
+        }
+      ]
+    },
+    {
+      "id": "phy-motion-1d",
+      "videos": [
+        {
+          "title": "MOTION IN A STRAIGHT LINE in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=6HQgDO1trlM",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 28m"
+        },
+        {
+          "title": "Motion in One Dimension | Kinematics | Complete REVISION for JEE Physics | Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=U4NNxFaFliE",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "34m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Kinematics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/kinematics-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 3 Rest and Motion: Kinematics"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 1",
+          "section": "Motion in One Dimension / Kinematics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Kinematics I"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.1 Kinematics"
+        }
+      ]
+    },
+    {
+      "id": "phy-motion-2d",
+      "videos": [
+        {
+          "title": "MOTION IN A PLANE in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=Rh95KkMwklU",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 42m"
+        },
+        {
+          "title": "Motion in Two Dimension | Projectile Motion | Complete REVISION for JEE Physics | Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=4_Zo5WhMf7w",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "47m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Kinematics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/kinematics-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 3 Rest and Motion: Kinematics; Ch 7 Circular Motion"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 1",
+          "section": "Projectile Motion; Circular Motion"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Kinematics II (projectile, relative motion, circular)"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.1 Kinematics"
+        }
+      ]
+    },
+    {
+      "id": "phy-laws-of-motion",
+      "videos": [
+        {
+          "title": "LAWS OF MOTION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=mE8w2uxm6XY",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "7h 48m"
+        },
+        {
+          "title": "Newton's Laws of Motion | Complete REVISION for JEE Physics | Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=7JlR8gNRQIs",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "49m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Laws of Motion – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/laws-of-motion-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 4 The Forces; Ch 5 Newton's Laws of Motion; Ch 6 Friction"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 1",
+          "section": "Laws of Motion"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Newton's Laws of Motion; Friction"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.2 The Fundamental Equation of Dynamics"
+        }
+      ]
+    },
+    {
+      "id": "phy-work-energy-power",
+      "videos": [
+        {
+          "title": "WORK, ENERGY & POWER in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=PAlXOkn_Pa8",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 43m"
+        },
+        {
+          "title": "Work Energy Power | Formulae and Concept REVISION in 9 min | JEE Physics by Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=kjrXoE-kDI8",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "9m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Work, Energy and Power – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/work-energy-power-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 8 Work and Energy"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 1",
+          "section": "Work, Energy and Power"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics I",
+          "section": "Work, Power and Energy"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.3 Laws of Conservation of Energy, Momentum and Angular Momentum"
+        }
+      ]
+    },
+    {
+      "id": "phy-center-of-mass",
+      "videos": [
+        {
+          "title": "CENTRE OF MASS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=7xy0V3FjxdY",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 45m"
+        },
+        {
+          "title": "Center of Mass | Complete REVISION for JEE Physics | Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=ads35RKD618",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "28m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Rotational Motion (has a Centre of Mass section) – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/rotational-motion-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 9 Centre of Mass, Linear Momentum, Collision"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Centre of Mass, Linear Momentum, Impulse and Collision"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics II",
+          "section": "Centre of Mass and Collisions"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.3 Laws of Conservation of Energy, Momentum and Angular Momentum"
+        }
+      ]
+    },
+    {
+      "id": "phy-rotational-motion",
+      "videos": [
+        {
+          "title": "ROTATIONAL MOTION in One Shot: All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=UsHUxG90f_4",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "11h 54m"
+        },
+        {
+          "title": "Rotational Motion (Part-1) | MOI Torque & Static Equilibrium | JEE Physics | Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=O6j1mLp06XI",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "52m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Rotational Motion – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/rotational-motion-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 10 Rotational Mechanics"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Rotational Mechanics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics II",
+          "section": "Rigid Body Dynamics"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.5 Dynamics of a Solid Body"
+        }
+      ]
+    },
+    {
+      "id": "phy-gravitation",
+      "videos": [
+        {
+          "title": "GRAVITATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=wE0xrUuJLnk",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "3h 53m"
+        },
+        {
+          "title": "Gravitation Revision- Physics Class 11, JEE, NEET, Advanced | One Shot | Mohit Goenka (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=rAj2huLVaEk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "51m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Gravitation – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/gravitation-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 11 Gravitation"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Gravitation"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics II",
+          "section": "Gravitation"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.4 Universal Gravitation"
+        }
+      ]
+    },
+    {
+      "id": "phy-solids",
+      "videos": [
+        {
+          "title": "Mechanical Properties of Solids in 1 Shot: All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=FCByCwnj_J0",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "3h 34m"
+        },
+        {
+          "title": "Elasticity | Properties of Solids | Complete REVISION for JEE Physics | Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=gSXxjk89l_c",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "23m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Properties of Solids and Liquids – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/properties-of-solids-and-liquids-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 14 Some Mechanical Properties of Matter (elasticity)"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Elasticity"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics II",
+          "section": "Properties of Solids (Elasticity)"
+        }
+      ]
+    },
+    {
+      "id": "phy-fluids",
+      "videos": [
+        {
+          "title": "MECHANICAL PROPERTIES OF FLUIDS in One Shot: All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=8_KVbLZlCjM",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "10h 16m"
+        },
+        {
+          "title": "Fluid Statics - Part 1 | Complete REVISION for JEE Physics | IIT JEE | Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=RFKx9B9yo3M",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "39m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Properties of Solids and Liquids – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/properties-of-solids-and-liquids-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 13 Fluid Mechanics; Ch 14 (surface tension, viscosity)"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Fluid Mechanics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Mechanics II",
+          "section": "Fluid Mechanics"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 1, 1.7 Hydrodynamics"
+        }
+      ]
+    },
+    {
+      "id": "phy-thermal-properties",
+      "videos": [
+        {
+          "title": "THERMAL PROPERTIES OF MATTER in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=UYfR15GpKIs",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "8h 23m"
+        },
+        {
+          "title": "Thermal Properties of Matter | Complete REVISION for JEE Physics | Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=OYjjyPIzddE",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "56m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Properties of Solids and Liquids (thermal expansion, heat transfer) – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/properties-of-solids-and-liquids-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 23 Heat and Temperature; Ch 25 Calorimetry; Ch 28 Heat Transfer"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Waves & Thermodynamics",
+          "section": "Thermal Expansion; Calorimetry and Heat Transfer"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Waves & Thermodynamics",
+          "section": "Calorimetry, Thermal Expansion and Heat Transfer"
+        }
+      ]
+    },
+    {
+      "id": "phy-kinetic-theory",
+      "videos": [
+        {
+          "title": "KTG & THERMODYNAMICS in one Shot: All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=JAvi2K_DbbI",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "8h 34m"
+        },
+        {
+          "title": "Kinetic Theory of Gases in ONE SHOT | Class 11 Physics | JEE 2026 | JEE 2027 | Abdul sir",
+          "url": "https://www.youtube.com/watch?v=pT4aa2pqhhQ",
+          "channel": "Vedantu JEE Made Ejee",
+          "language": "hinglish",
+          "duration": "2h 33m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Kinetic Theory of Gases – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/kinetic-theory-of-gases-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 24 Kinetic Theory of Gases; Ch 27 Specific Heat Capacities of Gases"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Waves & Thermodynamics",
+          "section": "Kinetic Theory of Gases"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Waves & Thermodynamics",
+          "section": "Kinetic Theory of Gases"
+        }
+      ]
+    },
+    {
+      "id": "phy-thermodynamics",
+      "videos": [
+        {
+          "title": "THERMODYNAMICS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=NwCmoh7Vd9g",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "8h 47m"
+        },
+        {
+          "title": "JEE 2027 - 7Q Sure Shot in Thermodynamics 🔥 | ΔQ/ΔU/ΔW in GRAPHS | +4 Marks | Eduniti",
+          "url": "https://www.youtube.com/watch?v=IySVKH_OttE",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "24m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Vedantu: Thermodynamics Revision Notes (JEE Main)",
+          "url": "https://www.vedantu.com/jee-main/physics-thermodynamics-revision-notes"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 26 Laws of Thermodynamics; Ch 27 Specific Heat Capacities of Gases"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Waves & Thermodynamics",
+          "section": "Laws of Thermodynamics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Waves & Thermodynamics",
+          "section": "Thermodynamics"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 2 Thermodynamics and Molecular Physics (first-law and second-law sections)"
+        }
+      ]
+    },
+    {
+      "id": "phy-oscillations",
+      "videos": [
+        {
+          "title": "OSCILLATIONS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=bv8qBsHK9bM",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "4h 29m"
+        },
+        {
+          "title": "Simple Harmonic Motion | Formulae and Concept REVISION in 25 min | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=RIb7ofNG09I",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "26m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Oscillations and Waves – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/oscillations-and-waves-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 12 Simple Harmonic Motion"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Mechanics Vol 2",
+          "section": "Simple Harmonic Motion"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Waves & Thermodynamics",
+          "section": "Simple Harmonic Motion"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 4, Mechanical Oscillations"
+        }
+      ]
+    },
+    {
+      "id": "phy-waves",
+      "videos": [
+        {
+          "title": "WAVES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=G58QS4soCuQ",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 28m"
+        },
+        {
+          "title": "String Waves (Part-1) | Wave Equation | Wave Speed | PYQs | JEE Physics | Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=mZWNmH19wDQ",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "35m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Oscillations and Waves – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/oscillations-and-waves-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 15 Wave Motion and Waves on a String; Ch 16 Sound Waves"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Waves & Thermodynamics",
+          "section": "Wave Motion; Superposition of Waves; Sound Waves"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Waves & Thermodynamics",
+          "section": "Wave Motion; Sound Waves"
+        }
+      ]
+    },
+    {
+      "id": "phy-electrostatics",
+      "videos": [
+        {
+          "title": "ELECTROSTATICS in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=le2vYj0EaZ0",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 38m"
+        },
+        {
+          "title": "Electrostatics | Formulae and Concept REVISION in 15 min | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=3stXbGRMcrk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "17m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Electrostatics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/electrostatics-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 29 Electric Field and Potential; Ch 30 Gauss's Law"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Electrostatics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Electrostatics & Current Electricity",
+          "section": "Electric Charges and Fields; Electric Potential; Gauss's Law"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 3, Constant Electric Field in Vacuum; Conductors and Dielectrics"
+        }
+      ]
+    },
+    {
+      "id": "phy-capacitors",
+      "videos": [
+        {
+          "title": "CAPACITOR in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=EJJGEpGFzQs",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "7h 18m"
+        },
+        {
+          "title": "Capacitors | Formulae and Concept REVISION in 22 min | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=EXEiickNUkY",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "23m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Electrostatics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/electrostatics-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 31 Capacitors"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Capacitors"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Electrostatics & Current Electricity",
+          "section": "Capacitance"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 3, Electric Capacitance. Energy of an Electric Field"
+        }
+      ]
+    },
+    {
+      "id": "phy-current-electricity",
+      "videos": [
+        {
+          "title": "CURRENT ELECTRICITY in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=JY24andAvME",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "9h 19m"
+        },
+        {
+          "title": "Current Electricity | Formulae and Concept REVISION in 25 min | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=gm8FUfjrX18",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "25m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Current Electricity – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/current-electricity-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 32 Electric Current in Conductors; Ch 33 Thermal and Chemical Effects of Current"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Current Electricity"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Electrostatics & Current Electricity",
+          "section": "Current Electricity"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 3, Electric Current"
+        }
+      ]
+    },
+    {
+      "id": "phy-magnetic-effects",
+      "videos": [
+        {
+          "title": "MOVING CHARGE AND MAGNETISM in one Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=B1LPwt25S4c",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "7h 2m"
+        },
+        {
+          "title": "Moving Charges | Formulae and Concept REVISION in 13 min | JEE Physics by Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=ULD2Ok1CGJk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "13m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Magnetic Effects of Current – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/magnetic-effects-of-current-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 34 Magnetic Field; Ch 35 Magnetic Field due to a Current"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Magnetics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Magnetism & EMI",
+          "section": "Magnetic Force; Magnetic Field due to Current"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 3, Constant Magnetic Field. Magnetics; Motion of Charged Particles in Electric and Magnetic Fields"
+        }
+      ]
+    },
+    {
+      "id": "phy-magnetism-matter",
+      "videos": [
+        {
+          "title": "MAGNETISM & MATTER in 60 Minutes | Full Chapter Revision | Class 12th JEE",
+          "url": "https://www.youtube.com/watch?v=uhsGAJt3Z10",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "59m"
+        },
+        {
+          "title": "Magnetic Materials | Dia-Para and Ferromagnetism | Susceptibility | Hysteresis Curve | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=63cwdYXNlYE",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "17m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Vedantu: Magnetic Effects of Current and Magnetism Revision Notes (JEE Main)",
+          "url": "https://www.vedantu.com/jee-main/physics-magnetic-effects-of-current-and-magnetism-revision-notes"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 36 Permanent Magnets; Ch 37 Magnetic Properties of Matter"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Magnetics (magnetism and matter part)"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Magnetism & EMI",
+          "section": "Magnetism and Matter"
+        }
+      ]
+    },
+    {
+      "id": "phy-emi",
+      "videos": [
+        {
+          "title": "ELECTROMAGNETIC INDUCTION in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=_WXExQ4E-po",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "6h 34m"
+        },
+        {
+          "title": "Electromagnetic Induction | Formulae and Concept REVISION in 30 min | JEE Physics by Mohit Sir",
+          "url": "https://www.youtube.com/watch?v=puVavm_GFRM",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "32m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Electromagnetic Induction – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/electromagnetic-induction-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 38 Electromagnetic Induction"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Electromagnetic Induction"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Magnetism & EMI",
+          "section": "Electromagnetic Induction"
+        },
+        {
+          "name": "IE Irodov – Problems in General Physics (Advanced, selective)",
+          "section": "Part 3, Electromagnetic Induction. Maxwell's Equations"
+        }
+      ]
+    },
+    {
+      "id": "phy-alternating-current",
+      "videos": [
+        {
+          "title": "ALTERNATING CURRENT in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=FImh-a0673s",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "7h 21m"
+        },
+        {
+          "title": "Alternating Current | Formulae and Concept REVISION in 20 min | JEE Physics by Mohit Sir (IIT KGP)",
+          "url": "https://www.youtube.com/watch?v=74dTY-pzM_o",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "21m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Alternating Current and Electromagnetic Waves – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/alternating-current-and-electromagnetic-waves"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 39 Alternating Current"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Electricity & Magnetism",
+          "section": "Alternating Current"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Magnetism & EMI",
+          "section": "Alternating Current"
+        }
+      ]
+    },
+    {
+      "id": "phy-em-waves",
+      "videos": [
+        {
+          "title": "ELECTROMAGNETIC WAVES in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=8TnzQkZrztQ",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "2h 57m"
+        },
+        {
+          "title": "Electromagnetic Waves | Quick REVISION in 15 min | Displacement Current | Intensity | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=bcVXgEkyQZY",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "20m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Alternating Current and Electromagnetic Waves – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/alternating-current-and-electromagnetic-waves"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 40 Electromagnetic Waves"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Electromagnetic Waves"
+        }
+      ]
+    },
+    {
+      "id": "phy-ray-optics",
+      "videos": [
+        {
+          "title": "RAY OPTICS in 1 Shot: All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=72T8RfBU0ME",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "8h 20m"
+        },
+        {
+          "title": "Ray Optics | Formulae and Concept REVISION in 20 min | JEE Physics by Mohit Sir (IITKGP)",
+          "url": "https://www.youtube.com/watch?v=BhnyTWzIlBA",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "20m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Optics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/optics-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 18 Geometrical Optics; Ch 19 Optical Instruments; Ch 20 Dispersion and Spectra"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Reflection of Light; Refraction of Light"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Optics & Modern Physics",
+          "section": "Geometrical Optics"
+        }
+      ]
+    },
+    {
+      "id": "phy-wave-optics",
+      "videos": [
+        {
+          "title": "WAVE OPTICS in 1 Shot : All Concepts & PYQs Covered || JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=k8IyQgwDdUk",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "5h 7m"
+        },
+        {
+          "title": "Interference - Wave Optics (Part-1) | Formulae and Concept REVISION in 24 min | YDSE | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=LG5nlE8XTeI",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "25m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Optics – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/optics-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 1",
+          "section": "Ch 17 Light Waves"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Interference and Diffraction of Light"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Optics & Modern Physics",
+          "section": "Wave Optics"
+        }
+      ]
+    },
+    {
+      "id": "phy-dual-nature",
+      "videos": [
+        {
+          "title": "MODERN PHYSICS in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=V76QPpoWVwA",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "10h 41m"
+        },
+        {
+          "title": "Photoelectric Effect - Modern Physics (Part-2)| Formulae and Concept REVISION in 8 min | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=24oTQp84jrk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "8m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Dual Nature of Matter and Radiation – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/dual-nature-of-matter-and-radiation"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 42 Photoelectric Effect and Wave-Particle Duality"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        }
+      ]
+    },
+    {
+      "id": "phy-atoms",
+      "videos": [
+        {
+          "title": "MODERN PHYSICS in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=V76QPpoWVwA",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "10h 41m"
+        },
+        {
+          "title": "Atomic Structure - Modern Physics (Part-1) | Formulae and Concept REVISION in 10 min | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=9VKUnE3mpHk",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "11m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Vedantu: Atoms and Nuclei Revision Notes (JEE Main)",
+          "url": "https://www.vedantu.com/jee-main/physics-atoms-and-nuclei-revision-notes"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 43 Bohr's Model and Physics of the Atom; Ch 44 X-rays"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        }
+      ]
+    },
+    {
+      "id": "phy-nuclei",
+      "videos": [
+        {
+          "title": "MODERN PHYSICS in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=V76QPpoWVwA",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "10h 41m"
+        },
+        {
+          "title": "Nuclear Physics - Modern Physics (Part-5) | Formulae and Concept REVISION in 14 min | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=VDWqVahGixc",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "14m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Vedantu: Atoms and Nuclei Revision Notes (JEE Main)",
+          "url": "https://www.vedantu.com/jee-main/physics-atoms-and-nuclei-revision-notes"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 46 The Nucleus"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        },
+        {
+          "name": "Cengage (BM Sharma) – Optics & Modern Physics",
+          "section": "Modern Physics"
+        }
+      ]
+    },
+    {
+      "id": "phy-semiconductors",
+      "videos": [
+        {
+          "title": "SEMICONDUCTOR in One Shot: All Concepts & PYQs Covered |JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=rdnWOyqZTy4",
+          "channel": "JEE Wallah (PW)",
+          "language": "hinglish",
+          "duration": "5h 17m"
+        },
+        {
+          "title": "Logic Gates in 12 Min | De Morgan's Theorem | Semiconductors #3 | Concept and PYQs | JEE Physics",
+          "url": "https://www.youtube.com/watch?v=pZdQAzLbFTo",
+          "channel": "Eduniti (Mohit Goenka)",
+          "language": "hinglish",
+          "duration": "14m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash: Electronic Devices – JEE Main Physics Formula Sheet",
+          "url": "https://www.aakash.ac.in/jee-main-physics-formulas/electronic-devices-and-communication-systems"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "HC Verma Vol 2",
+          "section": "Ch 45 Semiconductors and Semiconductor Devices"
+        },
+        {
+          "name": "DC Pandey (Arihant) – Optics & Modern Physics",
+          "section": "Semiconductors"
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Video links were found on YouTube search-result pages and each one was checked with YouTube's oEmbed API (title + channel) on 2026-10-01. Durations and view counts come from the search results and are approximate.",
+    "phy-dual-nature, phy-atoms and phy-nuclei share one JEE Wallah 'Modern Physics' one-shot (10h 42m) that covers all three; there is no separate verified PW one-shot for each.",
+    "phy-kinetic-theory uses a combined JEE Wallah 'KTG & Thermodynamics' one-shot.",
+    "Eduniti (Mohit Goenka) videos are short revision/formula videos (10–60 min), not full lectures; several chapters are split across parts (Rotational Motion, Fluids, Waves, Wave Optics, Modern Physics) and only one part is linked.",
+    "phy-experimental-physics: no single PW one-shot for the 'Experimental Skills' unit was found; linked videos are an Eduniti question-practice video and a Vedantu JEE English lecture (from 2024).",
+    "phy-magnetism-matter: the PW video is a 60-minute revision, not a full lecture.",
+    "phy-semiconductors: the Eduniti video covers only logic gates.",
+    "Video language: JEE Wallah, Eduniti and Vedantu JEE Made Ejee are marked hinglish (Hindi with English terms). This is a general judgement, not checked video by video.",
+    "Notes pages (Aakash, Vedantu) were fetched and confirmed to load with a matching title. Aakash has no separate Thermodynamics, Atoms or Nuclei page, so Vedantu revision notes are linked for those. phy-center-of-mass uses the Aakash Rotational Motion sheet, whose Centre of Mass section does not cover collisions.",
+    "Book chapter numbers are given only for HC Verma (fixed numbering). DC Pandey and Cengage chapter numbers change between editions, so only the volume and chapter name are given; names may differ slightly by edition. Irodov section names are from the standard edition; Irodov is optional and only for Advanced.",
+    "ncert_useful is a judgement call: true where JEE Main often asks NCERT-style theory or fact questions (modern physics, semiconductors, EM waves, magnetism and matter, optics, thermal physics, units, experiments). False where NCERT exercises are too easy to help with JEE problem-solving, though NCERT theory should still be read."
+  ]
+}

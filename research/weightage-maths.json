@@ -1,0 +1,1389 @@
+{
+  "subject": "maths",
+  "chapters": [
+    {
+      "id": "math-sets-relations",
+      "main": {
+        "avg_questions_per_shift": 0.74,
+        "by_year": {
+          "2019": 0.31,
+          "2020": 0.56,
+          "2021": 0.42,
+          "2022": 0.52,
+          "2023": 0.83,
+          "2024": 0.8,
+          "2025": 1.11,
+          "2026": 0.68
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": null,
+          "2026": null
+        },
+        "avg_questions": null,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "About one easy question per shift; short chapter, quick marks",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/sets-and-relations",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026"
+      ]
+    },
+    {
+      "id": "math-logarithms",
+      "main": {
+        "avg_questions_per_shift": 0.07,
+        "by_year": {
+          "2019": 0.0,
+          "2020": 0.06,
+          "2021": 0.08,
+          "2022": 0.0,
+          "2023": 0.17,
+          "2024": 0.0,
+          "2025": 0.05,
+          "2026": 0.16
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": null,
+          "2026": null
+        },
+        "avg_questions": null,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "Rarely a standalone question; worth it mainly as a tool used in other chapters",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/logarithm",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026"
+      ]
+    },
+    {
+      "id": "math-quadratic-equations",
+      "main": {
+        "avg_questions_per_shift": 0.92,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.12,
+          "2021": 0.96,
+          "2022": 1.09,
+          "2023": 0.92,
+          "2024": 0.9,
+          "2025": 0.84,
+          "2026": 0.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 0,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Steady ~1 question per shift; core skill reused across algebra",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/quadratic-equation-and-inequalities",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/quadratic-equation-and-inequalities",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-complex-numbers",
+      "main": {
+        "avg_questions_per_shift": 1.06,
+        "by_year": {
+          "2019": 1.06,
+          "2020": 0.94,
+          "2021": 1.12,
+          "2022": 1.13,
+          "2023": 1.0,
+          "2024": 1.2,
+          "2025": 1.0,
+          "2026": 1.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 2,
+          "2022": 3,
+          "2023": 2,
+          "2024": 2,
+          "2025": 2,
+          "2026": 3
+        },
+        "avg_questions": 2.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1 question per shift and 2-3 per Advanced year; a few standard ideas cover most questions",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/complex-numbers",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/complex-numbers",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-sequences-series",
+      "main": {
+        "avg_questions_per_shift": 1.64,
+        "by_year": {
+          "2019": 1.88,
+          "2020": 1.69,
+          "2021": 1.42,
+          "2022": 1.52,
+          "2023": 1.62,
+          "2024": 1.8,
+          "2025": 1.42,
+          "2026": 1.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 2,
+          "2021": 1,
+          "2022": 2,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1.5 questions per shift; mostly formula-driven",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/sequences-and-series",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/sequences-and-series",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-permutations-combinations",
+      "main": {
+        "avg_questions_per_shift": 1.11,
+        "by_year": {
+          "2019": 0.81,
+          "2020": 1.0,
+          "2021": 0.96,
+          "2022": 0.91,
+          "2023": 1.96,
+          "2024": 1.05,
+          "2025": 1.11,
+          "2026": 1.16
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 1,
+          "2022": 2,
+          "2023": 0,
+          "2024": 3,
+          "2025": 2,
+          "2026": 2
+        },
+        "avg_questions": 1.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Over 1 question per shift, but counting problems are easy to get wrong",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/permutations-and-combinations",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/permutations-and-combinations",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-binomial-theorem",
+      "main": {
+        "avg_questions_per_shift": 1.22,
+        "by_year": {
+          "2019": 1.31,
+          "2020": 1.12,
+          "2021": 1.5,
+          "2022": 1.26,
+          "2023": 1.92,
+          "2024": 1.15,
+          "2025": 1.26,
+          "2026": 0.89
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1 question per shift in Main; short chapter with standard patterns",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/binomial-theorem",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/mathematical-induction-and-binomial-theorem",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-matrices",
+      "main": {
+        "avg_questions_per_shift": 1.18,
+        "by_year": {
+          "2019": 1.12,
+          "2020": 1.0,
+          "2021": 1.58,
+          "2022": 1.39,
+          "2023": 1.17,
+          "2024": 1.2,
+          "2025": 1.16,
+          "2026": 1.05
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 4,
+          "2020": 2,
+          "2021": 2,
+          "2022": 2,
+          "2023": 2,
+          "2024": 3,
+          "2025": 2,
+          "2026": 2
+        },
+        "avg_questions": 2.38,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "Matrices + Determinants are ~2 questions per shift, the highest-scoring algebra unit; quick to master",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/matrices-and-determinants",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/matrices-and-determinants",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-determinants",
+      "main": {
+        "avg_questions_per_shift": 0.73,
+        "by_year": {
+          "2019": 0.75,
+          "2020": 0.94,
+          "2021": 0.77,
+          "2022": 0.61,
+          "2023": 0.79,
+          "2024": 0.8,
+          "2025": 0.63,
+          "2026": 0.68
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 2,
+          "2022": 1,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.62,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "System-of-equations questions show up almost every shift and follow a fixed method",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/matrices-and-determinants",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/matrices-and-determinants",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-trigonometric-ratios",
+      "main": {
+        "avg_questions_per_shift": 0.4,
+        "by_year": {
+          "2019": 0.44,
+          "2020": 0.31,
+          "2021": 0.35,
+          "2022": 0.3,
+          "2023": 0.25,
+          "2024": 0.35,
+          "2025": 0.32,
+          "2026": 0.63
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 0,
+          "2022": 2,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.75,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Under 0.5 questions per shift on its own, but every other chapter uses it",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-ratio-and-identites",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/trigonometric-functions-and-equations",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-trigonometric-equations",
+      "main": {
+        "avg_questions_per_shift": 0.34,
+        "by_year": {
+          "2019": 0.38,
+          "2020": 0.0,
+          "2021": 0.42,
+          "2022": 0.65,
+          "2023": 0.17,
+          "2024": 0.4,
+          "2025": 0.32,
+          "2026": 0.32
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 0,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 2
+        },
+        "avg_questions": 0.62,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "About 0.3-0.4 questions per shift in Main 2024-26; low count",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/trigonometric-functions-and-equations",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/trigonometric-functions-and-equations",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-inverse-trigonometric-functions",
+      "main": {
+        "avg_questions_per_shift": 0.51,
+        "by_year": {
+          "2019": 0.5,
+          "2020": 0.19,
+          "2021": 0.65,
+          "2022": 0.87,
+          "2023": 0.46,
+          "2024": 0.4,
+          "2025": 0.58,
+          "2026": 0.53
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 0,
+          "2022": 1,
+          "2023": 2,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "About 0.4 questions per shift; small chapter with a few standard identities",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/inverse-trigonometric-functions",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/inverse-trigonometric-functions",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-functions",
+      "main": {
+        "avg_questions_per_shift": 0.93,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.56,
+          "2021": 0.81,
+          "2022": 0.91,
+          "2023": 1.12,
+          "2024": 1.1,
+          "2025": 0.84,
+          "2026": 0.95
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 5,
+          "2021": 0,
+          "2022": 1,
+          "2023": 2,
+          "2024": 2,
+          "2025": 3,
+          "2026": 1
+        },
+        "avg_questions": 1.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "About 1 question per shift and frequent in Advanced; the basics feed all of calculus",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/functions",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/functions",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-limits",
+      "main": {
+        "avg_questions_per_shift": 0.8,
+        "by_year": {
+          "2019": 1.12,
+          "2020": 0.94,
+          "2021": 1.04,
+          "2022": 0.96,
+          "2023": 0.67,
+          "2024": 0.7,
+          "2025": 0.89,
+          "2026": 0.58
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 1,
+          "2022": 3,
+          "2023": 1,
+          "2024": 2,
+          "2025": 3,
+          "2026": 1
+        },
+        "avg_questions": 1.88,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "Steady ~0.7 questions per shift; standard limits and expansions solve most of them",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/limits-continuity-and-differentiability",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/limits-continuity-and-differentiability",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-continuity-differentiability",
+      "main": {
+        "avg_questions_per_shift": 0.56,
+        "by_year": {
+          "2019": 0.62,
+          "2020": 0.56,
+          "2021": 0.88,
+          "2022": 0.48,
+          "2023": 0.17,
+          "2024": 0.7,
+          "2025": 0.47,
+          "2026": 0.53
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 3,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 2,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 1.12,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Around 0.4 questions per shift; a short chapter, and the ideas are tested more in Advanced",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/limits-continuity-and-differentiability",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/limits-continuity-and-differentiability",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-methods-of-differentiation",
+      "main": {
+        "avg_questions_per_shift": 0.39,
+        "by_year": {
+          "2019": 0.56,
+          "2020": 0.62,
+          "2021": 0.15,
+          "2022": 0.39,
+          "2023": 0.54,
+          "2024": 0.75,
+          "2025": 0.21,
+          "2026": 0.11
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 0.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Few standalone questions, but the skill is needed for all of calculus",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/differentiation",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/differentiation",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-application-of-derivatives",
+      "main": {
+        "avg_questions_per_shift": 1.0,
+        "by_year": {
+          "2019": 1.25,
+          "2020": 1.56,
+          "2021": 1.27,
+          "2022": 1.39,
+          "2023": 0.79,
+          "2024": 1.3,
+          "2025": 0.74,
+          "2026": 0.53
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.6-1 question per shift; long chapter with tricky max-min questions",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/application-of-derivatives",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/application-of-derivatives",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-indefinite-integration",
+      "main": {
+        "avg_questions_per_shift": 0.43,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.56,
+          "2021": 0.38,
+          "2022": 0.17,
+          "2023": 0.38,
+          "2024": 0.4,
+          "2025": 0.42,
+          "2026": 0.37
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.3 standalone questions per shift, but definite integration and differential equations depend on it",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/indefinite-integrals",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/indefinite-integrals",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-definite-integration",
+      "main": {
+        "avg_questions_per_shift": 1.68,
+        "by_year": {
+          "2019": 1.38,
+          "2020": 1.25,
+          "2021": 2.23,
+          "2022": 2.0,
+          "2023": 1.67,
+          "2024": 2.15,
+          "2025": 1.21,
+          "2026": 1.63
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 3,
+          "2021": 6,
+          "2022": 2,
+          "2023": 2,
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 2.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "Among the top Main chapters (~1.5 questions per shift); properties-based questions are fast",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/definite-integration",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/definite-integration",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-area-under-curves",
+      "main": {
+        "avg_questions_per_shift": 0.95,
+        "by_year": {
+          "2019": 0.81,
+          "2020": 0.69,
+          "2021": 0.65,
+          "2022": 0.96,
+          "2023": 1.08,
+          "2024": 1.1,
+          "2025": 0.95,
+          "2026": 1.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 4,
+          "2022": 1,
+          "2023": 1,
+          "2024": 2,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 1.62,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Reliably ~1 question per shift; mostly sketching plus a standard integral",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/area-under-the-curves",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/application-of-integration",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-differential-equations",
+      "main": {
+        "avg_questions_per_shift": 1.32,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.0,
+          "2021": 1.62,
+          "2022": 1.7,
+          "2023": 1.04,
+          "2024": 1.85,
+          "2025": 1.11,
+          "2026": 1.11
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 0,
+          "2022": 2,
+          "2023": 2,
+          "2024": 1,
+          "2025": 2,
+          "2026": 2
+        },
+        "avg_questions": 1.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "About 1-1.5 questions per shift; a handful of standard equation types",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/differential-equations",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/differential-equations",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-straight-lines",
+      "main": {
+        "avg_questions_per_shift": 0.89,
+        "by_year": {
+          "2019": 1.19,
+          "2020": 0.69,
+          "2021": 0.81,
+          "2022": 0.78,
+          "2023": 0.5,
+          "2024": 1.2,
+          "2025": 0.89,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 2,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "About 1 question per shift in Main; base for all coordinate geometry",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/straight-lines-and-pair-of-straight-lines",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/straight-lines-and-pair-of-straight-lines",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-circles",
+      "main": {
+        "avg_questions_per_shift": 0.84,
+        "by_year": {
+          "2019": 1.25,
+          "2020": 0.56,
+          "2021": 1.12,
+          "2022": 1.04,
+          "2023": 0.79,
+          "2024": 1.0,
+          "2025": 0.53,
+          "2026": 0.79
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 5,
+          "2022": 2,
+          "2023": 2,
+          "2024": 1,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 1.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "About 0.5-0.8 questions per shift; questions are often lengthy",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/circle",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/circle",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-parabola",
+      "main": {
+        "avg_questions_per_shift": 0.79,
+        "by_year": {
+          "2019": 1.12,
+          "2020": 0.69,
+          "2021": 0.69,
+          "2022": 1.0,
+          "2023": 0.79,
+          "2024": 0.6,
+          "2025": 0.89,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 2,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 1.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.7 questions per shift; standard results but heavy algebra",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/parabola",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/parabola",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-ellipse",
+      "main": {
+        "avg_questions_per_shift": 0.66,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.56,
+          "2021": 0.62,
+          "2022": 0.52,
+          "2023": 0.5,
+          "2024": 0.4,
+          "2025": 0.95,
+          "2026": 0.79
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.4-0.9 questions per shift; builds on parabola results",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/ellipse",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/ellipse",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-hyperbola",
+      "main": {
+        "avg_questions_per_shift": 0.55,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.5,
+          "2021": 0.35,
+          "2022": 0.65,
+          "2023": 0.38,
+          "2024": 0.55,
+          "2025": 0.47,
+          "2026": 0.68
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 2
+        },
+        "avg_questions": 0.5,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "About 0.5 questions per shift; mostly parallels ellipse",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/hyperbola",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/hyperbola",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-vector-algebra",
+      "main": {
+        "avg_questions_per_shift": 1.42,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.0,
+          "2021": 1.46,
+          "2022": 1.22,
+          "2023": 2.0,
+          "2024": 1.75,
+          "2025": 1.21,
+          "2026": 1.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 2,
+          "2022": 1,
+          "2023": 2,
+          "2024": 2,
+          "2025": 3,
+          "2026": 2
+        },
+        "avg_questions": 1.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "Over 1 question per shift; formula-based and quick",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/vector-algebra",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/vector-algebra",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-3d-geometry",
+      "main": {
+        "avg_questions_per_shift": 1.91,
+        "by_year": {
+          "2019": 2.0,
+          "2020": 1.06,
+          "2021": 2.08,
+          "2022": 2.17,
+          "2023": 3.0,
+          "2024": 2.15,
+          "2025": 1.79,
+          "2026": 1.53
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 2,
+          "2021": 0,
+          "2022": 2,
+          "2023": 1,
+          "2024": 3,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 1.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "The top Main chapter (~1.7 questions per shift); highly predictable question types",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/3d-geometry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/3d-geometry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-statistics",
+      "main": {
+        "avg_questions_per_shift": 0.72,
+        "by_year": {
+          "2019": 0.88,
+          "2020": 0.94,
+          "2021": 0.77,
+          "2022": 0.57,
+          "2023": 0.92,
+          "2024": 0.75,
+          "2025": 0.42,
+          "2026": 0.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "About 0.6 questions per shift from a very short chapter (mean and variance)",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/statistics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/statistics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-probability",
+      "main": {
+        "avg_questions_per_shift": 0.68,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.56,
+          "2021": 0.81,
+          "2022": 0.78,
+          "2023": 0.71,
+          "2024": 0.8,
+          "2025": 0.53,
+          "2026": 0.68
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 4,
+          "2022": 2,
+          "2023": 3,
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 1.25,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Probability overall is ~1 question per shift; classical problems need careful counting",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/probability",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/probability",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    },
+    {
+      "id": "math-conditional-probability",
+      "main": {
+        "avg_questions_per_shift": 0.47,
+        "by_year": {
+          "2019": 0.5,
+          "2020": 0.44,
+          "2021": 0.5,
+          "2022": 0.65,
+          "2023": 0.42,
+          "2024": 0.5,
+          "2025": 0.58,
+          "2026": 0.26
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 3,
+          "2021": 1,
+          "2022": 1,
+          "2023": 2,
+          "2024": 3,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 1.88,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Bayes/total probability/random variable questions appear in most Main sessions and every Advanced year",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/mathematics/probability",
+        "https://questions.examside.com/past-years/jee/jee-advanced/mathematics/probability",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-april-2024",
+        "https://www.mathongo.com/iit-jee/jee-main-maths-chapter-wise-questions-with-solutions-january-2026",
+        "https://allen.in/jee-advanced/analysis",
+        "https://engineering.careers360.com/articles/jee-advanced-syllabus-weightage"
+      ]
+    }
+  ],
+  "method_notes": "PRIMARY SOURCE: ExamSIDE (questions.examside.com) chapter-wise PYQ pages for JEE Main and JEE Advanced Mathematics, downloaded 2026-10-01. Every question there carries its paper label (e.g. 'JEE Main 2025 (Online) 22nd January Morning Shift'), so I counted questions per chapter per year. Coverage check: across all ExamSIDE chapters every Main shift adds up to its full maths paper (30 questions per shift in 2019 and 2021-2024, 25 in 2020 and 2025-2026; one 2026 shift has 24), and every Advanced paper adds up too (2019-2020: 18+18, 2021: 19+19, 2022: 18+18, 2023-2024: 17+17, 2025: 16+16, 2026: 16+18). So these are complete counts, not samples. MAIN by_year = questions in that year / number of B.Tech shifts that year: 2019:16, 2020:16, 2021:26, 2022:23, 2023:24, 2024:20, 2025:19, 2026:19. The shift counts come from the union of shift labels across all chapter pages. This is plain arithmetic on complete counts, so direct chapters are labelled coaching_analysis. Note that 2019-2024 papers had 30 maths questions per shift (5 of 10 numericals optional in 2021-2024), while 2020 and 2025-2026 had 25. Pre-2025 per-shift values are therefore roughly 20% higher for the same share of the paper. MAIN avg_questions_per_shift = weighted mean of the yearly per-shift values, with weight 3 for each of 2024, 2025 and 2026 and weight 1 for each of 2019-2023 (2024-26 = 9/14 = 64% of the weight), because the 2024 syllabus cut removed some topics and 2025 cut the paper to 25 questions. ADVANCED by_year = total questions in Paper 1 + Paper 2 that ExamSIDE files under the chapter. avg_questions = plain mean over the 8 years 2019-2026. Each multi-part paragraph or matching question counts as listed by ExamSIDE (one entry per question number). CHAPTER MAPPING: ExamSIDE merges some chapters that the app splits, so I divided them myself. Every chapter built this way is labelled source_type 'estimate'. (a) Matrices vs Determinants: a question goes to Determinants if its text is about a system of linear equations, consistency, infinitely many/unique/no solutions, or evaluates a determinant written in |array| form. Otherwise it goes to Matrices; that includes det/adj/inverse algebra, which coaching books keep in the Matrices chapter. (b) Limits vs Continuity & Differentiability: a question goes to C&D if its text mentions continuity/discontinuity/(non-)differentiability at points, otherwise to Limits. (c) Probability vs Conditional Probability/Bayes/Random Variables: a question goes to Conditional if its text mentions a random variable, distribution, mean/variance, Bayes cues ('given that', 'was', 'found to be', transfers between bags, telling the truth), independence or binomial; otherwise to Probability. Main splits use automatic keyword rules. For Advanced, I read every 2019-2026 question in these merged chapters and made a few manual corrections; I also split ExamSIDE's single Advanced 'trigonometric functions and equations' chapter into Trig Equations (solution-count/set questions) and Trig Ratios & Identities (everything else, including one 2023 inradius question). Other mappings: Main 'differentiation' = Methods of Differentiation; Advanced 'application-of-integration' = Area Under Curves; Advanced 'mathematical-induction-and-binomial-theorem' = Binomial Theorem. ExamSIDE chapters with no app equivalent were left out: Properties of Triangle, Height & Distance, Mathematical Reasoning, Mathematical Induction. CROSS-CHECKS: (1) PW (pw.live) and Vedantu publish identical JEE Main 2025 Jan/April session chapter totals. They match ExamSIDE closely, e.g. 3D 18/17 vs 16/18; Matrices+Determinants 18/15 vs 19/15; Binomial 11/13 vs 11/13; Probability 12/9 vs 12/9; Sequences 13/13 vs 13/14; Trig Equations 2/5 vs 1/5; Logarithm 1/0 vs 1/0. (2) I counted MathonGo's chapter-wise PDF question banks: Jan 2024 (sum 290 of 300; the Sets & Relations PDF would not download), Apr 2024 (300) and Jan 2026 (250). They agree within about ±3 per session for most chapters (Jan 2026: Sequences 17 vs 17, Area 10 vs 10, Trig Eq 2 vs 2, Matrices+Determinants 16 vs 16, Limits+C&D 11 vs 11). Bigger differences in 2024: Definite Integration (MathonGo 34 vs ExamSIDE 43), Functions (30 vs 22), Limits+C&D (39 vs 28), Matrices/Determinants split (MathonGo 20/21 vs my split 24/16). These come from different chapter classification. (3) For Advanced, Allen's 2023 analysis (Probability 5, Determinant & Matrices 3, Complex 2, ITF 2, Vector 2) matches ExamSIDE 2023. Careers360 has an unlabelled Advanced table (16+18 = 34 questions, which matches the 2026 paper totals) that agrees at the unit level on coordinate geometry (5), differential equations (2), probability+statistics (3) and 3D (2). HIGH_YIELD = true if the chapter is in the top 9 of 31 (about 30%) by Main weighted average (cut-off 1.06 per shift) or has Advanced avg >= 1.75 per year (the 9th-ranked value; ties included). ROI = my judgement in line with common coaching advice (questions per shift relative to how long the chapter takes to learn and how hard it is); it is not taken from a single source. CONFIDENCE mainly reflects the Main numbers: high = ExamSIDE counts agree with PW 2025 and/or MathonGo 2024/2026 counts; medium = combined total confirmed but the split between app chapters is my estimate, or counts are very small; low = keyword split with no second source for the split. Advanced numbers come only from ExamSIDE (spot-checked against Allen 2023 and Careers360), so treat Advanced as medium at best.",
+  "uncertainties": [
+    "Trigonometric Equations (flagged Advanced-only) IS still asked in JEE Main after the 2024 syllabus change. ExamSIDE counts 8 questions in 2024 (20 shifts), 6 in 2025 (19 shifts) and 6 in 2026 (19 shifts), mostly 'number of solutions of ... in [a,b]' questions. PW reports 2 (Jan) + 5 (Apr) for 2025, and MathonGo counted 9 in 2024 and 2 in Jan 2026. That is about 0.3-0.4 per shift. ExamSIDE's Main chapter also contains a few trig-function questions (e.g. max/min), so the true 'equations only' count may be slightly lower.",
+    "Logarithms (flagged Advanced-only) still appears in JEE Main, but rarely: ExamSIDE has 0 in 2024, 1 in 2025 (22 Jan morning) and 3 in 2026 (23 Jan evening, 4 Apr evening, 8 Apr evening). PW lists 'Basic Mathematics and Logarithm' 1 (Jan 2025) / 0 (Apr 2025); MathonGo 'Basic of Mathematics' has 1 in Jan 2026. So it is roughly 0.05-0.16 per shift; log manipulation is also used inside many other chapters' questions.",
+    "Advanced numbers for Sets and Relations and for Logarithms are null: ExamSIDE has no such Advanced chapter, so any such questions are filed under other chapters and cannot be counted.",
+    "Matrices vs Determinants, Limits vs Continuity & Differentiability, and Probability vs Conditional Probability are my keyword-based splits of combined ExamSIDE chapters. The combined totals are reliable (cross-checked); the split is not. Combined Matrices+Determinants is about 1.91 per shift in Main (the joint-highest unit with 3D). Combined Limits+C&D is about 1.36. Combined Probability is about 1.15.",
+    "The Probability / Conditional Probability split in Main is the weakest number: much question text is rendered as images or MathML on ExamSIDE, so cues like P(A|B) are invisible to keyword matching. Some Bayes questions may be counted as plain Probability.",
+    "Chapter boundaries differ between sources: e.g. a definite-integral question involving a limit, or a vector question set in 3D. Per-chapter counts can differ by 10-30% between ExamSIDE and MathonGo for Definite Integration, Functions and Limits/C&D in 2024.",
+    "The 2019-2024 per-shift numbers come from 30-question papers and 2020/2025-2026 from 25-question papers, so per-shift values are not strictly comparable across years without rescaling (I did not rescale).",
+    "Main 2026 has 19 shifts (Jan 21-24 and 28, Apr 2, 4, 5, 6 and 8 evening). One 2026 shift (4 April evening) shows only 24 maths questions on ExamSIDE, so a question may be missing or dropped.",
+    "Motion's blog (motion.ac.in) labels a table 'Jan 2026 / Apr 2026', but its numbers are identical to PW's 2025 table, so I treated it as mislabelled and did not use it.",
+    "Collegedunia's 2022-2026 maths unit table gives only rounded per-shift ranges (e.g. '2-3'). I did not use it for numbers.",
+    "Advanced Properties of Triangles (2019:1, 2020:2, 2021:2, 2023:1 on ExamSIDE; Allen says 3 'Solution of Triangles' questions in 2023) has no app chapter, so it is not counted anywhere except one 2023 inradius question that ExamSIDE filed under trigonometry (counted in Trig Ratios).",
+    "Advanced trig split (Equations vs Ratios) and the manual Advanced corrections for Limits/C&D (2019 x1, 2020 x2, 2024 x1 moved to C&D), Probability, and Determinants (2019 x1) rely on my reading of question text where formulas were partly missing."
+  ]
+}

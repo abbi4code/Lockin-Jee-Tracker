@@ -1,0 +1,1335 @@
+{
+  "subject": "maths",
+  "chapters": [
+    {
+      "id": "math-sets-relations",
+      "videos": [
+        {
+          "title": "SETS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=SOXQuRrgJHo",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "2h 55m"
+        },
+        {
+          "title": "JEE MAINS 2026/2027 : SETS & RELATIONS + 3.0 THEORY +Qs + DPP (Video Solutions) + CBT TEST |NEHA MAM",
+          "url": "https://www.youtube.com/watch?v=BbDh_D9NOAc",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 26m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Sets, Relations and Functions (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/115837-JEE-Main-2024-Maths-Revision-Notes-on-Sets,-Relations-and-Functions.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Sets, Relations and Functions",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/sets-relations-and-functions"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Sets and Relations"
+        },
+        {
+          "name": "NCERT Exemplar Class 11",
+          "section": "Sets; Relations and Functions"
+        },
+        {
+          "name": "NCERT Exemplar Class 12",
+          "section": "Relations and Functions"
+        }
+      ]
+    },
+    {
+      "id": "math-logarithms",
+      "videos": [
+        {
+          "title": "LOGARITHM in 100 Minutes | Complete One Shot With PYQ's| JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=KKxHKAe-Jkc",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "1h 37m"
+        },
+        {
+          "title": "Logarithm Class 11 | One Shot | JEE Main & Advanced | Arvind Kalia Sir",
+          "url": "https://www.youtube.com/watch?v=R9ouaals2GY",
+          "channel": "JEE Nexus by Unacademy",
+          "language": "hinglish",
+          "duration": "2h 3m"
+        }
+      ],
+      "notes": [],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Logarithm"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Logarithms"
+        }
+      ]
+    },
+    {
+      "id": "math-quadratic-equations",
+      "videos": [
+        {
+          "title": "QUADRATIC EQUATIONS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=iLIPlvjDkPU",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 34m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: QUADRATIC EQUATIONS 3.0 THEORY + DPP+ TEST NEHA AGRAWAL MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=MnUt4uRiUv8",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 42m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Complex Numbers and Quadratic Equations (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/1266-JEE-Main-Maths-Revision-Notes-on-Complex-Numbers-and-Quadratic-Equations.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Complex Numbers and Quadratic Equations",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/complex-numbers-and-quadratic-equations"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Quadratic Equations / Theory of Equations"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Theory of Equations"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Quadratic Equations"
+        }
+      ]
+    },
+    {
+      "id": "math-complex-numbers",
+      "videos": [
+        {
+          "title": "COMPLEX NUMBER in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=Q-AlaLN72w0",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 35m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: COMPLEX NUMBERS 3.0 \"FULL THEORY+ DPP+TESTING\" NEHA MAM| MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=XVZ20FDLorE",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 57m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Complex Numbers and Quadratic Equations (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/1266-JEE-Main-Maths-Revision-Notes-on-Complex-Numbers-and-Quadratic-Equations.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Complex Numbers and Quadratic Equations",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/complex-numbers-and-quadratic-equations"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Complex Numbers"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Complex Numbers"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Complex Numbers"
+        }
+      ]
+    },
+    {
+      "id": "math-sequences-series",
+      "videos": [
+        {
+          "title": "SEQUENCE & SERIES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=CVG9PcraP1k",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h 41m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 :SEQUENCES & SERIES 3.0 \"THEORY + DPPs+ TESTING\" NEHA MAM| MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=VMlrlqJgWdQ",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 25m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Sequences and Series (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/124613-JEE-Main-Revision-Notes-on-Sequences-and-Series-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Sequences and Series",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/sequences-and-series-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Sequences and Series"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Sequences and Series"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Sequences and Series"
+        }
+      ]
+    },
+    {
+      "id": "math-permutations-combinations",
+      "videos": [
+        {
+          "title": "PERMUTATION & COMBINATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=rPFlUfjcakw",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 53m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 :PERMUTATIONS & COMBINATIONS +3.0 THEORY+Qs+ DPP (Video Sols) + CBT TEST| NEHA MAM",
+          "url": "https://www.youtube.com/watch?v=dZleU5ZUDAo",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 18m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Permutations and Combinations (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/12145-JEE-Main-Permutations-and-Combinations-Revision-Notes-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Permutations and Combinations",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/permutations-and-combinations"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Permutations and Combinations"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Permutations and Combinations"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Permutations and Combinations"
+        }
+      ]
+    },
+    {
+      "id": "math-binomial-theorem",
+      "videos": [
+        {
+          "title": "BINOMIAL THEOREM in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=QMWDHOcXEQI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 10m"
+        },
+        {
+          "title": "JEE MAINS 2026/2027 : BINOMIAL THEOREM 3.0 THEORY + DPP + TEST NEHA AGRAWAL MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=kTrZgk8ht6s",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 8m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Binomial Theorem (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/12429-JEE-Main-Binomial-Theorem-and-Its-Simple-Applications-Revision-Notes-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Binomial Theorem and Its Applications",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/binomial-theorem-and-Its-applications"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Binomial Theorem"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Binomial Theorem"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Binomial Theorem"
+        }
+      ]
+    },
+    {
+      "id": "math-matrices",
+      "videos": [
+        {
+          "title": "MATRICES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=2YFQIFQmPmw",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h 23m"
+        },
+        {
+          "title": "JEE MAINS 2026/27:MATRICES & DETERMINANTS 3.0\"THEORY+ DPP+ TESTING\" NEHA MAM|MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=QIbRBtoAsjE",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 34m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Matrices and Determinants (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/12844-JEE-Main-Maths-Revision-Notes-on-Matrices-and-Determinants.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Matrices and Determinants",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/matrices-determinants-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Matrices"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Matrices"
+        },
+        {
+          "name": "NCERT Exemplar Class 12",
+          "section": "Matrices"
+        }
+      ]
+    },
+    {
+      "id": "math-determinants",
+      "videos": [
+        {
+          "title": "Manzil 2026: DETERMINANTS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=uhq_WUNlvh8",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 36m"
+        },
+        {
+          "title": "JEE MAINS 2026/27:MATRICES & DETERMINANTS 3.0\"THEORY+ DPP+ TESTING\" NEHA MAM|MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=QIbRBtoAsjE",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 34m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Matrices and Determinants (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/12844-JEE-Main-Maths-Revision-Notes-on-Matrices-and-Determinants.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Matrices and Determinants",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/matrices-determinants-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Determinants"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Algebra (S.K. Goyal)",
+          "section": "Determinants"
+        },
+        {
+          "name": "NCERT Exemplar Class 12",
+          "section": "Determinants"
+        }
+      ]
+    },
+    {
+      "id": "math-trigonometric-ratios",
+      "videos": [
+        {
+          "title": "TRIGONOMETRIC RATIOS & IDENTITIES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=DitLpxy6V48",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 52m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: TRIGONOMETRY & INVERSE+THEORY +PYQ +DPP (Video Solutions)+CBT TEST | NEHA AGRAWAL",
+          "url": "https://www.youtube.com/watch?v=IQeeRDA6T94",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 5m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Trigonometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131826-JEE-Main-Revision-Notes-on-Trigonometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Trigonometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/trigonometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Trigonometry (G. Tewani)",
+          "section": "Trigonometric Ratios and Identities"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Trigonometry (Amit M. Agarwal)",
+          "section": "Trigonometric Functions and Identities"
+        },
+        {
+          "name": "S.L. Loney: Plane Trigonometry",
+          "section": "Trigonometric ratios, compound and multiple angles"
+        }
+      ]
+    },
+    {
+      "id": "math-trigonometric-equations",
+      "videos": [
+        {
+          "title": "TRIGONOMETRIC FUNCTIONS & EQUATIONS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=-uZzrzAkHn0",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7h 15m"
+        },
+        {
+          "title": "TRIGONOMETRY & INVERSE TRIGONOMETRY |JEE Advanced Exclusive THEORY +PYQ's + Cengage Qs| NEHA AGRAWAL",
+          "url": "https://www.youtube.com/watch?v=qtpKds9gt4w",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "2h 18m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Trigonometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131826-JEE-Main-Revision-Notes-on-Trigonometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Trigonometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/trigonometry-formulas"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "Cengage Trigonometry (G. Tewani)",
+          "section": "Trigonometric Equations"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Trigonometry (Amit M. Agarwal)",
+          "section": "Trigonometric Equations and Inequations"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Trigonometric Equations"
+        }
+      ]
+    },
+    {
+      "id": "math-inverse-trigonometric-functions",
+      "videos": [
+        {
+          "title": "INVERSE TRIGONOMETRIC FUNCTIONS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=rdWRwY2kEXI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 4m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: INVERSE TRIGONOMETRY+THEORY +PYQ +DPP (Video Solutions) + CBT TEST | NEHA AGRAWAL",
+          "url": "https://www.youtube.com/watch?v=EO_6mXn9szs",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "2h 45m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Trigonometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131826-JEE-Main-Revision-Notes-on-Trigonometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Trigonometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/trigonometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Trigonometry (G. Tewani)",
+          "section": "Inverse Trigonometric Functions"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Trigonometry (Amit M. Agarwal)",
+          "section": "Inverse Trigonometric Functions"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Inverse Trigonometric Functions"
+        }
+      ]
+    },
+    {
+      "id": "math-functions",
+      "videos": [
+        {
+          "title": "RELATIONS & FUNCTIONS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=Qs0wRt70mC4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7h 28m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 : FUNCTIONS + 3.0 THEORY + Qs + DPP (Video Solutions) + CBT TEST|NEHA AGRAWAL |JEE",
+          "url": "https://www.youtube.com/watch?v=qMZbl49B2gk",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 14m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Sets, Relations and Functions (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/115837-JEE-Main-2024-Maths-Revision-Notes-on-Sets,-Relations-and-Functions.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Sets, Relations and Functions",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/sets-relations-and-functions"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Relations and Functions"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Differential Calculus (Amit M. Agarwal)",
+          "section": "Functions"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Functions"
+        }
+      ]
+    },
+    {
+      "id": "math-limits",
+      "videos": [
+        {
+          "title": "LIMIT in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=JnER25G1V7o",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 21m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 :LIMITS CONTINUITY DERIVATIVES 3.0 THEORY +DPP +TEST| MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=1Px2H-ZNAXc",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 28m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Limits, Continuity and Differentiability (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/124731-JEE-Main-Revision-Notes-on-Limits,-Continuity-and-Differentiability-Free-Pdf.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Limits, Continuity and Differentiability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/limits-continuity-differentiability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Limits"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Differential Calculus (Amit M. Agarwal)",
+          "section": "Limits"
+        },
+        {
+          "name": "I.A. Maron: Problems in Calculus of One Variable",
+          "section": "Limits"
+        }
+      ]
+    },
+    {
+      "id": "math-continuity-differentiability",
+      "videos": [
+        {
+          "title": "CONTINUITY & DIFFERENTIABILITY in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=hsedtF2azNQ",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 28m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 :LIMITS CONTINUITY DERIVATIVES 3.0 THEORY +DPP +TEST| MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=1Px2H-ZNAXc",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 28m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Limits, Continuity and Differentiability (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/124731-JEE-Main-Revision-Notes-on-Limits,-Continuity-and-Differentiability-Free-Pdf.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Limits, Continuity and Differentiability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/limits-continuity-differentiability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Continuity and Differentiability"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Differential Calculus (Amit M. Agarwal)",
+          "section": "Continuity and Differentiability"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Continuity and Differentiability"
+        }
+      ]
+    },
+    {
+      "id": "math-methods-of-differentiation",
+      "videos": [
+        {
+          "title": "METHOD OF DIFFERENTIATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=3JMzZR2TvhA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 16m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 :LIMITS CONTINUITY DERIVATIVES 3.0 THEORY +DPP +TEST| MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=1Px2H-ZNAXc",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 28m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash JEE Main Formula Sheet: Limits, Continuity and Differentiability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/limits-continuity-differentiability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Methods of Differentiation"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Differential Calculus (Amit M. Agarwal)",
+          "section": "Differentiation"
+        }
+      ]
+    },
+    {
+      "id": "math-application-of-derivatives",
+      "videos": [
+        {
+          "title": "APPLICATION OF DERIVATIVES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=jOVcucQLv38",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 33m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 : APPLICATION OF DERIVATIVES 3.0 THEORY + DPP + TEST| MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=FjePwtMW_jA",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 6m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash JEE Main Formula Sheet: Application of Derivatives",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/application-of-derivatives-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Application of Derivatives (Tangents and Normals, Monotonicity, Maxima and Minima, Mean Value Theorems)"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Differential Calculus (Amit M. Agarwal)",
+          "section": "Applications of Derivatives"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Application of Derivatives"
+        }
+      ]
+    },
+    {
+      "id": "math-indefinite-integration",
+      "videos": [
+        {
+          "title": "INDEFINITE INTEGRATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=7dVDuyI_8FA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h 14m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 : INDEFINITE INTEGRATION 3.0 THEORY +Qs + DPP +TEST| MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=aBuT_NpL4kM",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 34m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Integral Calculus (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/124841-Revision-Notes-on-Integral-Calculus-for-JEE-Main-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Integral Calculus",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/integral-calculus-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Indefinite Integration"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Integral Calculus (Amit M. Agarwal)",
+          "section": "Indefinite Integrals"
+        },
+        {
+          "name": "I.A. Maron: Problems in Calculus of One Variable",
+          "section": "Indefinite Integrals"
+        }
+      ]
+    },
+    {
+      "id": "math-definite-integration",
+      "videos": [
+        {
+          "title": "DEFINITE INTEGRATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=UwRAUIeoCtI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 48m"
+        },
+        {
+          "title": "JEE MAINS 2026/2027: DEFINITE INTEGRATION 3.0 THEORY +Qs + DPP +TEST | MATHEMATICALLY INCLINED #jee",
+          "url": "https://www.youtube.com/watch?v=bpeEpWjvG50",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "2h 58m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Integral Calculus (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/124841-Revision-Notes-on-Integral-Calculus-for-JEE-Main-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Integral Calculus",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/integral-calculus-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Definite Integration"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Integral Calculus (Amit M. Agarwal)",
+          "section": "Definite Integrals"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Definite Integration"
+        }
+      ]
+    },
+    {
+      "id": "math-area-under-curves",
+      "videos": [
+        {
+          "title": "APPLICATION OF INTEGRALS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=x0vMQRKTmQ0",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h 16m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 new syllabus :DIFFERENTIAL EQUATIONS & AREA UNDER THE CURVE THEORY+PYQ’s +Tricks",
+          "url": "https://www.youtube.com/watch?v=KGI1PiPN-q4",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 37m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash JEE Main Formula Sheet: Integral Calculus",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/integral-calculus-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Area under Curves"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Integral Calculus (Amit M. Agarwal)",
+          "section": "Area of Bounded Regions"
+        }
+      ]
+    },
+    {
+      "id": "math-differential-equations",
+      "videos": [
+        {
+          "title": "DIFFERENTIAL EQUATION in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=H1FKKjz8hsw",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h 59m"
+        },
+        {
+          "title": "JEE MAINS 2026/2027 : DIFFERENTIAL EQUATIONS + 3.0 THEORY +Qs + DPP +TEST | NEHA AGRAWAL MAM",
+          "url": "https://www.youtube.com/watch?v=PbeylmdToTs",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 39m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Differential Equations (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131148-Revision-Notes-on-JEE-Main-Differential-Equations-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Differential Equations",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/differential-equations"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Calculus (G. Tewani)",
+          "section": "Differential Equations"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Integral Calculus (Amit M. Agarwal)",
+          "section": "Differential Equations"
+        },
+        {
+          "name": "NCERT Exemplar Class 12",
+          "section": "Differential Equations"
+        }
+      ]
+    },
+    {
+      "id": "math-straight-lines",
+      "videos": [
+        {
+          "title": "STRAIGHT LINES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=pufR8xp-CQA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 24m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: STRAIGHT LINES+3.0 THEORY+PYQ +DPP (Video Solutions) +CBT TEST| NEHA AGRAWAL #jee",
+          "url": "https://www.youtube.com/watch?v=RHk11VC256Y",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 6m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Coordinate Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131246-JEE-Main-Revision-Notes-on-Coordinate-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Co-ordinate Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/co-ordinate-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Coordinate Geometry (G. Tewani)",
+          "section": "Straight Lines"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Coordinate Geometry (S.K. Goyal)",
+          "section": "Straight Lines"
+        },
+        {
+          "name": "S.L. Loney: The Elements of Coordinate Geometry",
+          "section": "The Straight Line"
+        }
+      ]
+    },
+    {
+      "id": "math-circles",
+      "videos": [
+        {
+          "title": "CIRCLES in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=qcpj3jjgr6o",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 53m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: CIRCLES + 3.0 THEORY +PYQ +DPP (Video Solutions)+ CBT TEST| NEHA AGRAWAL #jee2025",
+          "url": "https://www.youtube.com/watch?v=Se39Hv2_FzM",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "4h 5m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Coordinate Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131246-JEE-Main-Revision-Notes-on-Coordinate-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Co-ordinate Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/co-ordinate-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Coordinate Geometry (G. Tewani)",
+          "section": "Circles"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Coordinate Geometry (S.K. Goyal)",
+          "section": "Circle"
+        },
+        {
+          "name": "S.L. Loney: The Elements of Coordinate Geometry",
+          "section": "The Circle"
+        }
+      ]
+    },
+    {
+      "id": "math-parabola",
+      "videos": [
+        {
+          "title": "PARABOLA in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=Nv9s38ZGPes",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 1m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 new syllabus: CONIC SECTIONS ONE SHOT| FULL THEORY +PYQ’s +Tricks | NEHA AGRAWAL |",
+          "url": "https://www.youtube.com/watch?v=ze6pUWYfAvY",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 41m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Coordinate Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131246-JEE-Main-Revision-Notes-on-Coordinate-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Co-ordinate Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/co-ordinate-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Coordinate Geometry (G. Tewani)",
+          "section": "Parabola"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Coordinate Geometry (S.K. Goyal)",
+          "section": "Parabola"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Parabola"
+        }
+      ]
+    },
+    {
+      "id": "math-ellipse",
+      "videos": [
+        {
+          "title": "ELLIPSE in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=ZdCd1G0NDUI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "2h 57m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 new syllabus: CONIC SECTIONS ONE SHOT| FULL THEORY +PYQ’s +Tricks | NEHA AGRAWAL |",
+          "url": "https://www.youtube.com/watch?v=ze6pUWYfAvY",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 41m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Coordinate Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131246-JEE-Main-Revision-Notes-on-Coordinate-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Co-ordinate Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/co-ordinate-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Coordinate Geometry (G. Tewani)",
+          "section": "Ellipse"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Coordinate Geometry (S.K. Goyal)",
+          "section": "Ellipse"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Ellipse"
+        }
+      ]
+    },
+    {
+      "id": "math-hyperbola",
+      "videos": [
+        {
+          "title": "HYPERBOLA in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=zITyahKONeg",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h 33m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 new syllabus: CONIC SECTIONS ONE SHOT| FULL THEORY +PYQ’s +Tricks | NEHA AGRAWAL |",
+          "url": "https://www.youtube.com/watch?v=ze6pUWYfAvY",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 41m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Coordinate Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131246-JEE-Main-Revision-Notes-on-Coordinate-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Co-ordinate Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/co-ordinate-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Coordinate Geometry (G. Tewani)",
+          "section": "Hyperbola"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Coordinate Geometry (S.K. Goyal)",
+          "section": "Hyperbola"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Hyperbola"
+        }
+      ]
+    },
+    {
+      "id": "math-vector-algebra",
+      "videos": [
+        {
+          "title": "VECTORS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=FsTlbTQyuJ0",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7h 10m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: VECTORS & 3D GEOMETRY 3.0 \"THEORY+ DPP+TESTING\" NEHA MAM| MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=QWo-Uy7KRp4",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 11m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Vector Algebra (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131524-JEE-Main-Vector-Algebra-Revision-Notes-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Vector Algebra",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/vector-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Vectors and 3D Geometry (G. Tewani)",
+          "section": "Vectors"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Vectors and 3D Geometry (Amit M. Agarwal)",
+          "section": "Vector Algebra / Product of Vectors"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Vectors"
+        }
+      ]
+    },
+    {
+      "id": "math-3d-geometry",
+      "videos": [
+        {
+          "title": "THREE-DIMENSIONAL GEOMETRY in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=t_RMMkiYj4g",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h 56m"
+        },
+        {
+          "title": "JEE MAINS 2026/27: VECTORS & 3D GEOMETRY 3.0 \"THEORY+ DPP+TESTING\" NEHA MAM| MATHEMATICALLY INCLINED",
+          "url": "https://www.youtube.com/watch?v=QWo-Uy7KRp4",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "5h 11m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Three-Dimensional Geometry (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131416-JEE-Main-Revision-Notes-on-Three-Dimensional-Geometry-Free-PDF-Download.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Three Dimensional Geometry",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/three-dimensional-geometry-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Vectors and 3D Geometry (G. Tewani)",
+          "section": "Three-Dimensional Geometry"
+        },
+        {
+          "name": "Arihant Skills in Mathematics: Vectors and 3D Geometry (Amit M. Agarwal)",
+          "section": "Three Dimensional Coordinate System / Lines and Planes"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "3D Geometry"
+        }
+      ]
+    },
+    {
+      "id": "math-statistics",
+      "videos": [
+        {
+          "title": "STATISTICS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=mWa7eSpT6kg",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h 32m"
+        },
+        {
+          "title": "JEE MAINS & ADVANCED 2026/27 : STATISTICS+THEORY +PYQ +DPP (Video Solutions)+CBT TEST | NEHA AGRAWAL",
+          "url": "https://www.youtube.com/watch?v=WFY1D61ZOV0",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 14m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Statistics and Probability (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131711-JEE-Main-Revision-Notes-on-Statistics-and-Probability-Free-PDF.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Statistics and Probability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/statistics-probability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Exemplar Class 11",
+          "section": "Statistics"
+        }
+      ]
+    },
+    {
+      "id": "math-probability",
+      "videos": [
+        {
+          "title": "PROBABILITY in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=3OFuYbk-BV4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 51m"
+        },
+        {
+          "title": "JEE MAINS 2026/27 : PROBABILITY+ 3.0 THEORY +PYQ +DPP (Video Solutions)+ CBT TEST| NEHA AGRAWAL #jee",
+          "url": "https://www.youtube.com/watch?v=N1gW3lZx_4I",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "3h 51m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "eSaral JEE Main Revision Notes: Statistics and Probability (PDF)",
+          "url": "https://www.esaral.com/media/uploads/2024/4/5/131711-JEE-Main-Revision-Notes-on-Statistics-and-Probability-Free-PDF.pdf"
+        },
+        {
+          "title": "Aakash JEE Main Formula Sheet: Statistics and Probability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/statistics-probability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Probability"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Probability"
+        },
+        {
+          "name": "NCERT Exemplar Class 11",
+          "section": "Probability"
+        }
+      ]
+    },
+    {
+      "id": "math-conditional-probability",
+      "videos": [
+        {
+          "title": "PROBABILITY in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=3OFuYbk-BV4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h 51m"
+        },
+        {
+          "title": "PROBABILITY for JEE ADVANCED | JEE Advanced Exclusive THEORY + PYQ's + Cengage Qs | NEHA AGRAWAL",
+          "url": "https://www.youtube.com/watch?v=XT5QXwGwC4A",
+          "channel": "Neha Agrawal Mathematically Inclined",
+          "language": "english",
+          "duration": "1h 59m"
+        }
+      ],
+      "notes": [
+        {
+          "title": "Aakash JEE Main Formula Sheet: Statistics and Probability",
+          "url": "https://www.aakash.ac.in/jee-main-maths-formulas/statistics-probability-formulas"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "Cengage Algebra (G. Tewani)",
+          "section": "Probability (conditional probability, Bayes' theorem, random variables)"
+        },
+        {
+          "name": "Black Book: Advanced Problems in Mathematics for JEE (Vikas Gupta, Pankaj Joshi)",
+          "section": "Probability"
+        },
+        {
+          "name": "NCERT Exemplar Class 12",
+          "section": "Probability"
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Book sections are given as topic names, not verified chapter titles or numbers; they vary by edition (Cengage, Arihant, Black Book).",
+    "Statistics: no standard JEE problem book chapter confirmed, so only NCERT Exemplar is listed.",
+    "Neha Agrawal (Mathematically Inclined) videos are marked english; she teaches mainly in English with occasional Hindi.",
+    "Several Neha Agrawal videos cover two chapters together (Matrices & Determinants, Conic Sections, Vectors & 3D, Limits/Continuity/Derivatives, Differential Equations & Area).",
+    "math-conditional-probability: no dedicated one-shot found; uses the PW Manzil Probability one-shot and Neha Agrawal's JEE Advanced Probability video, assumed to cover conditional probability, Bayes and random variables (contents not checked minute by minute).",
+    "math-logarithms: no dedicated free formula sheet found, so notes are empty.",
+    "math-methods-of-differentiation, math-application-of-derivatives, math-area-under-curves, math-conditional-probability: the eSaral PDFs don't cover these topics, so only the Aakash formula page is listed.",
+    "ncert_useful is false for Trigonometric Equations and Quadratic Equations because the rationalised NCERT has little or nothing on these; true elsewhere.",
+    "Video durations are from YouTube playlist metadata as of 2026-10-01."
+  ]
+}

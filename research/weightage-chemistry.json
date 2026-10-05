@@ -1,0 +1,1459 @@
+{
+  "subject": "chemistry",
+  "chapters": [
+    {
+      "id": "chem-mole-concept",
+      "main": {
+        "avg_questions_per_shift": 1.27,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.19,
+          "2021": 1.38,
+          "2022": 1.52,
+          "2023": 1.46,
+          "2024": 1.35,
+          "2025": 1.53,
+          "2026": 0.89
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 0,
+          "2022": 2,
+          "2023": 2,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 1.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "~1.3 Qs/shift in Main from a short, formula-driven chapter that also feeds every physical-chemistry numerical",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/some-basic-concepts-of-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/some-basic-concepts-of-chemistry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-redox",
+      "main": {
+        "avg_questions_per_shift": 0.47,
+        "by_year": {
+          "2019": 0.38,
+          "2020": 0.44,
+          "2021": 0.27,
+          "2022": 0.35,
+          "2023": 0.42,
+          "2024": 0.75,
+          "2025": 0.37,
+          "2026": 0.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 3,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Small chapter, quick to finish; ~0.5 Q/shift plus balancing skills reused in electrochem and titration problems",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/redox-reactions",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/redox-reactions",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-atomic-structure",
+      "main": {
+        "avg_questions_per_shift": 1.17,
+        "by_year": {
+          "2019": 1.19,
+          "2020": 0.81,
+          "2021": 1.0,
+          "2022": 1.13,
+          "2023": 1.21,
+          "2024": 1.15,
+          "2025": 1.11,
+          "2026": 1.37
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 2,
+          "2025": 0,
+          "2026": 2
+        },
+        "avg_questions": 1.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Steady ~1.2 Qs/shift; formula-based numericals (Bohr, de Broglie, quantum numbers) that are fast to master",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/structure-of-atom",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/structure-of-atom",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-states-of-matter",
+      "main": {
+        "avg_questions_per_shift": 0.02,
+        "by_year": {
+          "2019": 0.44,
+          "2020": 0.31,
+          "2021": 0.46,
+          "2022": 0.57,
+          "2023": 0.38,
+          "2024": 0.0,
+          "2025": 0.05,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 2,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Out of Main since 2024; still ~0.75 Q/yr in Advanced, short gas-law chapter",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/gaseous-state",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-thermodynamics",
+      "main": {
+        "avg_questions_per_shift": 1.22,
+        "by_year": {
+          "2019": 1.38,
+          "2020": 0.88,
+          "2021": 0.92,
+          "2022": 1.0,
+          "2023": 1.04,
+          "2024": 1.1,
+          "2025": 1.63,
+          "2026": 1.16
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 2,
+          "2021": 4,
+          "2022": 2,
+          "2023": 4,
+          "2024": 1,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 2.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "High weight in both exams (~1.3/shift Main, ~2.3/yr Adv) but sign conventions and concepts take time",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/thermodynamics",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/thermodynamics",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://allen.in/jee-advanced/analysis",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-chemical-equilibrium",
+      "main": {
+        "avg_questions_per_shift": 0.6,
+        "by_year": {
+          "2019": 0.63,
+          "2020": 0.56,
+          "2021": 0.73,
+          "2022": 0.48,
+          "2023": 0.54,
+          "2024": 0.5,
+          "2025": 0.58,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Short chapter with ~0.6 Q/shift; Kp/Kc/Le Chatelier questions are formulaic",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-equilibrium",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/chemical-equilibrium",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage"
+      ]
+    },
+    {
+      "id": "chem-ionic-equilibrium",
+      "main": {
+        "avg_questions_per_shift": 0.68,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.81,
+          "2021": 0.58,
+          "2022": 0.74,
+          "2023": 0.63,
+          "2024": 0.45,
+          "2025": 0.84,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 2,
+          "2021": 0,
+          "2022": 2,
+          "2023": 1,
+          "2024": 0,
+          "2025": 2,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "~0.7 Q/shift Main, ~0.9/yr Adv; pH/buffer/Ksp calculations are calculation-heavy and error-prone",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/ionic-equilibrium",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/ionic-equilibrium",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-solid-state",
+      "main": {
+        "avg_questions_per_shift": 0.0,
+        "by_year": {
+          "2019": 0.69,
+          "2020": 0.31,
+          "2021": 0.58,
+          "2022": 0.39,
+          "2023": 0.46,
+          "2024": 0.0,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Out of Main since 2024; ~1 Q/yr in Advanced from a compact, geometry-based chapter",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/solid-state",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-solutions",
+      "main": {
+        "avg_questions_per_shift": 1.01,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.75,
+          "2021": 0.96,
+          "2022": 0.96,
+          "2023": 1.0,
+          "2024": 0.75,
+          "2025": 1.16,
+          "2026": 1.21
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 2,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 3
+        },
+        "avg_questions": 1.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "~1 Q/shift in Main and ~1.4/yr Adv; colligative-property numericals are formulaic",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/solutions",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/solutions",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-electrochemistry",
+      "main": {
+        "avg_questions_per_shift": 1.19,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 1.0,
+          "2021": 0.85,
+          "2022": 1.0,
+          "2023": 1.13,
+          "2024": 1.55,
+          "2025": 1.16,
+          "2026": 1.11
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 3,
+          "2022": 2,
+          "2023": 1,
+          "2024": 2,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 1.63,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "~1.3 Qs/shift Main and ~1.6/yr Adv; Nernst/conductance numericals reward practice",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/electrochemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/electrochemistry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-chemical-kinetics",
+      "main": {
+        "avg_questions_per_shift": 1.18,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.94,
+          "2021": 1.0,
+          "2022": 1.04,
+          "2023": 0.96,
+          "2024": 1.0,
+          "2025": 1.37,
+          "2026": 1.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 2,
+          "2021": 1,
+          "2022": 1,
+          "2023": 0,
+          "2024": 2,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 1.5,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "~1.3 Qs/shift from a short, formula-driven chapter; classic high-ROI physical chapter",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-kinetics-and-nuclear-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/chemical-kinetics-and-nuclear-chemistry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-surface-chemistry",
+      "main": {
+        "avg_questions_per_shift": 0.03,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.88,
+          "2021": 0.81,
+          "2022": 0.83,
+          "2023": 1.0,
+          "2024": 0.1,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Out of Main since 2024; ~1 Q/yr in Advanced recently, theory-based and quick",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/surface-chemistry",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-periodic-table",
+      "main": {
+        "avg_questions_per_shift": 1.1,
+        "by_year": {
+          "2019": 0.81,
+          "2020": 1.06,
+          "2021": 0.73,
+          "2022": 0.65,
+          "2023": 0.63,
+          "2024": 1.3,
+          "2025": 1.47,
+          "2026": 0.95
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 1
+        },
+        "avg_questions": 0.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "~1.2 Qs/shift in Main from a short NCERT-trend chapter; rarely a standalone Advanced question",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/periodic-table-and-periodicity",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/periodic-table-and-periodicity",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-chemical-bonding",
+      "main": {
+        "avg_questions_per_shift": 1.45,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 1.13,
+          "2021": 1.12,
+          "2022": 1.26,
+          "2023": 1.33,
+          "2024": 2.45,
+          "2025": 1.05,
+          "2026": 1.21
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 3,
+          "2024": 2,
+          "2025": 2,
+          "2026": 3
+        },
+        "avg_questions": 1.5,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "~1.5 Qs/shift Main, ~1.5/yr Adv; foundation for all of inorganic",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-bonding-and-molecular-structure",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/chemical-bonding-and-molecular-structure",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-hydrogen",
+      "main": {
+        "avg_questions_per_shift": 0.0,
+        "by_year": {
+          "2019": 0.88,
+          "2020": 0.5,
+          "2021": 0.85,
+          "2022": 0.65,
+          "2023": 0.71,
+          "2024": 0.0,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "Out of Main since 2024; Advanced asked it only twice in 2019-2026",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/hydrogen"
+      ]
+    },
+    {
+      "id": "chem-s-block",
+      "main": {
+        "avg_questions_per_shift": 0.02,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.5,
+          "2021": 0.73,
+          "2022": 1.09,
+          "2023": 1.54,
+          "2024": 0.05,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "Out of Main since 2024; examside tags no Advanced question 2019-2026",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/s-block-elements"
+      ]
+    },
+    {
+      "id": "chem-p-block-13-14",
+      "main": {
+        "avg_questions_per_shift": 0.4,
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": 0.31,
+          "2022": 0.57,
+          "2023": 0.5,
+          "2024": 0.55,
+          "2025": 0.11,
+          "2026": 0.47
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": null,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.43,
+        "source_type": "estimate"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Memory-based NCERT chapter (boron, aluminium, carbon, silicon families); ~0.5 Q/shift in Main",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/p-block-elements",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-p-block-15-18",
+      "main": {
+        "avg_questions_per_shift": 0.6,
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": 0.85,
+          "2022": 1.26,
+          "2023": 0.67,
+          "2024": 0.55,
+          "2025": 0.37,
+          "2026": 0.47
+        },
+        "source_type": "estimate"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": null,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 2,
+          "2025": 3,
+          "2026": 1
+        },
+        "avg_questions": 1.71,
+        "source_type": "estimate"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Large NCERT-memory chapter but the bulk of Advanced p-block questions (oxoacids, N/P/S/halogen chemistry)",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/p-block-elements",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-d-f-block",
+      "main": {
+        "avg_questions_per_shift": 1.23,
+        "by_year": {
+          "2019": 0.88,
+          "2020": 0.75,
+          "2021": 1.38,
+          "2022": 1.3,
+          "2023": 1.25,
+          "2024": 1.7,
+          "2025": 1.0,
+          "2026": 1.16
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 3,
+          "2020": 1,
+          "2021": 0,
+          "2022": 3,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 1.13,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "~1.3 Qs/shift in Main, mostly NCERT statement questions",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/d-and-f-block-elements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/d-and-f-block-elements",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-coordination-compounds",
+      "main": {
+        "avg_questions_per_shift": 2.04,
+        "by_year": {
+          "2019": 1.75,
+          "2020": 2.0,
+          "2021": 1.5,
+          "2022": 1.35,
+          "2023": 1.96,
+          "2024": 2.4,
+          "2025": 2.26,
+          "2026": 1.89
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 2,
+          "2021": 3,
+          "2022": 1,
+          "2023": 2,
+          "2024": 4,
+          "2025": 2,
+          "2026": 2
+        },
+        "avg_questions": 2.13,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 5,
+      "roi_reason": "Single highest-weight chemistry chapter in Main (~2.2/shift) and ~2/yr in Advanced; rule-based and quick to learn",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/coordination-compounds",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/coordination-compounds",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-metallurgy",
+      "main": {
+        "avg_questions_per_shift": 0.02,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 0.56,
+          "2021": 1.19,
+          "2022": 0.96,
+          "2023": 0.92,
+          "2024": 0.0,
+          "2025": 0.05,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 2,
+          "2020": 1,
+          "2021": 2,
+          "2022": 2,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 1.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "Out of Main since 2024; ~1 Q/yr in Advanced until 2023, none tagged 2024-2026",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/isolation-of-elements",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/isolation-of-elements",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-qualitative-analysis",
+      "main": {
+        "avg_questions_per_shift": 0.35,
+        "by_year": {
+          "2019": 0.0,
+          "2020": 0.13,
+          "2021": 0.15,
+          "2022": 0.22,
+          "2023": 0.25,
+          "2024": 0.4,
+          "2025": 0.63,
+          "2026": 0.26
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 2,
+          "2022": 0,
+          "2023": 0,
+          "2024": 2,
+          "2025": 2,
+          "2026": 0
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "~0.4 Q/shift Main and ~0.75/yr Adv; memorisation of tests, overlaps with d/p-block",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/salt-analysis",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/salt-analysis",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-environmental-chemistry",
+      "main": {
+        "avg_questions_per_shift": 0.0,
+        "by_year": {
+          "2019": 1.25,
+          "2020": 0.5,
+          "2021": 0.85,
+          "2022": 0.65,
+          "2023": 0.88,
+          "2024": 0.0,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 1,
+      "roi_reason": "Out of Main since 2024 and not tagged in any Advanced paper 2019-2026",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry"
+      ]
+    },
+    {
+      "id": "chem-goc",
+      "main": {
+        "avg_questions_per_shift": 1.78,
+        "by_year": {
+          "2019": 1.31,
+          "2020": 0.94,
+          "2021": 1.23,
+          "2022": 1.35,
+          "2023": 0.79,
+          "2024": 3.1,
+          "2025": 1.68,
+          "2026": 1.42
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 5,
+          "2021": 4,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 1.38,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 4,
+      "roi_reason": "~2 Qs/shift in Main (includes isomerism/nomenclature) and the base of all organic chemistry",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/basics-of-organic-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/basics-of-organic-chemistry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-isomerism",
+      "main": {
+        "avg_questions_per_shift": null,
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": null,
+          "2026": null
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": null,
+          "2026": null
+        },
+        "avg_questions": null,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Short chapter; stereo/isomer-count questions recur in both exams but are counted inside GOC by every source",
+      "confidence": "low",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/basics-of-organic-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/basics-of-organic-chemistry",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-practical-organic",
+      "main": {
+        "avg_questions_per_shift": 0.77,
+        "by_year": {
+          "2019": 0.44,
+          "2020": 0.25,
+          "2021": 0.77,
+          "2022": 0.61,
+          "2023": 0.42,
+          "2024": 0.85,
+          "2025": 0.63,
+          "2026": 1.16
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 2,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 0.75,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 4,
+      "roi_reason": "Rising in Main (~0.9 Q/shift 2024-26) from a short purification/detection chapter",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/practical-organic-chemistry",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/practical-organic-chemistry",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-hydrocarbons",
+      "main": {
+        "avg_questions_per_shift": 0.95,
+        "by_year": {
+          "2019": 1.06,
+          "2020": 0.81,
+          "2021": 0.88,
+          "2022": 0.48,
+          "2023": 0.88,
+          "2024": 1.0,
+          "2025": 0.95,
+          "2026": 1.05
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 4,
+          "2020": 1,
+          "2021": 3,
+          "2022": 5,
+          "2023": 0,
+          "2024": 1,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 2.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "~1 Q/shift Main and ~2/yr Adv; reaction-heavy but central to organic",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrocarbons",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/hydrocarbons",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-haloalkanes-haloarenes",
+      "main": {
+        "avg_questions_per_shift": 1.0,
+        "by_year": {
+          "2019": 1.0,
+          "2020": 1.06,
+          "2021": 1.0,
+          "2022": 0.78,
+          "2023": 0.79,
+          "2024": 1.25,
+          "2025": 1.0,
+          "2026": 0.84
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 1,
+          "2024": 0,
+          "2025": 1,
+          "2026": 0
+        },
+        "avg_questions": 0.25,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "~1 Q/shift in Main; SN1/SN2 mechanisms reused across organic",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/haloalkanes-and-haloarenes",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/haloalkanes-and-haloarenes",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-alcohols-phenols-ethers",
+      "main": {
+        "avg_questions_per_shift": 0.82,
+        "by_year": {
+          "2019": 0.94,
+          "2020": 0.81,
+          "2021": 0.92,
+          "2022": 1.13,
+          "2023": 1.33,
+          "2024": 1.1,
+          "2025": 0.37,
+          "2026": 0.74
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 1,
+          "2021": 0,
+          "2022": 0,
+          "2023": 2,
+          "2024": 1,
+          "2025": 3,
+          "2026": 0
+        },
+        "avg_questions": 0.88,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "~0.7-0.8 Q/shift Main, ~0.9/yr Adv; reaction-memory chapter",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/alcohols-phenols-and-ethers",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/alcohols-phenols-and-ethers",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/"
+      ]
+    },
+    {
+      "id": "chem-aldehydes-ketones",
+      "main": {
+        "avg_questions_per_shift": 1.0,
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": 1.0,
+          "2026": null
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": 1,
+          "2024": null,
+          "2025": 1,
+          "2026": null
+        },
+        "avg_questions": 1.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "Combined carbonyl chapters are the 2nd-3rd heaviest in Main and the heaviest in Advanced, but there are many name reactions to learn",
+      "confidence": "low",
+      "sources": [
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/aldehydes-ketones-and-carboxylic-acids",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/aldehydes-ketones-and-carboxylic-acids",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-carboxylic-acids",
+      "main": {
+        "avg_questions_per_shift": 0.3,
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": 0.3,
+          "2026": null
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": null,
+          "2020": null,
+          "2021": null,
+          "2022": null,
+          "2023": null,
+          "2024": null,
+          "2025": 3,
+          "2026": null
+        },
+        "avg_questions": 3.0,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 3,
+      "roi_reason": "Smaller than aldehydes/ketones in Main, but acid-derivative questions show up in Advanced",
+      "confidence": "low",
+      "sources": [
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/aldehydes-ketones-and-carboxylic-acids",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/aldehydes-ketones-and-carboxylic-acids",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-amines",
+      "main": {
+        "avg_questions_per_shift": 1.33,
+        "by_year": {
+          "2019": 1.38,
+          "2020": 1.0,
+          "2021": 1.96,
+          "2022": 1.26,
+          "2023": 1.33,
+          "2024": 1.4,
+          "2025": 1.16,
+          "2026": 1.37
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 5,
+          "2022": 2,
+          "2023": 3,
+          "2024": 2,
+          "2025": 2,
+          "2026": 1
+        },
+        "avg_questions": 2.13,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": true,
+      "roi": 3,
+      "roi_reason": "~1.3 Qs/shift Main and ~2/yr Adv; diazonium chemistry links to aromatic organic",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/compounds-containing-nitrogen",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/compounds-containing-nitrogen",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-biomolecules",
+      "main": {
+        "avg_questions_per_shift": 1.04,
+        "by_year": {
+          "2019": 1.13,
+          "2020": 0.88,
+          "2021": 1.08,
+          "2022": 1.04,
+          "2023": 1.0,
+          "2024": 1.1,
+          "2025": 1.05,
+          "2026": 1.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 1,
+          "2021": 1,
+          "2022": 1,
+          "2023": 1,
+          "2024": 1,
+          "2025": 1,
+          "2026": 2
+        },
+        "avg_questions": 1.13,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 5,
+      "roi_reason": "About one guaranteed NCERT-fact question per Main shift and ~1/yr in Advanced; pure recall",
+      "confidence": "high",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/biomolecules",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/biomolecules",
+        "https://www.pw.live/iit-jee/exams/jee-main-chapter-wise-weightage",
+        "https://www.collegedekho.com/news/chemistry-chapter-wise-number-of-questions-asked-in-jee-main-2025-session-1-64649/",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/",
+        "https://allen.in/jee-advanced/analysis"
+      ]
+    },
+    {
+      "id": "chem-polymers",
+      "main": {
+        "avg_questions_per_shift": 0.0,
+        "by_year": {
+          "2019": 0.75,
+          "2020": 0.31,
+          "2021": 0.54,
+          "2022": 0.83,
+          "2023": 0.5,
+          "2024": 0.0,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 1,
+          "2020": 0,
+          "2021": 0,
+          "2022": 1,
+          "2023": 0,
+          "2024": 0,
+          "2025": 1,
+          "2026": 1
+        },
+        "avg_questions": 0.5,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 2,
+      "roi_reason": "Out of Main since 2024; ~0.5 Q/yr in Advanced",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/polymers",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/polymers",
+        "https://www.adarshbarnwal.com/jee-advanced-2025-2026-analysis/"
+      ]
+    },
+    {
+      "id": "chem-everyday-life",
+      "main": {
+        "avg_questions_per_shift": 0.03,
+        "by_year": {
+          "2019": 0.19,
+          "2020": 0.56,
+          "2021": 0.5,
+          "2022": 1.09,
+          "2023": 0.71,
+          "2024": 0.1,
+          "2025": 0.0,
+          "2026": 0.0
+        },
+        "source_type": "coaching_analysis"
+      },
+      "advanced": {
+        "by_year": {
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "2022": 0,
+          "2023": 0,
+          "2024": 1,
+          "2025": 0,
+          "2026": 0
+        },
+        "avg_questions": 0.13,
+        "source_type": "coaching_analysis"
+      },
+      "high_yield": false,
+      "roi": 1,
+      "roi_reason": "Out of Main since 2024; one Advanced question tagged in 2019-2026",
+      "confidence": "medium",
+      "sources": [
+        "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+        "https://questions.examside.com/past-years/jee/jee-advanced/chemistry/chemistry-in-everyday-life"
+      ]
+    }
+  ],
+  "method_notes": "PRIMARY SOURCE: examside (questions.examside.com) chapter-wise PYQ lists. For every JEE Main chapter page I read its 'PYQ Statistics' table (total questions and average per paper per year) and, for 2019-2026, recounted questions from the per-question shift labels; the two agree. Summed over all examside chapters the yearly totals equal exactly papers x questions-per-paper (2019: 16 shifts x 30 = 480; 2020: 16 x 25 = 400; 2021: 26 x 30 = 780; 2022: 23 x 30 = 690; 2023: 24 x 30 = 720; 2024: 20 x 30 = 600; 2025: 19 x 25 = 475; 2026: 19 x 25 = 475), so every question is tagged to exactly one chapter. main.by_year = examside total for that chapter / number of shifts that year. For 2021-2024 the paper had 30 chemistry questions (10 numericals, of which only 5 had to be attempted), and examside counts all 30, so per-shift values for those years are on a 30-question base; 2020 and 2025-2026 are on a 25-question base. main.avg_questions_per_shift = 0.7 x mean(2024, 2025, 2026) + 0.3 x mean(2019-2023), to weight the post-2024-syllabus papers. For the nine chapters removed from the Main syllabus in 2024, avg = mean(2024-2026) only (about 0), because the old numbers no longer apply; their 2019-2023 values are still kept in by_year. advanced.by_year = examside count of questions tagged to the chapter across Paper 1 + Paper 2 (counted from per-question labels; totals check: 2019 36, 2020 36, 2021 38, 2022 36, 2023 34, 2024 34, 2025 32, 2026 34). advanced.avg_questions = mean of non-null years. Chapter mapping from examside: Gaseous State -> chem-states-of-matter; Chemical Kinetics and Nuclear Chemistry -> chem-chemical-kinetics; Periodic Table & Periodicity -> chem-periodic-table; Isolation of Elements -> chem-metallurgy; Salt Analysis -> chem-qualitative-analysis; Basics of Organic Chemistry -> chem-goc (it also contains isomerism and nomenclature questions); Compounds Containing Nitrogen -> chem-amines. examside has no Advanced 'Environmental Chemistry' chapter, and because its Advanced totals add up exactly, environmental chemistry is recorded as 0 there. CROSS-CHECKS: JEE Main 2025 Session 1 (10 shifts) per-chapter counts from CollegeDekho and from the PW/Vedantu table (Jan + Apr 2025) agree with examside within about 1-3 questions per session for coordination, thermodynamics, kinetics, electrochemistry, mole concept, atomic structure, biomolecules, hydrocarbons, haloalkanes, solutions and the equilibrium chapters (e.g. coordination Jan 2025: examside 20, CollegeDekho 19, PW 18; thermodynamics 17/17/15). Bigger disagreements, which come from where each source draws chapter lines: chemical bonding (examside 9 vs CollegeDekho 13 vs PW 8 in Jan 2025), periodic table (examside 28 vs PW 20 for all of 2025), alcohols (examside 7 vs PW 15 for 2025), p-block (examside 10 vs PW 19 for 2025), redox (examside 7 vs PW 3), amines (examside 22 vs PW 19). PW's 'Some Basic Principles and Techniques' (20 in Jan 2025) equals examside GOC (16) + practical organic (4). JEE Advanced: Allen's 2023 chapter table and Adarsh Barnwal's 2025 table agree with examside on most chapters (e.g. 2023 thermodynamics 4/4; 2025 p-block 3/3, coordination 2/2, electrochemistry 2/2, salt analysis 2/2). SPLITS: (1) p-Block. examside lumps groups 13-18. I sorted each Main 2021-2026 and Advanced 2019-2026 p-block question by the elements and compounds in its text (keyword/formula matching, plus reading every ambiguous 2021-2026 Main question and every Advanced question by hand). Questions that span both groups or are general p-block questions were left out of both chapters. Unassigned Main counts: 2021 7, 2022 4, 2023 4, 2024 9, 2025 1, 2026 2; Advanced: 2020 2 (so 2020 is null), 2022 2, 2026 1. Main 2019-2020 are null because too many questions had formulas only as images. These values are marked source_type 'estimate'. (2) Aldehydes/ketones vs carboxylic acids. examside, PW and Vedantu all merge these chapters, and most questions are reaction schemes drawn as images, so I could not split them. Merged examside Main per-shift values: 2019 1.81, 2020 1.44, 2021 1.65, 2022 1.30, 2023 1.25, 2024 1.55, 2025 1.37, 2026 1.84 (weighted avg 1.56). Merged Advanced totals: 2019 4, 2020 2, 2021 1, 2022 1, 2023 3, 2024 6, 2025 1, 2026 6. The only split counts found: CollegeDekho Main Jan 2025 (Aldehydes and Ketones 10, Carboxylic Acid Derivatives 3, over 10 shifts, giving 1.0 and 0.3 per shift; this is Session 1 only). For Advanced: Adarsh Barnwal 2025 (Carbonyl 1, Carboxylic acid & derivative 3) and Allen 2023 (Carbonyl 1; carboxylic acids folded into a 5-question 'mixed' group, so null). The per-chapter averages for these two chapters rest on these few data points only. (3) Isomerism. No source counts it separately for Main or Advanced; it sits inside GOC / 'Basics of Organic Chemistry', so it is null. A keyword scan of examside GOC finds roughly 5-16 identifiable isomerism/stereo questions a year in Main 2024-2026. That figure is indicative only and is not used. high_yield = in roughly the top 30% by main.avg_questions_per_shift or advanced.avg_questions (coordination, GOC, chemical bonding, amines, mole concept, d/f block, thermodynamics, kinetics, electrochemistry, hydrocarbons, carbonyl chapters, p-block 15-18). roi is a judgement based on the usual coaching view of chapter length and difficulty against these counts. confidence: high = examside plus at least one other source agree closely; medium = examside only, or sources disagree on chapter boundaries; low = derived split or very thin data.",
+  "uncertainties": [
+    "Removed-from-Main chapters that still had questions tagged in Main 2024-2026 (examside): Surface Chemistry 2 in 2024 (Tyndall-effect assertion-reason, 31 Jan S1; 'adsorption principle used in which purification method', 4 Apr S2, which is really chromatography); Chemistry in Everyday Life 2 in 2024 (saponification/soap, 1 Feb S2; uses of CCl4/freons/DDT, 6 Apr S1, which is really NCERT haloalkanes); s-Block 1 in 2024 (flame colour assertion-reason, 6 Apr S2); States of Matter 1 in 2025 (van der Waals constant 'a' order, 7 Apr S1); Metallurgy 1 in 2025 (example of calcination, 28 Jan S2). CollegeDekho's Jan 2025 table also lists 1 'States of Matter' question. Most are borderline topics that the current syllabus keeps under other chapters, but they are real questions.",
+    "chem-isomerism: no per-chapter counts in any source for Main or Advanced (always merged into GOC); all values null.",
+    "chem-aldehydes-ketones and chem-carboxylic-acids: Main values come from CollegeDekho Jan 2025 Session 1 only; Advanced values only from Allen 2023 and Adarsh Barnwal 2025. All other years null. The Advanced average for carboxylic acids (3.0) is a single year and should not be read as a stable figure; the merged examside average for both chapters together is about 3.0 per year.",
+    "chem-p-block-13-14 / chem-p-block-15-18: split by my own classification of examside question text (estimate). Main 2019-2020 and Advanced 2020 are null; some general p-block questions are assigned to neither chapter.",
+    "Main 2021-2024 per-shift values are on a 30-question paper (including 5 optional numericals) and 2025-2026 on 25 questions, so before 2025 the numbers run a little high compared with what a candidate actually had to attempt.",
+    "Chapter boundaries differ between sources (bonding vs periodic table vs p-block, alcohols vs aromatic compounds, GOC vs practical organic vs salt analysis). Values follow examside's tagging, which is one site's editorial classification, not an official one.",
+    "No independent full-year chemistry chapter count was found for JEE Main 2026 or for JEE Main 2019-2024. Those years rest on examside alone, with partial agreement from PW's 5-year percentage table.",
+    "JEE Advanced chapter counts for 2019-2022, 2024 and 2026 come from examside only; Allen (2023) and Adarsh Barnwal (2025) were the only cross-checks found.",
+    "chem-environmental-chemistry Advanced = 0 because examside tags no Advanced chemistry question to it (its Advanced totals add up exactly), not because a source states 0."
+  ]
+}

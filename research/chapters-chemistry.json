@@ -1,0 +1,728 @@
+{
+  "subject": "chemistry",
+  "syllabus_sources": [
+    {
+      "exam": "main",
+      "year": 2026,
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "exam": "advanced",
+      "year": 2026,
+      "url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf"
+    }
+  ],
+  "units": [
+    {
+      "id": "chem-physical",
+      "name": "Physical Chemistry"
+    },
+    {
+      "id": "chem-inorganic",
+      "name": "Inorganic Chemistry"
+    },
+    {
+      "id": "chem-organic",
+      "name": "Organic Chemistry"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chem-mole-concept",
+      "name": "Some Basic Concepts (Mole Concept)",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 1",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": false,
+      "notes": "Advanced also names normality and redox/neutralisation stoichiometry."
+    },
+    {
+      "id": "chem-redox",
+      "name": "Redox Reactions",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 2, Ch 7",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-mole-concept"
+      ],
+      "difficulty": 2,
+      "ncert_critical": false,
+      "notes": "Advanced covers redox under General topics (stoichiometry of redox reactions) rather than as a separate unit."
+    },
+    {
+      "id": "chem-atomic-structure",
+      "name": "Atomic Structure",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 2",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-states-of-matter",
+      "name": "States of Matter: Gases and Liquids",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-mole-concept"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT, so use the pre-2023 NCERT Class 11 chapter or coaching material. Part of this chapter is still in JEE Main (asked in 2024–26 papers or listed in Main's practical unit); the topics marked Main show which."
+    },
+    {
+      "id": "chem-thermodynamics",
+      "name": "Chemical Thermodynamics",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 5",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-mole-concept"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-chemical-equilibrium",
+      "name": "Chemical Equilibrium",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 6",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-thermodynamics"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-ionic-equilibrium",
+      "name": "Ionic Equilibrium",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 6",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-chemical-equilibrium",
+        "math-logarithms"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-solid-state",
+      "name": "Solid State",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 12 Ch 1)."
+    },
+    {
+      "id": "chem-solutions",
+      "name": "Solutions",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 1",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-mole-concept"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-electrochemistry",
+      "name": "Electrochemistry",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 2",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-redox",
+        "chem-thermodynamics",
+        "math-logarithms"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Advanced also names Faraday's laws, equivalent conductivity and corrosion."
+    },
+    {
+      "id": "chem-chemical-kinetics",
+      "name": "Chemical Kinetics",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 3",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-logarithms",
+        "math-indefinite-integration"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced adds catalysis (homogeneous, heterogeneous, enzyme)."
+    },
+    {
+      "id": "chem-surface-chemistry",
+      "name": "Surface Chemistry",
+      "unit_id": "chem-physical",
+      "branch": "physical",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 12 Ch 5); the old NCERT text is the best source. Part of this chapter is still in JEE Main (asked in 2024–26 papers or listed in Main's practical unit); the topics marked Main show which."
+    },
+    {
+      "id": "chem-periodic-table",
+      "name": "Classification of Elements and Periodicity",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 3",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-atomic-structure"
+      ],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": null
+    },
+    {
+      "id": "chem-chemical-bonding",
+      "name": "Chemical Bonding and Molecular Structure",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 1, Ch 4",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-atomic-structure",
+        "chem-periodic-table"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Advanced: MO diagrams only up to Ne2; VSEPR shapes listed explicitly."
+    },
+    {
+      "id": "chem-hydrogen",
+      "name": "Hydrogen",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-periodic-table"
+      ],
+      "difficulty": 1,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 11 Ch 9)."
+    },
+    {
+      "id": "chem-s-block",
+      "name": "s-Block Elements",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-periodic-table"
+      ],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 11 Ch 10)."
+    },
+    {
+      "id": "chem-p-block-13-14",
+      "name": "p-Block Elements (Groups 13 and 14)",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-periodic-table",
+        "chem-chemical-bonding"
+      ],
+      "difficulty": 3,
+      "ncert_critical": true,
+      "notes": "Main 2026 covers only general trends and unique behaviour of the first element (Unit 10). Advanced names specific compounds (borax, diborane, silicones, silicates, zeolites). Dropped from rationalised NCERT."
+    },
+    {
+      "id": "chem-p-block-15-18",
+      "name": "p-Block Elements (Groups 15 to 18)",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-periodic-table",
+        "chem-chemical-bonding"
+      ],
+      "difficulty": 4,
+      "ncert_critical": true,
+      "notes": "Main 2026 covers only general trends (Unit 10). Advanced names preparation/properties of NH3, HNO3, oxoacids, O3, H2SO4, interhalogens, xenon compounds. Dropped from rationalised NCERT."
+    },
+    {
+      "id": "chem-d-f-block",
+      "name": "d- and f-Block Elements",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 4",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-periodic-table"
+      ],
+      "difficulty": 3,
+      "ncert_critical": true,
+      "notes": "Main names K2Cr2O7 and KMnO4; Advanced names oxoanions of chromium and manganese."
+    },
+    {
+      "id": "chem-coordination-compounds",
+      "name": "Coordination Compounds",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 5",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-chemical-bonding",
+        "chem-d-f-block"
+      ],
+      "difficulty": 4,
+      "ncert_critical": true,
+      "notes": "Advanced adds metal carbonyls and names cis-trans and ionisation isomerism."
+    },
+    {
+      "id": "chem-metallurgy",
+      "name": "Isolation of Metals (Metallurgy)",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-thermodynamics",
+        "chem-electrochemistry"
+      ],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 12 Ch 6)."
+    },
+    {
+      "id": "chem-qualitative-analysis",
+      "name": "Qualitative (Salt) Analysis",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-ionic-equilibrium",
+        "chem-p-block-15-18",
+        "chem-d-f-block"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Main includes it under Unit 20 (Practical Chemistry) with its own cation/anion list; Advanced has a separate 'Principles of Qualitative Analysis' section. NCERT lab manual, not a textbook chapter."
+    },
+    {
+      "id": "chem-environmental-chemistry",
+      "name": "Environmental Chemistry",
+      "unit_id": "chem-inorganic",
+      "branch": "inorganic",
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 1,
+      "ncert_critical": true,
+      "notes": "Not in Main 2026; in Advanced (added in its 2023 revision, secondary source). Dropped from rationalised NCERT (was Class 11 Ch 14)."
+    },
+    {
+      "id": "chem-goc",
+      "name": "General Organic Chemistry",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-chemical-bonding"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Electronic effects, reactive intermediates, acidity/basicity, IUPAC nomenclature."
+    },
+    {
+      "id": "chem-isomerism",
+      "name": "Isomerism",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-goc"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Advanced limits stereoisomers to at most two asymmetric centres and excludes R,S and E,Z configurations."
+    },
+    {
+      "id": "chem-practical-organic",
+      "name": "Purification, Characterisation and Practical Organic Chemistry",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-goc"
+      ],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Main Unit 13 covers purification methods and quantitative estimation; Advanced covers detection of elements, functional-group tests and empirical formula by combustion only."
+    },
+    {
+      "id": "chem-hydrocarbons",
+      "name": "Hydrocarbons",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 11,
+      "ncert_chapter": "Class 11 Part 2, Ch 9",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-goc",
+        "chem-isomerism"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-haloalkanes-haloarenes",
+      "name": "Haloalkanes and Haloarenes",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 6",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-hydrocarbons"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced excludes the benzyne mechanism and cine substitution."
+    },
+    {
+      "id": "chem-alcohols-phenols-ethers",
+      "name": "Alcohols, Phenols and Ethers",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 7",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-haloalkanes-haloarenes"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-aldehydes-ketones",
+      "name": "Aldehydes and Ketones",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-alcohols-phenols-ethers"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-carboxylic-acids",
+      "name": "Carboxylic Acids and Derivatives",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-aldehydes-ketones"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Main 2026 names only acidic strength of carboxylic acids; Advanced names preparation and reactions (esters, acid chlorides, amides)."
+    },
+    {
+      "id": "chem-amines",
+      "name": "Amines and Diazonium Salts",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 9",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-carboxylic-acids"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "chem-biomolecules",
+      "name": "Biomolecules",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-aldehydes-ketones"
+      ],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Main names vitamins and hormones; Advanced names maltose, lactose and anomers (added in its 2023 revision, secondary source)."
+    },
+    {
+      "id": "chem-polymers",
+      "name": "Polymers",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "chem-hydrocarbons"
+      ],
+      "difficulty": 1,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 12 Ch 15). Part of this chapter is still in JEE Main (asked in 2024–26 papers or listed in Main's practical unit); the topics marked Main show which."
+    },
+    {
+      "id": "chem-everyday-life",
+      "name": "Chemistry in Everyday Life",
+      "unit_id": "chem-organic",
+      "branch": "organic",
+      "class": 12,
+      "ncert_chapter": null,
+      "in_main": false,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 1,
+      "ncert_critical": true,
+      "notes": "Removed from Main in 2024; still in Advanced. Dropped from rationalised NCERT (was Class 12 Ch 16)."
+    }
+  ],
+  "removed_or_changed": [
+    {
+      "item": "States of Matter (gases and liquids)",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://www.scribd.com/document/685225474/Chemistry-Deleted-and-Added-Portion-for-JEE-Main-2024-1"
+    },
+    {
+      "item": "Hydrogen",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://www.scribd.com/document/685225474/Chemistry-Deleted-and-Added-Portion-for-JEE-Main-2024-1"
+    },
+    {
+      "item": "s-Block Elements",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://www.scribd.com/document/685225474/Chemistry-Deleted-and-Added-Portion-for-JEE-Main-2024-1"
+    },
+    {
+      "item": "General Principles and Processes of Isolation of Metals",
+      "change": "Removed from Main in 2024; still in Advanced 2026 as 'Isolation of Metals'.",
+      "source_url": "https://www.scribd.com/document/685225474/Chemistry-Deleted-and-Added-Portion-for-JEE-Main-2024-1"
+    },
+    {
+      "item": "Solid State",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://arpitclasses.in/jee-main-chemistry-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Surface Chemistry",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://arpitclasses.in/jee-main-chemistry-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Polymers",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://arpitclasses.in/jee-main-chemistry-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Chemistry in Everyday Life",
+      "change": "Removed from Main in 2024; still in Advanced 2026.",
+      "source_url": "https://arpitclasses.in/jee-main-chemistry-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Environmental Chemistry",
+      "change": "Not in Main 2026; added to Advanced in its 2023 revision.",
+      "source_url": "https://www.adarshbarnwal.com/jee-advanced-syllabus/"
+    },
+    {
+      "item": "p-Block Elements (Groups 13 to 18)",
+      "change": "Main 2026 keeps only a general introduction and trends; detailed compounds are Advanced-only.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "item": "R,S and E,Z configurations; benzyne mechanism",
+      "change": "Explicitly excluded from the Advanced 2026 syllabus.",
+      "source_url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf"
+    }
+  ],
+  "uncertainties": [
+    "The 2027 syllabi were not published as of 25 Sep 2026; this map uses the JEE Main 2026 (NTA) and JEE Advanced 2026 (IIT Roorkee brochure, Annexure-I) texts.",
+    "vmc_name and vmc_order are null for every chapter: no current public VMC Chemistry chapter list or teaching order was found.",
+    "Collegedunia's 2026 deleted-syllabus article claims Alcohols, Phenols and Ethers and Group 13-14 p-block were removed from Main. The official NTA 2026 text contradicts this (Unit 17 covers alcohols, phenols and ethers; Unit 10 covers Groups 13-18 general trends), so the official text was followed.",
+    "The 2024 Main deletions come from coaching/education summaries (a Scribd-hosted coaching sheet and Arpit Classes); NTA did not publish a change list. They match what is absent from the NTA 2026 text.",
+    "ncert_chapter is null for chapters dropped from the rationalised NCERT books (States of Matter, Solid State, Surface Chemistry, Hydrogen, s-Block, both p-Block chapters, Metallurgy, Environmental Chemistry, Polymers, Everyday Life). Class 11 numbering assumes the rationalised 9-chapter edition (Part 1: Ch 1-6, Part 2: Ch 7-9); Class 12 numbering follows the 10-chapter edition confirmed by several NCERT-solution sites.",
+    "Chemical Bonding is placed under Inorganic; some coaching institutes (possibly VMC) teach it under Physical Chemistry.",
+    "Main Unit 20 also lists physical-chemistry experiments (titrations, enthalpy of neutralisation, sols, kinetics of iodide/H2O2) and inorganic preparations (Mohr's salt, potash alum). These will be attached as Main-only topics to the relevant chapters in Section 2 rather than made a separate chapter.",
+    "difficulty and ncert_critical are editorial judgments reflecting common teacher/aspirant descriptions, not a single cited source."
+  ]
+}

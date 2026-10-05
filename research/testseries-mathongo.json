@@ -1,0 +1,907 @@
+{
+  "source": "MathonGo test series",
+  "tracks": [
+    {
+      "id": "mg-phys-alternating-current",
+      "subject": "physics",
+      "name": "Alternating Current",
+      "chapterIds": [
+        "phy-alternating-current"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-electromagnetic-waves",
+      "subject": "physics",
+      "name": "Electromagnetic Waves",
+      "chapterIds": [
+        "phy-em-waves"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-ray-optics",
+      "subject": "physics",
+      "name": "Ray Optics",
+      "chapterIds": [
+        "phy-ray-optics"
+      ],
+      "tests": 7,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-wave-optics",
+      "subject": "physics",
+      "name": "Wave Optics",
+      "chapterIds": [
+        "phy-wave-optics"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-dual-nature-of-matter",
+      "subject": "physics",
+      "name": "Dual Nature of Matter",
+      "chapterIds": [
+        "phy-dual-nature"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-atoms",
+      "subject": "physics",
+      "name": "Atoms",
+      "chapterIds": [
+        "phy-atoms"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-nuclei",
+      "subject": "physics",
+      "name": "Nuclei",
+      "chapterIds": [
+        "phy-nuclei"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-semiconductor-electronics",
+      "subject": "physics",
+      "name": "Semiconductor Electronics",
+      "chapterIds": [
+        "phy-semiconductors"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-centre-of-mass-rotational-motion",
+      "subject": "physics",
+      "name": "Centre of Mass & Rotational Motion",
+      "chapterIds": [
+        "phy-center-of-mass",
+        "phy-rotational-motion"
+      ],
+      "tests": 9,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-thermodynamics",
+      "subject": "physics",
+      "name": "Thermodynamics",
+      "chapterIds": [
+        "phy-thermodynamics"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-units-measurements",
+      "subject": "physics",
+      "name": "Units & Measurements",
+      "chapterIds": [
+        "phy-units-measurements"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-motion-in-a-plane",
+      "subject": "physics",
+      "name": "Motion in a Plane",
+      "chapterIds": [
+        "phy-motion-2d"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-laws-of-motion",
+      "subject": "physics",
+      "name": "Laws of Motion",
+      "chapterIds": [
+        "phy-laws-of-motion"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-mechanical-properties-of-fluids",
+      "subject": "physics",
+      "name": "Mechanical Properties of Fluids",
+      "chapterIds": [
+        "phy-fluids"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-thermal-properties-of-matter",
+      "subject": "physics",
+      "name": "Thermal Properties of Matter",
+      "chapterIds": [
+        "phy-thermal-properties"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-oscillations-shm",
+      "subject": "physics",
+      "name": "Oscillations (SHM)",
+      "chapterIds": [
+        "phy-oscillations"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-waves",
+      "subject": "physics",
+      "name": "Waves",
+      "chapterIds": [
+        "phy-waves"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-gravitation",
+      "subject": "physics",
+      "name": "Gravitation",
+      "chapterIds": [
+        "phy-gravitation"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-electric-charges-fields-electrostatics",
+      "subject": "physics",
+      "name": "Electric Charges & Fields (Electrostatics)",
+      "chapterIds": [
+        "phy-electrostatics"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-electrostatic-potential-capacitance",
+      "subject": "physics",
+      "name": "Electrostatic Potential & Capacitance",
+      "chapterIds": [
+        "phy-electrostatics",
+        "phy-capacitors"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-current-electricity",
+      "subject": "physics",
+      "name": "Current Electricity",
+      "chapterIds": [
+        "phy-current-electricity"
+      ],
+      "tests": 7,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-moving-charges-magnetism",
+      "subject": "physics",
+      "name": "Moving Charges & Magnetism",
+      "chapterIds": [
+        "phy-magnetic-effects"
+      ],
+      "tests": 11,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-electromagnetic-induction",
+      "subject": "physics",
+      "name": "Electromagnetic Induction",
+      "chapterIds": [
+        "phy-emi"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-motion-in-straight-line",
+      "subject": "physics",
+      "name": "Motion in Straight Line",
+      "chapterIds": [
+        "phy-motion-1d"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-work-energy-power",
+      "subject": "physics",
+      "name": "Work, Energy & Power",
+      "chapterIds": [
+        "phy-work-energy-power"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-mechanical-properties-of-solids",
+      "subject": "physics",
+      "name": "Mechanical Properties of Solids",
+      "chapterIds": [
+        "phy-solids"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-phys-kinetic-theory-of-gases",
+      "subject": "physics",
+      "name": "Kinetic Theory of Gases",
+      "chapterIds": [
+        "phy-kinetic-theory"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-solid-state",
+      "subject": "chemistry",
+      "name": "Solid State",
+      "chapterIds": [
+        "chem-solid-state"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-metallurgy",
+      "subject": "chemistry",
+      "name": "Metallurgy",
+      "chapterIds": [
+        "chem-metallurgy"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-p-block-15-18",
+      "subject": "chemistry",
+      "name": "p-Block (15–18)",
+      "chapterIds": [
+        "chem-p-block-15-18"
+      ],
+      "tests": 7,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-aldehydes-ketones-carboxylic-acids",
+      "subject": "chemistry",
+      "name": "Aldehydes, Ketones & Carboxylic Acids",
+      "chapterIds": [
+        "chem-aldehydes-ketones",
+        "chem-carboxylic-acids"
+      ],
+      "tests": 8,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-amines",
+      "subject": "chemistry",
+      "name": "Amines",
+      "chapterIds": [
+        "chem-amines"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-biomolecules",
+      "subject": "chemistry",
+      "name": "Biomolecules",
+      "chapterIds": [
+        "chem-biomolecules"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-polymers",
+      "subject": "chemistry",
+      "name": "Polymers",
+      "chapterIds": [
+        "chem-polymers"
+      ],
+      "tests": 3,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-chemistry-in-everyday-life",
+      "subject": "chemistry",
+      "name": "Chemistry in Everyday Life",
+      "chapterIds": [
+        "chem-everyday-life"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-periodicity",
+      "subject": "chemistry",
+      "name": "Periodicity",
+      "chapterIds": [
+        "chem-periodic-table"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-chemical-bonding",
+      "subject": "chemistry",
+      "name": "Chemical Bonding",
+      "chapterIds": [
+        "chem-chemical-bonding"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-coordination-compounds",
+      "subject": "chemistry",
+      "name": "Coordination Compounds",
+      "chapterIds": [
+        "chem-coordination-compounds"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-alcohols-phenols-ethers",
+      "subject": "chemistry",
+      "name": "Alcohols, Phenols & Ethers",
+      "chapterIds": [
+        "chem-alcohols-phenols-ethers"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-solutions",
+      "subject": "chemistry",
+      "name": "Solutions",
+      "chapterIds": [
+        "chem-solutions"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-mole-concept",
+      "subject": "chemistry",
+      "name": "Mole Concept",
+      "chapterIds": [
+        "chem-mole-concept"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-thermodynamics",
+      "subject": "chemistry",
+      "name": "Thermodynamics",
+      "chapterIds": [
+        "chem-thermodynamics"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-electrochemistry",
+      "subject": "chemistry",
+      "name": "Electrochemistry",
+      "chapterIds": [
+        "chem-electrochemistry"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-atomic-structure",
+      "subject": "chemistry",
+      "name": "Atomic Structure",
+      "chapterIds": [
+        "chem-atomic-structure"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-equilibrium",
+      "subject": "chemistry",
+      "name": "Equilibrium",
+      "chapterIds": [
+        "chem-chemical-equilibrium",
+        "chem-ionic-equilibrium"
+      ],
+      "tests": 9,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-chemical-kinetics",
+      "subject": "chemistry",
+      "name": "Chemical Kinetics",
+      "chapterIds": [
+        "chem-chemical-kinetics"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-redox-reactions",
+      "subject": "chemistry",
+      "name": "Redox Reactions",
+      "chapterIds": [
+        "chem-redox"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-surface-chemistry",
+      "subject": "chemistry",
+      "name": "Surface Chemistry",
+      "chapterIds": [
+        "chem-surface-chemistry"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-hydrogen",
+      "subject": "chemistry",
+      "name": "Hydrogen",
+      "chapterIds": [
+        "chem-hydrogen"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-s-block",
+      "subject": "chemistry",
+      "name": "s-Block",
+      "chapterIds": [
+        "chem-s-block"
+      ],
+      "tests": 3,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-p-block-13-14",
+      "subject": "chemistry",
+      "name": "p-Block (13–14)",
+      "chapterIds": [
+        "chem-p-block-13-14"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-environmental-chemistry",
+      "subject": "chemistry",
+      "name": "Environmental Chemistry",
+      "chapterIds": [
+        "chem-environmental-chemistry"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": true
+    },
+    {
+      "id": "mg-chem-goc",
+      "subject": "chemistry",
+      "name": "GOC",
+      "chapterIds": [
+        "chem-goc",
+        "chem-isomerism"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-hydrocarbons",
+      "subject": "chemistry",
+      "name": "Hydrocarbons",
+      "chapterIds": [
+        "chem-hydrocarbons"
+      ],
+      "tests": 7,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-haloalkanes-haloarenes",
+      "subject": "chemistry",
+      "name": "Haloalkanes & Haloarenes",
+      "chapterIds": [
+        "chem-haloalkanes-haloarenes"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-d-block-n-f-block",
+      "subject": "chemistry",
+      "name": "d-block n f-block",
+      "chapterIds": [
+        "chem-d-f-block"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-chem-practical",
+      "subject": "chemistry",
+      "name": "Practical",
+      "chapterIds": [
+        "chem-practical-organic",
+        "chem-qualitative-analysis"
+      ],
+      "tests": 3,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-matrices",
+      "subject": "maths",
+      "name": "Matrices",
+      "chapterIds": [
+        "math-matrices"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-determinants",
+      "subject": "maths",
+      "name": "Determinants",
+      "chapterIds": [
+        "math-determinants"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-probability-12th",
+      "subject": "maths",
+      "name": "Probability (12th)",
+      "chapterIds": [
+        "math-conditional-probability"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-quadratic-equations",
+      "subject": "maths",
+      "name": "Quadratic Equations",
+      "chapterIds": [
+        "math-quadratic-equations"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-trigonometric-functions",
+      "subject": "maths",
+      "name": "Trigonometric Functions",
+      "chapterIds": [
+        "math-trigonometric-ratios"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-functions",
+      "subject": "maths",
+      "name": "Functions",
+      "chapterIds": [
+        "math-functions"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-integrals",
+      "subject": "maths",
+      "name": "Integrals",
+      "chapterIds": [
+        "math-indefinite-integration",
+        "math-definite-integration",
+        "math-area-under-curves"
+      ],
+      "tests": 14,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-differential-equations",
+      "subject": "maths",
+      "name": "Differential Equations",
+      "chapterIds": [
+        "math-differential-equations"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-sets-n-relation",
+      "subject": "maths",
+      "name": "Sets n Relation",
+      "chapterIds": [
+        "math-sets-relations"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-trigonometric-equations",
+      "subject": "maths",
+      "name": "Trigonometric Equations",
+      "chapterIds": [
+        "math-trigonometric-equations"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-complex-numbers",
+      "subject": "maths",
+      "name": "Complex Numbers",
+      "chapterIds": [
+        "math-complex-numbers"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-permutations-combinations",
+      "subject": "maths",
+      "name": "Permutations & Combinations",
+      "chapterIds": [
+        "math-permutations-combinations"
+      ],
+      "tests": 7,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-binomial-theorem",
+      "subject": "maths",
+      "name": "Binomial Theorem",
+      "chapterIds": [
+        "math-binomial-theorem"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-sequences-series",
+      "subject": "maths",
+      "name": "Sequences & Series",
+      "chapterIds": [
+        "math-sequences-series"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-straight-lines",
+      "subject": "maths",
+      "name": "Straight Lines",
+      "chapterIds": [
+        "math-straight-lines"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-circles",
+      "subject": "maths",
+      "name": "Circles",
+      "chapterIds": [
+        "math-circles"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-conic-sections",
+      "subject": "maths",
+      "name": "Conic Sections",
+      "chapterIds": [
+        "math-parabola",
+        "math-ellipse",
+        "math-hyperbola"
+      ],
+      "tests": 13,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-statistics",
+      "subject": "maths",
+      "name": "Statistics",
+      "chapterIds": [
+        "math-statistics"
+      ],
+      "tests": 4,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-inverse-trigonometric-functions-itf",
+      "subject": "maths",
+      "name": "Inverse Trigonometric Functions (ITF)",
+      "chapterIds": [
+        "math-inverse-trigonometric-functions"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-continuity-differentiability",
+      "subject": "maths",
+      "name": "Continuity & Differentiability",
+      "chapterIds": [
+        "math-continuity-differentiability",
+        "math-methods-of-differentiation"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-applications-of-derivatives",
+      "subject": "maths",
+      "name": "Applications of Derivatives",
+      "chapterIds": [
+        "math-application-of-derivatives"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-vector-algebra",
+      "subject": "maths",
+      "name": "Vector Algebra",
+      "chapterIds": [
+        "math-vector-algebra"
+      ],
+      "tests": 6,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-3d-geometry",
+      "subject": "maths",
+      "name": "3D Geometry",
+      "chapterIds": [
+        "math-3d-geometry"
+      ],
+      "tests": 5,
+      "pyqTests": null,
+      "removedFromMain": false
+    },
+    {
+      "id": "mg-math-limits-derivatives",
+      "subject": "maths",
+      "name": "Limits & Derivatives",
+      "chapterIds": [
+        "math-limits"
+      ],
+      "tests": 8,
+      "pyqTests": null,
+      "removedFromMain": false
+    }
+  ]
+}

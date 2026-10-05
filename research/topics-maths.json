@@ -1,0 +1,1336 @@
+{
+  "subject": "maths",
+  "chapters": [
+    {
+      "id": "math-sets-relations",
+      "topics": [
+        {
+          "name": "Sets, their representation and types of sets",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Power set",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Union, intersection, complement and their properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Difference and symmetric difference of sets",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "De Morgan's laws",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Practical problems on sets (Venn diagram counting)",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Ordered pairs and Cartesian product of sets",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relations: domain, codomain and range",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Types of relations: reflexive, symmetric, transitive",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equivalence relations",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-logarithms",
+      "topics": [
+        {
+          "name": "Definition of logarithm and conditions for existence",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Laws of logarithms (product, quotient, power)",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 6,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (6 questions)."
+        },
+        {
+          "name": "Change of base formula",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 5,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (5 questions)."
+        },
+        {
+          "name": "Logarithmic function: domain, range and graph",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equations and inequalities using log properties",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 11,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (11 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-quadratic-equations",
+      "topics": [
+        {
+          "name": "Quadratic equations in real and complex number systems",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Nature of roots and the discriminant",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relations between roots and coefficients",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Symmetric functions of roots",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 12,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (12 questions)."
+        },
+        {
+          "name": "Formation of quadratic equations with given roots",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Fundamental theorem of algebra (statement)",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-complex-numbers",
+      "topics": [
+        {
+          "name": "Complex numbers as ordered pairs; a + ib form",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Algebra of complex numbers",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Conjugate of a complex number",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Argand plane representation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Modulus and (principal) argument",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Polar representation",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Properties of modulus; triangle inequality",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 11,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (11 questions)."
+        },
+        {
+          "name": "Cube roots of unity",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Geometric interpretations of complex numbers",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 27,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (27 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-sequences-series",
+      "topics": [
+        {
+          "name": "Arithmetic progression: nth term and sum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Arithmetic mean; inserting AMs between two numbers",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Geometric progression: nth term and sum",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Geometric mean; inserting GMs between two numbers",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relation between AM and GM",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Infinite geometric series",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 12,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (12 questions)."
+        },
+        {
+          "name": "Sums of first n natural numbers, squares and cubes",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 13,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (13 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-permutations-combinations",
+      "topics": [
+        {
+          "name": "Fundamental principle of counting; factorials",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Permutations: meaning of P(n, r)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Permutations with repetition and identical objects",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Circular permutations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Combinations: meaning of C(n, r) and properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Applications: selection, arrangement and grouping",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-binomial-theorem",
+      "topics": [
+        {
+          "name": "Binomial theorem for a positive integral index",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "General term",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Middle term(s)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Specific coefficients and term independent of x",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Simple applications (remainders, approximations)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Properties of binomial coefficients",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 9,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (9 questions)."
+        },
+        {
+          "name": "Sums of series of binomial coefficients",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 22,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (22 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-matrices",
+      "topics": [
+        {
+          "name": "Matrix: definition, order and equality",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Types of matrices (diagonal, scalar, identity, etc.)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition and scalar multiplication of matrices",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Multiplication of matrices and its properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Transpose of a matrix and its properties",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Symmetric and skew-symmetric matrices",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Elementary row and column transformations",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-determinants",
+      "topics": [
+        {
+          "name": "Determinants of order two and three; evaluation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Minors and cofactors",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Properties of determinants",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 30,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (30 questions)."
+        },
+        {
+          "name": "Area of a triangle using determinants",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Adjoint of a square matrix",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Inverse of a square matrix (order up to three)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Consistency of linear equations in 2 or 3 variables",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Solving linear equations using matrices",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-trigonometric-ratios",
+      "topics": [
+        {
+          "name": "Angles: degree and radian measure",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Trigonometric functions of any angle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Fundamental trigonometric identities",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Periodicity and graphs of trigonometric functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition and subtraction (compound angle) formulae",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Multiple and sub-multiple angle formulae",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Sum-to-product and product-to-sum formulae",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-trigonometric-equations",
+      "topics": [
+        {
+          "name": "Trigonometric equations; principal solutions",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 23,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (23 questions)."
+        },
+        {
+          "name": "General solutions of sin x = k, cos x = k, tan x = k",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 14,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (14 questions)."
+        },
+        {
+          "name": "Equations solved by factorising or as quadratics",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 14,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (14 questions)."
+        },
+        {
+          "name": "Equations of the form a cos x + b sin x = c",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 4,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (4 questions)."
+        },
+        {
+          "name": "Number of solutions in an interval (graphical)",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 14,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (14 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-inverse-trigonometric-functions",
+      "topics": [
+        {
+          "name": "Inverse trig functions: domain and principal range",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Principal values",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Graphs of inverse trigonometric functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Properties: f(f^-1(x)), f^-1(f(x)), negative arguments",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Reciprocal and complementary relations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Sum and difference formulae for inverse functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Simplification using elementary properties",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-functions",
+      "topics": [
+        {
+          "name": "Function as a relation; domain, codomain and range",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Real-valued functions: finding domain and range",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Polynomial, rational, trig, exp and log functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Graphs of simple functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Absolute value, greatest integer and power functions",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 49,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (49 questions)."
+        },
+        {
+          "name": "Algebra of functions: sum, difference, product, quotient",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "One-one, onto and into functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Composition of functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Inverse (invertible) functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Even and odd functions",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 15,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (15 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-limits",
+      "topics": [
+        {
+          "name": "Limit of a function; left- and right-hand limits",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Algebra of limits (sum, difference, product, quotient)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Standard limits: algebraic, trig, exponential, log",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Indeterminate forms 0/0 and infinity/infinity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Indeterminate form 1^infinity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "L'Hospital's rule",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 24,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (24 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-continuity-differentiability",
+      "topics": [
+        {
+          "name": "Continuity at a point and on an interval",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Continuity of sum, difference, product, quotient",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Continuity of composite functions",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Intermediate value property",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Differentiability at a point; LHD and RHD",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Relation between continuity and differentiability",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-methods-of-differentiation",
+      "topics": [
+        {
+          "name": "Derivative from first principles",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Sum, difference, product and quotient rules",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Chain rule; derivatives of composite functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Derivatives of trig and inverse trig functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Derivatives of exponential and log functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Differentiation of implicit functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Second-order derivatives",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-application-of-derivatives",
+      "topics": [
+        {
+          "name": "Rate of change of quantities",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Geometric meaning of derivative; tangents and normals",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Increasing and decreasing functions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Maxima and minima of functions of one variable",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Rolle's theorem and its geometric interpretation",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Lagrange's mean value theorem and its interpretation",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-indefinite-integration",
+      "topics": [
+        {
+          "name": "Integration as anti-derivative; standard integrals",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integration using trigonometric identities",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integration by substitution",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integrals of 1/(x^2 +- a^2), 1/sqrt(a^2 - x^2) types",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integrals of (px+q)/(ax^2+bx+c) and root forms",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integration by parts",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integration by partial fractions",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-definite-integration",
+      "topics": [
+        {
+          "name": "Definite integral as the limit of a sum",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Fundamental theorem of calculus",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Evaluation by substitution and by parts",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Properties of definite integrals",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Integrals of even, odd and periodic functions",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-area-under-curves",
+      "topics": [
+        {
+          "name": "Area under a curve using definite integrals",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Area bounded by a curve and a line",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Area between two curves",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Areas of circles, parabolas and ellipses (standard)",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-differential-equations",
+      "topics": [
+        {
+          "name": "Ordinary differential equations: order and degree",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Formation of differential equations",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "General and particular solutions",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Variable separable method",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Homogeneous differential equations",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Linear first-order equations: dy/dx + P(x)y = Q(x)",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-straight-lines",
+      "topics": [
+        {
+          "name": "Cartesian coordinates; distance and section formulae",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Shift of origin",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Locus and its equation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Slope; parallel and perpendicular lines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Various forms of equation of a line; intercepts",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Intersection of lines; angle between two lines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Distance of a point from a line",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Concurrency of three lines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Lines through the intersection of two given lines",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Bisectors of the angle between two lines",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 6,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (6 questions)."
+        },
+        {
+          "name": "Centroid, orthocentre and circumcentre of a triangle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Incentre of a triangle",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        }
+      ]
+    },
+    {
+      "id": "math-circles",
+      "topics": [
+        {
+          "name": "Standard form of a circle; centre and radius",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "General equation of a circle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Circle with given ends of a diameter",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parametric equations of a circle",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Intersection of a line and a circle",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Tangent and normal to a circle",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 14,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (14 questions)."
+        },
+        {
+          "name": "Equation of a chord",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 7,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (7 questions)."
+        },
+        {
+          "name": "Intersection of two circles",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 9,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (9 questions)."
+        },
+        {
+          "name": "Circle through intersection of two circles / circle-line",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-parabola",
+      "topics": [
+        {
+          "name": "Conic sections as sections of a cone",
+          "in_main": true,
+          "in_advanced": false
+        },
+        {
+          "name": "Standard equations of a parabola",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Focus, directrix, latus rectum and eccentricity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parametric equations of a parabola",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 20,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (20 questions)."
+        },
+        {
+          "name": "Tangent to a parabola",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 6,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (6 questions)."
+        },
+        {
+          "name": "Normal to a parabola",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 5,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (5 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-ellipse",
+      "topics": [
+        {
+          "name": "Standard equation of an ellipse",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Foci, directrices, latus rectum and eccentricity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parametric equations of an ellipse",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 3,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (3 questions)."
+        },
+        {
+          "name": "Tangent to an ellipse",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Normal to an ellipse",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-hyperbola",
+      "topics": [
+        {
+          "name": "Standard equation of a hyperbola",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Foci, directrices, latus rectum and eccentricity",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Parametric equations of a hyperbola",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 1
+        },
+        {
+          "name": "Tangent to a hyperbola",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Normal to a hyperbola",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-vector-algebra",
+      "topics": [
+        {
+          "name": "Vectors and scalars; types of vectors",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition of vectors; scalar multiplication",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Components of a vector in 2D and 3D",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Scalar (dot) product and projection",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Vector (cross) product and area",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Scalar triple product; geometric meaning",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 2,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (2 questions)."
+        },
+        {
+          "name": "Vector triple product",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 5,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (5 questions)."
+        }
+      ]
+    },
+    {
+      "id": "math-3d-geometry",
+      "topics": [
+        {
+          "name": "Coordinates in space; distance and section formula",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Direction cosines and direction ratios",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Equation of a line in space",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Angle between two lines",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Skew lines and shortest distance between them",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Coplanar lines",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Equation of a plane",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Distance of a point from a plane",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        },
+        {
+          "name": "Angle between two planes; between a line and a plane",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-statistics",
+      "topics": [
+        {
+          "name": "Mean, median and mode of grouped and ungrouped data",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Measures of dispersion",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Mean deviation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Variance and standard deviation",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Comparing distributions: same mean, different variance",
+          "in_main": false,
+          "in_advanced": true,
+          "main_questions_2024_2026": 0
+        }
+      ]
+    },
+    {
+      "id": "math-probability",
+      "topics": [
+        {
+          "name": "Random experiments, sample space and events",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Types of events (impossible, simple, compound)",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Probability of an event",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Addition theorem of probability",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Probability using permutations and combinations",
+          "in_main": true,
+          "in_advanced": true
+        }
+      ]
+    },
+    {
+      "id": "math-conditional-probability",
+      "topics": [
+        {
+          "name": "Conditional probability",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Multiplication theorem of probability",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Independent events",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Theorem of total probability",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Bayes' theorem",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Random variable and its probability distribution",
+          "in_main": true,
+          "in_advanced": true
+        },
+        {
+          "name": "Mean and variance of a random variable",
+          "in_main": true,
+          "in_advanced": true,
+          "main_questions_2024_2026": 13,
+          "main_note": "Not named in the NTA 2026 syllabus, but asked in JEE Main 2024–26 (13 questions)."
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Flag rule used: a topic is true for an exam when that exam's 2026 text names it or when it is an inseparable part of something the text names (e.g. AP sums under 'Arithmetic progressions', conditional probability under 'Bayes' theorem'). It is false when it is a distinct item that only the other exam's text names. The 2027 texts are not out yet.",
+    "Logarithms (chapter flagged Adv-only): Main Unit 7 names 'logarithmic functions' and Unit 8 integrates them, so the definition of a logarithm and the log function/graph are marked in_main true. The laws of logarithms, change of base and log equations/inequalities are not named by Main and are marked false, though Main problems assume them as prerequisite skills.",
+    "Logarithms: Advanced says only 'Logarithms and their properties'. 'Equations and inequalities using log properties' is included as an application of those properties, not a separately named item.",
+    "Trigonometric Equations (chapter flagged Adv-only): the Main 2026 text (Unit 14) names only identities, trigonometric functions and inverse trigonometric functions, so every topic is in_main false. Not verified here, but Main papers set after the 2024 cut may still include trig-equation questions; check recent paper analyses before skipping it for Main.",
+    "Trigonometric Ratios: Main says only 'trigonometrical identities and trigonometrical functions'. Compound, multiple/sub-multiple angle and sum-product formulae are treated as identities, and periodicity/graphs as part of 'trigonometric functions' plus Unit 7 'graphs of simple functions', so they are in_main true. This differs from the chapters file note that Advanced 'adds' them.",
+    "Conics: Main names only 'equations of conic sections (parabola, ellipse and hyperbola) in standard forms'. Focus, directrix, latus rectum and eccentricity are marked in_main true because the standard forms are defined by them (NCERT); parametric forms, tangents and normals are marked in_main false. 'Sections of a cone' is named only in Main and was placed under Parabola as the first conic.",
+    "Power set is named only in Main; Advanced says 'sets and their representations, different kinds of sets', so it is marked in_advanced false. It is a minor topic either way.",
+    "Area of a triangle using determinants is named only in Main, so in_advanced false (Advanced students still use it in coordinate geometry).",
+    "Rate of change of quantities is named only in Main, so in_advanced false.",
+    "Properties of determinants: Main 2026 says only 'evaluation of determinants'; coaching sources say properties were cut from Main in 2024, so in_main false. Advanced says 'properties of these matrix operations', read as covering determinant properties.",
+    "Items marked in_main false that Main papers may still touch indirectly: polar form of complex numbers, symmetric functions of roots, L'Hospital's rule, modulus/greatest-integer functions, mean and variance of a random variable, Venn-diagram counting problems. None is named in the Main 2026 text.",
+    "Cartesian product is not named in Main but a relation is defined as a subset of it, so in_main true. Conjugate of a complex number is treated as part of Main's 'algebra of complex numbers'. Independent events and total probability are treated as part of Main's 'multiplication theorem' and 'Bayes' theorem'.",
+    "AM-GM relation is named in Main; Advanced names 'arithmetic and geometric means' without the inequality. Marked in_advanced true.",
+    "Main Unit 8 lists 'evaluation of simple integrals of the type ...' but the formulas were lost in PDF text extraction. The two special-integral topics follow the standard NTA list (1/(x^2 +- a^2), 1/sqrt(x^2 +- a^2), 1/(a^2 - x^2), 1/sqrt(a^2 - x^2), 1/(ax^2+bx+c), (px+q)/(ax^2+bx+c) and root forms, sqrt(a^2 +- x^2), sqrt(x^2 - a^2)); confirm against the PDF.",
+    "Matrix/determinant split follows NCERT: adjoint, inverse and linear systems are under Determinants, not Matrices.",
+    "Parametric and logarithmic differentiation are not named in either text; they are taught under the chain rule and log functions and were not listed as separate topics.",
+    "Main's chapter split of Unit 7 (functions, limits, continuity, differentiation, applications) and Advanced's 'Differential Calculus' and 'Sets, Relations and Functions' were mapped to the app's coaching-style chapters. Every syllabus item mapped to one of the 31 chapter ids; nothing was left over."
+  ]
+}

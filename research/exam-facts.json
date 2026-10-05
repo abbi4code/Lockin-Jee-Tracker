@@ -1,0 +1,1328 @@
+{
+  "dates": [
+    {
+      "event": "JEE Main 2027 Session 1 registration",
+      "kind": "registration",
+      "start": "2026-10-31",
+      "end": "2026-11-27",
+      "source_type": "expected",
+      "source": "https://www.vedantu.com/jee-main/exam-dates",
+      "notes": "Not yet open as of 2026-10-01; no 2027 Information Bulletin yet. Projected from 2026 (31 Oct-27 Nov 2025), 2025 (28 Oct-22 Nov 2024) and 2024 (1 Nov-4 Dec 2023). Expect it to open in the last week of October 2026."
+    },
+    {
+      "event": "JEE Main 2027 Session 1",
+      "kind": "exam",
+      "start": "2027-01-22",
+      "end": "2027-01-30",
+      "source_type": "official",
+      "source": "https://nta.ac.in/Download/Notice/Notice_20260916195948.pdf",
+      "notes": "NTA tentative exam calendar (public notice 16 Sep 2026): 22-24 and 28-30 Jan 2027, buffer day 31 Jan 2027. Dates are marked tentative by NTA; the calendar does not split B.E./B.Tech from B.Arch/B.Planning days (in past years the last day was Paper 2)."
+    },
+    {
+      "event": "JEE Main 2027 Session 1 result",
+      "kind": "result",
+      "start": "2027-02-11",
+      "end": "2027-02-16",
+      "source_type": "expected",
+      "source": "https://www.vedantu.com/jee-main/exam-dates",
+      "notes": "Projected: 2026 result 16 Feb (exam ended 29 Jan), 2025 result 11 Feb (exam ended 30 Jan), 2024 result 12-13 Feb."
+    },
+    {
+      "event": "JEE Main 2027 Session 2 registration",
+      "kind": "registration",
+      "start": "2027-02-01",
+      "end": "2027-02-25",
+      "source_type": "expected",
+      "source": "https://www.vedantu.com/jee-main/exam-dates",
+      "notes": "Projected from 2026 (1-25 Feb 2026, re-opened 12-13 Mar) and 2025 (31 Jan/1 Feb-25 Feb 2025)."
+    },
+    {
+      "event": "JEE Main 2027 Session 2",
+      "kind": "exam",
+      "start": "2027-04-01",
+      "end": "2027-04-10",
+      "source_type": "expected",
+      "source": "https://www.vedantu.com/jee-main/exam-dates",
+      "notes": "Not in NTA's calendar (which runs only to March 2027). Projected from 2026 (B.Tech 2,4,5,6,8 Apr), 2025 (B.Tech 2-8 Apr, Paper 2 on 9 Apr) and 2024 (4-9 Apr, Paper 2 on 12 Apr)."
+    },
+    {
+      "event": "JEE Main 2027 Session 2 result (final NTA score, Advanced cutoff)",
+      "kind": "result",
+      "start": "2027-04-18",
+      "end": "2027-04-25",
+      "source_type": "expected",
+      "source": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420809492136.pdf",
+      "notes": "Projected: 2026 Paper 1 final result 20 Apr 2026; 2025 about 18-19 Apr; 2024 about 24-25 Apr."
+    },
+    {
+      "event": "CBSE Class 12 board exams 2027 (theory)",
+      "kind": "exam",
+      "start": "2027-02-15",
+      "end": "2027-04-10",
+      "source_type": "expected",
+      "source": "https://timesofcollege.com/news/cbse-date-sheet-2027-cbsegovin-live-update-class-10-12-tentative-cbse-2027-exam-schedule",
+      "notes": "CBSE had not released the 2027 date sheet when checked. Projected from 2026 (17 Feb-10 Apr 2026 after revision), 2025 (15 Feb-4 Apr) and 2024 (15 Feb-2 Apr). Class 12 stays a single annual board exam; the two-exam system from 2026 applies to Class 10 only."
+    },
+    {
+      "event": "JEE Advanced 2027 registration",
+      "kind": "registration",
+      "start": "2027-04-23",
+      "end": "2027-05-02",
+      "source_type": "expected",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "notes": "Projected from 2026 (23 Apr-2 May 2026), 2025 (23 Apr-2 May 2025) and 2024 (27 Apr-7 May 2024). Organising IIT for 2027 not officially announced; IIT Delhi is next in the usual rotation."
+    },
+    {
+      "event": "JEE Advanced 2027",
+      "kind": "exam",
+      "start": "2027-05-16",
+      "end": "2027-05-23",
+      "source_type": "expected",
+      "source": "https://engineering.careers360.com/articles/jee-advanced-2027",
+      "notes": "Single day, both papers (Paper 1 morning, Paper 2 afternoon). Not announced. Past dates: 17 May 2026, 18 May 2025, 26 May 2024 (all Sundays). Window covers the likely Sundays 16 or 23 May 2027."
+    },
+    {
+      "event": "JEE Advanced 2027 result",
+      "kind": "result",
+      "start": "2027-05-31",
+      "end": "2027-06-07",
+      "source_type": "expected",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "notes": "Projected: about 15 days after the exam (1 Jun 2026, 2 Jun 2025, 9 Jun 2024)."
+    }
+  ],
+  "main_pattern": {
+    "applies_to_year": 2026,
+    "duration_minutes": 180,
+    "total_marks": 300,
+    "subjects": [
+      {
+        "subject": "physics",
+        "sections": [
+          {
+            "name": "A",
+            "type": "mcq_single",
+            "questions": 20,
+            "must_attempt": 20,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "4 options, one correct"
+          },
+          {
+            "name": "B",
+            "type": "numerical_integer",
+            "questions": 5,
+            "must_attempt": 5,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "Enter answer rounded off to the nearest integer via on-screen keypad; negative marking applies"
+          }
+        ]
+      },
+      {
+        "subject": "chemistry",
+        "sections": [
+          {
+            "name": "A",
+            "type": "mcq_single",
+            "questions": 20,
+            "must_attempt": 20,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "4 options, one correct"
+          },
+          {
+            "name": "B",
+            "type": "numerical_integer",
+            "questions": 5,
+            "must_attempt": 5,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "Enter answer rounded off to the nearest integer via on-screen keypad; negative marking applies"
+          }
+        ]
+      },
+      {
+        "subject": "maths",
+        "sections": [
+          {
+            "name": "A",
+            "type": "mcq_single",
+            "questions": 20,
+            "must_attempt": 20,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "4 options, one correct"
+          },
+          {
+            "name": "B",
+            "type": "numerical_integer",
+            "questions": 5,
+            "must_attempt": 5,
+            "marks_correct": 4,
+            "marks_wrong": -1,
+            "marks_unattempted": 0,
+            "partial_marking": null,
+            "notes": "Enter answer rounded off to the nearest integer via on-screen keypad; negative marking applies"
+          }
+        ]
+      }
+    ],
+    "recent_changes": [
+      {
+        "year": 2024,
+        "change": "Revised (reduced) JEE Main syllabus introduced from the 2024 exam. Paper still had 10 Section B numericals per subject of which any 5 were to be attempted (90 questions shown, 75 attempted)."
+      },
+      {
+        "year": 2025,
+        "change": "Optional choice in Section B removed: 5 numerical questions per subject, all compulsory (75 questions in the paper). Negative marking (-1) continues for both sections."
+      },
+      {
+        "year": 2026,
+        "change": "No change to the B.E./B.Tech pattern (20 MCQ + 5 numerical per subject, +4/-1). NTA clarified on 2 Nov 2025 that no on-screen calculator is allowed. Merit is the best NTA score across the two sessions."
+      }
+    ],
+    "source_type": "official",
+    "source": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/11/202511021649722475.pdf",
+    "notes": "2027 Information Bulletin not released as of 2026-10-01; pattern shown is from the official 2026 bulletin (identical to 2025). Ties are broken by NTA score in Maths, then Physics, then Chemistry."
+  },
+  "advanced_patterns": [
+    {
+      "year": 2023,
+      "papers": [
+        {
+          "paper": 1,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paper": 2,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/past_qps/2023_1_English.pdf"
+    },
+    {
+      "year": 2024,
+      "papers": [
+        {
+          "paper": 1,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paper": 2,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_integer",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Non-negative integer answer; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 paragraphs x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/past_qps/2024_1_English.pdf"
+    },
+    {
+      "year": 2025,
+      "papers": [
+        {
+          "paper": 1,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I vs List-II; one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I vs List-II; one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 6,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 3,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I vs List-II; one correct option"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paper": 2,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 8,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 8,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -2,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -2 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 8,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/past_qps/2025_1_English.pdf"
+    },
+    {
+      "year": 2026,
+      "papers": [
+        {
+          "paper": 1,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "matching_list",
+                  "questions": 4,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": "List-I (4 entries) vs List-II (5 entries); one correct option"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "paper": 2,
+          "duration_minutes": 180,
+          "total_marks": 180,
+          "subjects": [
+            {
+              "subject": "physics",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 2,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 question stems x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "chemistry",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 2,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 question stems x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            },
+            {
+              "subject": "maths",
+              "sections": [
+                {
+                  "name": "1",
+                  "type": "mcq_single",
+                  "questions": 4,
+                  "marks_correct": 3,
+                  "marks_wrong": -1,
+                  "partial_marking": null,
+                  "notes": null
+                },
+                {
+                  "name": "2",
+                  "type": "mcq_multiple",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": -1,
+                  "partial_marking": "+4 only if all correct options are chosen; +3 if all four options are correct but only three are chosen; +2 if three or more options are correct but only two are chosen, both correct; +1 if two or more options are correct but only one is chosen and it is correct; 0 if unanswered; -1 in all other cases",
+                  "notes": null
+                },
+                {
+                  "name": "3",
+                  "type": "numerical_decimal",
+                  "questions": 5,
+                  "marks_correct": 4,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "Numerical value, truncate/round to 2 decimals; no negative marking"
+                },
+                {
+                  "name": "4",
+                  "type": "paragraph",
+                  "questions": 4,
+                  "marks_correct": 2,
+                  "marks_wrong": 0,
+                  "partial_marking": null,
+                  "notes": "2 question stems x 2 questions; numerical value answers (truncate/round to 2 decimals); no negative marking"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/documents/p1_english.pdf"
+    }
+  ],
+  "eligibility": {
+    "advanced_qualifying": {
+      "top_candidates": 250000,
+      "percentile_cutoffs": [
+        {
+          "year": 2023,
+          "general": 90.7788642,
+          "ews": 75.6229025,
+          "obc_ncl": 73.6114227,
+          "sc": 51.9776027,
+          "st": 37.2348772,
+          "pwd": null,
+          "source_type": "coaching_analysis",
+          "source": "https://www.shiksha.com/engineering/articles/minimum-jee-main-marks-required-to-qualify-for-jee-advanced-blogId-27675"
+        },
+        {
+          "year": 2024,
+          "general": 93.2362181,
+          "ews": 81.3266412,
+          "obc_ncl": 79.6757881,
+          "sc": 60.0923182,
+          "st": 46.697584,
+          "pwd": null,
+          "source_type": "coaching_analysis",
+          "source": "https://www.shiksha.com/engineering/articles/minimum-jee-main-marks-required-to-qualify-for-jee-advanced-blogId-27675"
+        },
+        {
+          "year": 2025,
+          "general": 93.1023262,
+          "ews": 80.3830119,
+          "obc_ncl": 79.4313582,
+          "sc": 61.1526933,
+          "st": 47.9026465,
+          "pwd": 0.0079349,
+          "source_type": "coaching_analysis",
+          "source": "https://www.pw.live/iit-jee/exams/jee-main-cutoff-2025"
+        },
+        {
+          "year": 2026,
+          "general": 93.4123549,
+          "ews": 82.4164528,
+          "obc_ncl": 80.9232583,
+          "sc": 63.9172792,
+          "st": 52.0174712,
+          "pwd": 0.0023186,
+          "source_type": "official",
+          "source": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/04/20260420809492136.pdf"
+        }
+      ],
+      "notes": "Top 2,50,000 B.E./B.Tech candidates of JEE Main (all categories), split 40.5% OPEN, 10% GEN-EWS, 27% OBC-NCL, 15% SC, 7.5% ST, with 5% PwD within each. 2026 OPEN 96,187 + OPEN-PwD 5,063; EWS 23,750+1,250; OBC-NCL 64,125+3,375; SC 35,625+1,875; ST 17,812+938. pwd = UR-PwD cutoff.",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf"
+    },
+    "board_criterion": {
+      "general_percent": 75,
+      "sc_st_percent": 65,
+      "alternative": "Be within the category-wise top 20 percentile of successful candidates of own Class XII board (same academic year). Five subjects minimum with Physics, Chemistry, Maths compulsory. 65% also applies to PwD.",
+      "source_type": "official",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "notes": "Same rule for IITs (JEE Advanced brochure) and NIT+ system (JEE Main 2026 bulletin, CSAB/JoSAA)."
+    },
+    "advanced_attempts": {
+      "max_attempts": 2,
+      "rule": "Maximum two attempts in two consecutive years. For 2027: must have appeared in Class XII for the first time in 2026 or 2027 (so a 2027 Class 12 candidate can attempt in 2027 and 2028). Must not have been admitted to an IIT earlier.",
+      "source_type": "expected",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "notes": "Official 2026 rule carried forward; JEE Advanced 2027 brochure/JAB eligibility not yet published. JAB briefly announced 3 attempts for 2025 (Nov 2024) and then reverted to 2; a 2026 petition for a third attempt has no JAB decision."
+    },
+    "age_limit": {
+      "rule": "Born on or after 1 October 2002 (SC, ST, PwD: on or after 1 October 1997). JEE Main itself has no age limit.",
+      "source_type": "expected",
+      "source": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "notes": "Projected by shifting the official 2026 rule (born on or after 1 Oct 2001; 5-year relaxation for SC/ST/PwD) by one year."
+    }
+  },
+  "uncertainties": [
+    "No JEE Main 2027 Information Bulletin as of 2026-10-01. Only Session 1 exam dates are official (NTA tentative calendar of 16 Sep 2026: 22-24, 28-30 Jan 2027, buffer 31 Jan). Session 1 registration/result and all Session 2 dates are projected from 2024-2026.",
+    "Session 2 exam projection (1-10 Apr 2027) uses 2026: 2,4,5,6,8 Apr; 2025: 2-9 Apr; 2024: 4-12 Apr. Session 2 result projection uses 20 Apr 2026, about 18-19 Apr 2025 and about 24-25 Apr 2024 (2024 and 2025 dates are from news reports and memory of NTA notices, not re-checked against the PDFs).",
+    "JEE Advanced 2027: no date, brochure or organising IIT officially announced. IIT Delhi is expected by the JAB rotation (Roorkee 2026, Delhi last in 2020). Exam projected for mid/late May 2027 (17 May 2026, 18 May 2025, 26 May 2024); registration from 23 Apr-2 May in 2025 and 2026.",
+    "JEE Advanced 2027 attempt and age rules are not yet published; values are the 2026 official rule shifted one year. Watch for a JAB decision on attempts (there was a 3-attempt announcement and reversal for 2025).",
+    "CBSE 2027 Class 12 date sheet not out when checked (expected late Sep-Nov 2026). Window projected from 2024 (15 Feb-2 Apr), 2025 (15 Feb-4 Apr) and 2026 (17 Feb-10 Apr). No Class 12 scheme change found; the two-board-exam system applies to Class 10 only.",
+    "JEE Main percentile cutoffs for 2023-2025 are taken from coaching/education sites quoting NTA press releases, not checked against the NTA PDFs. UR-PwD cutoffs for 2023 and 2024 not confirmed (null).",
+    "JEE Advanced 2026 pattern source (jeeadv.ac.in/documents/p1_english.pdf, p2_english.pdf) is the current-year link and may move to jeeadv.ac.in/past_qps/2026_1_English.pdf next cycle. Each year all three subjects shared the same section structure within a paper.",
+    "2026 change: negative marking for multiple-correct MCQs in JEE Advanced dropped from -2 (2023-2025) to -1, and Paper 1 numericals moved to 4 per subject. The 2027 pattern is not announced and changes yearly.",
+    "JEE Main 2024 syllabus-reduction note and the 2024 Section B 'attempt any 5 of 10' detail are from general knowledge of the 2024 bulletin, not re-opened here."
+  ]
+}

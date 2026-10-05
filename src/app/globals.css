@@ -1,0 +1,271 @@
+@import "tailwindcss";
+@import "@fontsource-variable/doto";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/jetbrains-mono";
+
+@theme {
+  --color-ink: #000000;
+  --color-ink-2: #0b0b0b;
+  --color-ink-3: #141414;
+  --color-line: #1d1d1d;
+  --color-line-2: #2c2c2c;
+  --color-fg: #ececec;
+  --color-mute: #8c8c8c;
+  --color-dim: #4d4d4d;
+  --color-red: #ff3b30;
+  /* Unlit dots in progress bars, rings and the streak strip. */
+  --color-dot-off: #262626;
+
+  /* Subject colours: only used for the nav and tiny markers. */
+  --color-phy: #8f7cff;
+  --color-chem: #b8f34c;
+  --color-math: #ff7a45;
+  --color-hot: #ff3fa4;
+
+  --font-dot: "Doto Variable", ui-monospace, monospace;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--color-ink);
+  transition: background-color 0.3s ease;
+}
+
+/* Paper: warm light yellow, low glare for long sessions. */
+html[data-theme="paper"] {
+  color-scheme: light;
+  --color-ink: #f5eedb;
+  --color-ink-2: #ede3c9;
+  --color-ink-3: #e5d9bb;
+  --color-line: #e0d4b4;
+  --color-line-2: #cfbf98;
+  --color-fg: #2a2318;
+  --color-mute: #6e6350;
+  --color-dim: #9a8d71;
+  --color-red: #d2361f;
+  --color-dot-off: #ddd0ad;
+  --color-phy: #6a55e0;
+  --color-chem: #5e8f10;
+  --color-math: #d9561c;
+}
+
+/* Sepia: a deeper, warmer yellow. */
+html[data-theme="sepia"] {
+  color-scheme: light;
+  --color-ink: #eadcb6;
+  --color-ink-2: #e1d1a6;
+  --color-ink-3: #d8c698;
+  --color-line: #d4c296;
+  --color-line-2: #c0ab7a;
+  --color-fg: #2b2214;
+  --color-mute: #655638;
+  --color-dim: #8d7c57;
+  --color-red: #c4301a;
+  --color-dot-off: #cfbc8c;
+  --color-phy: #5c47cc;
+  --color-chem: #557f0d;
+  --color-math: #c84d15;
+}
+
+/* Text weight (set on /me): Tailwind's font-* utilities read these variables, so every weight steps up together. */
+html[data-weight="medium"] {
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+}
+html[data-weight="bold"] {
+  --font-weight-normal: 600;
+  --font-weight-medium: 700;
+  --font-weight-semibold: 800;
+  --font-weight-bold: 900;
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal, 400);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: var(--color-red);
+  color: #000;
+}
+
+/* Dot-matrix numerals. */
+.dot {
+  font-family: var(--font-dot);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+html[data-weight="bold"] .dot {
+  font-weight: 900;
+}
+
+/* ── Cursor ──────────────────────────────────────────────────────────────
+   Drawn by components/Cursor.tsx on mouse/trackpad devices; colours come from the theme tokens.
+   Without it (touch, or before JS loads) clickable things still get the hand. */
+@layer base {
+  button:not(:disabled),
+  [role="button"],
+  [role="checkbox"],
+  summary,
+  select {
+    cursor: pointer;
+  }
+}
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
+[data-cursor-root] {
+  --cursor-color: var(--color-fg);
+  --cursor-edge: var(--color-ink);
+}
+[data-cursor-root][data-invert="true"] {
+  --cursor-color: var(--color-ink);
+  --cursor-edge: var(--color-fg);
+}
+[data-cursor-root][data-kind="danger"] {
+  --cursor-color: var(--color-red);
+}
+[data-cursor-root][data-kind="disabled"] {
+  --cursor-color: var(--color-dim);
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 9999px;
+  background: var(--cursor-color);
+  box-shadow: 0 0 0 1.5px var(--cursor-edge);
+  transition:
+    width 0.16s,
+    height 0.16s,
+    margin 0.16s,
+    border-radius 0.16s,
+    background-color 0.16s,
+    opacity 0.16s,
+    scale 0.12s;
+}
+/* A ring of dots, like the focus timer's dial. */
+.cursor-ring {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border: 2px dotted var(--cursor-color);
+  border-radius: 9999px;
+  opacity: 0;
+  transition:
+    width 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    height 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    margin 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-radius 0.22s,
+    border-color 0.16s,
+    opacity 0.16s,
+    scale 0.12s;
+}
+[data-cursor-root][data-hidden="true"] > * {
+  opacity: 0 !important;
+}
+
+/* Buttons and links. */
+[data-cursor-root]:is([data-kind="pointer"], [data-kind="go"], [data-kind="danger"]) .cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  opacity: 1;
+}
+[data-cursor-root]:is([data-kind="pointer"], [data-kind="danger"], [data-kind="check"]) .cursor-dot {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+}
+/* Primary actions: the red "recording" dot. */
+[data-cursor-root][data-kind="go"] .cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--color-red);
+}
+/* Checkboxes: a dotted square that matches the tick box. */
+[data-cursor-root][data-kind="check"] .cursor-ring {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 8px;
+  opacity: 1;
+}
+/* Text fields: a caret. */
+[data-cursor-root][data-kind="text"] .cursor-dot {
+  width: 2px;
+  height: 22px;
+  margin: -11px 0 0 -1px;
+  border-radius: 1px;
+}
+/* Disabled: a dim ring with a slash through it. */
+[data-cursor-root][data-kind="disabled"] .cursor-ring {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  opacity: 1;
+  background: linear-gradient(135deg, transparent calc(50% - 1px), var(--cursor-color) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+}
+[data-cursor-root][data-kind="disabled"] .cursor-dot {
+  opacity: 0;
+}
+/* Press feedback. */
+[data-cursor-root][data-down="true"] .cursor-ring {
+  scale: 0.82;
+}
+[data-cursor-root][data-down="true"] .cursor-dot {
+  scale: 0.7;
+}
+
+/* Page entrance (app/template.tsx): plain CSS so it runs before any JavaScript loads. */
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+}
+.page-fade {
+  animation: page-fade 0.2s ease-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

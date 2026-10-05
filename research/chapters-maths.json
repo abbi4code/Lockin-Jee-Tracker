@@ -1,0 +1,693 @@
+{
+  "subject": "maths",
+  "syllabus_sources": [
+    {
+      "exam": "main",
+      "year": 2026,
+      "url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "exam": "advanced",
+      "year": 2026,
+      "url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf"
+    }
+  ],
+  "units": [
+    {
+      "id": "math-algebra",
+      "name": "Algebra"
+    },
+    {
+      "id": "math-trigonometry",
+      "name": "Trigonometry"
+    },
+    {
+      "id": "math-calculus",
+      "name": "Calculus"
+    },
+    {
+      "id": "math-coordinate-geometry",
+      "name": "Coordinate Geometry"
+    },
+    {
+      "id": "math-vectors-3d",
+      "name": "Vectors and 3D Geometry"
+    },
+    {
+      "id": "math-stats-probability",
+      "name": "Statistics and Probability"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "math-sets-relations",
+      "name": "Sets and Relations",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 1 and Ch 2",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 1,
+      "ncert_critical": true,
+      "notes": "Equivalence relations are covered in Class 12 Part 1, Ch 1. Advanced also lists symmetric difference and De Morgan's laws."
+    },
+    {
+      "id": "math-logarithms",
+      "name": "Logarithms",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": false,
+      "notes": "Main names logarithmic functions but not the laws of logs; log-equation questions are rare in Main (about 0.07 per shift). Treated as Main + Advanced; the basics are needed everywhere."
+    },
+    {
+      "id": "math-quadratic-equations",
+      "name": "Quadratic Equations",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 4",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced adds the statement of the fundamental theorem of algebra and symmetric functions of roots."
+    },
+    {
+      "id": "math-complex-numbers",
+      "name": "Complex Numbers",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 4",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-quadratic-equations",
+        "math-trigonometric-ratios"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "The square root of a complex number and the triangle inequality were dropped from Main in 2024. Advanced still lists the triangle inequality, cube roots of unity, polar form and geometric interpretation."
+    },
+    {
+      "id": "math-sequences-series",
+      "name": "Sequences and Series",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Main covers only AP, GP, inserting means and the AM-GM relation. Advanced adds infinite GP and the sums of n, n^2 and n^3. Harmonic progression is in neither current syllabus."
+    },
+    {
+      "id": "math-permutations-combinations",
+      "name": "Permutations and Combinations",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 6",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "math-binomial-theorem",
+      "name": "Binomial Theorem",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 7",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-permutations-combinations"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Properties of binomial coefficients were dropped from Main in 2024 but are still in Advanced. Both syllabi cover only a positive integral index."
+    },
+    {
+      "id": "math-matrices",
+      "name": "Matrices",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 3",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Advanced lists elementary row and column transformations. Main does not."
+    },
+    {
+      "id": "math-determinants",
+      "name": "Determinants",
+      "unit_id": "math-algebra",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 4",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-matrices"
+      ],
+      "difficulty": 3,
+      "ncert_critical": true,
+      "notes": "Main 2026 lists evaluation, area of a triangle, adjoint and inverse, and consistency of linear equations using matrices. Coaching summaries report that properties of determinants were cut from Main in 2024."
+    },
+    {
+      "id": "math-trigonometric-ratios",
+      "name": "Trigonometric Ratios and Identities",
+      "unit_id": "math-trigonometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 3",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": false,
+      "notes": "Heights and distances were dropped from Main in 2024. Advanced adds periodicity and graphs, and multiple and sub-multiple angle formulae."
+    },
+    {
+      "id": "math-trigonometric-equations",
+      "name": "Trigonometric Equations",
+      "unit_id": "math-trigonometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": null,
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-trigonometric-ratios"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Not named in the NTA 2026 syllabus, but still asked in JEE Main: about 0.3–0.4 questions per shift in 2024–2026 (6–8 a year). Treated as Main + Advanced."
+    },
+    {
+      "id": "math-inverse-trigonometric-functions",
+      "name": "Inverse Trigonometric Functions",
+      "unit_id": "math-trigonometry",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 2",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-trigonometric-ratios",
+        "math-functions"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced covers principal values only, plus elementary properties."
+    },
+    {
+      "id": "math-functions",
+      "name": "Functions",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 1 (introduced in Class 11, Ch 2)",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-sets-relations"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced explicitly lists even and odd functions, invertible functions, and special functions such as greatest integer and absolute value."
+    },
+    {
+      "id": "math-limits",
+      "name": "Limits",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 12",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-functions"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced names L'Hospital's rule explicitly."
+    },
+    {
+      "id": "math-continuity-differentiability",
+      "name": "Continuity and Differentiability",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 5",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-limits"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Advanced adds continuity of composite functions and the intermediate value property."
+    },
+    {
+      "id": "math-methods-of-differentiation",
+      "name": "Methods of Differentiation",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 5 (basics in Class 11, Ch 12)",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-limits"
+      ],
+      "difficulty": 2,
+      "ncert_critical": false,
+      "notes": "Both syllabi go up to second-order derivatives and cover implicit functions."
+    },
+    {
+      "id": "math-application-of-derivatives",
+      "name": "Application of Derivatives",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 1, Ch 6",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-methods-of-differentiation",
+        "math-continuity-differentiability"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Main 2026 names only rate of change, monotonicity, and maxima and minima. Tangents and normals, Rolle's theorem and LMVT are in Advanced only. Rolle's and LMVT were dropped from Main in 2024."
+    },
+    {
+      "id": "math-indefinite-integration",
+      "name": "Indefinite Integration",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 7",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-methods-of-differentiation"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "math-definite-integration",
+      "name": "Definite Integration",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 7",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-indefinite-integration"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "The definite integral as the limit of a sum is listed in Advanced but was dropped from Main in 2024."
+    },
+    {
+      "id": "math-area-under-curves",
+      "name": "Area Under Curves",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 8",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-definite-integration"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "math-differential-equations",
+      "name": "Differential Equations",
+      "unit_id": "math-calculus",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 9",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-indefinite-integration"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Both syllabi cover separation of variables, homogeneous equations and linear first-order equations. Advanced also lists forming a differential equation."
+    },
+    {
+      "id": "math-straight-lines",
+      "name": "Straight Lines",
+      "unit_id": "math-coordinate-geometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 9",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Advanced adds shift of origin, angle bisectors, family of lines through an intersection point, and the incentre. Translation of axes was dropped from Main in 2024."
+    },
+    {
+      "id": "math-circles",
+      "name": "Circles",
+      "unit_id": "math-coordinate-geometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-straight-lines"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Main 2026 names standard and general forms, the diameter form, and intersection of a line with a circle centred at the origin. Tangents, normals, chords, parametric form and families of circles are named only in Advanced."
+    },
+    {
+      "id": "math-parabola",
+      "name": "Parabola",
+      "unit_id": "math-coordinate-geometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-straight-lines"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Main names standard-form equations only. Advanced adds focus, directrix, eccentricity, parametric form, and tangents and normals."
+    },
+    {
+      "id": "math-ellipse",
+      "name": "Ellipse",
+      "unit_id": "math-coordinate-geometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-straight-lines"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Same Main/Advanced split as Parabola."
+    },
+    {
+      "id": "math-hyperbola",
+      "name": "Hyperbola",
+      "unit_id": "math-coordinate-geometry",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-ellipse"
+      ],
+      "difficulty": 4,
+      "ncert_critical": false,
+      "notes": "Same Main/Advanced split as Parabola."
+    },
+    {
+      "id": "math-vector-algebra",
+      "name": "Vector Algebra",
+      "unit_id": "math-vectors-3d",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 10",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": "Main 2026 names only scalar (dot) and vector (cross) products. Scalar and vector triple products are named only in Advanced."
+    },
+    {
+      "id": "math-3d-geometry",
+      "name": "Three Dimensional Geometry",
+      "unit_id": "math-vectors-3d",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 11 (introduced in Class 11, Ch 11)",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-vector-algebra"
+      ],
+      "difficulty": 3,
+      "ncert_critical": true,
+      "notes": "Main 2026 covers only points, direction cosines and ratios, and lines, including skew lines and the shortest distance between them. Planes appear only in Advanced."
+    },
+    {
+      "id": "math-statistics",
+      "name": "Statistics",
+      "unit_id": "math-stats-probability",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 13",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [],
+      "difficulty": 2,
+      "ncert_critical": true,
+      "notes": "Added to Advanced in its 2023 revision, according to secondary sources."
+    },
+    {
+      "id": "math-probability",
+      "name": "Probability",
+      "unit_id": "math-stats-probability",
+      "branch": null,
+      "class": 11,
+      "ncert_chapter": "Class 11, Ch 14",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-sets-relations",
+        "math-permutations-combinations"
+      ],
+      "difficulty": 3,
+      "ncert_critical": false,
+      "notes": null
+    },
+    {
+      "id": "math-conditional-probability",
+      "name": "Conditional Probability, Bayes' Theorem and Random Variables",
+      "unit_id": "math-stats-probability",
+      "branch": null,
+      "class": 12,
+      "ncert_chapter": "Class 12 Part 2, Ch 13",
+      "in_main": true,
+      "in_advanced": true,
+      "vmc_name": null,
+      "vmc_order": null,
+      "prerequisites": [
+        "math-probability"
+      ],
+      "difficulty": 4,
+      "ncert_critical": true,
+      "notes": "Bernoulli trials and the binomial distribution were dropped from Main in 2024 and are not named in Advanced 2026. Advanced covers the mean and variance of a random variable."
+    }
+  ],
+  "removed_or_changed": [
+    {
+      "item": "Mathematical Induction",
+      "change": "Whole unit removed from Main in 2024. Not in the Advanced 2026 syllabus either.",
+      "source_url": "https://www.shiksha.com/engineering/articles/jee-main-2026-reduced-syllabus-pdf-deleted-chapters-topics-in-pcm-blogId-149147"
+    },
+    {
+      "item": "Mathematical Reasoning",
+      "change": "Whole unit removed from Main in 2024. Not in the Advanced 2026 syllabus either.",
+      "source_url": "https://www.shiksha.com/engineering/articles/jee-main-2026-reduced-syllabus-pdf-deleted-chapters-topics-in-pcm-blogId-149147"
+    },
+    {
+      "item": "Heights and Distances",
+      "change": "Removed from Main in 2024. Not in the Advanced 2026 syllabus.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Special series (sums of n, n^2, n^3) and AGP",
+      "change": "Removed from Main in 2024. Sums of n, n^2 and n^3 are still in Advanced.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Properties of binomial coefficients",
+      "change": "Removed from Main in 2024. Still in Advanced.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Square root of a complex number; triangle inequality",
+      "change": "Removed from Main in 2024. The triangle inequality is still in Advanced.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Properties of determinants; elementary transformations",
+      "change": "Removed from Main in 2024. Elementary row and column transformations are still in Advanced.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Bernoulli trials and binomial distribution",
+      "change": "Removed from Main in 2024. Not named in Advanced 2026.",
+      "source_url": "https://arpitclasses.in/jee-main-mathematics-syllabus-2024-list-of-deleted-added-topics/"
+    },
+    {
+      "item": "Rolle's theorem and Lagrange's mean value theorem",
+      "change": "Removed from Main in 2024. Still in Advanced.",
+      "source_url": "https://engineering.careers360.com/articles/jee-main-mathematics-syllabus"
+    },
+    {
+      "item": "Definite integral as the limit of a sum",
+      "change": "Removed from Main in 2024. Still in Advanced.",
+      "source_url": "https://engineering.careers360.com/articles/jee-main-mathematics-syllabus"
+    },
+    {
+      "item": "Translation of axes (shift of origin)",
+      "change": "Removed from Main in 2024. Advanced lists shift of origin.",
+      "source_url": "https://engineering.careers360.com/articles/jee-main-mathematics-syllabus"
+    },
+    {
+      "item": "Equation of a plane (3D geometry)",
+      "change": "Not in Main 2026, where Unit 11 covers lines only. In Advanced.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "item": "Scalar and vector triple products",
+      "change": "Not named in Main 2026. In Advanced.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "item": "Tangents and normals (to curves, circles and conics)",
+      "change": "Not named in Main 2026. In Advanced.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "item": "General solution of trigonometric equations",
+      "change": "Not named in Main 2026. In Advanced.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    },
+    {
+      "item": "Properties / Solution of Triangles",
+      "change": "Removed from Advanced in its revised syllabus (from 2023). Not in Main 2026.",
+      "source_url": "https://www.adarshbarnwal.com/jee-advanced-syllabus/"
+    },
+    {
+      "item": "Harmonic Progression",
+      "change": "Removed from Advanced in its revised syllabus (from 2023). Not in Main 2026.",
+      "source_url": "https://www.adarshbarnwal.com/jee-advanced-syllabus/"
+    },
+    {
+      "item": "Statistics",
+      "change": "Added to Advanced in its revised syllabus (from 2023).",
+      "source_url": "https://www.adarshbarnwal.com/jee-advanced-syllabus/"
+    },
+    {
+      "item": "Linear Inequalities (Class 11, Ch 5) and Linear Programming (Class 12 Part 2, Ch 12)",
+      "change": "In neither the Main 2026 nor the Advanced 2026 syllabus text, so they are excluded from chapters.",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2025/10/202510311323551056.pdf"
+    }
+  ],
+  "uncertainties": [
+    "The 2027 syllabi are not published yet. As of 25 Sep 2026, jeemain.nta.nic.in still links the 2026 syllabus and jeeadv.ac.in is still the 2026 site. Re-check when the JEE Main 2027 bulletin and the JEE Advanced 2027 brochure are released.",
+    "vmc_name and vmc_order are null for every chapter. No current public VMC Maths chapter list or order was found. The only public ordering found was a partial 2014 Quora answer, which was not used. The index page of your brother's VMC modules is the reliable source.",
+    "Neither official syllabus lists chapters, only units and topics. The chapter split here follows common coaching practice (for example, Limits vs Continuity vs Methods of Differentiation, and Circle/Parabola/Ellipse/Hyperbola as separate chapters).",
+    "in_main=false for Logarithms and Trigonometric Equations is based on the NTA 2026 text not naming them. NTA publishes no chapter-level mapping.",
+    "Item-level details on what was removed from Main in 2024 come from coaching and education sites comparing the old and new NTA texts, not from an NTA change notice.",
+    "The Advanced 2023 revision (triangles and HP removed, statistics added) is taken from secondary sources. The 2026 official text confirms the current state only.",
+    "NCERT chapter numbers follow the rationalised 14-chapter Class 11 edition and the 13-chapter Class 12 edition. Check them against the printed books your brother uses.",
+    "Trigonometric equations reportedly were removed from rationalised NCERT Class 11 (secondary source), so ncert_chapter is null for that chapter.",
+    "difficulty and ncert_critical are editorial judgments based on common teacher and aspirant descriptions, not on a single cited source."
+  ]
+}

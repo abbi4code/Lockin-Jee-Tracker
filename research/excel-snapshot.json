@@ -1,0 +1,421 @@
+{
+  "source": "files/JEE_Chapter_Tracker (1).xlsx",
+  "tests": {
+    "mg-phys-alternating-current": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-electromagnetic-waves": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-ray-optics": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-wave-optics": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-dual-nature-of-matter": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-atoms": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-nuclei": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-semiconductor-electronics": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-centre-of-mass-rotational-motion": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-thermodynamics": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-units-measurements": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-motion-in-a-plane": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-phys-laws-of-motion": {
+      "chapterwise": 5,
+      "pyq": 1
+    },
+    "mg-phys-mechanical-properties-of-fluids": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-phys-thermal-properties-of-matter": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-oscillations-shm": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-phys-waves": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-phys-gravitation": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-phys-electric-charges-fields-electrostatics": {
+      "chapterwise": 6,
+      "pyq": 0
+    },
+    "mg-phys-electrostatic-potential-capacitance": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-current-electricity": {
+      "chapterwise": 5,
+      "pyq": 0
+    },
+    "mg-phys-moving-charges-magnetism": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-electromagnetic-induction": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-motion-in-straight-line": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-phys-work-energy-power": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-phys-mechanical-properties-of-solids": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-phys-kinetic-theory-of-gases": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-solid-state": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-metallurgy": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-p-block-15-18": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-aldehydes-ketones-carboxylic-acids": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-amines": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-biomolecules": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-polymers": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-chemistry-in-everyday-life": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-periodicity": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-chem-chemical-bonding": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-chem-coordination-compounds": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-chem-alcohols-phenols-ethers": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-chem-solutions": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-chem-mole-concept": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-chem-thermodynamics": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-chem-electrochemistry": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-chem-atomic-structure": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-chem-equilibrium": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-chem-chemical-kinetics": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-chem-redox-reactions": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-chem-surface-chemistry": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-hydrogen": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-s-block": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-p-block-13-14": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-environmental-chemistry": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-goc": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-chem-hydrocarbons": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-chem-haloalkanes-haloarenes": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-chem-d-block-n-f-block": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-chem-practical": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-matrices": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-determinants": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-probability-12th": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-quadratic-equations": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-math-trigonometric-functions": {
+      "chapterwise": 3,
+      "pyq": 0
+    },
+    "mg-math-functions": {
+      "chapterwise": 4,
+      "pyq": 0
+    },
+    "mg-math-integrals": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-math-differential-equations": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-sets-n-relation": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-trigonometric-equations": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-complex-numbers": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-math-permutations-combinations": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-math-binomial-theorem": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-math-sequences-series": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-math-straight-lines": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-circles": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-conic-sections": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-statistics": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-inverse-trigonometric-functions-itf": {
+      "chapterwise": 2,
+      "pyq": 0
+    },
+    "mg-math-continuity-differentiability": {
+      "chapterwise": 1,
+      "pyq": 0
+    },
+    "mg-math-applications-of-derivatives": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-vector-algebra": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-3d-geometry": {
+      "chapterwise": 0,
+      "pyq": 0
+    },
+    "mg-math-limits-derivatives": {
+      "chapterwise": 2,
+      "pyq": 0
+    }
+  },
+  "stages": {
+    "phy-dual-nature": "undone",
+    "phy-atoms": "undone",
+    "phy-nuclei": "undone",
+    "phy-semiconductors": "undone",
+    "phy-ray-optics": "working",
+    "phy-electrostatics": "testing",
+    "phy-capacitors": "working",
+    "phy-em-waves": "working",
+    "phy-alternating-current": "ready",
+    "phy-center-of-mass": "ready",
+    "phy-rotational-motion": "ready",
+    "phy-emi": "ready",
+    "phy-work-energy-power": "ready",
+    "phy-current-electricity": "testing",
+    "phy-magnetic-effects": "testing",
+    "phy-gravitation": "testing",
+    "phy-wave-optics": "testing",
+    "phy-thermodynamics": "weak",
+    "phy-units-measurements": "weak",
+    "phy-motion-2d": "weak",
+    "phy-laws-of-motion": "weak",
+    "phy-fluids": "weak",
+    "phy-thermal-properties": "weak",
+    "phy-oscillations": "weak",
+    "phy-waves": "weak",
+    "phy-solids": "weak",
+    "phy-kinetic-theory": "weak",
+    "phy-motion-1d": "weak",
+    "chem-solid-state": "undone",
+    "chem-metallurgy": "undone",
+    "chem-p-block-15-18": "undone",
+    "chem-amines": "undone",
+    "chem-biomolecules": "undone",
+    "chem-polymers": "undone",
+    "chem-everyday-life": "undone",
+    "chem-chemical-kinetics": "ready",
+    "chem-solutions": "ready",
+    "chem-haloalkanes-haloarenes": "ready",
+    "chem-periodic-table": "ready",
+    "chem-hydrocarbons": "ready",
+    "chem-goc": "testing",
+    "chem-isomerism": "testing",
+    "chem-alcohols-phenols-ethers": "testing",
+    "chem-aldehydes-ketones": "testing",
+    "chem-carboxylic-acids": "testing",
+    "chem-mole-concept": "weak",
+    "chem-thermodynamics": "weak",
+    "chem-atomic-structure": "weak",
+    "chem-chemical-equilibrium": "weak",
+    "chem-ionic-equilibrium": "weak",
+    "chem-redox": "weak",
+    "chem-surface-chemistry": "weak",
+    "chem-hydrogen": "weak",
+    "chem-s-block": "weak",
+    "chem-p-block-13-14": "weak",
+    "chem-environmental-chemistry": "weak",
+    "chem-chemical-bonding": "weak",
+    "chem-coordination-compounds": "weak",
+    "chem-electrochemistry": "weak",
+    "chem-d-f-block": "weak",
+    "math-continuity-differentiability": "working",
+    "math-methods-of-differentiation": "working",
+    "math-vector-algebra": "working",
+    "math-3d-geometry": "working",
+    "math-complex-numbers": "ready",
+    "math-binomial-theorem": "ready",
+    "math-inverse-trigonometric-functions": "ready",
+    "math-limits": "ready",
+    "math-trigonometric-equations": "testing",
+    "math-application-of-derivatives": "testing",
+    "math-trigonometric-ratios": "testing",
+    "math-indefinite-integration": "testing",
+    "math-definite-integration": "testing",
+    "math-area-under-curves": "testing",
+    "math-permutations-combinations": "testing",
+    "math-functions": "weak",
+    "math-determinants": "weak",
+    "math-statistics": "weak",
+    "math-differential-equations": "weak",
+    "math-sets-relations": "weak",
+    "math-quadratic-equations": "weak",
+    "math-sequences-series": "weak",
+    "math-straight-lines": "weak",
+    "math-circles": "weak",
+    "math-parabola": "weak",
+    "math-ellipse": "weak",
+    "math-hyperbola": "weak",
+    "math-matrices": "weak",
+    "math-conditional-probability": "weak",
+    "math-probability": "weak"
+  }
+}

@@ -1,0 +1,976 @@
+{
+ "subject": "chemistry",
+ "topics": [
+  {
+   "chapter_id": "chem-mole-concept",
+   "topic": "Normality and equivalent concept",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/some-basic-concepts-of-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Gas laws, ideal gas equation, absolute temperature",
+   "main_2024": 1,
+   "main_2025": 6,
+   "main_2026": 2,
+   "example": "2025 Apr 2 S2: Dumas method, 60 mL N2 at 300 K/715 mm Hg (aq. tension 15 mm) -> %N; needs PV=nRT. Others: 3 more Dumas (2025), Kp problems needing P=nRT/V (2025 Jan 24 S1, Apr 2 S1; 2026 Apr 6 S1), thermo (2024 Apr 6 S1, 2026 Jan 28 S1)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/practical-organic-chemistry",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Dalton's law of partial pressures",
+   "main_2024": 0,
+   "main_2025": 5,
+   "main_2026": 2,
+   "example": "2025 Apr 7 S1: dry air 70% N2/27% O2/3% Ar by mass at 1.15 atm, ratio of partial pressures (the examside 'Gaseous State' 2025 question). Also 4 Dumas aqueous-tension corrections (2025), 2026 Apr 6 S1 (He partial pressure), 2026 Jan 24 S2 (pN2 in air for Henry's law)",
+   "source": "https://questions.examside.com/past-years/jee/question/pat-the-sea-level-the-dry-air-mass-percentage-composition-jee-main-chemistry-some-basic-concepts-of-chemistry-enedql2r6rabs6hy",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Diffusion of gases (Graham's law)",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Kinetic theory of gases",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Average, rms and most probable speeds",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Deviation from ideality; real gases",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "van der Waals equation",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Intermolecular forces: types and distance dependence",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Jan 31 S1: A/R - noble gases held by strong dispersion forces, so high boiling points (p-block tag); 2026 Apr 8 S2: haloalkane b.p. order due to van der Waals forces",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-states-of-matter",
+   "topic": "Liquids: vapour pressure, surface tension, viscosity",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/gaseous-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Classification of solids; crystalline state",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Unit cells and seven crystal systems",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Close packing: cubic and hexagonal; voids",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Packing in fcc, bcc and hcp lattices",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Nearest neighbours and coordination number",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Ionic radii and radius ratio",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-solid-state",
+   "topic": "Point defects",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/solid-state",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-electrochemistry",
+   "topic": "Faraday's laws of electrolysis",
+   "main_2024": 6,
+   "main_2025": 3,
+   "main_2026": 1,
+   "example": "2024 Jan 29 S1: mass of Zn deposited by 0.015 A for 15 min; 2025 Jan 22 S1: Al deposited from AlCl3, 2 A for 30 min; 2026 Jan 24 S1: Cu deposited then O2 evolved at 600 mA for 28 min",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/electrochemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-electrochemistry",
+   "topic": "Equivalent conductivity",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/electrochemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-electrochemistry",
+   "topic": "Corrosion",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2025 Jan 22 S2: statements - corrosion is electrochemical, pure metal as anode; rate in alkaline vs acidic medium. Also 2024 Jan 27 S2: incorrect statement about rusting of iron",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/electrochemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-chemical-kinetics",
+   "topic": "Catalysis: homogeneous and heterogeneous",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Apr 8 S1: Fe(III) catalysis of iodide-persulphate (Fe3+ oxidises I-, Fe2+ reduces S2O8 2-); 2026 Apr 8 S2: surface (heterogeneous) catalysis by transition metals. Both tagged d-block",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/d-and-f-block-elements",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-chemical-kinetics",
+   "topic": "Activity and selectivity of solid catalysts",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-kinetics-and-nuclear-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-chemical-kinetics",
+   "topic": "Enzyme catalysis and its mechanism",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Apr 6 S2: incorrect statements about enzymes (specificity; 'oxidase' hydrolyses maltose); 2026 Jan 21 S2: Ea of enzyme- vs acid-catalysed sucrose hydrolysis. Both tagged Biomolecules, partly answerable from Main's 'enzymes'",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/biomolecules",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Adsorption: physisorption and chemisorption",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Freundlich adsorption isotherm",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Colloids: types and classification",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Methods of preparing colloids",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "General properties of colloids",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Emulsions",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-surface-chemistry",
+   "topic": "Surfactants and micelles",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/surface-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Position in periodic table; occurrence; isotopes",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Dihydrogen: preparation, properties and uses",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Hydrides: ionic, covalent and interstitial",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Water: physical and chemical properties",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Heavy water",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Hydrogen peroxide: preparation, reactions, structure",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrogen",
+   "topic": "Hydrogen as a fuel",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/hydrogen",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Reactivity with air, water, H2, halogens, acids",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Reducing nature; solutions in liquid ammonia",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Oxides, hydroxides, halides and oxoacid salts",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Anomalous behaviour of lithium and beryllium",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Uses of alkali and alkaline earth metals",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Sodium compounds: Na2CO3, NaCl, NaOH, NaHCO3",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-s-block",
+   "topic": "Calcium compounds: CaO, Ca(OH)2, CaCO3, CaSO4",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/s-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Borax and orthoboric acid",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 2,
+   "example": "2026 Jan 28 S2: Na2B4O7 ->(heat) NaBO2 + B2O3, then CuSO4 bead reactions, oxidation states of Cu. Also 2024 Apr 8 S1 (borax-bead reaction sequence), 2026 Jan 22 S2 (BCl3 hydrolysis gives [B(OH)4]-)",
+   "source": "https://questions.examside.com/past-years/jee/question/pconsider-the-following-reactionsppmathrmna2b4o-jee-main-chemistry-6wtuhlzjgdo53pjv",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Diborane and boron trifluoride",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 21 S1: Statement II - BF3 is electron-deficient Lewis acid, forms adduct with NH3, trigonal planar",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Aluminium chloride; uses of boron and aluminium",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 31 S2: group-13 halide hydrolysis; AlCl3 in acidified water gives octahedral [Al(H2O)6]3+. Also 2024 Jan 30 S1 (bonding tag): geometry of ion from AlCl3 in acidified water",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Allotropes of carbon and uses of carbon",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 6 S1: which is not a semiconductor - graphite; 2024 Feb 1 S2: Statement II - carbon allotropy due to catenation and p-pi/d-pi bonding",
+   "source": "https://questions.examside.com/past-years/jee/question/pwhich-of-the-following-material-is-not-a-semiconductor-jee-main-chemistry-some-basic-concepts-of-chemistry-ckxcwjkeewhcmenr",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Oxides: CO, CO2 and SiO2",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-p-block-13-14",
+   "topic": "Silicones, silicates and zeolites",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "N2, NH3, HNO3 and oxides of nitrogen",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 9 S1: which is not formed when PbS reacts with dilute HNO3 (S, NO, Pb(NO3)2, N2O)",
+   "source": "https://questions.examside.com/past-years/jee/question/pon-reaction-of-lead-sulphide-with-dilute-nitric-acid-whic-jee-main-chemistry-some-basic-concepts-of-chemistry-oih2vqlcccbquicq",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Phosphorus allotropes, PH3, PCl3, PCl5",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Oxoacids of phosphorus",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Dioxygen, simple oxides and ozone",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 27 S2: 1 mol PbS oxidised by X mol O3 to give Y mol O2; X+Y",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Sulphur: allotropes, SO2, H2SO4, oxoacids",
+   "main_2024": 3,
+   "main_2025": 2,
+   "main_2026": 2,
+   "example": "2024 Apr 9 S1: rhombic and monoclinic sulphur both S8 (A/R); 2024 Apr 9 S2: O atoms in oleum; 2024 Jan 31 S2: S8 disproportionation to S2- and S2O3 2-; 2025 Jan 23 S1: SO2 as oxidant/reductant; 2025 Jan 22 S1: electrolyte giving H2S2O8; 2026 Apr 5 S2: SO2 turns K2Cr2O7 paper green; 2026 Apr 6 S1: V2O5 in H2SO4 manufacture (one statement)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Chlorine, HCl and bleaching powder",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/p-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Interhalogens and oxoacids of halogens",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-bonding-and-molecular-structure",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-p-block-15-18",
+   "topic": "Xenon fluorides and oxides",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-bonding-and-molecular-structure",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-d-f-block",
+   "topic": "Standard electrode potentials of 3d metals",
+   "main_2024": 4,
+   "main_2025": 2,
+   "main_2026": 1,
+   "example": "2024 Apr 5 S2: how many of Ti2+, Cr2+, V2+ liberate H2 from dilute acid; 2025 Apr 2 S1: metal with highest E(M3+/M2+) among Mn, Cr, Co, Fe; 2026 Jan 22 S1: first-row metal that does not liberate H2 from dil. HCl",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/d-and-f-block-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-coordination-compounds",
+   "topic": "Stability of coordination compounds",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 1,
+   "example": "2026 Apr 5 S2: [Fe(C2O4)3]3- most stable; [Cu(NH3)4]2+ vs [Cu(en)2]2+ (chelate effect). Also 2025 Apr 4 S2 (most stable Fe(III) complex), 2024 Jan 30 S1 (Ca2+/Mg2+ EDTA stability constants, one statement)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/coordination-compounds",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-coordination-compounds",
+   "topic": "Metal carbonyls",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Jan 29 S1: which metal carbonyl has a bridging CO; 2024 Jan 30 S2: geometry around Mn in Mn2(CO)10; 2026 Apr 5 S1: synergic bonding in metal carbonyls",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/coordination-compounds",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Metal ores and their concentration",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 29 S1: incorrect mineral-formula pair (fluoroapatite, carnallite, cryolite, fluorspar-BF3)",
+   "source": "https://questions.examside.com/past-years/jee/question/pidentify-the-incorrect-pair-from-the-following-p-jee-main-chemistry-some-basic-concepts-of-chemistry-268bmoeloruqwrwr",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Thermodynamic principles of extraction",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/isolation-of-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Extraction of iron",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/isolation-of-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Extraction of copper and zinc",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/isolation-of-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Electrochemical principles: aluminium",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 30 S1: one statement among five - Al made by electrolysis of Al2O3 with cryolite (coordination tag)",
+   "source": "https://questions.examside.com/past-years/jee/question/pchoose-the-correct-statements-from-the-following-p-p-jee-main-chemistry-some-basic-concepts-of-chemistry-ubl2x0x1qim3nmyw",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Cyanide process: silver and gold",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Jan 30 S1: one statement among five - CN- used as ligand for leaching silver (also in Main coordination applications)",
+   "source": "https://questions.examside.com/past-years/jee/question/pchoose-the-correct-statements-from-the-following-p-p-jee-main-chemistry-some-basic-concepts-of-chemistry-ubl2x0x1qim3nmyw",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-metallurgy",
+   "topic": "Refining of metals",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/isolation-of-elements",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-qualitative-analysis",
+   "topic": "Ag+ and Hg2+",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 24 S1: metal chlorides soluble/sparingly soluble/soluble in hot water (AgCl, Hg2Cl2, PbCl2 among options)",
+   "source": "https://questions.examside.com/past-years/jee/question/pconsider-three-metal-chlorides-mathrmx-mathrmy-a-jee-main-chemistry-some-basic-concepts-of-chemistry-c3m5dmipl0f4jntl",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-qualitative-analysis",
+   "topic": "Cr3+ and Mn2+",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Apr 4 S2: which of Fe3+, Pb2+, Cu2+, Mn2+ precipitates with H2S in NH4OH (Mn2+). Also 2024 Apr 6 S1 (group reagent match, Mn2+), 2024 Feb 1 S1 (white salts incl. Mn(OH)2)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/salt-analysis",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-qualitative-analysis",
+   "topic": "Anion: bicarbonate",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/salt-analysis",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Atmospheric pollution",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Water pollution",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "2024 Apr 9 S1: F- hardens tooth enamel by converting hydroxyapatite to fluoroapatite, give formula (tagged Biomolecules)",
+   "source": "https://questions.examside.com/past-years/jee/question/pthe-mathrmf--ions-make-the-enamel-on-teeth-much-jee-main-chemistry-some-basic-concepts-of-chemistry-5nuypphez1uzwf8w",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Soil pollution",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Industrial waste",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Strategies to control environmental pollution",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-environmental-chemistry",
+   "topic": "Green chemistry",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/environmental-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-isomerism",
+   "topic": "Conformations of butane (Newman)",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Jan 24 S2: conformers of n-butane; torsional strain vs dihedral angle",
+   "source": "https://questions.examside.com/past-years/jee/question/pgiven-below-are-two-statementsp-pstatement-i-there-jee-main-chemistry-some-basic-concepts-of-chemistry-kuredjhpgcnbyien",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-practical-organic",
+   "topic": "Test for nitro group",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/practical-organic-chemistry",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-hydrocarbons",
+   "topic": "Allylic and benzylic halogenation",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Apr 4 S2: match-list - chlorination of toluene in light = free-radical substitution (one of four pairs)",
+   "source": "https://questions.examside.com/past-years/jee/question/p-text--match-the-list-i-with-list-ii--p-style-jee-main-chemistry-some-basic-concepts-of-chemistry-1ymyll9xxmfm8jyg",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-alcohols-phenols-ethers",
+   "topic": "Kolbe, aspirin synthesis, phenol oxidation/reduction",
+   "main_2024": 2,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2024 Feb 1 S2: match - phenol + Zn/heat -> benzene; phenol + CO2/NaOH/HCl -> salicylic acid (Kolbe). Also 2024 Jan 27 S2 (Na2Cr2O7 oxidation, Kolbe), 2026 Apr 6 S1 (phenol + Zn -> benzene, moles)",
+   "source": "https://questions.examside.com/past-years/jee/question/match-blist-ib-with-blist-iib-brbr-sty-jee-main-chemistry-6rgzndxdy863ftuz",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-biomolecules",
+   "topic": "Anomers and glycoside formation",
+   "main_2024": 2,
+   "main_2025": 3,
+   "main_2026": 3,
+   "example": "2026 Apr 5 S1: statements on alpha/beta anomers of glucose (C-1 configuration, m.p., specific rotation). Also 2025 Jan 28 S2 / Jan 29 S1 (glycosidic linkages in sucrose, maltose, lactose, amylose, cellulose), 2024 Apr 4 S2 (anomers/epimers match)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/biomolecules",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-biomolecules",
+   "topic": "Fibrous and globular proteins",
+   "main_2024": 1,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2024 Apr 6 S2: 'most enzymes are globular proteins'; 2025 Apr 7 S2: denaturation converts soluble globular to insoluble fibrous form",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/biomolecules",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Addition and condensation polymerisation",
+   "main_2024": 1,
+   "main_2025": 0,
+   "main_2026": 1,
+   "example": "2026 Apr 6 S1: TiCl4 / Al(C2H5)3 in Ziegler-Natta polymerisation (d-block tag); 2024 Jan 29 S1: Ziegler catalyst contains Ti (coordination tag)",
+   "source": "https://questions.examside.com/past-years/jee/question/pa-basic-vanadium-oxide-is-used-in-the-manufacture-of-m-jee-main-chemistry-some-basic-concepts-of-chemistry-ce7exevstwlqfwhv",
+   "confidence": "low"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Homopolymers and copolymers",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/polymers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Natural rubber and cellulose",
+   "main_2024": 1,
+   "main_2025": 2,
+   "main_2026": 0,
+   "example": "2025 Jan 29 S1: amylose/cellulose/glycogen linkages (cellulose beta C1-C4); 2024 Jan 29 S2: monomer of cellulose; 2025 Apr 3 S2: cotton (cellulose) vs nylon drying. All tagged Biomolecules/Bonding",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/biomolecules",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Teflon and PVC",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/polymers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Nylon and Bakelite",
+   "main_2024": 0,
+   "main_2025": 1,
+   "main_2026": 0,
+   "example": "2025 Apr 3 S2: wet cotton vs nylon clothes - H-bonding with water (bonding tag)",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemical-bonding-and-molecular-structure",
+   "confidence": "medium"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Biodegradable polymers",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/polymers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-polymers",
+   "topic": "Applications of polymers",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/polymers",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Drug-target interaction",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Antacids and antihistamines",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Tranquilizers and analgesics",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Antimicrobials",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Antifertility drugs",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Artificial sweeteners (names only)",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  },
+  {
+   "chapter_id": "chem-everyday-life",
+   "topic": "Soaps, detergents and cleansing action",
+   "main_2024": 0,
+   "main_2025": 0,
+   "main_2026": 0,
+   "example": "",
+   "source": "https://questions.examside.com/past-years/jee/jee-main/chemistry/chemistry-in-everyday-life",
+   "confidence": "high"
+  }
+ ],
+ "notes": "Method: parsed examside JEE Main chapter pages (all 32 Chemistry chapters, local copies of questions.examside.com/past-years/jee/jee-main/chemistry/<chapter>). They list 600 (2024), 475 (2025) and 474 (2026) questions, which matches every shift in full (20x30, 19x25, 19x25). I searched all 1,549 questions by keyword for every topic, whatever chapter tag they carried, then read the hits by hand. I opened about 25 individual question pages to see the options. I did no MathonGo/PW cross-check, because the examside list is complete by count. Counting rule: a question counts when the Adv-only content is needed to answer it, including one statement in a multi-statement or match-list question. It does not count when the same fact is taught in a Main unit: VSEPR shapes, group trends, salt-analysis tests on Main ions, Dumas/Kjeldahl as such.\nVERDICT ON THE 5 'REMOVED BUT TAGGED' CHAPTERS: (1) Surface Chemistry, 2 in 2024 (Jan 31 S1 'adsorption principle used in which purification method'; Apr 4 S2 'adsorbents in adsorption chromatography: silica gel/alumina...'): both are chromatography from Main's Purification unit. Not surface chemistry, so 0. (2) Chemistry in Everyday Life, 2 in 2024 (Feb 1 S2 and Apr 6 S1, uses of CCl4/CH2Cl2/iodoform/freons/DDT): this is the polyhalogen-compounds section of Main's Haloalkanes unit. Not drugs or soaps, so 0. (3) s-Block, 1 in 2024 (Apr 6 S2, flame emission wavelengths of Li/Na/Rb/Cs): this is genuine s-block content (NCERT flame colours), but none of the 7 listed s-block topics covers it, so it is noted here, not counted. (4) States of Matter, 1 in 2025 (Apr 7 S1, partial pressures of N2/O2/Ar in air from mass %): this is genuinely Dalton's law and is counted. (The van der Waals 'a' ordering question that an earlier mis-aligned parse put in 2025 is really 2023 Apr 8.) (5) Metallurgy, 1 in 2025 (Jan 28 S2, 'purification method based on solid->vapour->solid', i.e. sublimation): this is organic purification. Not metallurgy, so 0. Note: the earlier lead's text was off by one (each label was attached to the next question); fixed here.\nBIGGEST HIDDEN RISKS: Faraday's laws (6/3/1). They are not named in the NTA text but are asked almost every year in the Electrochemistry chapter. Gas laws and Dalton's law are needed inside Main questions (4 Dumas-method numericals in 2025, Kp and thermodynamics numericals). Sulphur compounds (3/2/2). Anomers and glycosidic linkages (2/3/3). E(M3+/M2+) of 3d metals (4/2/1). Kolbe and phenol-Zn (2/0/1). Metal carbonyls (2/0/1). Mn2+ group IV analysis (2/0/1).\nNOT COUNTED BUT RELEVANT: VSEPR/hybridisation questions on Xe compounds (XeF2, XeF4, XeO3, XeOF4, XeO2F2) number 2/3/8 in 2024/25/26. Those on interhalogens and polyhalides (ClF3, BrF5, IF7, ICl4-, I3-) number 10/5/7. They sit in Chemical Bonding, and the shapes follow from VSEPR (Main), so the student needs to know these formulas exist even if he skips the p-block sections. Ni(CO)4 VBT/magnetism questions (1/5/5) were also left out of 'Metal carbonyls'. Acid/basic/amphoteric/neutral nature of CO, SiO2, N2O, NO, SnO2, PbO2 came up in about 4 questions (2024 x3, 2026 x1), treated as Main group trends. Main salt-analysis tests (brown ring NO, Nessler NH3, chromyl chloride) were left out of the N/Cl topics. CaCO3/MgCO3 ignition stoichiometry (2024 Jan 31 S2) and CO2 + Ca(OH)2 (2025 Jan 22 S1) need only Class-10 facts, so they are not in s-block. Blast-furnace reactions given in equilibrium/stoichiometry questions (2024 Apr 5 S1, 2025 Jan 24 S1) need no metallurgy. H2O2 as a disproportionation example (2024 Jan 30 S2, 2025 Jan 28 S1) can be done from oxidation states. 2025 Apr 3 S1 'homogeneous catalyst cannot change equilibrium composition' needs only Main kinetics/equilibrium.\nCAVEATS: borderline judgements carry confidence 'medium' or 'low'. Examples: one statement among several (2024 Jan 30 S1 counted for Al electrolysis, cyanide leaching and EDTA stability), gas-law use inside thermodynamics/equilibrium questions, cellulose/nylon counted under Polymers although the questions are tagged Biomolecules/Bonding. Some topics overlap Main units (enzymes, globular proteins, cyanide leaching), so a nonzero count there does not by itself mean the student would miss the question. Examples use S1 = morning, S2 = evening shift."
+}

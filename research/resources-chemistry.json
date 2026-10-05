@@ -1,0 +1,1428 @@
+{
+  "subject": "chemistry",
+  "chapters": [
+    {
+      "id": "chem-mole-concept",
+      "videos": [
+        {
+          "title": "Manzil 2026: MOLE CONCEPT in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=CAb8YZKLoac",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "8h"
+        },
+        {
+          "title": "JEE Brief: MOLE CONCEPT in One shot | JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=Rn8O7qq_f18",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Some Basic Concepts of Chemistry (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1vn_fB33DBQ7TUhXiGhmne8y-3uVGzr83/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 1 Some Basic Concepts of Chemistry"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Mole and Equivalent Concept"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Mole Concept"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Some Basic Concepts / Stoichiometry"
+        }
+      ]
+    },
+    {
+      "id": "chem-redox",
+      "videos": [
+        {
+          "title": "REDOX REACTION in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=8oypjDXAXZc",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6.5h"
+        },
+        {
+          "title": "JEE Brief: REDOX REACTION One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=VjRzBsIvl9s",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "3.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Revision Notes: Redox Reaction (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1iy-zzbXFcNDCJJ6aLk2jyqFLT7HUBEoc/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 7 Redox Reactions"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Redox Reactions / Equivalent Concept"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Redox and Equivalent Concept"
+        }
+      ]
+    },
+    {
+      "id": "chem-atomic-structure",
+      "videos": [
+        {
+          "title": "STRUCTURE OF ATOM in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=7OkNy8vhDaw",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "JEE Brief: STRUCTURE OF ATOMS One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=g40iFCf9oKs",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "6h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Atomic Structure (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1-1WBwrP_O6XQVDwronPqeWSH2DKT2dWN/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 2 Structure of Atom"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Atomic Structure"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Atomic Structure"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Atomic Structure"
+        }
+      ]
+    },
+    {
+      "id": "chem-states-of-matter",
+      "videos": [
+        {
+          "title": "GASEOUS STATE in 1 Shot - All Concepts, Tricks & PYQs Covered | Class 11 | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=Ng6Y1HOxRDY",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7.5h"
+        },
+        {
+          "title": "Gaseous State Class 11 | One Shot | JEE Main & Advanced | Mohit Ryan Sir",
+          "url": "https://www.youtube.com/watch?v=H4xJgkg-fkA",
+          "channel": "JEE Nexus by Unacademy",
+          "language": "hinglish",
+          "duration": "4.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: States of Matter (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1ipU8OzWXaGYZmqz0BYdMPnFdoiMEwBjG/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (old pre-2023 edition)",
+          "section": "Ch 5 States of Matter"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Gaseous State"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Gaseous State"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "States of Matter (Gaseous State)"
+        }
+      ]
+    },
+    {
+      "id": "chem-thermodynamics",
+      "videos": [
+        {
+          "title": "THERMODYNAMICS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=NwCmoh7Vd9g",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "9h"
+        },
+        {
+          "title": "JEE Brief: THERMODYNAMICS & THERMOCHEMISTRY One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=FhSv9MCOVhY",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "6h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Thermodynamics (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1J2u2qw9P2eH-NLgtlEJ2bvtNPhJJXedz/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 5 Thermodynamics"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Thermodynamics and Thermochemistry"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Thermodynamics / Thermochemistry"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Thermodynamics and Thermochemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-equilibrium",
+      "videos": [
+        {
+          "title": "CHEMICAL EQUILIBRIUM in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=BceSksiNLD4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "JEE Brief: Chemical and Ionic Equilibrium | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=177_fLFW-Ms",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Chemical Equilibrium (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/179uwtYGlwyJT1_W_w-z-y4X0Q8IbaJWe/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 6 Equilibrium (chemical equilibrium part)"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Chemical Equilibrium"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Chemical Equilibrium"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Chemical Equilibrium"
+        }
+      ]
+    },
+    {
+      "id": "chem-ionic-equilibrium",
+      "videos": [
+        {
+          "title": "IONIC EQUILIBRIUM in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=1W-UvePUAKo",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h"
+        },
+        {
+          "title": "JEE Brief: Chemical and Ionic Equilibrium | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=177_fLFW-Ms",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Ionic Equilibrium (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1xrDcphZrZzyfEpJFkXR30js6ex3exZ8k/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 6 Equilibrium (ionic equilibrium part)"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Ionic Equilibrium"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Ionic Equilibrium"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Ionic Equilibrium"
+        }
+      ]
+    },
+    {
+      "id": "chem-solid-state",
+      "videos": [
+        {
+          "title": "SOLID STATE  in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=r3w9iwWRThM",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h"
+        },
+        {
+          "title": "Solid State Class 12 | One Shot | JEE Main & Advanced | Mohit Ryan Sir",
+          "url": "https://www.youtube.com/watch?v=a81B2EupaJM",
+          "channel": "JEE Nexus by Unacademy",
+          "language": "hinglish",
+          "duration": "4h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Solid State (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1ihj1REEOxe-1hgpEHnbjIsFTq8unQVmx/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 1 The Solid State"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Solid State"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Solid State"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Solid State"
+        }
+      ]
+    },
+    {
+      "id": "chem-solutions",
+      "videos": [
+        {
+          "title": "SOLUTIONS in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=f6ENSghG7T4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7.5h"
+        },
+        {
+          "title": "JEE Brief: Dilute Solution | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=l7KwKgMNhSM",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "4.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Solutions (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1BcG4DycEjwvI6T5TF7Q6vJ11l0-Qm2ai/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 1 Solutions"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Dilute Solutions and Colligative Properties"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Dilute Solutions / Colligative Properties"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Solutions and Colligative Properties"
+        }
+      ]
+    },
+    {
+      "id": "chem-electrochemistry",
+      "videos": [
+        {
+          "title": "ELECTROCHEMISTRY in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=GplPceRaMi0",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "8h"
+        },
+        {
+          "title": "JEE Brief: Electrochemistry | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=EHy52QPMdsk",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Electrochemistry (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1tVcBgvZ6SFIB9kuGghC50Y5QPjKsbrmI/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 2 Electrochemistry"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Electrochemistry"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Electrochemistry"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Electrochemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-kinetics",
+      "videos": [
+        {
+          "title": "CHEMICAL KINETICS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=kwPNxC9AgZA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "JEE Brief: Chemical Kinetics | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=dv_I0sk9tso",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "4h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Chemical Kinetics (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1l-KNNCkmHwbsyDsr4sw9UlPMzjDFPVt-/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 3 Chemical Kinetics"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Chemical Kinetics"
+        },
+        {
+          "name": "P Bahadur - Numerical Chemistry",
+          "section": "Chemical Kinetics"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Chemical Kinetics"
+        }
+      ]
+    },
+    {
+      "id": "chem-surface-chemistry",
+      "videos": [
+        {
+          "title": "SURFACE CHEMISTRY in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=B4GL9GSzxBg",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3.5h"
+        },
+        {
+          "title": "Surface Chemistry Class 12 | One Shot | JEE Main & Advanced | Mohit Ryan Sir",
+          "url": "https://www.youtube.com/watch?v=dVpcvhKlmC4",
+          "channel": "JEE Nexus by Unacademy",
+          "language": "hinglish",
+          "duration": "3.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Surface Chemistry (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/17hPvIwUKn91lBdCp-658bLM3urHyxTT3/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 5 Surface Chemistry"
+        },
+        {
+          "name": "N Awasthi - Problems in Physical Chemistry",
+          "section": "Surface Chemistry"
+        },
+        {
+          "name": "Cengage Physical Chemistry (KS Verma)",
+          "section": "Surface Chemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-periodic-table",
+      "videos": [
+        {
+          "title": "Manzil 2026: PERIODIC TABLE in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=nLE7_YBFQNQ",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7h"
+        },
+        {
+          "title": "PERIODIC TABLE One Shot for JEE Main and Advanced | Sakshi Vora | JEE Brief",
+          "url": "https://www.youtube.com/watch?v=ABfRlH8uYh8",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Periodic Properties (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1rChjQfQuXhMQiYQLV-Jm1B_1WT_ZMVuY/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 3 Classification of Elements and Periodicity in Properties"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Periodic Properties"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Periodic Table / Periodic Properties"
+        }
+      ]
+    },
+    {
+      "id": "chem-chemical-bonding",
+      "videos": [
+        {
+          "title": "CHEMICAL BONDING in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=kS8s_WX0IlY",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "9.5h"
+        },
+        {
+          "title": "JEE Brief: CHEMICAL BONDING One Shot CHEMISTRY for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=gEOUQ0YOArU",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "6.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Chemical Bonding (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1yu7kH2dA6Kwyn6xVBilZgd6brOpftHoq/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 4 Chemical Bonding and Molecular Structure"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Chemical Bonding"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Chemical Bonding"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "Chemical Bonding"
+        }
+      ]
+    },
+    {
+      "id": "chem-hydrogen",
+      "videos": [
+        {
+          "title": "HYDROGEN in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=FdmETHB1mjE",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "2h"
+        },
+        {
+          "title": "Hydrogen | One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=V7ykQ5yiik0",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "4h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Hydrogen (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1wtn_qZNlPB2gU10lmTRqWzbYFwvO17Zp/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (old pre-2023 edition)",
+          "section": "Ch 9 Hydrogen"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Hydrogen and its Compounds"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "Hydrogen"
+        }
+      ]
+    },
+    {
+      "id": "chem-s-block",
+      "videos": [
+        {
+          "title": "S-BLOCK ELEMENTS in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=G4c5v97ExSM",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h"
+        },
+        {
+          "title": "s Block Elements | One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=aU6MPFdyjmo",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "4h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: s-Block Elements (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1-ZvPXBfXmFUA2W6aZWWSo_p2GMaPuCka/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (old pre-2023 edition)",
+          "section": "Ch 10 The s-Block Elements"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "s-Block Elements"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Group 1 and Group 2 Elements"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "s-Block Elements"
+        }
+      ]
+    },
+    {
+      "id": "chem-p-block-13-14",
+      "videos": [
+        {
+          "title": "P-BLOCK: Complete Chapter in 1 Video || Concepts+PYQs || Class 11 JEE",
+          "url": "https://www.youtube.com/watch?v=zXUcjDbXIHE",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5h"
+        },
+        {
+          "title": "P Block Elements Group 13-14 | One Shot - Sambhav | JEE Main | #jee2024 #jee2025 | Monica Bedi",
+          "url": "https://www.youtube.com/watch?v=izWq023rOos",
+          "channel": "Unacademy JEE Official",
+          "language": "hinglish",
+          "duration": "2.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: p-Block Elements (covers groups 13 to 18) (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1IyKqok9Fmy4U1nKEsOfufO41Xijh0qJz/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (old pre-2023 edition)",
+          "section": "Ch 11 The p-Block Elements (Groups 13 and 14)"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "p-Block Elements (Boron and Carbon families)"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Group 13 and Group 14 Elements"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "p-Block Elements"
+        }
+      ]
+    },
+    {
+      "id": "chem-p-block-15-18",
+      "videos": [
+        {
+          "title": "P-BLOCK in 1 Shot - All Concepts Covered || JEE Main & Advanced || Class 12",
+          "url": "https://www.youtube.com/watch?v=olvP7nrVNu4",
+          "channel": "Lakshya JEE",
+          "language": "hinglish",
+          "duration": "2h"
+        },
+        {
+          "title": "The P - Block Elements FULL CHAPTER | Class 12th Inorganic Chemistry | Lakshya",
+          "url": "https://www.youtube.com/watch?v=Vd9RmjkqONA",
+          "channel": "Lakshya JEE",
+          "language": "hinglish",
+          "duration": "3.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: p-Block Elements (covers groups 13 to 18) (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1IyKqok9Fmy4U1nKEsOfufO41Xijh0qJz/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 7 The p-Block Elements (Groups 15 to 18)"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "p-Block Elements (Groups 15 to 18)"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Group 15 to Group 18 Elements"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "p-Block Elements"
+        }
+      ]
+    },
+    {
+      "id": "chem-d-f-block",
+      "videos": [
+        {
+          "title": "D & F-BLOCK in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=SjILQ6cX_Vo",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6.5h"
+        },
+        {
+          "title": "JEE Brief: D and F Block Elements Class 12 Chemistry One Shot for JEE Main and Advanced",
+          "url": "https://www.youtube.com/watch?v=AQagzcRoDkM",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: d- and f-Block Elements (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1uq4ECVE7SGgvQsSIYPMj5vY4TInxW30W/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 4 The d- and f-Block Elements"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "d-Block Elements"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Transition Elements / Lanthanoids and Actinoids"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "d- and f-Block Elements"
+        }
+      ]
+    },
+    {
+      "id": "chem-coordination-compounds",
+      "videos": [
+        {
+          "title": "COORDINATION COMPOUNDS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=5myJzBeN514",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "8h"
+        },
+        {
+          "title": "JEE Brief: Coordination Compound | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=XZzQlquqWdY",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Coordination Compounds (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1lQFGvRM2iDF3UYyW6NBpaMuUtsY32XPs/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 5 Coordination Compounds"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Coordination Compounds"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Coordination Compounds"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "Coordination Compounds"
+        }
+      ]
+    },
+    {
+      "id": "chem-metallurgy",
+      "videos": [
+        {
+          "title": "METALLURGY in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=_s9tTXvhkHM",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h"
+        },
+        {
+          "title": "Metallurgy | One Shot | #BounceBack Series | JEE Chemistry | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=l7LmAojpivA",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Metallurgy (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1esMbn7zB9lZFHaxAIuKdvyF4IhW5MrI8/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 6 General Principles and Processes of Isolation of Elements"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Metallurgy"
+        },
+        {
+          "name": "OP Tandon - Inorganic Chemistry",
+          "section": "Metallurgy"
+        }
+      ]
+    },
+    {
+      "id": "chem-qualitative-analysis",
+      "videos": [
+        {
+          "title": "SALT ANALYSIS in One Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=8rRnn4ECwXI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6.5h"
+        },
+        {
+          "title": "Salt Analysis | Qualitative Analysis | One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=ld5sFkLjFUk",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "6h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Qualitative Analysis (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/112Ly36m36YME5iDcelU9Sn8N62fAQnAp/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Laboratory Manual Chemistry Class 12",
+          "section": "Systematic Qualitative Analysis (salt analysis)"
+        },
+        {
+          "name": "VK Jaiswal - Problems in Inorganic Chemistry",
+          "section": "Qualitative Analysis (salt analysis)"
+        },
+        {
+          "name": "JD Lee - Concise Inorganic Chemistry (Sudarsan Guha adaptation)",
+          "section": "Reactions of cations and anions (group chemistry)"
+        }
+      ]
+    },
+    {
+      "id": "chem-environmental-chemistry",
+      "videos": [
+        {
+          "title": "ENVIRONMENTAL CHEMISTRY in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main",
+          "url": "https://www.youtube.com/watch?v=B2_wuSR71jw",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "2.5h"
+        },
+        {
+          "title": "Environmental Chemistry | One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=xOaYbVC_i4c",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "2h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Environmental Chemistry (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1TY_n0g_VTddmNMwItaYS-zLUy_UCaHy_/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (old pre-2023 edition)",
+          "section": "Ch 14 Environmental Chemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-goc",
+      "videos": [
+        {
+          "title": "GOC in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=FFCT-lh86tA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h"
+        },
+        {
+          "title": "JEE Brief: General Organic Chemistry | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=eWaRElkCLvI",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: General Organic Chemistry (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1YLS56fJNC9RSKPJricTWPhndIf-qkccp/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 8 Organic Chemistry: Some Basic Principles and Techniques"
+        },
+        {
+          "name": "Himanshu Pandey - Problems in GOC",
+          "section": "GOC (electronic effects, reactive intermediates, acidity/basicity)"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "General Organic Chemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-isomerism",
+      "videos": [
+        {
+          "title": "ISOMERISM in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=UOzWO2-Z9So",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "7.5h"
+        },
+        {
+          "title": "JEE Brief: Isomerism | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=c_wsMPCc4HM",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Isomerism (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1GgEcVwycVF6boXdzep5pOyqprvwLSfrR/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": false,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 8 Organic Chemistry: Some Basic Principles and Techniques (isomerism section)"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Isomerism"
+        },
+        {
+          "name": "Himanshu Pandey - Problems in GOC",
+          "section": "Isomerism"
+        }
+      ]
+    },
+    {
+      "id": "chem-practical-organic",
+      "videos": [
+        {
+          "title": "PURIFICATION OF ORGANIC COMPOUNDS in 1 Shot - All Concepts, Tricks & PYQs Covered | JEE Main & Adv.",
+          "url": "https://www.youtube.com/watch?v=9ldKfnFH9L8",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h"
+        },
+        {
+          "title": "Practical Organic Chemistry (POC) One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=okCmFv1-iwk",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "4.5h"
+        }
+      ],
+      "notes": [],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 8 Organic Chemistry: Some Basic Principles and Techniques (purification, qualitative and quantitative analysis)"
+        },
+        {
+          "name": "NCERT Laboratory Manual Chemistry Class 11/12",
+          "section": "Detection of elements and functional groups"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Practical Organic Chemistry"
+        }
+      ]
+    },
+    {
+      "id": "chem-hydrocarbons",
+      "videos": [
+        {
+          "title": "HYDROCARBON in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=02CBTEOMMsA",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6.5h"
+        },
+        {
+          "title": "JEE Brief: Hydrocarbon | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=Nv-Pa5EB2NE",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Hydrocarbons (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1M8fhPh7sLwMPzMj6N3FE1cYL7Bp-H8cC/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 11 (rationalised)",
+          "section": "Ch 9 Hydrocarbons"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Hydrocarbons (alkanes, alkenes, alkynes, aromatic)"
+        },
+        {
+          "name": "Solomons & Fryhle - Organic Chemistry",
+          "section": "Alkenes and Alkynes / Aromatic Compounds"
+        }
+      ]
+    },
+    {
+      "id": "chem-haloalkanes-haloarenes",
+      "videos": [
+        {
+          "title": "HALOALKANES & HALOARENES in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=7iJFvPI8vMM",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "6h"
+        },
+        {
+          "title": "JEE Brief: Haloalkane & Haloarene | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=q2RzVKPT6FU",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Halogen Derivatives (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1WvvH8xLZg3L5SqaRGvIxbWscOiQnGSZR/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 6 Haloalkanes and Haloarenes"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Alkyl Halides / Aryl Halides"
+        },
+        {
+          "name": "Solomons & Fryhle - Organic Chemistry",
+          "section": "Nucleophilic Substitution and Elimination"
+        }
+      ]
+    },
+    {
+      "id": "chem-alcohols-phenols-ethers",
+      "videos": [
+        {
+          "title": "ALCOHOLS, PHENOLS AND ETHERS in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=IDo8B0c5Xis",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "4h"
+        },
+        {
+          "title": "JEE Brief: Alcohol Phenol Ether | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=jgGp_MLGP2U",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Alcohols, Phenols, Ethers (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1ntbXo98C4z-t7j1_2M88yZ5iSshSN99M/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 7 Alcohols, Phenols and Ethers"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Alcohols, Phenols and Ethers"
+        }
+      ]
+    },
+    {
+      "id": "chem-aldehydes-ketones",
+      "videos": [
+        {
+          "title": "ALDEHYDES, KETONES & CARBOXYLIC ACIDS in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=oR19BqbPBu4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "JEE Brief: Aldehyde Ketone Carboxylic Acid | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=7Hg5KtFYMhU",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Aldehydes, Ketones (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1-El8kkdLaak3lAt3kDKk7weK5CM_kCEx/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 8 Aldehydes, Ketones and Carboxylic Acids"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Aldehydes and Ketones (carbonyl compounds)"
+        }
+      ]
+    },
+    {
+      "id": "chem-carboxylic-acids",
+      "videos": [
+        {
+          "title": "ALDEHYDES, KETONES & CARBOXYLIC ACIDS in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=oR19BqbPBu4",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "JEE Brief: Aldehyde Ketone Carboxylic Acid | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=7Hg5KtFYMhU",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Carboxylic Acids (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1Kog_VLmNWJ83_BD4ZXdXTXRHRYjsPrbx/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 8 Aldehydes, Ketones and Carboxylic Acids"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Carboxylic Acids and their Derivatives"
+        }
+      ]
+    },
+    {
+      "id": "chem-amines",
+      "videos": [
+        {
+          "title": "AMINES in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=SKHrfD34Kkc",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "3h"
+        },
+        {
+          "title": "JEE Brief: Amines & N - derivatives | One Shot for JEE Main and Advanced | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=82TatEhQweg",
+          "channel": "Vora Classes",
+          "language": "hinglish",
+          "duration": "4.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Amines (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/10ZWE6QQSSt379j3ebtEGuDS7dzmSSQ5i/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 9 Amines"
+        },
+        {
+          "name": "MS Chouhan - Advanced Problems in Organic Chemistry",
+          "section": "Amines / Nitrogen compounds"
+        }
+      ]
+    },
+    {
+      "id": "chem-biomolecules",
+      "videos": [
+        {
+          "title": "BIOMOLECULES in 1 Shot: All Concepts & PYQs Covered | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=LcVNwEWJtyI",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "5.5h"
+        },
+        {
+          "title": "Biomolecules One Shot | #BounceBack Series | Unacademy Atoms | IIT JEE Chemistry | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=xuKRxlEcJvM",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "6h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Biomolecules (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1k3T9gM9InmbVBcG2h52B40YTOFL4rR3N/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (rationalised)",
+          "section": "Ch 10 Biomolecules"
+        }
+      ]
+    },
+    {
+      "id": "chem-polymers",
+      "videos": [
+        {
+          "title": "POLYMER in 1 Shot | From Zero to Hero | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=iPOxMOCOIpY",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "2h"
+        },
+        {
+          "title": "Polymers One Shot | #BounceBack Series | Unacademy Atoms | IIT JEE Chemistry | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=k5g6LEaBOe0",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "3.5h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Polymers (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1_qQU_dGx4VkKDfuMVkE3n7YCuOONhMsG/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 15 Polymers"
+        }
+      ]
+    },
+    {
+      "id": "chem-everyday-life",
+      "videos": [
+        {
+          "title": "CHEMISTRY IN EVERYDAY LIFE in 1 Shot | From Zero to Hero | JEE Main & Advanced",
+          "url": "https://www.youtube.com/watch?v=DfB6JQ8weHc",
+          "channel": "JEE Wallah",
+          "language": "hinglish",
+          "duration": "1.5h"
+        },
+        {
+          "title": "Chemistry in Everyday Life | One Shot | #BounceBack Series | Unacademy Atoms | Sakshi Vora",
+          "url": "https://www.youtube.com/watch?v=_2dOz0DxhYk",
+          "channel": "JEE Legends",
+          "language": "hinglish",
+          "duration": "4h"
+        }
+      ],
+      "notes": [
+        {
+          "title": "MathonGo/Quizrr Formula Sheet: Chemistry in Everyday Life (PDF, Google Drive)",
+          "url": "https://drive.google.com/file/d/1si4XS_qY3sr6AQCiobbh8y7PTykK3Ds0/view?usp=sharing"
+        }
+      ],
+      "ncert_useful": true,
+      "books": [
+        {
+          "name": "NCERT Chemistry Class 12 (old pre-2023 edition)",
+          "section": "Ch 16 Chemistry in Everyday Life"
+        }
+      ]
+    }
+  ],
+  "uncertainties": [
+    "All video URLs were taken from YouTube's own search-results page and re-checked via YouTube oEmbed (title + channel match). Durations are from YouTube search results, rounded to the nearest half hour.",
+    "Language for all videos is set to 'hinglish' based on the channels' usual teaching style (PW/JEE Wallah, Sakshi Vora, Mohit Ryan, Lakshya JEE, Monica Bedi); not checked by watching each video.",
+    "chem-aldehydes-ketones and chem-carboxylic-acids share the same two combined one-shots (Aldehydes, Ketones & Carboxylic Acids); acid-derivative depth for JEE Advanced may be limited.",
+    "chem-chemical-equilibrium and chem-ionic-equilibrium share the Sakshi Vora 'Chemical and Ionic Equilibrium' one-shot.",
+    "chem-p-block-13-14: the JEE Wallah video is labelled 'Class 11' but its group coverage (13 and 14) was not confirmed from the description. chem-p-block-15-18: both Lakshya JEE videos are labelled 'Class 12' (groups 15 to 18 implied) but not confirmed from the description.",
+    "Notes are MathonGo-listed Quizrr formula-sheet PDFs on Google Drive (links taken from mathongo.com/dw/formula-sheets and resolved from bit.ly; Drive titles confirmed). They target JEE Main and may not cover Advanced-only depth. No formula sheet found for chem-practical-organic.",
+    "The p-Block formula sheet is a single PDF covering groups 13 to 18 and is used for both p-block chapters.",
+    "ncert_useful is false for States of Matter, Solid State and Surface Chemistry (removed from rationalised NCERT, numericals-heavy; the old edition is listed under books for theory) and Isomerism (NCERT coverage is thin). Hydrogen, s-Block, p-Block 13-14, p-Block 15-18, Metallurgy, Environmental Chemistry, Polymers and Chemistry in Everyday Life were removed from the rationalised NCERT, but the old-edition text is still worth reading, so they stay true and the old edition is listed under books.",
+    "Book section names are descriptive topic names rather than exact chapter numbers, because these books are reorganised across editions. NCERT chapter numbers follow the 2023+ rationalised edition and the pre-2023 edition as labelled.",
+    "Many older Sakshi Vora 'BounceBack' videos on JEE Legends (Unacademy) date from 2021-22. They are older but still widely used."
+  ]
+}
