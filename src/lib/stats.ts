@@ -94,8 +94,9 @@ export function pace(chapters: Chapters, exam: Exam) {
 
 const REVISION_GAPS = [3, 7, 21, 45]; // days after done / after each revision
 
-export function revisionsDue(chapters: Chapters, exam: Exam) {
-  const now = today();
+/** Studied chapters whose next spaced revision falls on or before `until` (default today), soonest first. */
+export function revisionsDue(chapters: Chapters, exam: Exam, until = today()) {
+  const now = until;
   return ALL_CHAPTERS.filter((c) => chapterInScope(c, exam))
     .map((c) => {
       const p = chapters[c.id] ?? emptyProgress();

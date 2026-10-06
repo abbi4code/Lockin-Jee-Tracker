@@ -12,6 +12,7 @@ import { celebrate } from "../lib/celebrate";
 import { chapterFraction, scopedTopics } from "../lib/stats";
 import { emptyProgress, useProgress, type Status, type StepId } from "../store/progress";
 import { TestSeriesPanel } from "../components/TestSeries";
+import { NotesBlock, ScheduleBlock } from "../components/ChapterPlan";
 import { isStudied, STAGES } from "../lib/stages";
 
 const STEPS: { id: StepId; label: string }[] = [
@@ -167,6 +168,7 @@ export function ChapterScreen({ chapterId }: { chapterId: string }) {
         </ul>
         {hidden > 0 && <p className="mt-3 font-mono text-[12px] text-dim">{hidden} advanced-only topics hidden in main mode</p>}
       </Section>
+      <NotesBlock chapterId={chapter.id} />
       </div>
 
       <aside className="lg:sticky lg:top-10 lg:col-span-5 lg:self-start">
@@ -218,6 +220,8 @@ export function ChapterScreen({ chapterId }: { chapterId: string }) {
           })}
         </div>
       </Section>
+
+      <ScheduleBlock chapterId={chapter.id} />
 
       {isStudied(p.status) && (
         <Section label="revisions" right={p.revisions.at(-1) ? `last ${p.revisions.at(-1)}` : `done ${p.doneAt}`}>

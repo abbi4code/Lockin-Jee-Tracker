@@ -3,7 +3,8 @@ import { NextResponse, type NextRequest } from "next/server";
 import { isAdminEmail } from "./lib/admin";
 
 const AUTH_PAGES = ["/login", "/signup"];
-const isPublic = (path: string) => path === "/" || AUTH_PAGES.includes(path) || path.startsWith("/auth/");
+// /api/cron/* has no session: those routes check CRON_SECRET themselves.
+const isPublic = (path: string) => path === "/" || AUTH_PAGES.includes(path) || path.startsWith("/auth/") || path.startsWith("/api/cron/");
 
 /**
  * Runs before every page: refreshes the Supabase session cookie, then routes by login state.

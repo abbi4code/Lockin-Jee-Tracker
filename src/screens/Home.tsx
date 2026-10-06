@@ -16,7 +16,9 @@ import { celebrate } from "../lib/celebrate";
 import { roastLines } from "../lib/roasts";
 import { activityGrid, chapterFraction, currentFocus, daysBetween, formatMinutes, freeMarks, pace, revisionsDue, streak, subjectStats } from "../lib/stats";
 import { currentPlan, isScheduled, studyByDay, toggleDay } from "../lib/coaching";
-import { useProgress } from "../store/progress";
+import { today, useProgress } from "../store/progress";
+import { PlanItemRow } from "../components/PlanItemRow";
+import { live, onDay, overdue } from "../lib/plan";
 import { scoreTone, seriesSummary } from "../lib/tests";
 
 function Header() {
@@ -314,26 +316,51 @@ function TestSeries() {
   );
 }
 
-function Revise() {
-  const { chapters, settings, addRevision } = useProgress();
-  const due = revisionsDue(chapters, settings.exam);
-  if (!due.length) return null;
+/** Today's scheduled chapters (plus anything overdue), and spaced-repetition revisions not planned yet. */
+function TodayPlan() {
+  const { plan, chapters, settings, schedule } = useProgress();
+  const t = today();
+  const items = [...overdue(plan, t), ...onDay(plan, t).sort((a, b) => Number(!!a.doneAt) - Number(!!b.doneAt))];
+  const planned = new Set(live(plan).filter((i) => !i.doneAt).map((i) => i.chapterId));
+  const unplanned = revisionsDue(chapters, settings.exam).filter((d) => !planned.has(d.chapter.id));
+  const done = items.filter((i) => i.doneAt).length;
   return (
-    <Section label="revise today" right={`${due.length} due`}>
+    <Section
+      label="today's plan"
+      right={
+        <Link href="/plan" className="hover:text-fg">
+          {items.length ? `${done}/${items.length} done · ` : ""}planner →
+        </Link>
+      }
+    >
+      {items.length === 0 && <p className="font-mono text-[13px] text-dim">nothing scheduled today. plan revisions on any chapter page or in the planner.</p>}
       <AnimatePresence initial={false}>
-        {due.slice(0, 4).map(({ chapter, revisions }) => (
-          <motion.div key={chapter.id} layout exit={{ opacity: 0, height: 0 }} className="flex items-center gap-3 py-2">
-            <span className="size-1.5 rounded-full" style={{ background: SUBJECT_COLOR[chapter.subject] }} />
-            <Link href={`/c/${chapter.id}`} className="min-w-0 flex-1 truncate text-[15px]">
-              {chapter.name}
-            </Link>
-            <span className="font-mono text-[12px] text-dim">rev {revisions + 1}</span>
-            <button onClick={() => addRevision(chapter.id)} className="rounded-full border border-line-2 px-3 py-1 text-[13px] text-mute transition hover:border-fg hover:text-fg">
-              done
-            </button>
-          </motion.div>
+        {items.map((i) => (
+          <PlanItemRow key={i.id} item={i} t={t} />
         ))}
       </AnimatePresence>
+      {unplanned.length > 0 && (
+        <div className="mt-3 border-t border-line/60 pt-3">
+          <Label className="mb-1">due for revision · not planned</Label>
+          {unplanned.slice(0, 3).map(({ chapter, revisions }) => (
+            <div key={chapter.id} className="flex items-center gap-3 py-1.5">
+              <span className="size-1.5 rounded-full" style={{ background: SUBJECT_COLOR[chapter.subject] }} />
+              <Link href={`/c/${chapter.id}`} className="min-w-0 flex-1 truncate text-[15px]">
+                {chapter.name}
+              </Link>
+              <span className="font-mono text-[12px] text-dim">rev {revisions + 1}</span>
+              <button onClick={() => schedule([{ chapterId: chapter.id, date: t }])} className="rounded-full border border-line-2 px-3 py-1 font-mono text-[12px] text-mute transition hover:border-fg hover:text-fg">
+                + today
+              </button>
+            </div>
+          ))}
+          {unplanned.length > 3 && (
+            <Link href="/plan" className="mt-1 inline-block font-mono text-[12px] text-mute hover:text-fg">
+              +{unplanned.length - 3} more · plan my week →
+            </Link>
+          )}
+        </div>
+      )}
     </Section>
   );
 }
@@ -364,6 +391,7 @@ export function Home() {
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-14">
         <div className="lg:col-span-7">
           <Countdown />
+          <TodayPlan />
           <TodayCollege />
           <Now />
           <Syllabus />
@@ -373,7 +401,6 @@ export function Home() {
           <Rhythm />
           <StudyTime />
           <TestSeries />
-          <Revise />
           <UpNext />
         </div>
       </div>

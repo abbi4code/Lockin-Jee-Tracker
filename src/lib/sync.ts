@@ -6,6 +6,12 @@ import { supabase } from "./supabase/client";
 import { useProgress, type ChapterProgress, type QuestionDay, type Settings, type StudySession } from "../store/progress";
 import { normalizeStatus } from "./stages";
 import { fromTestRow, toTestRow } from "./tests";
+import { fromPlanRow, toPlanRow, type PlanRow } from "./plan";
+
+// Whether public.plan_items exists (null = not checked yet). Until its migration is applied the planner
+// works locally only; the next full sync after it appears uploads everything.
+let planTable: boolean | null = null;
+const missingTable = (e: { code?: string } | null) => e?.code === "PGRST205" || e?.code === "42P01";
 
 // Local-first sync: progress lives in localStorage and is pushed to Supabase whenever the user
 // is signed in. Conflicts resolve per chapter by updatedAt (newest wins); streak days are merged.
@@ -73,7 +79,22 @@ async function pull(userId: string) {
   });
   // Upload state unless the server already has everything (newer settings, every streak day and question count).
   const serverComplete = remoteNewer && activity.length === rs.activity.length && !localQuestionsAhead;
-  store.markDirty([...toPush, ...testsToPush, ...(serverComplete ? [] : ["state"])]);
+  // Planner items: same newest-wins merge as tests, but tolerate the table not existing yet.
+  const planRes = await supabase.from("plan_items").select("id, chapter_id, date, kind, done_at, deleted, updated_at");
+  let planToPush: string[] = [];
+  if (planRes.error) {
+    if (!missingTable(planRes.error)) throw planRes.error;
+    planTable = false;
+  } else {
+    planTable = true;
+    const rowsIn = (planRes.data ?? []) as PlanRow[];
+    store.mergePlan(rowsIn.map(fromPlanRow));
+    const remotePlan = new Map(rowsIn.map((r) => [r.id, new Date(r.updated_at).getTime()]));
+    planToPush = Object.values(useProgress.getState().plan)
+      .filter((i) => i.updatedAt > (remotePlan.get(i.id) ?? -1))
+      .map((i) => `plan:${i.id}`);
+  }
+  store.markDirty([...toPush, ...testsToPush, ...planToPush, ...(serverComplete ? [] : ["state"])]);
 }
 
 async function push(userId: string) {
@@ -120,6 +141,13 @@ async function push(userId: string) {
   if (testRows.length) {
     const { error } = await supabase.from("test_results").upsert(testRows);
     if (error) throw error;
+  }
+  const planIds = ids.filter((id) => id.startsWith("plan:") && s.plan[id.slice(5)]);
+  for (const id of planIds) syncedAt[id] = s.plan[id.slice(5)].updatedAt;
+  if (planIds.length && planTable !== false) {
+    const { error } = await supabase.from("plan_items").upsert(planIds.map((id) => toPlanRow(s.plan[id.slice(5)], userId)));
+    if (missingTable(error)) planTable = false;
+    else if (error) throw error;
   }
   useProgress.getState().markClean(ids, syncedAt);
 }

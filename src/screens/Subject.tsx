@@ -47,6 +47,7 @@ function ChapterRow({ c }: { c: Chapter }) {
           <div className="mt-1 flex flex-wrap items-center gap-1.5">
             {status !== "undone" && <Tag tone={status === "weak" ? "red" : "fg"}>{stageLabel(status)}</Tag>}
             {c.weight?.highYield && <Tag tone="red">high-yield</Tag>}
+            {(p?.weak ?? []).some((w) => !w.fixed) && <Tag>{(p?.weak ?? []).filter((w) => !w.fixed).length} weak</Tag>}
             {!c.inMain && <Tag>adv only</Tag>}
             {!c.inAdv && <Tag>main only</Tag>}
             <span className="font-mono text-[11px] text-dim">{c.cls}th</span>

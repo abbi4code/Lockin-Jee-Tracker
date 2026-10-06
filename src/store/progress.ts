@@ -5,6 +5,7 @@ import { isStudied, normalizeStatus, type Status } from "../lib/stages";
 import type { TestResult } from "../lib/tests";
 import type { Coaching } from "../lib/coaching";
 import type { Targets } from "../lib/college";
+import type { PlanItem, PlanKind } from "../lib/plan";
 
 export type { Status };
 export type StepId = "lecture" | "notes" | "module" | "pyq" | "ncert";
@@ -19,6 +20,25 @@ export interface ChapterProgress {
   confidence: number | null;
   doneAt: string | null;
   updatedAt: number;
+  /** Free-form notes for this chapter. */
+  notes?: string;
+  /** Things to fix in this chapter; ticked off when fixed. */
+  weak?: WeakSpot[];
+}
+
+export interface WeakSpot {
+  id: string;
+  text: string;
+  fixed: boolean;
+  /** YYYY-MM-DD it was noted. */
+  at: string;
+}
+
+/** Push reminder times ("HH:MM" in `tz`, null = off). The reminder job on the server reads these. */
+export interface Reminders {
+  morning: string | null;
+  evening: string | null;
+  tz: string;
 }
 
 export interface Settings {
@@ -28,6 +48,7 @@ export interface Settings {
   coaching?: Coaching;
   /** Daily targets for the college score. Absent = defaults (see lib/college.ts). */
   targets?: Targets;
+  reminders?: Reminders;
 }
 
 /** Questions solved on one day, by subject. `at` = last edit, so the newest copy wins when devices sync. */
@@ -80,6 +101,8 @@ interface State {
   lastMaxScore: number | null;
   /** Questions solved per day (YYYY-MM-DD), logged with the counter on the home screen. */
   questions: Record<string, QuestionDay>;
+  /** Planner items by id (soft-deleted rows kept so removals sync). */
+  plan: Record<string, PlanItem>;
 
   toggleTopic: (chapterId: string, topic: string, allTopics: string[]) => Status;
   setAllTopics: (chapterId: string, topics: string[], checked: boolean) => void;
@@ -87,6 +110,18 @@ interface State {
   setStatus: (chapterId: string, status: Status, topics: string[]) => void;
   addRevision: (chapterId: string) => void;
   setConfidence: (chapterId: string, value: number | null) => void;
+  setNotes: (chapterId: string, notes: string) => void;
+  addWeak: (chapterId: string, text: string) => void;
+  toggleWeak: (chapterId: string, id: string) => void;
+  removeWeak: (chapterId: string, id: string) => void;
+  /** Adds planner items (skipping a chapter already scheduled for the same day and kind). */
+  schedule: (entries: { chapterId: string; date: string; kind?: PlanKind }[]) => void;
+  movePlan: (id: string, date: string) => void;
+  /** Ticks an item off (or back on). Ticking a revision also logs a revision on the chapter. */
+  togglePlanDone: (id: string) => void;
+  deletePlan: (id: string) => void;
+  /** Used by sync: newest version of each item wins. */
+  mergePlan: (rows: PlanItem[]) => void;
   setSettings: (patch: Partial<Settings>) => void;
   /** Used by sync: replace data without marking it dirty. */
   applyRemote: (patch: { chapters?: Record<string, ChapterProgress>; settings?: Settings; activity?: string[]; questions?: Record<string, QuestionDay>; stateUpdatedAt?: number }) => void;
@@ -137,6 +172,7 @@ const initial = {
   tests: {} as Record<string, TestResult>,
   lastMaxScore: null as number | null,
   questions: {} as Record<string, QuestionDay>,
+  plan: {} as Record<string, PlanItem>,
 };
 
 export const useProgress = create<State>()(
@@ -205,6 +241,61 @@ export const useProgress = create<State>()(
 
         setConfidence: (chapterId, value) => edit(chapterId, (p) => ({ ...p, confidence: value })),
 
+        setNotes: (chapterId, notes) => edit(chapterId, (p) => ({ ...p, notes })),
+
+        addWeak: (chapterId, text) =>
+          edit(chapterId, (p) => ({ ...p, weak: [...(p.weak ?? []), { id: crypto.randomUUID(), text: text.trim().slice(0, 200), fixed: false, at: today() }] })),
+
+        toggleWeak: (chapterId, id) => edit(chapterId, (p) => ({ ...p, weak: (p.weak ?? []).map((w) => (w.id === id ? { ...w, fixed: !w.fixed } : w)) })),
+
+        removeWeak: (chapterId, id) => edit(chapterId, (p) => ({ ...p, weak: (p.weak ?? []).filter((w) => w.id !== id) })),
+
+        schedule: (entries) =>
+          set((s) => {
+            const now = Date.now();
+            const plan = { ...s.plan };
+            const added: string[] = [];
+            for (const { chapterId, date, kind = "revision" } of entries) {
+              const dup = Object.values(plan).some((i) => !i.deleted && !i.doneAt && i.chapterId === chapterId && i.date === date && i.kind === kind);
+              if (dup) continue;
+              const id = crypto.randomUUID();
+              plan[id] = { id, chapterId, date, kind, doneAt: null, deleted: false, updatedAt: now };
+              added.push(`plan:${id}`);
+            }
+            return added.length ? { plan, dirty: [...new Set([...s.dirty, ...added])] } : s;
+          }),
+
+        movePlan: (id, date) =>
+          set((s) => (s.plan[id] ? { plan: { ...s.plan, [id]: { ...s.plan[id], date, updatedAt: Date.now() } }, dirty: [...new Set([...s.dirty, `plan:${id}`])] } : s)),
+
+        togglePlanDone: (id) => {
+          const item = get().plan[id];
+          if (!item) return;
+          const done = !item.doneAt;
+          set((s) => ({
+            plan: { ...s.plan, [id]: { ...item, doneAt: done ? new Date().toISOString() : null, updatedAt: Date.now() } },
+            dirty: [...new Set([...s.dirty, `plan:${id}`])],
+          }));
+          if (item.kind !== "revision") return;
+          // Keep the chapter's revision log (and so the spaced-repetition schedule) in step.
+          if (done) get().addRevision(item.chapterId);
+          else
+            edit(item.chapterId, (p) => {
+              const i = p.revisions.lastIndexOf(today());
+              return i === -1 ? p : { ...p, revisions: p.revisions.filter((_, k) => k !== i) };
+            });
+        },
+
+        deletePlan: (id) =>
+          set((s) => (s.plan[id] ? { plan: { ...s.plan, [id]: { ...s.plan[id], deleted: true, updatedAt: Date.now() } }, dirty: [...new Set([...s.dirty, `plan:${id}`])] } : s)),
+
+        mergePlan: (rows) =>
+          set((s) => {
+            const plan = { ...s.plan };
+            for (const r of rows) if (!plan[r.id] || r.updatedAt > plan[r.id].updatedAt) plan[r.id] = r;
+            return { plan };
+          }),
+
         setSettings: (patch) =>
           set((s) => ({
             settings: { ...s.settings, ...patch },
@@ -261,7 +352,14 @@ export const useProgress = create<State>()(
             dirty: s.dirty.filter((id) => {
               if (!ids.includes(id)) return true;
               if (id.startsWith("session:")) return false; // sessions never change after logging
-              const current = id === "state" ? s.stateUpdatedAt : id.startsWith("test:") ? s.tests[id.slice(5)]?.updatedAt : s.chapters[id]?.updatedAt;
+              const current =
+                id === "state"
+                  ? s.stateUpdatedAt
+                  : id.startsWith("test:")
+                    ? s.tests[id.slice(5)]?.updatedAt
+                    : id.startsWith("plan:")
+                      ? s.plan[id.slice(5)]?.updatedAt
+                      : s.chapters[id]?.updatedAt;
               return current !== syncedAt[id];
             }),
           })),

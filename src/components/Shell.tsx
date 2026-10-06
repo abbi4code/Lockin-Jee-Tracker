@@ -10,7 +10,8 @@ import { Cursor } from "./Cursor";
 import { ChatDock } from "./ChatDock";
 import { FocusTimer } from "./FocusTimer";
 import { startSync, useSync } from "../lib/sync";
-import { useProgress } from "../store/progress";
+import { today, useProgress } from "../store/progress";
+import { pending } from "../lib/plan";
 
 const NAV = [
   { href: "/today", label: "Today", icon: House, color: "var(--color-fg)" },
@@ -21,8 +22,12 @@ const NAV = [
   { href: "/me", label: "Me", icon: UserRound, color: "var(--color-fg)" },
 ];
 
+/** Scheduled items due today or overdue and not done: drives the Today-tab dot and the app-icon badge. */
+const usePending = () => useProgress((s) => pending(s.plan, today()).length);
+
 function Nav() {
   const { state } = useSync();
+  const due = usePending();
   const pathname = usePathname();
   // A chapter page lights up its subject's tab.
   const chapter = pathname.startsWith("/c/") ? getChapter(pathname.slice(3)) : undefined;
@@ -67,6 +72,7 @@ function Nav() {
                   )}
                 </AnimatePresence>
                 {href === "/me" && (state === "error" || state === "offline") && <span className="absolute top-1.5 right-2 size-1.5 rounded-full bg-warn" />}
+                {href === "/today" && !isActive && due > 0 && <span className="absolute top-1.5 right-2 size-1.5 rounded-full bg-red" aria-label={`${due} planned items due`} />}
               </motion.div>
             </Link>
           );
@@ -86,11 +92,22 @@ const CHROMELESS = (path: string) => path === "/" || path === "/login" || path =
 /** Pages that never read saved progress: they render in the server HTML instead of waiting for the app to load. */
 const INSTANT = (path: string) => path === "/" || path === "/login" || path === "/signup" || path.startsWith("/auth");
 
+/** Installed app: show the number of due planner items on the home-screen icon (where the OS supports it). */
+function AppBadge() {
+  const due = usePending();
+  useEffect(() => {
+    if (!("setAppBadge" in navigator)) return;
+    (due ? navigator.setAppBadge(due) : navigator.clearAppBadge()).catch(() => {});
+  }, [due]);
+  return null;
+}
+
 function AppChrome() {
   const pathname = usePathname();
   if (CHROMELESS(pathname)) return null;
   return (
     <>
+      <AppBadge />
       <FocusTimer />
       <ChatDock />
       <Nav />

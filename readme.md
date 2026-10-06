@@ -23,6 +23,7 @@ Without Supabase keys the app runs in local-only mode (no accounts, progress sav
 | `/today` | Dashboard: countdown, what to study now, syllabus progress, streak, pace |
 | `/s/[subject]`, `/c/[chapter]` | Subjects and chapters with topic checklists |
 | `/focus` | Pomodoro / stopwatch focus timer; sessions are logged |
+| `/plan` | Planner: revisions scheduled on days, "plan my week", drag to move |
 | `/me` | Profile, exam scope, sign out, backup |
 | `/admin` | Admin panel: every student's progress, study time and MathonGo scores; log/fix results; one-time Excel import (admins only) |
 
@@ -43,3 +44,10 @@ Without Supabase keys the app runs in local-only mode (no accounts, progress sav
 - `research/*.json`: source research. `node research/tools.mjs validate` checks it.
 - `scripts/build-data.mjs`: packs it into `src/data/jee.json` (runs before dev/build).
 - `research/colleges-*.json`: JoSAA 2025 final-round closing ranks (IITs, NITs, IIITs) and BITSAT 2025 cutoffs. The build packs them into `src/data/colleges.json`, the ladder for the daily/weekly college game (`src/lib/college.ts`).
+
+## Planner reminders (push notifications)
+
+1. Run `supabase/migrations/20261006000000_plan_reminders.sql` (SQL Editor, or `npm run db:push` once the CLI is linked).
+2. Add `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` and `CRON_SECRET` to the host's environment (they're in your local `.env`).
+3. After deploying, in Supabase enable the `pg_cron` and `pg_net` extensions and schedule the job (every 15 minutes) with the SQL at the bottom of that migration, filling in your site URL and `CRON_SECRET`.
+4. In the app: Me → reminders → turn on, pick the times, "send a test". On iPhone, add the app to the home screen first.

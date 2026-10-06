@@ -5,6 +5,7 @@ import { ArrowUpRight, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { buzz, Segmented } from "../components/Controls";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
+import { RemindersSection } from "../components/RemindersSection";
 import { Page } from "../components/Shell";
 import { DotText, fadeUp, Label, Section } from "../components/ui";
 import type { Exam } from "../data";
@@ -156,6 +157,8 @@ export function MeScreen({ isAdmin }: { isAdmin: boolean }) {
         ))}
         <p className="mt-3 text-[14px] text-mute">Hitting all three (plus good test scores) gets the top colleges. Going past a target counts up to 120%.</p>
       </Section>
+
+      <RemindersSection />
 
       <Section
         label="account"
