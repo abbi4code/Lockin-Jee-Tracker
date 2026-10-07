@@ -72,7 +72,7 @@ export function FocusTimer() {
           <Link href="/focus" className="flex items-center gap-2.5 rounded-full border border-line-2 bg-ink-2/90 px-4 py-2 backdrop-blur-xl">
             <span className={`size-1.5 rounded-full ${running ? "animate-pulse bg-red" : "bg-mute"}`} />
             <DotText className="text-[16px]">{formatClock(shown)}</DotText>
-            <span className="max-w-40 truncate font-mono text-[12px] text-mute">{running ? (chapter?.name ?? "focus") : "paused"}</span>
+            <span className="max-w-40 truncate font-mono text-[12px] text-mute">{running ? (chapter?.name ?? "focus") : timer.mode === "stopwatch" ? "paused · not logged" : "paused"}</span>
           </Link>
         </motion.div>
       )}

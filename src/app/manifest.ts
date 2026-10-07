@@ -6,8 +6,8 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "lockin. — JEE tracker",
     short_name: "lockin.",
     description: "Track every chapter, topic and mock for JEE Main + Advanced 2027.",
-    // The installed app opens straight on the dashboard (the proxy sends signed-out users to /login).
-    start_url: "/today",
+    // The proxy routes "/" to each account's home: /admin for admins, /today for students (signed out: the landing page).
+    start_url: "/",
     scope: "/",
     display: "standalone",
     orientation: "portrait",

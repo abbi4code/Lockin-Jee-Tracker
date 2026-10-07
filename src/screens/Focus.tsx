@@ -182,6 +182,13 @@ export function FocusScreen() {
         )}
       </motion.div>
 
+      {/* A pomodoro logs itself when it ends; a stopwatch only counts once it's stopped. Say so. */}
+      {!pomodoro && !toast && (
+        <motion.p variants={fadeUp} className={`mt-5 text-center font-mono text-[12.5px] ${active ? "text-red" : "text-dim"}`}>
+          {active ? `${formatClock(elapsed)} not counted yet · press stop & log to add it to today` : "stopwatch time counts once you press stop & log"}
+        </motion.p>
+      )}
+
       <AnimatePresence>
         {toast && (
           <motion.p initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mt-5 text-center font-mono text-[13px] text-mute">

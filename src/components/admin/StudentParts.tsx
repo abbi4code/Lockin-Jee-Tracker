@@ -23,7 +23,8 @@ export function SectionTitle({ children, right }: { children: ReactNode; right?:
 /** A titled block separated by a hairline, like the rest of the app. */
 export function Block({ title, right, children, className = "" }: { title: ReactNode; right?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <section className={`border-t border-line pt-5 pb-8 ${className}`}>
+    // min-w-0: inside a grid, a section would otherwise grow to its content's width and overflow phones.
+    <section className={`min-w-0 border-t border-line pt-5 pb-8 ${className}`}>
       <SectionTitle right={right}>{title}</SectionTitle>
       {children}
     </section>
@@ -62,11 +63,11 @@ export function MeterRow({ label, subject, fraction, value }: { label: string; s
   return (
     <div className="flex items-center gap-3 py-1.5">
       {subject ? <span className="size-1.5 shrink-0 rounded-full" style={{ background: SUBJECT_COLOR[subject] }} /> : null}
-      <span className="w-40 shrink-0 truncate text-[14.5px] lg:w-56">{label}</span>
+      <span className="w-32 shrink-0 truncate text-[14.5px] sm:w-40 lg:w-56">{label}</span>
       <div className="flex min-w-0 flex-1 overflow-hidden">
         <DotBar value={fraction} dots="auto" size={4} />
       </div>
-      <span className="w-28 shrink-0 text-right font-mono text-[12.5px] text-mute">{value}</span>
+      <span className="w-24 shrink-0 text-right font-mono text-[12.5px] text-mute sm:w-28">{value}</span>
     </div>
   );
 }

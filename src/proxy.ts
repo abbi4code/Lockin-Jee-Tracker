@@ -8,7 +8,8 @@ const isPublic = (path: string) => path === "/" || AUTH_PAGES.includes(path) || 
 
 /**
  * Runs before every page: refreshes the Supabase session cookie, then routes by login state.
- * Signed out → app pages redirect to /login. Signed in → landing/auth pages redirect to /today.
+ * Signed out → app pages redirect to /login. Signed in → landing/auth pages redirect to the home page for
+ * the account: /admin for admins (ADMIN_EMAILS), /today for students. Admins can still open every other page.
  */
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -41,8 +42,9 @@ export async function proxy(request: NextRequest) {
   };
 
   if (!claims && !isPublic(path)) return redirect(`/login?next=${encodeURIComponent(path)}`);
-  if (claims && (path === "/" || AUTH_PAGES.includes(path))) return redirect("/today");
-  if (path.startsWith("/admin") && !isAdminEmail(claims?.email as string | undefined)) return redirect("/today");
+  const admin = isAdminEmail(claims?.email as string | undefined);
+  if (claims && (path === "/" || AUTH_PAGES.includes(path))) return redirect(admin ? "/admin" : "/today");
+  if (path.startsWith("/admin") && !admin) return redirect("/today");
   return response;
 }
 

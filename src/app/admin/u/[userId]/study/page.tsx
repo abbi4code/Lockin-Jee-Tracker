@@ -61,12 +61,12 @@ export default async function Study({ params }: PageProps<"/admin/u/[userId]/stu
           <Empty>no focus sessions yet.</Empty>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[560px] text-left text-[14px]">
+            <table className="w-full text-left text-[14px]">
               <thead className="font-mono text-[11px] text-dim uppercase">
                 <tr>
                   <th className="py-2 font-normal">when</th>
                   <th className="py-2 font-normal">chapter</th>
-                  <th className="py-2 font-normal">mode</th>
+                  <th className="hidden py-2 font-normal sm:table-cell">mode</th>
                   <th className="py-2 text-right font-normal">length</th>
                 </tr>
               </thead>
@@ -75,13 +75,13 @@ export default async function Study({ params }: PageProps<"/admin/u/[userId]/stu
                   const c = r.chapterId ? getChapter(r.chapterId) : null;
                   return (
                     <tr key={r.id} className="border-t border-line/60">
-                      <td className="py-2 pr-3 font-mono text-[12px] text-dim">{new Date(r.startedAt).toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })}</td>
+                      <td className="py-2 pr-3 font-mono text-[12px] whitespace-nowrap text-dim">{new Date(r.startedAt).toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })}</td>
                       <td className="py-2 pr-3">
                         {c && <span className="mr-2 inline-block size-1.5 rounded-full align-middle" style={{ background: SUBJECT_COLOR[c.subject] }} />}
                         {c?.name ?? <span className="text-mute">general study</span>}
                       </td>
-                      <td className="py-2 pr-3 font-mono text-[12px] text-mute">{r.mode}</td>
-                      <td className="py-2 text-right font-mono text-[13px]">{hours(r.minutes)}</td>
+                      <td className="hidden py-2 pr-3 font-mono text-[12px] text-mute sm:table-cell">{r.mode}</td>
+                      <td className="py-2 text-right font-mono text-[13px] whitespace-nowrap">{hours(r.minutes)}</td>
                     </tr>
                   );
                 })}

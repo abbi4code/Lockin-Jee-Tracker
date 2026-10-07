@@ -9,6 +9,7 @@ import { buzz, Check, Segmented } from "../components/Controls";
 import { TodayCollege, WeekCollege } from "../components/College";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
 import { Headline } from "../components/Headline";
+import { AdminLink } from "../components/AdminLink";
 import { Rolling, useCountdown } from "../components/Numbers";
 import { Page } from "../components/Shell";
 import { DotBar, DotText, fadeUp, Label, Section } from "../components/ui";
@@ -28,6 +29,7 @@ function Header() {
       <div className="flex items-center justify-between">
         <span className="dot text-lg">lockin.</span>
         <div className="flex items-center gap-4">
+        <AdminLink />
         <div className="hidden sm:block">
           <ThemeSwitcher />
         </div>

@@ -13,7 +13,8 @@ const field = "w-full border-b border-line-2 bg-transparent py-3 text-[16px] out
 /** Where to go after signing in: ?next= if it's a path on this site, else the dashboard. */
 function target() {
   const next = new URLSearchParams(window.location.search).get("next");
-  return next?.startsWith("/") && !next.startsWith("//") ? next : "/today";
+  // No ?next=: go to "/" and let the proxy pick the account's home (/admin for admins, /today otherwise).
+  return next?.startsWith("/") && !next.startsWith("//") ? next : "/";
 }
 
 // Known on the server too (unlike the browser client), so the server HTML already has the right form.
