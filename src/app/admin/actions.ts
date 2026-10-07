@@ -45,7 +45,7 @@ export async function adminSaveTest(form: FormData) {
     updated_at: new Date().toISOString(),
   });
   if (error) throw new Error(error.message);
-  revalidatePath(`/admin/u/${userId}`);
+  revalidatePath(`/admin/u/${userId}`, "layout");
 }
 
 export async function adminDeleteTest(form: FormData) {
@@ -53,7 +53,7 @@ export async function adminDeleteTest(form: FormData) {
   const userId = String(form.get("userId"));
   const { error } = await db.from("test_results").update({ deleted: true, updated_at: new Date().toISOString() }).eq("id", String(form.get("id"))).eq("user_id", userId);
   if (error) throw new Error(error.message);
-  revalidatePath(`/admin/u/${userId}`);
+  revalidatePath(`/admin/u/${userId}`, "layout");
 }
 
 /**
@@ -120,6 +120,6 @@ export async function adminImportExcel(form: FormData) {
     const { error } = await db.from("test_results").insert(testRows);
     if (error) throw new Error(error.message);
   }
-  revalidatePath(`/admin/u/${userId}`);
+  revalidatePath(`/admin/u/${userId}`, "layout");
   revalidatePath("/admin");
 }

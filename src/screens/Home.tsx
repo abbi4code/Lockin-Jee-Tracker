@@ -4,16 +4,16 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, Timer } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { buzz, Check, Segmented } from "../components/Controls";
 import { TodayCollege, WeekCollege } from "../components/College";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
+import { Headline } from "../components/Headline";
 import { Rolling, useCountdown } from "../components/Numbers";
 import { Page } from "../components/Shell";
 import { DotBar, DotText, fadeUp, Label, Section } from "../components/ui";
 import { findExam, SUBJECT_COLOR, SUBJECTS, type Exam } from "../data";
 import { celebrate } from "../lib/celebrate";
-import { roastLines } from "../lib/roasts";
 import { activityGrid, chapterFraction, currentFocus, daysBetween, formatMinutes, freeMarks, pace, revisionsDue, streak, subjectStats } from "../lib/stats";
 import { currentPlan, isScheduled, studyByDay, toggleDay } from "../lib/coaching";
 import { today, useProgress } from "../store/progress";
@@ -22,9 +22,7 @@ import { live, onDay, overdue } from "../lib/plan";
 import { scoreTone, seriesSummary } from "../lib/tests";
 
 function Header() {
-  const { chapters, activity, settings, setSettings } = useProgress();
-  // One line, chosen once per visit: no rotating text competing for attention.
-  const [line] = useState(() => roastLines(chapters, activity, settings.exam)[0]);
+  const { settings, setSettings } = useProgress();
   return (
     <motion.header variants={fadeUp} className="pb-8">
       <div className="flex items-center justify-between">
@@ -44,10 +42,7 @@ function Header() {
         />
         </div>
       </div>
-      <p className="mt-6 text-[16px] leading-relaxed text-mute lg:mt-8 lg:text-[18px]">
-        {settings.name ? <span className="text-fg">{settings.name}, </span> : null}
-        {line}
-      </p>
+      <Headline />
     </motion.header>
   );
 }

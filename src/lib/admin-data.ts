@@ -7,6 +7,8 @@ import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { createSupabaseServer } from "@/lib/supabase/server";
 import type { ChapterProgress, QuestionDay, Settings, StudySession } from "@/store/progress";
 import { collegeReport } from "@/lib/college";
+import { studyByDay } from "@/lib/coaching";
+import { liveResults } from "@/lib/tests";
 import { fromTestRow, seriesSummary, type TestResult } from "@/lib/tests";
 import { normalizeStatus } from "@/lib/stages";
 
@@ -43,6 +45,10 @@ export interface StudentSummary {
   imported: boolean;
   /** Today's and this week's college from the college game (null until the ladder is built). */
   college: { today: { name: string; score: number } | null; week: { name: string; score: number } | null };
+  /** Last 7 days, coaching included. */
+  study7: number;
+  questions7: number;
+  testsGiven: number;
 }
 
 export async function loadStudents(): Promise<{ students: StudentSummary[]; error: string | null }> {
@@ -136,11 +142,26 @@ function summarise(
     tests,
     series: seriesSummary(tests),
     imported: Object.values(tests).some((t) => t.imported),
+    study7: studyByDay(sessions, state?.settings?.coaching, 7).reduce((n, d) => n + d.total, 0),
+    questions7: questions7(state?.questions ?? {}, tests),
+    testsGiven: liveResults(tests).length,
     college: {
       today: game.college ? { name: `${game.college.short} · ${game.college.branch}`, score: Math.round(game.today.score) } : null,
       week: game.week.college ? { name: `${game.week.college.short} · ${game.week.college.branch}`, score: Math.round(game.week.score) } : null,
     },
   };
+}
+
+/** Questions logged plus attempted in tests over the last 7 days. */
+function questions7(questions: Record<string, QuestionDay>, tests: Record<string, TestResult>) {
+  let n = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(Date.now() - i * 86_400_000).toLocaleDateString("en-CA");
+    const q = questions[d];
+    if (q) n += q.physics + q.chemistry + q.maths;
+    for (const t of liveResults(tests)) if (t.takenOn === d) n += (t.correct ?? 0) + (t.wrong ?? 0);
+  }
+  return n;
 }
 
 export const ago = (iso: string | null) => {
