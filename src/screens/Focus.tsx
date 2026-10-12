@@ -4,11 +4,12 @@ import { AnimatePresence, motion } from "motion/react";
 import { Pause, Play, Square } from "lucide-react";
 import { useEffect, useState } from "react";
 import { buzz, Segmented } from "../components/Controls";
-import { finishedListeners, formatClock, useTick } from "../components/FocusTimer";
+import { finishedListeners, formatClock, lastFinished, useTick } from "../components/FocusTimer";
 import { Page } from "../components/Shell";
 import { DotText, fadeUp, Label, Section } from "../components/ui";
-import { ALL_CHAPTERS, chapterInScope, getChapter, SUBJECT_COLOR, SUBJECTS } from "../data";
+import { ChapterSelect, SessionLog, type OpenRequest } from "../components/SessionLog";
 import { celebrate } from "../lib/celebrate";
+import { LONG_SESSION_MIN } from "../lib/sessions";
 import { formatMinutes, minutesByDay } from "../lib/stats";
 import { timerElapsed, useProgress, type StudySession, type TimerMode } from "../store/progress";
 
@@ -43,38 +44,11 @@ function DotRing({ fraction, running }: { fraction: number; running: boolean }) 
 }
 
 function ChapterPicker() {
-  const { timer, timerSet, chapters, settings } = useProgress();
-  const inProgress = ALL_CHAPTERS.filter((c) => chapters[c.id]?.status === "working").map((c) => c.id);
+  const { timer, timerSet } = useProgress();
   return (
     <label className="block">
       <Label>studying</Label>
-      <select
-        value={timer.chapterId ?? ""}
-        onChange={(e) => timerSet({ chapterId: e.target.value || null })}
-        className="mt-2 w-full appearance-none border-b border-line-2 bg-transparent py-2.5 text-[16px] outline-none focus:border-fg"
-      >
-        <option value="">no specific chapter</option>
-        {inProgress.length > 0 && (
-          <optgroup label="in progress">
-            {inProgress.map((id) => (
-              <option key={id} value={id}>
-                {getChapter(id)?.name}
-              </option>
-            ))}
-          </optgroup>
-        )}
-        {SUBJECTS.map((s) => (
-          <optgroup key={s.id} label={s.name}>
-            {s.chapters
-              .filter((c) => chapterInScope(c, settings.exam))
-              .map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
-                </option>
-              ))}
-          </optgroup>
-        ))}
-      </select>
+      <ChapterSelect value={timer.chapterId} onChange={(chapterId) => timerSet({ chapterId })} className="mt-2" />
     </label>
   );
 }
@@ -89,14 +63,19 @@ export function FocusScreen() {
   const pomodoro = timer.mode === "pomodoro";
   const remaining = Math.max(timer.target * 60_000 - elapsed, 0);
   const fraction = pomodoro ? elapsed / (timer.target * 60_000) : ((elapsed / 1000) % 60) / 60;
-  const [toast, setToast] = useState<string | null>(null);
+  // What just got logged; "edit" opens it in the log below.
+  const [toast, setToast] = useState<{ text: string; id: string | null } | null>(null);
+  const [openLog, setOpenLog] = useState<OpenRequest | null>(null);
+  const edit = (id: string, notice: string | null = null) => setOpenLog({ id, notice, key: Date.now() });
 
   useEffect(() => {
     const onDone = (s: StudySession | null) => {
-      setToast(s ? `${s.minutes} min logged. take 5 — stretch, water, no phone.` : null);
+      setToast(s ? { text: `${s.minutes} min logged. take 5 — stretch, water, no phone.`, id: s.id } : null);
       if (s?.subject && (s.subject === "physics" || s.subject === "chemistry" || s.subject === "maths")) celebrate(s.subject);
     };
     finishedListeners.add(onDone);
+    // Finished just before this screen mounted (it ended while the app was closed): still say so.
+    if (lastFinished && Date.now() - lastFinished.at < 10_000) onDone(lastFinished.session);
     return () => void finishedListeners.delete(onDone);
   }, []);
 
@@ -109,11 +88,11 @@ export function FocusScreen() {
   const stop = () => {
     buzz(20);
     const s = store.timerStop();
-    setToast(s ? `${formatMinutes(s.minutes)} logged.` : "under a minute — not logged.");
+    setToast(s ? { text: `${formatMinutes(s.minutes)} logged.`, id: s.id } : { text: "under a minute — not logged.", id: null });
+    // A long stopwatch run is often one left running: ask him to check it right away.
+    if (s && s.mode === "stopwatch" && s.minutes > LONG_SESSION_MIN) edit(s.id, `${formatMinutes(s.minutes)} on the stopwatch. if you stepped away, trim it to what you actually studied.`);
   };
 
-  const todays = store.sessions.filter((s) => new Date(s.startedAt).toLocaleDateString("en-CA") === new Date().toLocaleDateString("en-CA"));
-  const todayMinutes = todays.reduce((n, s) => n + s.minutes, 0);
   const week = minutesByDay(store.sessions, 7);
   const weekMax = Math.max(...week.map((d) => d.minutes), 60);
 
@@ -192,7 +171,15 @@ export function FocusScreen() {
       <AnimatePresence>
         {toast && (
           <motion.p initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mt-5 text-center font-mono text-[13px] text-mute">
-            {toast}
+            {toast.text}
+            {toast.id && (
+              <>
+                {" "}
+                <button onClick={() => edit(toast.id!)} className="text-fg underline decoration-line-2 underline-offset-4 hover:decoration-fg">
+                  edit
+                </button>
+              </>
+            )}
           </motion.p>
         )}
       </AnimatePresence>
@@ -204,25 +191,7 @@ export function FocusScreen() {
         <ChapterPicker />
       </motion.div>
 
-      <Section label="today" right={formatMinutes(todayMinutes)}>
-        {todays.length === 0 ? (
-          <p className="font-mono text-[13px] text-dim">no sessions yet today.</p>
-        ) : (
-          <div className="space-y-1">
-            {[...todays].reverse().map((s) => {
-              const c = s.chapterId ? getChapter(s.chapterId) : null;
-              return (
-                <div key={s.id} className="flex items-center gap-3 py-1.5 text-[15px]">
-                  <span className="size-1.5 rounded-full" style={{ background: c ? SUBJECT_COLOR[c.subject] : "var(--color-dim)" }} />
-                  <span className="min-w-0 flex-1 truncate">{c?.name ?? "general study"}</span>
-                  <span className="font-mono text-[12px] text-dim">{new Date(s.startedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</span>
-                  <span className="w-14 text-right font-mono text-[13px] text-mute">{formatMinutes(s.minutes)}</span>
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </Section>
+      <SessionLog open={openLog} />
 
       <Section label="last 7 days" right={formatMinutes(week.reduce((n, d) => n + d.minutes, 0))}>
         <div className="flex h-24 items-end gap-2">

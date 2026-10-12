@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { formatRank, heightToRank } from "@/lib/college";
 
 // Small, dependency-free charts for the admin panel. Colours come from theme tokens; text never wears a series
 // colour. Every chart has a hover readout line (the value under the pointer), so nothing is colour-only or
@@ -12,9 +13,9 @@ export interface Series {
 }
 
 /** How the top-of-scale label is written (a string, so server pages can pass it to this client component). */
-export type Unit = "minutes" | "count" | "level";
+export type Unit = "minutes" | "count" | "level" | "rank";
 const formatMax = (n: number, unit: Unit) =>
-  unit === "minutes" ? (n >= 60 ? `${Math.floor(n / 60)}h${n % 60 ? ` ${Math.round(n % 60)}m` : ""}` : `${Math.round(n)}m`) : unit === "level" ? `L${Math.round(n)}` : String(Math.round(n));
+  unit === "rank" ? `~${formatRank(heightToRank(n / 100))}` : unit === "minutes" ? (n >= 60 ? `${Math.floor(n / 60)}h${n % 60 ? ` ${Math.round(n % 60)}m` : ""}` : `${Math.round(n)}m`) : unit === "level" ? `L${Math.round(n)}` : String(Math.round(n));
 
 export interface Column {
   key: string;

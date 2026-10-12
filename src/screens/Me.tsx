@@ -143,7 +143,7 @@ export function MeScreen({ isAdmin }: { isAdmin: boolean }) {
         <p className="mt-3 text-[14px] text-mute">Coaching days add these hours to your study time automatically. Skipped one? Untick it on the home screen.</p>
       </Section>
 
-      <Section label="daily targets" right="for today's college">
+      <Section label="daily goals" right="for your own progress bars">
         {TARGET_ROWS.map((row) => (
           <div key={row.key} className="flex flex-wrap items-center justify-between gap-3 py-1.5">
             <span className="text-[15px]">{row.label}</span>
@@ -155,7 +155,7 @@ export function MeScreen({ isAdmin }: { isAdmin: boolean }) {
             />
           </div>
         ))}
-        <p className="mt-3 text-[14px] text-mute">Hitting all three (plus good test scores) gets the top colleges. Going past a target counts up to 120%.</p>
+        <p className="mt-3 text-[14px] text-mute">Your own goals for the day, shown on the home screen. The college is judged against real JEE aspirants instead, so changing these doesn&apos;t change it.</p>
       </Section>
 
       <RemindersSection />

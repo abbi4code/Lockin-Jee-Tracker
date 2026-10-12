@@ -11,6 +11,10 @@ export interface PushPayload {
   url?: string;
   /** Same tag replaces an earlier notification instead of stacking. */
   tag?: string;
+  /** With a tag: buzz again when replacing (chat messages), instead of updating silently. */
+  renotify?: boolean;
+  /** Chat: the service worker reports the message as delivered when the push lands. */
+  deliver?: boolean;
 }
 
 let configured = false;
@@ -24,7 +28,7 @@ export function pushConfigured() {
   return true;
 }
 
-/** Sends to every device the user turned reminders on for; drops subscriptions the browser has revoked. Returns how many got it. */
+/** Sends to every device the user turned notifications on for; drops subscriptions the browser has revoked. Returns how many got it. */
 export async function sendToUser(userId: string, payload: PushPayload) {
   if (!pushConfigured()) throw new Error("Push isn't configured: set the VAPID keys.");
   const admin = createSupabaseAdmin();

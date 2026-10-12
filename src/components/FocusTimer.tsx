@@ -32,6 +32,8 @@ export function useTick(active: boolean) {
 
 /** Shared by the pill and the focus screen: called when a pomodoro reaches its length. */
 export const finishedListeners = new Set<(s: StudySession | null) => void>();
+/** The last pomodoro that finished, for a focus screen that mounts just after (one that ended while the app was closed). */
+export let lastFinished: { session: StudySession | null; at: number } | null = null;
 
 /**
  * Lives in the app shell: finishes pomodoros on time (even after the app was backgrounded)
@@ -46,10 +48,13 @@ export function FocusTimer() {
   const due = timer.mode === "pomodoro" && running && elapsed >= timer.target * 60_000;
 
   useEffect(() => {
-    if (!due) return;
+    // Only once per pomodoro, even if this runs twice (React dev mode) or after another tab already stopped it.
+    if (!due || !useProgress.getState().timer.runningSince) return;
     const logged = useProgress.getState().timerStop();
+    lastFinished = { session: logged, at: Date.now() };
     chime();
-    navigator.vibrate?.([120, 80, 120]);
+    // Browsers refuse to vibrate before the first tap (e.g. a pomodoro that ended while the app was closed).
+    if (navigator.userActivation?.hasBeenActive !== false) navigator.vibrate?.([120, 80, 120]);
     if (document.visibilityState !== "visible" && "Notification" in window && Notification.permission === "granted") {
       new Notification("lockin.", { body: `${logged?.minutes ?? timer.target} min logged. Take 5.`, icon: "/pwa-192x192.png" });
     }

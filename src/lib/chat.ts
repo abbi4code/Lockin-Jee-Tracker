@@ -12,6 +12,12 @@ export interface Message {
   chapter_id: string | null;
   created_at: string;
   read_at: string | null;
+  /** When it reached the other side's app or phone (✓✓). Absent until the chat-status migration is applied. */
+  delivered_at?: string | null;
+  /** The message this one replies to (same thread). Absent until the reactions migration is applied. */
+  reply_to?: string | null;
+  /** { user id: emoji }, one reaction per person. */
+  reactions?: Record<string, string>;
   /** Client-only: still sending, or failed to send. */
   pending?: boolean;
   failed?: boolean;
@@ -91,7 +97,7 @@ export function useThread(studentId: string | null, meId: string | null) {
   }, [studentId, meId]);
 
   const send = useCallback(
-    async (body: string, chapterId: string | null) => {
+    async (body: string, chapterId: string | null, replyTo: string | null = null) => {
       if (!supabase || !studentId || !meId || !body.trim()) return;
       const msg: Message = {
         id: crypto.randomUUID(),
@@ -99,13 +105,21 @@ export function useThread(studentId: string | null, meId: string | null) {
         sender_id: meId,
         body: body.trim(),
         chapter_id: chapterId,
+        reply_to: replyTo,
+        reactions: {},
         created_at: new Date().toISOString(),
         read_at: null,
+        delivered_at: null,
         pending: true,
       };
       setMessages((list) => [...list, msg]); // shows instantly; the realtime echo replaces it
-      const { error } = await supabase.from("messages").insert({ id: msg.id, student_id: msg.student_id, sender_id: msg.sender_id, body: msg.body, chapter_id: msg.chapter_id });
+      // reply_to only when set, so plain messages still send before the reactions migration is applied.
+      const { error } = await supabase
+        .from("messages")
+        .insert({ id: msg.id, student_id: msg.student_id, sender_id: msg.sender_id, body: msg.body, chapter_id: msg.chapter_id, ...(replyTo ? { reply_to: replyTo } : {}) });
       setMessages((list) => list.map((m) => (m.id === msg.id ? { ...m, pending: false, failed: !!error } : m)));
+      // Push it to the other side's phone. keepalive: still goes out if the app is closed right after sending.
+      if (!error) fetch("/api/chat/notify", { method: "POST", keepalive: true, headers: { "content-type": "application/json" }, body: JSON.stringify({ id: msg.id }) }).catch(() => {});
     },
     [studentId, meId],
   );
@@ -113,17 +127,44 @@ export function useThread(studentId: string | null, meId: string | null) {
   const retry = useCallback(
     async (m: Message) => {
       setMessages((list) => list.filter((x) => x.id !== m.id));
-      await send(m.body, m.chapter_id);
+      await send(m.body, m.chapter_id, m.reply_to ?? null);
     },
     [send],
   );
 
-  /** Marks everything the other side sent as read. */
+  /** Sets my reaction on a message (null removes it). Shows at once; reverts if the server refuses. */
+  const react = useCallback(
+    async (m: Message, emoji: string | null) => {
+      if (!supabase || !meId) return;
+      const set = (e: string | null) =>
+        setMessages((list) =>
+          list.map((x) => {
+            if (x.id !== m.id) return x;
+            const reactions = { ...x.reactions };
+            if (e) reactions[meId] = e;
+            else delete reactions[meId];
+            return { ...x, reactions };
+          }),
+        );
+      const before = m.reactions?.[meId] ?? null;
+      set(emoji);
+      const { error } = await supabase.rpc("react_to_message", { msg: m.id, emoji });
+      if (error) {
+        console.error("reaction failed", error);
+        set(before);
+      }
+    },
+    [meId],
+  );
+
+  /** Marks everything the other side sent as read (red ✓✓ on their side). */
   const markRead = useCallback(async () => {
     if (!supabase || !studentId || !meId) return;
     const unread = messages.some((m) => m.sender_id !== meId && !m.read_at && !m.pending);
     if (!unread) return;
-    await supabase.from("messages").update({ read_at: new Date().toISOString() }).eq("student_id", studentId).neq("sender_id", meId).is("read_at", null);
+    const { error } = await supabase.rpc("mark_read", { student: studentId });
+    // Before the chat-status migration: the old way (sets read_at only).
+    if (error?.code === "PGRST202") await supabase.from("messages").update({ read_at: new Date().toISOString() }).eq("student_id", studentId).neq("sender_id", meId).is("read_at", null);
   }, [messages, studentId, meId]);
 
   /** Tells the other side we're typing (at most every 2s). */
@@ -134,10 +175,13 @@ export function useThread(studentId: string | null, meId: string | null) {
     channelRef.current.send({ type: "broadcast", event: "typing", payload: { from: meId } });
   }, [meId]);
 
-  return { messages, loading, otherTyping, send, retry, markRead, typing };
+  return { messages, loading, otherTyping, send, retry, react, markRead, typing };
 }
 
-/** Unread messages addressed to me (live), for the badge. */
+/**
+ * Unread messages addressed to me (live), for the badge. While the app is open anywhere, it also marks what
+ * arrives as delivered, so the sender sees ✓✓ even before the chat is opened.
+ */
 export function useUnread(meId: string | null, isAdmin: boolean | null) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -148,12 +192,28 @@ export function useUnread(meId: string | null, isAdmin: boolean | null) {
       if (!isAdmin) q = q.eq("student_id", meId);
       q.then(({ count }) => setCount(count ?? 0));
     };
+    // Errors (e.g. before the chat-status migration) just mean no ✓✓ yet.
+    const delivered = () => void sb.rpc("mark_delivered").then(() => {});
     refresh();
+    delivered();
     const channel = sb
       .channel(`unread:${meId}`)
-      .on("postgres_changes", { event: "*", schema: "public", table: "messages", ...(isAdmin ? {} : { filter: `student_id=eq.${meId}` }) }, refresh)
+      .on("postgres_changes", { event: "*", schema: "public", table: "messages", ...(isAdmin ? {} : { filter: `student_id=eq.${meId}` }) }, (p) => {
+        refresh();
+        if (p.eventType === "INSERT" && (p.new as Message).sender_id !== meId) delivered();
+      })
       .subscribe();
-    return () => void sb.removeChannel(channel);
+    // Back from the background: catch up on anything that arrived meanwhile.
+    const onVisible = () => {
+      if (document.visibilityState !== "visible") return;
+      refresh();
+      delivered();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      sb.removeChannel(channel);
+    };
   }, [meId, isAdmin]);
   return count;
 }

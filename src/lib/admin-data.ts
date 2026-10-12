@@ -6,6 +6,7 @@ import { formatMinutes, minutesByDay, revisionsDue, streak, subjectStats } from 
 import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { createSupabaseServer } from "@/lib/supabase/server";
 import type { ChapterProgress, QuestionDay, Settings, StudySession } from "@/store/progress";
+import { liveSessionRows, type SessionRow } from "@/lib/sessions";
 import { collegeReport } from "@/lib/college";
 import { studyByDay } from "@/lib/coaching";
 import { liveResults } from "@/lib/tests";
@@ -43,8 +44,8 @@ export interface StudentSummary {
   tests: Record<string, TestResult>;
   series: ReturnType<typeof seriesSummary>;
   imported: boolean;
-  /** Today's and this week's college from the college game (null until the ladder is built). */
-  college: { today: { name: string; score: number } | null; week: { name: string; score: number } | null };
+  /** This week's college so far and last week's final, from the college game (null with nothing logged). */
+  college: { week: { name: string; rank: number } | null; lastWeek: { name: string; rank: number } | null };
   /** Last 7 days, coaching included. */
   study7: number;
   questions7: number;
@@ -58,7 +59,7 @@ export async function loadStudents(): Promise<{ students: StudentSummary[]; erro
     admin.auth.admin.listUsers({ page: 1, perPage: 500 }),
     admin.from("chapter_progress").select("user_id, chapter_id, data"),
     admin.from("user_state").select("user_id, data"),
-    admin.from("study_sessions").select("id, user_id, chapter_id, subject, mode, started_at, minutes").gte("started_at", since).order("started_at"),
+    admin.from("study_sessions").select("*").gte("started_at", since).order("started_at"),
     admin.from("test_results").select("*"),
   ]);
   const error = users.error?.message ?? progress.error?.message ?? states.error?.message ?? sessions.error?.message ?? testRows.error?.message ?? null;
@@ -78,10 +79,11 @@ export async function loadStudents(): Promise<{ students: StudentSummary[]; erro
   }
   const stateByUser = new Map((states.data ?? []).map((r) => [r.user_id, r.data as { settings?: Settings; activity?: string[]; questions?: Record<string, QuestionDay> }]));
   const sessionsByUser = new Map<string, StudySession[]>();
-  for (const r of sessions.data ?? []) {
-    const list = sessionsByUser.get(r.user_id) ?? [];
-    list.push({ id: r.id, chapterId: r.chapter_id, subject: r.subject, mode: r.mode, startedAt: r.started_at, minutes: r.minutes });
-    sessionsByUser.set(r.user_id, list);
+  for (const r of (sessions.data ?? []) as SessionRow[]) {
+    if (r.deleted) continue;
+    const list = sessionsByUser.get(r.user_id!) ?? [];
+    list.push(...liveSessionRows([r]));
+    sessionsByUser.set(r.user_id!, list);
   }
 
   // Admins (coaches) aren't students: leave them out of the student list.
@@ -105,10 +107,12 @@ function summarise(
   const days14 = minutesByDay(sessions, 14);
   const named = (id: string) => ALL_CHAPTERS.find((c) => c.id === id);
   const game = collegeReport(
-    { sessions, tests, questions: state?.questions ?? {}, coaching: state?.settings?.coaching, targets: state?.settings?.targets },
-    null,
+    { sessions, tests, questions: state?.questions ?? {}, coaching: state?.settings?.coaching },
     new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" }),
+    null,
+    1,
   );
+  const weekName = (w: typeof game.week) => (w.college && !w.empty ? { name: `${w.college.short} · ${w.college.branch}`, rank: Math.round(w.rank) } : null);
 
   return {
     id: u.id,
@@ -145,10 +149,7 @@ function summarise(
     study7: studyByDay(sessions, state?.settings?.coaching, 7).reduce((n, d) => n + d.total, 0),
     questions7: questions7(state?.questions ?? {}, tests),
     testsGiven: liveResults(tests).length,
-    college: {
-      today: game.college ? { name: `${game.college.short} · ${game.college.branch}`, score: Math.round(game.today.score) } : null,
-      week: game.week.college ? { name: `${game.week.college.short} · ${game.week.college.branch}`, score: Math.round(game.week.score) } : null,
-    },
+    college: { week: weekName(game.week), lastWeek: weekName(game.lastWeek) },
   };
 }
 

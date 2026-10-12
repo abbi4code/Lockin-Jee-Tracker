@@ -41,7 +41,7 @@ export function StudentList({ rows }: { rows: StudentRow[] }) {
         <span>questions · 7d</span>
         <span>tests</span>
         <span>streak</span>
-        <span>today&apos;s college</span>
+        <span>week&apos;s college</span>
         <span>syllabus</span>
         <span />
       </div>
@@ -65,7 +65,7 @@ export function StudentList({ rows }: { rows: StudentRow[] }) {
           <Cell label="questions · 7d" value={String(r.questions7)} />
           <Cell label="tests" value={String(r.tests)} />
           <Cell label="streak" value={`${r.streak}d`} />
-          <Cell label="today's college" value={r.college ?? "–"} />
+          <Cell label="this week's college" value={r.college ?? "–"} />
           <div className="col-span-2 lg:col-span-1">
             <div className="font-mono text-[11px] text-dim lg:hidden">syllabus</div>
             <div className="flex items-center gap-2">

@@ -6,10 +6,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { buzz, Check, Segmented } from "../components/Controls";
-import { TodayCollege, WeekCollege } from "../components/College";
+import { CollegeHistory, TodayLog, WeekCollege } from "../components/College";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
 import { Headline } from "../components/Headline";
 import { AdminLink } from "../components/AdminLink";
+import { RulesScroll } from "../components/RulesScroll";
 import { Rolling, useCountdown } from "../components/Numbers";
 import { Page } from "../components/Shell";
 import { DotBar, DotText, fadeUp, Label, Section } from "../components/ui";
@@ -277,6 +278,9 @@ function StudyTime() {
         <span className="flex items-center gap-1.5">
           <span className="size-2 rounded-[2px] bg-dim" /> coaching
         </span>
+        <Link href="/focus" className="ml-auto text-mute transition hover:text-fg">
+          fix or add time →
+        </Link>
       </div>
     </Section>
   );
@@ -384,19 +388,21 @@ export function Home() {
   return (
     <Page>
       <Header />
+      <RulesScroll />
       {/* Laptops: what to do on the left, how it's going on the right. Phones: one column. */}
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-14">
         <div className="lg:col-span-7">
           <Countdown />
           <TodayPlan />
-          <TodayCollege />
+          <WeekCollege />
           <Now />
           <Syllabus />
         </div>
         <div className="lg:col-span-5">
-          <WeekCollege />
+          <TodayLog />
           <Rhythm />
           <StudyTime />
+          <CollegeHistory />
           <TestSeries />
           <UpNext />
         </div>

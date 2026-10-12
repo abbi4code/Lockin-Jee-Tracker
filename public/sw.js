@@ -74,7 +74,7 @@ function put(req, res, store) {
   return res;
 }
 
-// ── Push reminders (sent by /api/cron/reminders) ──
+// ── Push: reminders (/api/cron/reminders) and chat messages (/api/chat/notify) ──
 self.addEventListener("push", (event) => {
   let data = {};
   try {
@@ -82,17 +82,19 @@ self.addEventListener("push", (event) => {
   } catch {
     data = { body: event.data ? event.data.text() : "" };
   }
-  event.waitUntil(
-    self.registration.showNotification(data.title || "lockin.", {
-      body: data.body || "",
-      icon: "/pwa-192x192.png",
-      tag: data.tag,
-      data: { url: data.url || "/today" },
-    }),
-  );
+  const shown = self.registration.showNotification(data.title || "lockin.", {
+    body: data.body || "",
+    icon: "/pwa-192x192.png",
+    tag: data.tag,
+    renotify: !!(data.tag && data.renotify),
+    data: { url: data.url || "/today" },
+  });
+  // A chat message reached this phone: tell the sender (✓✓). Same-origin, so the login cookie goes along.
+  const delivered = data.deliver ? fetch("/api/chat/delivered", { method: "POST" }).catch(() => {}) : null;
+  event.waitUntil(Promise.all([shown, delivered]));
 });
 
-// Tapping a reminder focuses an open lockin. window (or opens one) on the page it points to.
+// Tapping a notification focuses an open lockin. window (or opens one) on the page it points to.
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
   const url = new URL(event.notification.data?.url || "/today", self.location.origin).href;

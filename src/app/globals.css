@@ -118,6 +118,16 @@ body {
   color: #000;
 }
 
+/* Browser autofill (saved passwords): keep the field's own look instead of a coloured box. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-fg);
+  caret-color: var(--color-fg);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-ink) inset;
+  transition: background-color 9999s ease-out 0s;
+}
+
 /* Dot-matrix numerals. */
 .dot {
   font-family: var(--font-dot);

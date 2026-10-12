@@ -13,7 +13,7 @@ export interface HeadlineContext {
   targetMinutes: number;
   questions: number;
   targetQuestions: number;
-  /** Today's college-game score, 0–100. */
+  /** Today against his own goals, 0–100 (hours and questions, 50 each, up to 120% of a goal). */
   score: number;
   college: string | null;
   streak: { days: number; activeToday: boolean; atRisk: boolean };

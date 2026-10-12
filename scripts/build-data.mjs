@@ -82,9 +82,10 @@ const out = { generatedAt: new Date().toISOString().slice(0, 10), exams, subject
 // One-time import of the old Excel tracker (used only by the admin panel's import action).
 writeFileSync(join(ROOT, "src", "data", "excel-snapshot.json"), JSON.stringify(read("excel-snapshot.json")));
 
-// College ladder for the daily/weekly "college" game: every entry on one JEE Main CRL scale.
-// IITs (Advanced ranks) are scaled by research/colleges-iit.json's adv_to_main; BITS use their researched main_equiv.
-const COLLEGE_FILES = ["colleges-iit.json", "colleges-nit.json", "colleges-iiit-bits.json"];
+// College ladder for the weekly "college" game: every entry on one JEE Main CRL scale.
+// IITs (Advanced ranks) are scaled by research/colleges-iit.json's adv_to_main; BITS and colleges with their own
+// exam (exam "other": VITEEE, MET, WBJEE...) use the researched main_equiv, flagged as an estimate.
+const COLLEGE_FILES = ["colleges-iit.json", "colleges-nit.json", "colleges-iiit-bits.json", "colleges-gfti.json", "colleges-state.json", "colleges-private.json", "colleges-lowrank.json"];
 // IIIT Bangalore's 5-year iMTech duplicates its new 4-year B.Tech; every other entry is a B.Tech.
 const COLLEGE_SKIP = new Set(["iiitb-cse", "iiitb-ece"]);
 let colleges = COLLEGE_FILES.filter((f) => existsSync(join(ROOT, "research", f))).flatMap((f) => {
@@ -103,14 +104,22 @@ let colleges = COLLEGE_FILES.filter((f) => existsSync(join(ROOT, "research", f))
     return a.factor + ((x - a.at) / (b.at - a.at)) * (b.factor - a.factor);
   };
   return file.entries.map((e) => {
-    const rank = e.exam === "advanced" ? e.closing * advFactor(e.closing) : e.exam === "bitsat" ? e.main_equiv : e.closing;
-    return rank == null ? null : { id: e.id, short: e.short, type: e.type, branch: e.branch_short, exam: e.exam, closing: e.closing, rank: Math.round(rank) };
+    const estimate = e.exam === "bitsat" || e.exam === "other";
+    const rank = e.exam === "advanced" ? e.closing * advFactor(e.closing) : estimate ? e.main_equiv : e.closing;
+    if (rank == null || !Number.isFinite(rank) || rank <= 0) return null;
+    return { id: e.id, short: e.short, type: e.type, branch: e.branch_short, exam: e.exam, closing: e.closing, rank: Math.round(rank), ...(estimate ? { estimate: true } : {}) };
   });
 }).filter((c) => c && !COLLEGE_SKIP.has(c.id));
 // BITS ranks are estimates (BITSAT score → Main rank, ±2×); keep them inside the range the real JoSAA cutoffs span,
 // so a rough guess never becomes the ladder's top or bottom.
-const officialMax = Math.max(...colleges.filter((c) => c.exam !== "bitsat").map((c) => c.rank));
-colleges = colleges.filter((c) => c.exam !== "bitsat" || c.rank <= officialMax).sort((a, b) => a.rank - b.rank);
+// The same goes for other own-exam estimates: none may sit beyond the deepest real (JEE-rank) cutoff.
+const officialMax = Math.max(...colleges.filter((c) => !c.estimate).map((c) => c.rank));
+const seen = new Set();
+colleges = colleges
+  .filter((c) => !c.estimate || c.rank <= officialMax)
+  // An id in two research files: keep the first (the older, curated files come first).
+  .filter((c) => (seen.has(c.id) ? false : (seen.add(c.id), true)))
+  .sort((a, b) => a.rank - b.rank);
 writeFileSync(join(ROOT, "src", "data", "colleges.json"), JSON.stringify(colleges));
 console.log(`src/data/colleges.json: ${colleges.length} college-branches`);
 

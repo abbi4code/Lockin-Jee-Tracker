@@ -3,15 +3,20 @@
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "./supabase/client";
-import { useProgress, type ChapterProgress, type QuestionDay, type Settings, type StudySession } from "../store/progress";
+import { useProgress, type ChapterProgress, type QuestionDay, type Settings } from "../store/progress";
 import { normalizeStatus } from "./stages";
 import { fromTestRow, toTestRow } from "./tests";
 import { fromPlanRow, toPlanRow, type PlanRow } from "./plan";
+import { legacyRow, mergeSessions, toSessionRow, type SessionRow } from "./sessions";
 
 // Whether public.plan_items exists (null = not checked yet). Until its migration is applied the planner
 // works locally only; the next full sync after it appears uploads everything.
 let planTable: boolean | null = null;
 const missingTable = (e: { code?: string } | null) => e?.code === "PGRST205" || e?.code === "42P01";
+// Whether study_sessions has the columns for edits and deletions (null = not known yet). Until the
+// session-edits migration is applied, sessions upload in the old shape and deletions are hard deletes.
+let sessionColumns: boolean | null = null;
+const missingColumn = (e: { code?: string } | null) => e?.code === "PGRST204" || e?.code === "42703";
 
 // Local-first sync: progress lives in localStorage and is pushed to Supabase whenever the user
 // is signed in. Conflicts resolve per chapter by updatedAt (newest wins); streak days are merged.
@@ -33,7 +38,7 @@ async function pull(userId: string) {
   const [{ data: rows, error }, { data: remoteState, error: stateError }, { data: sessionRows, error: sessionError }, { data: testRows, error: testError }] = await Promise.all([
     supabase.from("chapter_progress").select("chapter_id, data"),
     supabase.from("user_state").select("data").eq("user_id", userId).maybeSingle(),
-    supabase.from("study_sessions").select("id, chapter_id, subject, mode, started_at, minutes").gte("started_at", since),
+    supabase.from("study_sessions").select("*").gte("started_at", since),
     supabase.from("test_results").select("*"),
   ]);
   if (error) throw error;
@@ -46,9 +51,12 @@ async function pull(userId: string) {
   const testsToPush = Object.values(useProgress.getState().tests)
     .filter((t) => t.updatedAt > (remoteTests.get(t.id) ?? -1))
     .map((t) => `test:${t.id}`);
-  store.mergeSessions(
-    (sessionRows ?? []).map((r): StudySession => ({ id: r.id, chapterId: r.chapter_id, subject: r.subject, mode: r.mode, startedAt: r.started_at, minutes: r.minutes })),
-  );
+  // Sessions: newest copy of each wins, deletions included. Read the store fresh: edits may have happened during the fetch.
+  const now = useProgress.getState();
+  if ((sessionRows ?? []).length) sessionColumns = "updated_at" in (sessionRows![0] as object);
+  const merged = mergeSessions(now.sessions, now.removedSessions, (sessionRows ?? []) as SessionRow[], since);
+  store.replaceSessions(merged.sessions, merged.removed);
+  const sessionsToPush = merged.push.map((id) => `session:${id}`);
 
   const incoming: Record<string, ChapterProgress> = {};
   const remoteUpdated = new Map<string, number>();
@@ -94,7 +102,7 @@ async function pull(userId: string) {
       .filter((i) => i.updatedAt > (remotePlan.get(i.id) ?? -1))
       .map((i) => `plan:${i.id}`);
   }
-  store.markDirty([...toPush, ...testsToPush, ...planToPush, ...(serverComplete ? [] : ["state"])]);
+  store.markDirty([...toPush, ...testsToPush, ...planToPush, ...sessionsToPush, ...(serverComplete ? [] : ["state"])]);
 }
 
 async function push(userId: string) {
@@ -123,14 +131,17 @@ async function push(userId: string) {
     });
     if (error) throw error;
   }
-  const sessionIds = ids.filter((id) => id.startsWith("session:")).map((id) => id.slice(8));
-  const sessionRows = s.sessions
-    .filter((x) => sessionIds.includes(x.id))
-    .map((x) => ({ id: x.id, user_id: userId, chapter_id: x.chapterId, subject: x.subject, mode: x.mode, started_at: x.startedAt, minutes: x.minutes }));
-  if (sessionRows.length) {
-    const { error } = await supabase.from("study_sessions").upsert(sessionRows);
-    if (error) throw error;
-  }
+  const sessionRows = ids
+    .filter((id) => id.startsWith("session:"))
+    .flatMap((id) => {
+      const key = id.slice(8);
+      const live = s.sessions.find((x) => x.id === key);
+      const x = live ?? s.removedSessions[key];
+      if (!x) return [];
+      syncedAt[id] = x.updatedAt as number;
+      return [toSessionRow(x, userId, !live)];
+    });
+  if (sessionRows.length) await pushSessions(sessionRows);
   const testRows = ids
     .filter((id) => id.startsWith("test:") && s.tests[id.slice(5)])
     .map((id) => {
@@ -150,6 +161,32 @@ async function push(userId: string) {
     else if (error) throw error;
   }
   useProgress.getState().markClean(ids, syncedAt);
+}
+
+/** Uploads session rows (soft deletions included). Falls back to the old table shape if the migration isn't applied. */
+export async function pushSessions(rows: SessionRow[]) {
+  if (!supabase) return;
+  if (sessionColumns !== false) {
+    const { error } = await supabase.from("study_sessions").upsert(rows);
+    if (!error) return void (sessionColumns = true);
+    if (!missingColumn(error)) throw error;
+    sessionColumns = false;
+  }
+  const live = rows.filter((r) => !r.deleted).map(legacyRow);
+  const gone = rows.filter((r) => r.deleted).map((r) => r.id);
+  if (live.length) {
+    const { error } = await supabase.from("study_sessions").upsert(live);
+    if (error) throw error;
+  }
+  if (gone.length) {
+    const { error } = await supabase.from("study_sessions").delete().in("id", gone);
+    if (error) throw error;
+    // Hard-deleted: nothing left to sync for these.
+    const st = useProgress.getState();
+    const removed = { ...st.removedSessions };
+    for (const id of gone) delete removed[id];
+    st.replaceSessions(st.sessions, removed);
+  }
 }
 
 /** Local data belongs to one account: switching accounts on a device starts from that account's data. */

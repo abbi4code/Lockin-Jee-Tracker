@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import { coachingMinutes } from "../lib/coaching";
-import { levelFor, scorer } from "../lib/college";
+import { DEFAULT_TARGETS, LADDER, ladderPosition, tracker, weekStart } from "../lib/college";
 import { moodFor, pickLine, type HeadlineContext, type HeadlineEvent, type Mood } from "../lib/headlines";
 import { addDays } from "../lib/plan";
 import { formatMinutes, streak } from "../lib/stats";
@@ -22,8 +22,15 @@ export function Headline() {
   const t = today();
 
   const { ctx, counts, latestTestPct } = useMemo(() => {
-    const day = scorer({ sessions, coaching: settings.coaching, questions, tests, targets: settings.targets })(t);
-    const level = levelFor(day.score);
+    const track = tracker({ sessions, coaching: settings.coaching, questions, tests });
+    const day = track.day(t);
+    // The mood reads today against his own goals; the college line is this week's college.
+    const goals = settings.targets ?? DEFAULT_TARGETS;
+    const targetMinutes = (coachingMinutes(settings.coaching, t) > 0 ? goals.hoursCoaching : goals.hoursOff) * 60;
+    const score = Math.min(100, 50 * Math.min(day.minutes / targetMinutes, 1.2) + 50 * Math.min(day.questions / goals.questions, 1.2));
+    const college = track.week(weekStart(t), t).college;
+    // Higher = better, so "level up" means a better college this week.
+    const level = college ? LADDER.length - ladderPosition(college) + 1 : 0;
     const st = streak(activity);
     const todaysTests = Object.values(tests)
       .filter((x) => !x.deleted && x.takenOn === t)
@@ -31,11 +38,11 @@ export function Headline() {
     const ctx: HeadlineContext = {
       hour: new Date().getHours(),
       minutes: day.minutes,
-      targetMinutes: day.targetMinutes,
+      targetMinutes,
       questions: day.questions,
-      targetQuestions: day.targetQuestions,
-      score: day.score,
-      college: level?.college.short ?? null,
+      targetQuestions: goals.questions,
+      score,
+      college: college?.short ?? null,
       streak: st,
       // A comeback needs an earlier active day: a brand-new account didn't "miss" yesterday.
       missedYesterday: !activity.includes(addDays(t, -1)) && activity.some((d) => d < addDays(t, -1)),
@@ -45,7 +52,8 @@ export function Headline() {
     };
     return {
       ctx,
-      counts: { sessions: sessions.filter((x) => new Date(x.startedAt).toLocaleDateString("en-CA") === t).length, q: day.questions, tests: todaysTests.length, level: level?.n ?? 1 },
+      // Only timed sessions are a "focus session done" moment; time added by hand isn't.
+      counts: { sessions: sessions.filter((x) => x.source !== "manual" && new Date(x.startedAt).toLocaleDateString("en-CA") === t).length, q: day.questions, tests: todaysTests.length, level },
       latestTestPct: todaysTests[0] ? pct(todaysTests[0]) : null,
     };
   }, [sessions, questions, tests, settings.coaching, settings.targets, settings.name, activity, t]);

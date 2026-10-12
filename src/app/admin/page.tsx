@@ -20,7 +20,7 @@ export default async function AdminPage() {
     study7: formatMinutes(s.study7),
     questions7: s.questions7,
     tests: s.testsGiven,
-    college: s.college.today?.name ?? null,
+    college: s.college.week?.name ?? s.college.lastWeek?.name ?? null,
     syllabus: s.overall.percent,
     done: `${s.overall.done}/${s.overall.total}`,
   }));

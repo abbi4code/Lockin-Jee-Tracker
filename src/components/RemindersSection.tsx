@@ -35,7 +35,7 @@ function TimeSelect({ value, options, onChange }: { value: string | null; option
   );
 }
 
-/** Me page: turn push reminders on for this device and pick the morning / evening times. */
+/** Me page: turn push notifications (chat messages + planner reminders) on for this device, and pick the reminder times. */
 export function RemindersSection() {
   const { settings, setSettings } = useProgress();
   const { user } = useSync();
@@ -85,15 +85,15 @@ export function RemindersSection() {
   };
 
   return (
-    <Section label="reminders" right={on ? "on for this device" : on === false ? "off" : undefined}>
-      <p className="text-[14px] text-mute">A morning note with today&apos;s plan, and an evening nudge only if something planned is still open. They arrive even when the app is closed.</p>
+    <Section label="notifications" right={on ? "on for this device" : on === false ? "off" : undefined}>
+      <p className="text-[14px] text-mute">New chat messages, a morning note with today&apos;s plan, and an evening nudge only if something planned is still open. They arrive even when the app is closed.</p>
 
       {env.iosBrowser ? (
-        <p className="mt-4 text-[14px] text-fg">On iPhone, add lockin. to your home screen first (Share → Add to Home Screen), then open it from there and turn reminders on.</p>
+        <p className="mt-4 text-[14px] text-fg">On iPhone, add lockin. to your home screen first (Share → Add to Home Screen), then open it from there and turn notifications on.</p>
       ) : !env.supported ? (
         <p className="mt-4 font-mono text-[12.5px] text-dim">this browser can&apos;t receive notifications.</p>
       ) : !user ? (
-        <p className="mt-4 font-mono text-[12.5px] text-dim">sign in to turn reminders on.</p>
+        <p className="mt-4 font-mono text-[12.5px] text-dim">sign in to turn notifications on.</p>
       ) : (
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <button
@@ -103,7 +103,7 @@ export function RemindersSection() {
             className={`flex items-center gap-1.5 rounded-full px-4 py-2 text-[14px] transition disabled:opacity-60 ${on ? "border border-line-2 text-mute hover:border-red hover:text-red" : "bg-fg font-medium text-ink"}`}
           >
             {busy ? <LoaderCircle className="size-3.5 animate-spin" /> : <BellRing className="size-3.5" />}
-            {on ? "turn off on this device" : "turn on reminders"}
+            {on ? "turn off on this device" : "turn on notifications"}
           </button>
           {on && (
             <button onClick={test} className="rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-fg hover:text-fg">
@@ -113,14 +113,15 @@ export function RemindersSection() {
         </div>
       )}
 
+      {/* Notifications turned on from the chat save no reminder times, so the reminders show (and stay) off until picked. */}
       <div className="mt-5 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-[15px]">morning plan</span>
-          <TimeSelect value={r ? r.morning : DEFAULTS.morning} options={MORNING} onChange={(morning) => saveTimes({ morning })} />
+          <TimeSelect value={r ? r.morning : on ? null : DEFAULTS.morning} options={MORNING} onChange={(morning) => saveTimes({ morning })} />
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-[15px]">evening nudge</span>
-          <TimeSelect value={r ? r.evening : DEFAULTS.evening} options={EVENING} onChange={(evening) => saveTimes({ evening })} />
+          <TimeSelect value={r ? r.evening : on ? null : DEFAULTS.evening} options={EVENING} onChange={(evening) => saveTimes({ evening })} />
         </div>
       </div>
       {msg && <p className="mt-3 font-mono text-[12.5px] text-mute">{msg}</p>}

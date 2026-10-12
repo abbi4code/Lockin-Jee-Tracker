@@ -1,7 +1,7 @@
 "use client";
 
-// Turning push reminders on/off for this device. The server side is /api/push (subscribe) and
-// /api/cron/reminders (sending); the service worker (public/sw.js) shows them.
+// Turning push notifications on/off for this device (chat messages and planner reminders). The server side is
+// /api/push (subscribe), /api/chat/notify and /api/cron/reminders (sending); the service worker (public/sw.js) shows them.
 
 export const pushSupported = () => typeof window !== "undefined" && "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
 export const isIOS = () => typeof navigator !== "undefined" && /iphone|ipad|ipod/i.test(navigator.userAgent);
@@ -19,7 +19,7 @@ function keyBytes(base64: string) {
 async function registration() {
   const reg = await navigator.serviceWorker.getRegistration();
   // The worker is only registered in production builds (see Providers).
-  if (!reg) throw new Error("Reminders need the deployed app (they don't run in dev).");
+  if (!reg) throw new Error("Notifications need the deployed app (they don't run in dev).");
   return reg;
 }
 
@@ -31,7 +31,7 @@ export async function currentSubscription() {
 
 export async function enablePush() {
   const key = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-  if (!key) throw new Error("Reminders aren't set up on this site yet (missing VAPID keys).");
+  if (!key) throw new Error("Notifications aren't set up on this site yet (missing VAPID keys).");
   const permission = await Notification.requestPermission();
   if (permission !== "granted") throw new Error(permission === "denied" ? "Notifications are blocked for this site. Allow them in the browser's site settings." : "Notifications weren't allowed.");
   const reg = await registration();

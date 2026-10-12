@@ -79,8 +79,14 @@ export default async function Study({ params }: PageProps<"/admin/u/[userId]/stu
                       <td className="py-2 pr-3">
                         {c && <span className="mr-2 inline-block size-1.5 rounded-full align-middle" style={{ background: SUBJECT_COLOR[c.subject] }} />}
                         {c?.name ?? <span className="text-mute">general study</span>}
+                        {/* Time he typed in or changed himself, so you can tell it from timed sessions. */}
+                        {(r.source === "manual" || r.edited) && (
+                          <span className="ml-2 rounded-[4px] border border-line-2 px-1.5 py-px align-middle font-mono text-[10.5px] tracking-wider text-mute uppercase">
+                            {r.source === "manual" ? "added by hand" : "edited"}
+                          </span>
+                        )}
                       </td>
-                      <td className="hidden py-2 pr-3 font-mono text-[12px] text-mute sm:table-cell">{r.mode}</td>
+                      <td className="hidden py-2 pr-3 font-mono text-[12px] text-mute sm:table-cell">{r.source === "manual" ? "manual" : r.mode}</td>
                       <td className="py-2 text-right font-mono text-[13px] whitespace-nowrap">{hours(r.minutes)}</td>
                     </tr>
                   );

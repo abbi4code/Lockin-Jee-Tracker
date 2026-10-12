@@ -1,4 +1,4 @@
-import type { CollegeDay } from "@/lib/admin-student";
+import { formatRank, rankHeight, type WeekResult } from "@/lib/college";
 import type { Column, Series } from "./Charts";
 import { fmtDay, hours, tickDay } from "./StudentParts";
 
@@ -34,12 +34,13 @@ export function questionColumns(days: { date: string; physics: number; chemistry
   }));
 }
 
-export function levelColumns(history: CollegeDay[], today: string, every = 5): Column[] {
-  return history.map((d, i) => ({
-    key: d.date,
-    tick: d.date === today || (history.length - 1 - i) % every === 0 ? tickDay(d.date) : "",
-    parts: [d.score > 0 ? d.level : 0],
-    tip: d.score > 0 && d.college ? `${fmtDay(d.date)} · level ${d.level} · ${d.college.short} ${d.college.branch} · score ${Math.round(d.score)}` : `${fmtDay(d.date)} · nothing logged`,
-    current: d.date === today,
+/** One column per finished week (oldest first): taller = better predicted rank (log scale). */
+export function weekColumns(weeks: WeekResult[]): Column[] {
+  return weeks.map((w) => ({
+    key: w.start,
+    tick: new Date(`${w.start}T00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" }).toLowerCase(),
+    parts: [w.empty ? 0 : Math.round(rankHeight(w.rank) * 100)],
+    tip: w.empty || !w.college ? `week of ${fmtDay(w.start)} · nothing logged` : `week of ${fmtDay(w.start)} · ${w.college.short} ${w.college.branch} · rank ~${formatRank(w.rank)}`,
+    current: false,
   }));
 }

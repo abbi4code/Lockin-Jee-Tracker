@@ -5,6 +5,7 @@ import { ColumnChart } from "@/components/admin/Charts";
 import { STUDY_SERIES, studyColumns } from "@/components/admin/columns";
 import { Block, Empty, fmtDay, hours, MeterRow, SUBJECT_NAME, Tile, Tiles } from "@/components/admin/StudentParts";
 import { attention, chapterInsights, collegeInsights, loadStudent, questionInsights, studyInsights, testInsights } from "@/lib/admin-student";
+import { formatRank } from "@/lib/college";
 
 export const metadata: Metadata = { title: "Student", robots: { index: false } };
 
@@ -29,9 +30,9 @@ export default async function Overview({ params }: PageProps<"/admin/u/[userId]"
         <Tile label="questions this week" value={q.week} sub={`today ${q.today.total} · all time ${q.allTime}`} href={`${base}/questions`} />
         <Tile label="tests given" value={t.given} sub={t.avg != null ? `avg ${Math.round(t.avg)}% · last 5 ${Math.round(t.last5!)}%` : "no scores yet"} href={`${base}/tests`} />
         <Tile
-          label="college · form"
-          value={c.form.level ? `L${c.form.level.n}` : "–"}
-          sub={c.form.level ? `${c.form.level.college.short} · today ${c.today.college?.short ?? "–"}` : "no data yet"}
+          label="college · this week"
+          value={c.week.empty ? "–" : `~${formatRank(c.week.rank)}`}
+          sub={c.week.empty ? `last week ${c.lastWeek.empty ? "–" : c.lastWeek.college?.short}` : `${c.week.college?.short} · ${c.week.college?.branch}`}
           href={`${base}/college`}
         />
         <Tile label="chapters studied" value={`${ch.overall.done}/${ch.overall.total}`} sub={`${Math.round(ch.overall.percent)}% of topics · ${ch.working.length} in progress`} href={`${base}/chapters`} />
@@ -79,9 +80,9 @@ export default async function Overview({ params }: PageProps<"/admin/u/[userId]"
             {q.daysOnTarget30 === 0 && q.allTime > 0 && <li>hasn&apos;t hit the {q.target}-question target yet</li>}
           </ul>
           {!a.overduePlan.length && !a.revisionsDue.length && !a.openWeak.length && !a.shaky.length && a.inactive7 < 3 && <Empty>nothing flagged. he&apos;s on it.</Empty>}
-          {c.best && c.best.score > 0 && (
+          {c.best && (
             <p className="mt-5 font-mono text-[12px] text-dim">
-              best day in 30: {fmtDay(c.best.date)} · level {c.best.level} ({c.best.college?.short})
+              best week in 12: week of {fmtDay(c.best.start)} · rank ~{formatRank(c.best.rank)} ({c.best.college?.short})
             </p>
           )}
         </Block>

@@ -8,6 +8,25 @@ import { DotField } from "../components/DotField";
 import { supabase } from "../lib/supabase/client";
 import { useProgress } from "../store/progress";
 
+/** Gives up waiting after this long, so the button never just spins. */
+const TIMEOUT_MS = 20_000;
+const withTimeout = <T,>(p: Promise<T>) =>
+  Promise.race([p, new Promise<never>((_, reject) => setTimeout(() => reject(new Error("timeout")), TIMEOUT_MS))]);
+
+/** Supabase's errors in plain words. Wrong password and unknown email stay one message on purpose (no hint which emails have accounts). */
+function friendly(err: unknown, mode: "signin" | "signup") {
+  const e = err as { code?: string; status?: number; message?: string; name?: string };
+  const msg = e?.message ?? "";
+  if (msg === "timeout") return "this is taking too long. check your internet and try again.";
+  if (e?.name === "AuthRetryableFetchError" || /fetch|network/i.test(msg)) return "couldn't reach the server. check your internet and try again.";
+  if (e?.code === "invalid_credentials" || /invalid login credentials/i.test(msg)) return "wrong email or password.";
+  if (e?.code === "email_not_confirmed" || /not confirmed/i.test(msg)) return "confirm your email first: open the link we sent you, then sign in.";
+  if (e?.status === 429 || /rate limit|too many|security purposes/i.test(msg)) return "too many tries. wait a minute and try again.";
+  if (e?.code === "user_already_exists" || /already registered|already exists/i.test(msg)) return "that email already has an account. sign in instead.";
+  if (e?.code === "weak_password") return msg || "pick a stronger password.";
+  return msg ? msg.charAt(0).toLowerCase() + msg.slice(1) : mode === "signin" ? "couldn't sign in. try again." : "couldn't create the account. try again.";
+}
+
 const field = "w-full border-b border-line-2 bg-transparent py-3 text-[16px] outline-none transition-colors placeholder:text-dim focus:border-fg";
 
 /** Where to go after signing in: ?next= if it's a path on this site, else the dashboard. */
@@ -43,36 +62,43 @@ function Form({ mode }: { mode: "signin" | "signup" }) {
     );
   }
 
-  const submit = async (e: FormEvent) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const sb = supabase;
     if (!sb) return;
+    // Read what's actually in the fields: browser autofill can fill them without React seeing a change.
+    const form = new FormData(e.currentTarget);
+    const emailIn = String(form.get("email") ?? "").trim();
+    const passwordIn = String(form.get("password") ?? "");
+    const nameIn = String(form.get("name") ?? "").trim().slice(0, 24);
+    setEmail(emailIn);
+    setPassword(passwordIn);
     setBusy(true);
     setError(null);
-    if (mode === "signin") {
-      const { error } = await sb.auth.signInWithPassword({ email, password });
-      if (error) {
-        setError(error.message);
-        setBusy(false);
-        return;
+    try {
+      if (mode === "signin") {
+        const { error } = await withTimeout(sb.auth.signInWithPassword({ email: emailIn, password: passwordIn }));
+        if (error) throw error;
+      } else {
+        const { data, error } = await withTimeout(
+          sb.auth.signUp({
+            email: emailIn,
+            password: passwordIn,
+            options: { data: { name: nameIn }, emailRedirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(target())}` },
+          }),
+        );
+        if (error) throw error;
+        if (nameIn) useProgress.getState().setSettings({ name: nameIn });
+        if (!data.session) {
+          setSent(true);
+          setBusy(false);
+          return;
+        }
       }
-    } else {
-      const { data, error } = await sb.auth.signUp({
-        email,
-        password,
-        options: { data: { name }, emailRedirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(target())}` },
-      });
-      if (error) {
-        setError(error.message);
-        setBusy(false);
-        return;
-      }
-      if (name) useProgress.getState().setSettings({ name });
-      if (!data.session) {
-        setSent(true);
-        setBusy(false);
-        return;
-      }
+    } catch (err) {
+      setError(friendly(err, mode));
+      setBusy(false);
+      return;
     }
     // Full navigation so the proxy sees the new session cookie.
     window.location.assign(target());
@@ -90,10 +116,12 @@ function Form({ mode }: { mode: "signin" | "signup" }) {
   }
 
   return (
-    <form onSubmit={submit} className="space-y-2">
-      {mode === "signup" && <input value={name} onChange={(e) => setName(e.target.value.slice(0, 24))} placeholder="your name" autoComplete="given-name" className={field} />}
-      <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" autoComplete="email" className={field} />
+    // method="post": if the script ever fails to load, a plain submit must not put the password in the URL.
+    <form onSubmit={submit} method="post" className="space-y-2">
+      {mode === "signup" && <input name="name" value={name} onChange={(e) => setName(e.target.value.slice(0, 24))} placeholder="your name" autoComplete="given-name" className={field} />}
+      <input name="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" autoComplete="email" className={field} />
       <input
+        name="password"
         type="password"
         required
         minLength={6}

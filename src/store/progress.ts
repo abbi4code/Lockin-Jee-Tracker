@@ -6,6 +6,7 @@ import type { TestResult } from "../lib/tests";
 import type { Coaching } from "../lib/coaching";
 import type { Targets } from "../lib/college";
 import type { PlanItem, PlanKind } from "../lib/plan";
+import { clampMinutes, dayOf, type Removed } from "../lib/sessions";
 
 export type { Status };
 export type StepId = "lecture" | "notes" | "module" | "pyq" | "ncert";
@@ -49,6 +50,8 @@ export interface Settings {
   /** Daily targets for the college score. Absent = defaults (see lib/college.ts). */
   targets?: Targets;
   reminders?: Reminders;
+  /** Announcements: id → the day (YYYY-MM-DD) it was first seen on any device. Synced, so the countdown is per account. */
+  seen?: Record<string, string>;
 }
 
 /** Questions solved on one day, by subject. `at` = last edit, so the newest copy wins when devices sync. */
@@ -66,6 +69,12 @@ export interface StudySession {
   mode: TimerMode;
   startedAt: string; // ISO
   minutes: number;
+  /** Last change (ms); sync keeps the newest copy. 0/absent on sessions logged before editing existed. */
+  updatedAt?: number;
+  /** "manual" = added by hand on the focus page instead of timed. Absent = timer. */
+  source?: "timer" | "manual";
+  /** Changed by hand after the timer logged it. */
+  edited?: boolean;
 }
 
 export type TimerMode = "stopwatch" | "pomodoro";
@@ -94,6 +103,8 @@ interface State {
   /** Supabase user id this local data belongs to (null = not linked yet). */
   owner: string | null;
   sessions: StudySession[];
+  /** Deleted sessions, kept until the deletion has synced. */
+  removedSessions: Record<string, Removed>;
   timer: Timer;
   /** MathonGo test results by id (soft-deleted rows kept so removals sync). */
   tests: Record<string, TestResult>;
@@ -134,7 +145,13 @@ interface State {
   markClean: (ids: string[], syncedAt: Record<string, number>) => void;
   markDirty: (ids: string[]) => void;
   setOwner: (id: string | null) => void;
-  mergeSessions: (sessions: StudySession[]) => void;
+  /** Used by sync: the merged result of lib/sessions mergeSessions. */
+  replaceSessions: (sessions: StudySession[], removed: Record<string, Removed>) => void;
+  /** Adds time studied without the timer. */
+  addSession: (s: { chapterId: string | null; startedAt: string; minutes: number }) => StudySession;
+  /** Fixes a logged session: chapter, start or length. */
+  editSession: (id: string, patch: Partial<Pick<StudySession, "chapterId" | "startedAt" | "minutes">>) => void;
+  deleteSession: (id: string) => void;
   timerStart: (opts?: Partial<Pick<Timer, "mode" | "target" | "chapterId">>) => void;
   timerPause: () => void;
   timerSet: (patch: Partial<Pick<Timer, "mode" | "target" | "chapterId">>) => void;
@@ -149,6 +166,14 @@ export const timerElapsed = (t: Timer, now = Date.now()) => t.banked + (t.runnin
 const idleTimer = (t?: Timer): Timer => ({ mode: t?.mode ?? "pomodoro", target: t?.target ?? 25, chapterId: t?.chapterId ?? null, runningSince: null, banked: 0, sessionStart: null });
 
 export const today = () => new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD in local time
+
+const sortSessions = (list: StudySession[]) => [...list].sort((a, b) => a.startedAt.localeCompare(b.startedAt));
+
+/** Counts `day` as a study day (streaks) and queues `ids` (plus the state, if the day is new) for sync. */
+function withActivity(s: { activity: string[]; stateUpdatedAt: number; dirty: string[] }, day: string, now: number, ids: string[]) {
+  if (s.activity.includes(day)) return { dirty: [...new Set([...s.dirty, ...ids])] };
+  return { activity: [...s.activity, day].sort(), stateUpdatedAt: now, dirty: [...new Set([...s.dirty, ...ids, "state"])] };
+}
 
 export const emptyProgress = (): ChapterProgress => ({
   status: "undone",
@@ -168,6 +193,7 @@ const initial = {
   dirty: [] as string[],
   owner: null as string | null,
   sessions: [] as StudySession[],
+  removedSessions: {} as Record<string, Removed>,
   timer: idleTimer(),
   tests: {} as Record<string, TestResult>,
   lastMaxScore: null as number | null,
@@ -351,15 +377,16 @@ export const useProgress = create<State>()(
             // Keep an id dirty if it changed again while the upload was in flight.
             dirty: s.dirty.filter((id) => {
               if (!ids.includes(id)) return true;
-              if (id.startsWith("session:")) return false; // sessions never change after logging
               const current =
                 id === "state"
                   ? s.stateUpdatedAt
-                  : id.startsWith("test:")
-                    ? s.tests[id.slice(5)]?.updatedAt
-                    : id.startsWith("plan:")
-                      ? s.plan[id.slice(5)]?.updatedAt
-                      : s.chapters[id]?.updatedAt;
+                  : id.startsWith("session:")
+                    ? (s.sessions.find((x) => x.id === id.slice(8)) ?? s.removedSessions[id.slice(8)])?.updatedAt
+                    : id.startsWith("test:")
+                      ? s.tests[id.slice(5)]?.updatedAt
+                      : id.startsWith("plan:")
+                        ? s.plan[id.slice(5)]?.updatedAt
+                        : s.chapters[id]?.updatedAt;
               return current !== syncedAt[id];
             }),
           })),
@@ -368,10 +395,57 @@ export const useProgress = create<State>()(
 
         setOwner: (owner) => set({ owner }),
 
-        mergeSessions: (incoming) =>
+        replaceSessions: (sessions, removedSessions) => set({ sessions, removedSessions }),
+
+        addSession: ({ chapterId, startedAt, minutes }) => {
+          const now = Date.now();
+          const session: StudySession = {
+            id: crypto.randomUUID(),
+            chapterId,
+            subject: chapterId ? (getChapter(chapterId)?.subject ?? null) : null,
+            mode: "stopwatch",
+            startedAt,
+            minutes: clampMinutes(minutes),
+            updatedAt: now,
+            source: "manual",
+          };
+          set((s) => ({
+            sessions: sortSessions([...s.sessions, session]),
+            ...withActivity(s, dayOf(startedAt), now, [`session:${session.id}`]),
+          }));
+          return session;
+        },
+
+        editSession: (id, patch) =>
           set((s) => {
-            const known = new Set(s.sessions.map((x) => x.id));
-            return { sessions: [...s.sessions, ...incoming.filter((x) => !known.has(x.id))].sort((a, b) => a.startedAt.localeCompare(b.startedAt)) };
+            const prev = s.sessions.find((x) => x.id === id);
+            if (!prev) return s;
+            const now = Date.now();
+            const chapterId = patch.chapterId !== undefined ? patch.chapterId : prev.chapterId;
+            const next: StudySession = {
+              ...prev,
+              ...patch,
+              chapterId,
+              subject: chapterId ? (getChapter(chapterId)?.subject ?? null) : null,
+              minutes: clampMinutes(patch.minutes ?? prev.minutes),
+              updatedAt: now,
+              edited: prev.source !== "manual" || prev.edited,
+            };
+            return {
+              sessions: sortSessions(s.sessions.map((x) => (x.id === id ? next : x))),
+              ...withActivity(s, dayOf(next.startedAt), now, [`session:${id}`]),
+            };
+          }),
+
+        deleteSession: (id) =>
+          set((s) => {
+            const prev = s.sessions.find((x) => x.id === id);
+            if (!prev) return s;
+            return {
+              sessions: s.sessions.filter((x) => x.id !== id),
+              removedSessions: { ...s.removedSessions, [id]: { ...prev, updatedAt: Date.now() } },
+              dirty: [...new Set([...s.dirty, `session:${id}`])],
+            };
           }),
 
         timerStart: (opts) =>
@@ -409,12 +483,14 @@ export const useProgress = create<State>()(
               subject: chapter ? (getChapter(chapter)?.subject ?? null) : null,
               mode: timer.mode,
               startedAt: new Date(timer.sessionStart).toISOString(),
-              minutes,
+              minutes: clampMinutes(minutes),
+              updatedAt: Date.now(),
+              source: "timer",
             };
           }
           set((s) => ({
             timer: idleTimer(s.timer),
-            sessions: logged ? [...s.sessions, logged] : s.sessions,
+            sessions: logged ? sortSessions([...s.sessions, logged]) : s.sessions,
             dirty: logged ? [...s.dirty, `session:${logged.id}`] : s.dirty,
           }));
           return logged;

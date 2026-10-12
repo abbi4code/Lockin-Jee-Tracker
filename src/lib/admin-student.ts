@@ -3,13 +3,14 @@ import { cache } from "react";
 import { ALL_CHAPTERS, getChapter, getTrack, type Exam, type SubjectId } from "@/data";
 import { isAdminEmail } from "@/lib/admin";
 import { coachingMinutes, studyByDay } from "@/lib/coaching";
-import { DEFAULT_TARGETS, levelFor, scorer, weekScore, weekStart, LEVELS, type College } from "@/lib/college";
+import { collegeReport, DEFAULT_TARGETS, LADDER, ladderPosition } from "@/lib/college";
 import { addDays, fromPlanRow, type PlanItem, type PlanRow } from "@/lib/plan";
 import { normalizeStatus, isStudied } from "@/lib/stages";
 import { revisionsDue, streak, subjectStats } from "@/lib/stats";
 import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { fromTestRow, liveResults, pct, type TestResult } from "@/lib/tests";
 import type { ChapterProgress, QuestionDay, Settings, StudySession } from "@/store/progress";
+import { liveSessionRows, type SessionRow } from "@/lib/sessions";
 
 // Everything the admin panel shows about one student, loaded once per request (the layout and the tab page
 // share it through React's cache) and only for that student.
@@ -46,14 +47,14 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
   const [progress, state, sessions, tests, plan] = await Promise.all([
     admin.from("chapter_progress").select("chapter_id, data").eq("user_id", id),
     admin.from("user_state").select("data").eq("user_id", id).maybeSingle(),
-    admin.from("study_sessions").select("id, chapter_id, subject, mode, started_at, minutes").eq("user_id", id).order("started_at"),
+    admin.from("study_sessions").select("*").eq("user_id", id).order("started_at"),
     admin.from("test_results").select("*").eq("user_id", id),
     admin.from("plan_items").select("id, chapter_id, date, kind, done_at, deleted, updated_at").eq("user_id", id).eq("deleted", false),
   ]);
   const chapters: Record<string, ChapterProgress> = {};
   for (const r of progress.data ?? []) chapters[r.chapter_id] = { ...(r.data as ChapterProgress), status: normalizeStatus((r.data as ChapterProgress).status) };
   const st = state.data?.data as { settings?: Settings; activity?: string[]; questions?: Record<string, QuestionDay> } | undefined;
-  const sessionList: StudySession[] = (sessions.data ?? []).map((r) => ({ id: r.id, chapterId: r.chapter_id, subject: r.subject, mode: r.mode, startedAt: r.started_at, minutes: r.minutes }));
+  const sessionList: StudySession[] = liveSessionRows((sessions.data ?? []) as SessionRow[]);
   const testMap: Record<string, TestResult> = {};
   for (const r of tests.data ?? []) {
     const t = fromTestRow(r);
@@ -173,41 +174,15 @@ export function testInsights(s: StudentDetail) {
   };
 }
 
-// ── College game ──
-export interface CollegeDay {
-  date: string;
-  score: number;
-  level: number;
-  college: College | null;
-}
-
-export function collegeInsights(s: StudentDetail, days = 30) {
-  const score = scorer({ sessions: s.sessions, coaching: s.settings?.coaching, questions: s.questions, tests: s.tests, targets: s.settings?.targets });
-  const history: CollegeDay[] = range(s.today, days).map((date) => {
-    const sc = score(date).score;
-    const lvl = levelFor(sc);
-    return { date, score: sc, level: lvl?.n ?? 1, college: lvl?.college ?? null };
-  });
-  const monday = weekStart(s.today);
-  const thisWeek = range(s.today, Math.round((Date.parse(s.today) - Date.parse(monday)) / 86_400_000) + 1).map(score);
-  const lastWeek = Array.from({ length: 7 }, (_, i) => score(addDays(monday, i - 7)));
-  // "Where he's heading": the level his average over the last 30 days (or since joining) reaches.
-  const span = history.filter((d) => d.date >= s.joinedDay);
-  const formScore = sum(span.map((d) => d.score)) / Math.max(span.length, 1);
-  const best = [...history].sort((a, b) => b.score - a.score)[0];
-  const unlocked = new Set(history.filter((d) => d.score > 0 && d.college).map((d) => d.college!.short));
-  return {
-    today: history.at(-1)!,
-    todayDetail: score(s.today),
-    history,
-    week: { score: weekScore(thisWeek), level: levelFor(weekScore(thisWeek)) },
-    lastWeek: { score: weekScore(lastWeek), level: levelFor(weekScore(lastWeek)) },
-    form: { score: formScore, level: levelFor(formScore), days: span.length },
-    daysScored: span.filter((d) => d.score > 0).length,
-    best,
-    unlocked,
-    levels: LEVELS,
-  };
+// ── College game (weekly) ──
+export function collegeInsights(s: StudentDetail, weeks = 12) {
+  const r = collegeReport({ sessions: s.sessions, coaching: s.settings?.coaching, questions: s.questions, tests: s.tests }, s.today, s.joinedDay, weeks);
+  const scored = r.history.filter((w) => !w.empty);
+  const best = [...scored].sort((a, b) => a.rank - b.rank)[0] ?? null;
+  // The ladder around this week's college: a few steps up and down.
+  const at = r.week.college ? ladderPosition(r.week.college) - 1 : 0;
+  const around = LADDER.slice(Math.max(0, at - 6), at + 7);
+  return { ...r, best, around, at };
 }
 
 // ── Chapters ──
