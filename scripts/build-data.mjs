@@ -75,7 +75,7 @@ const subjects = SUBJECTS.map(({ id, file, name, short }) => {
 const facts = read("exam-facts.json");
 const exams = facts.dates
   .filter((d) => d.kind === "exam")
-  .map((d) => ({ event: d.event, start: d.start, end: d.end, status: d.source_type }));
+  .map((d) => ({ event: d.event, start: d.start, end: d.end, status: d.source_type, ...(d.time ? { time: d.time } : {}) }));
 
 const tracks = read("testseries-mathongo.json").tracks;
 const out = { generatedAt: new Date().toISOString().slice(0, 10), exams, subjects, tracks };

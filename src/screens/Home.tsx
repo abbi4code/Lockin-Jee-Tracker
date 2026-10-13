@@ -14,7 +14,7 @@ import { RulesScroll } from "../components/RulesScroll";
 import { Rolling, useCountdown } from "../components/Numbers";
 import { Page } from "../components/Shell";
 import { DotBar, DotText, fadeUp, Label, Section } from "../components/ui";
-import { findExam, SUBJECT_COLOR, SUBJECTS, type Exam } from "../data";
+import { EXAMS, findExam, SUBJECT_COLOR, SUBJECTS, type Exam } from "../data";
 import { celebrate } from "../lib/celebrate";
 import { activityGrid, chapterFraction, currentFocus, daysBetween, formatMinutes, freeMarks, pace, revisionsDue, streak, subjectStats } from "../lib/stats";
 import { currentPlan, isScheduled, studyByDay, toggleDay } from "../lib/coaching";
@@ -123,7 +123,40 @@ function Countdown() {
         {boards && <>boards {daysBetween(now, new Date(boards.start))}d</>}
         {adv && <> · advanced {daysBetween(now, new Date(adv.start))}d</>}
       </div>
+      <Olympiads now={now} />
     </Section>
+  );
+}
+
+/** NSE olympiads (stage 1 of INPhO / INChO / INAO): days left to each, until its day has passed. */
+function Olympiads({ now }: { now: Date }) {
+  const list = EXAMS.filter((e) => /^NSE/.test(e.event))
+    .map((e) => ({ e, at: new Date(`${e.start}T${e.time ?? "09:00"}:00+05:30`) }))
+    .filter(({ e }) => e.end >= today())
+    .sort((a, b) => a.at.getTime() - b.at.getTime());
+  if (!list.length) return null;
+  return (
+    <div className="mt-5 grid grid-cols-3 border-t border-line/60 pt-4">
+      {list.map(({ e, at }, i) => {
+        const days = Math.max(0, daysBetween(now, at));
+        const [name, subject] = [e.event.split(" ")[0], e.event.match(/\((.+)\)/)?.[1] ?? ""];
+        return (
+          <div key={e.event} className={`min-w-0 ${i ? "border-l border-line/60 pl-4" : "pr-4"}`}>
+            <Label>
+              {name} <span className="hidden normal-case sm:inline">· {subject}</span>
+            </Label>
+            <div className="mt-2 flex items-baseline gap-1.5">
+              <DotText className="text-[28px] leading-none lg:text-[34px]">{days ? String(days) : "0"}</DotText>
+              <span className="font-mono text-[12px] text-mute">{days === 0 ? "today" : days === 1 ? "day" : "days"}</span>
+            </div>
+            <p className="mt-1.5 font-mono text-[11.5px] text-dim">
+              {at.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", weekday: "short", day: "numeric", month: "short" }).toLowerCase().replace(",", "")}
+              <span className="hidden sm:inline"> · {at.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit" }).toLowerCase()}</span>
+            </p>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 

@@ -54,6 +54,8 @@ export interface ExamDate {
   start: string;
   end: string;
   status: string;
+  /** Start time (HH:MM, IST) when the exam has a fixed slot, e.g. the NSE olympiads. */
+  time?: string;
 }
 
 /** A MathonGo test-series chapter; it can cover several app chapters. */
