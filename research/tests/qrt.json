@@ -1,0 +1,521 @@
+{
+    "success": true,
+    "message": "Pack tests sent successfully",
+    "data": {
+        "count": 12,
+        "hasNextPage": false,
+        "isPackPurchased": true,
+        "defaultPage": null,
+        "subgroups": [
+            {
+                "title": "Quizrr Revision Test (QRT)",
+                "tests": [
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9ce4358b0ff77f2dbd",
+                            "title": "Quizrr Revision Test (QRT) 1",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-08-24T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-08-24T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-11-09T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 1",
+                            "syllabus": "<h2>Physics</h2><ul><li>Units and Dimensions</li><li>Mathematics in Physics</li></ul><h2>Chemistry</h2><ul><li>Some Concepts of Chemistry</li></ul><h2>Maths</h2><ul><li>Basics of Mathematics - Logarithms & Inequalities</li><li>Set & Relations</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dbe",
+                            "title": "Quizrr Revision Test (QRT) 2",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-09-07T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-09-07T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-11-16T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 2",
+                            "syllabus": "<h2>Physics</h2><ul><li>Motion in One Dimension</li><li>Motion in Two Dimension</li></ul><h2>Chemistry</h2><ul><li>Structure of Atom</li></ul><h2>Maths</h2><ul><li>Trigonometry</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dbf",
+                            "title": "Quizrr Revision Test (QRT) 3",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-09-21T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-09-21T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-11-23T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 3",
+                            "syllabus": "<h2>Physics</h2><ul><li>Laws of Motion</li></ul><h2>Chemistry</h2><ul><li>Periodic Table</li></ul><h2>Maths</h2><ul><li>Quadratic Equation</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc0",
+                            "title": "Quizrr Revision Test (QRT) 4",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-10-05T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-10-05T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-11-30T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 4",
+                            "syllabus": "<h2>Physics</h2><ul><li>Work Power Energy</li></ul><h2>Chemistry</h2><ul><li>Chemical Bonding</li></ul><h2>Maths</h2><ul><li>Complex Number</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc1",
+                            "title": "Quizrr Revision Test (QRT) 5",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-10-19T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-10-19T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-12-14T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 5",
+                            "syllabus": "<h2>Physics</h2><ul><li>Gravitation</li></ul><h2>Chemistry</h2><ul><li>Redox Reactions</li><li>States of Matter</li></ul><h2>Maths</h2><ul><li>Sequence Series</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc2",
+                            "title": "Quizrr Revision Test (QRT) 6",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-11-02T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-11-02T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-12-21T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 6",
+                            "syllabus": "<h2>Physics</h2><ul><li>Center of Mass Momentum and Collision</li></ul><h2>Chemistry</h2><ul><li>Thermodynamics (C)</li></ul><h2>Maths</h2><ul><li>Binomial Theorem</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc3",
+                            "title": "Quizrr Revision Test (QRT) 7",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-11-16T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-11-16T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2025-12-28T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 7",
+                            "syllabus": "<h2>Physics</h2><ul><li>Rotational Motion</li></ul><h2>Chemistry</h2><ul><li>Chemical Equilibrium</li></ul><h2>Maths</h2><ul><li>Permutation Combination</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc4",
+                            "title": "Quizrr Revision Test (QRT) 8",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-11-23T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-11-23T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2026-01-04T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 8",
+                            "syllabus": "<h2>Physics</h2><ul><li>Mechanical Properties of Solids</li></ul><h2>Chemistry</h2><ul><li>Ionic Equilibrium</li></ul><h2>Maths</h2><ul><li>Straight Lines</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc5",
+                            "title": "Quizrr Revision Test (QRT) 9",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-12-07T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-12-07T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2026-01-18T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 9",
+                            "syllabus": "<h2>Physics</h2><ul><li>Mechanical Properties of Fluids</li></ul><h2>Chemistry</h2><ul><li>General Organic Chemistry</li></ul><h2>Maths</h2><ul><li>Circles</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc6",
+                            "title": "Quizrr Revision Test (QRT) 10",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-12-14T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-12-14T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2026-01-25T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 10",
+                            "syllabus": "<h2>Physics</h2><ul><li>Kinetic Theory of Gases</li><li>Thermal Properties of Matter</li></ul><h2>Chemistry</h2><ul><li>Hydrocarbons</li></ul><h2>Maths</h2><ul><li>Parabola</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc7",
+                            "title": "Quizrr Revision Test (QRT) 11",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2025-12-21T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-12-21T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2026-02-01T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 11",
+                            "syllabus": "<h2>Physics</h2><ul><li>Thermodynamics</li></ul><h2>Chemistry</h2><ul><li>s Block Elements</li><li>Hydrogen</li></ul><h2>Maths</h2><ul><li>Ellipse Hyperbola</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Revision Test (QRT)",
+                        "test": {
+                            "_id": "687e3a9de4358b0ff77f2dc8",
+                            "title": "Quizrr Revision Test (QRT) 12",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "totalTime": 90,
+                            "type": "paid",
+                            "totalQuestions": 45,
+                            "totalMarks": 180,
+                            "startDate": "2025-08-03T00:00:00.000Z",
+                            "endDate": "2027-06-30T00:00:00.000Z",
+                            "detailAccessDate": "2025-08-03T00:00:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "packDetails": [
+                                {
+                                    "packId": "687a16c16ac38d71587aeba5",
+                                    "startDate": "2026-01-04T03:30:00.000Z",
+                                    "endDate": "2027-08-26T18:29:00.000Z",
+                                    "detailAccessDate": "2025-12-28T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "69004cf6d4187e3603a7b640",
+                                    "startDate": "2026-02-08T03:30:00.000Z"
+                                }
+                            ],
+                            "shortTitle": "QRT 12",
+                            "syllabus": "<h2>Physics</h2><ul><li>Oscillations</li><li>Waves and Sound</li></ul><h2>Chemistry</h2><ul><li>p Block Elements</li><li>Environmental Chemistry</li></ul><h2>Maths</h2><ul><li>Limits</li><li>Statistics</li></ul>",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "tags": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -11,6 +11,7 @@ import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { fromTestRow, liveResults, pct, type TestResult } from "@/lib/tests";
 import type { ChapterProgress, QuestionDay, Settings, StudySession } from "@/store/progress";
 import { liveSessionRows, type SessionRow } from "@/lib/sessions";
+import { fromQuizrrRow, fromScheduleRows, quizrrScores, type QuizrrAttempt } from "@/lib/quizrr";
 
 // Everything the admin panel shows about one student, loaded once per request (the layout and the tab page
 // share it through React's cache) and only for that student.
@@ -32,6 +33,11 @@ export interface StudentDetail {
   plan: PlanItem[];
   /** False until the planner migration has been applied. */
   planAvailable: boolean;
+  quizrr: Record<string, QuizrrAttempt>;
+  /** Dates set in the admin panel (test id → day or null); tests without a row use the suggested date. */
+  quizrrDates: Record<string, string | null>;
+  /** False until the Quizrr migration has been applied. */
+  quizrrAvailable: boolean;
   today: string;
   /** The day the account was created (YYYY-MM-DD). */
   joinedDay: string;
@@ -44,12 +50,14 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
   const { data: userData } = await admin.auth.admin.getUserById(id);
   const u = userData?.user;
   if (!u || isAdminEmail(u.email)) return null;
-  const [progress, state, sessions, tests, plan] = await Promise.all([
+  const [progress, state, sessions, tests, plan, quizrr, quizrrSchedule] = await Promise.all([
     admin.from("chapter_progress").select("chapter_id, data").eq("user_id", id),
     admin.from("user_state").select("data").eq("user_id", id).maybeSingle(),
     admin.from("study_sessions").select("*").eq("user_id", id).order("started_at"),
     admin.from("test_results").select("*").eq("user_id", id),
     admin.from("plan_items").select("id, chapter_id, date, kind, done_at, deleted, updated_at").eq("user_id", id).eq("deleted", false),
+    admin.from("quizrr_attempts").select("*").eq("user_id", id).eq("deleted", false),
+    admin.from("quizrr_schedule").select("test_id, date").eq("user_id", id),
   ]);
   const chapters: Record<string, ChapterProgress> = {};
   for (const r of progress.data ?? []) chapters[r.chapter_id] = { ...(r.data as ChapterProgress), status: normalizeStatus((r.data as ChapterProgress).status) };
@@ -59,6 +67,11 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
   for (const r of tests.data ?? []) {
     const t = fromTestRow(r);
     testMap[t.id] = t;
+  }
+  const quizrrMap: Record<string, QuizrrAttempt> = {};
+  for (const r of quizrr.error ? [] : (quizrr.data ?? [])) {
+    const a = fromQuizrrRow(r);
+    quizrrMap[a.id] = a;
   }
   const activity = st?.activity ?? [];
   const lastEdit = Math.max(0, ...Object.values(chapters).map((p) => p.updatedAt));
@@ -79,6 +92,9 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
     tests: testMap,
     plan: plan.error ? [] : ((plan.data ?? []) as PlanRow[]).map(fromPlanRow),
     planAvailable: !plan.error,
+    quizrr: quizrrMap,
+    quizrrDates: quizrrSchedule.error ? {} : fromScheduleRows(quizrrSchedule.data ?? []),
+    quizrrAvailable: !quizrr.error && !quizrrSchedule.error,
     today: new Date().toLocaleDateString("en-CA"),
     joinedDay: new Date(u.created_at).toLocaleDateString("en-CA"),
   };
@@ -127,6 +143,7 @@ export function studyInsights(s: StudentDetail) {
 export function questionInsights(s: StudentDetail) {
   const testQs = new Map<string, number>();
   for (const t of liveResults(s.tests)) if (t.takenOn) testQs.set(t.takenOn, (testQs.get(t.takenOn) ?? 0) + (t.correct ?? 0) + (t.wrong ?? 0));
+  for (const q of quizrrScores(s.quizrr)) testQs.set(q.date, (testQs.get(q.date) ?? 0) + q.questions);
   const day = (date: string) => {
     const q = s.questions[date];
     const logged = { physics: q?.physics ?? 0, chemistry: q?.chemistry ?? 0, maths: q?.maths ?? 0 };
@@ -176,7 +193,7 @@ export function testInsights(s: StudentDetail) {
 
 // ── College game (weekly) ──
 export function collegeInsights(s: StudentDetail, weeks = 12) {
-  const r = collegeReport({ sessions: s.sessions, coaching: s.settings?.coaching, questions: s.questions, tests: s.tests }, s.today, s.joinedDay, weeks);
+  const r = collegeReport({ sessions: s.sessions, coaching: s.settings?.coaching, questions: s.questions, tests: s.tests, quizrr: s.quizrr }, s.today, s.joinedDay, weeks);
   const scored = r.history.filter((w) => !w.empty);
   const best = [...scored].sort((a, b) => a.rank - b.rank)[0] ?? null;
   // The ladder around this week's college: a few steps up and down.

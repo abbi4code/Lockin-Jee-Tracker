@@ -2,6 +2,7 @@ import raw from "../data/colleges.json";
 import type { QuestionDay, StudySession } from "../store/progress";
 import { coachingMinutes, type Coaching } from "./coaching";
 import { pct, type TestResult } from "./tests";
+import { quizrrScores, type QuizrrAttempt } from "./quizrr";
 
 // The college game, weekly. Each calendar week (Mon–Sun) becomes a predicted JEE Main rank, and the rank becomes
 // the best college it would actually get, from a ladder of real 2025 closing ranks (IIT Bombay CSE down to colleges
@@ -45,7 +46,8 @@ const MAX_RANK = 12_00_000;
 
 /**
  * What students at each rank typically put in, per day over a whole week (rest days included, coaching included):
- * study hours, questions solved, and average % in chapter-wise tests (MathonGo). No official data links study habits
+ * study hours, questions solved, and average % in tests (MathonGo chapter-wise and Quizrr; the % scale roughly
+ * matches real JEE Main marks too: 40% of 300 is ~94 percentile, 50% ~98). No official data links study habits
  * to ranks, so these are calibrated judgments from topper interviews and coaching norms: the top hundred study
  * ~12 h and solve ~150 questions a day; a ~6 h, ~40-question routine lands near rank 1 lakh (about 93 percentile).
  * Between anchors, rank moves on a log scale.
@@ -143,6 +145,8 @@ export interface Inputs {
   coaching: Coaching | undefined;
   questions: Record<string, QuestionDay>;
   tests: Record<string, TestResult>;
+  /** Quizrr scores: count like MathonGo tests (one test, one %; its questions count toward the day). */
+  quizrr?: Record<string, QuizrrAttempt>;
 }
 
 export interface DayTotals {
@@ -201,6 +205,10 @@ export function tracker(input: Inputs) {
     testQs.set(t.takenOn, (testQs.get(t.takenOn) ?? 0) + (t.correct ?? 0) + (t.wrong ?? 0));
     const p = pct(t);
     if (p != null) scored.push({ date: t.takenOn, pct: p });
+  }
+  for (const q of quizrrScores(input.quizrr ?? {})) {
+    testQs.set(q.date, (testQs.get(q.date) ?? 0) + q.questions);
+    if (q.pct != null) scored.push({ date: q.date, pct: q.pct });
   }
 
   const day = (date: string): DayTotals => {

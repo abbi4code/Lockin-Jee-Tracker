@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ScoreLine } from "@/components/admin/Charts";
+import { QuizrrAdmin } from "@/components/admin/QuizrrAdmin";
 import { Block, Empty, fmtDay, MeterRow, SUBJECT_NAME, Tile, Tiles } from "@/components/admin/StudentParts";
 import { getTrack, SUBJECT_COLOR, SUBJECTS, TRACKS } from "@/data";
 import { loadStudent, testInsights } from "@/lib/admin-student";
@@ -25,6 +26,10 @@ export default async function Tests({ params }: PageProps<"/admin/u/[userId]/tes
 
   return (
     <>
+      <h2 className="pb-4 text-[22px] font-semibold tracking-tight">quizrr · test series</h2>
+      <QuizrrAdmin s={s} />
+
+      <h2 className="mt-4 border-t border-line pt-8 pb-4 text-[22px] font-semibold tracking-tight">mathongo · chapter tests</h2>
       <Tiles>
         <Tile label="tests given" value={x.given} sub={x.imported ? `${x.imported} imported without scores` : "chapterwise + pyq"} />
         <Tile label="with scores" value={x.scored.length} sub="logged with marks" />

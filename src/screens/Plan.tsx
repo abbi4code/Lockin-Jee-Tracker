@@ -6,6 +6,8 @@ import { useMemo, useState, type DragEvent } from "react";
 import { DatePill } from "../components/ChapterPlan";
 import { buzz } from "../components/Controls";
 import { PlanItemRow as Item } from "../components/PlanItemRow";
+import { QuizrrDayRow } from "../components/Quizrr";
+import { dueQuizrr, quizrrOnDay } from "../lib/quizrr";
 import { Page } from "../components/Shell";
 import { fadeUp, Label, Section } from "../components/ui";
 import { ALL_CHAPTERS, chapterInScope, SUBJECT_COLOR } from "../data";
@@ -48,7 +50,7 @@ function ChapterSearch({ onPick, onClose }: { onPick: (chapterId: string) => voi
 
 export function PlanScreen() {
   const store = useProgress();
-  const { plan, chapters, settings, schedule, movePlan, deletePlan } = store;
+  const { plan, chapters, settings, schedule, movePlan, deletePlan, quizrr, quizrrDates } = store;
   const t = today();
   const [offset, setOffset] = useState(0);
   const [adding, setAdding] = useState<string | null>(null);
@@ -59,6 +61,8 @@ export function PlanScreen() {
   const days = Array.from({ length: 7 }, (_, i) => addDays(monday, i));
   const items = live(plan);
   const late = overdue(plan, t);
+  // Quizrr tests are placed by an admin: shown on their days, moved only from the admin panel.
+  const lateTests = dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t);
   const weekLabel = `${new Date(`${days[0]}T00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" })} – ${new Date(`${days[6]}T00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}`.toLowerCase();
 
   // "Plan my week": revisions due in the next 7 days first (soonest first), then studied chapters with open
@@ -140,10 +144,13 @@ export function PlanScreen() {
         </AnimatePresence>
       </motion.div>
 
-      {late.length > 0 && (
-        <Section label="overdue" right={`${late.length} missed`}>
+      {late.length + lateTests.length > 0 && (
+        <Section label="overdue" right={`${late.length + lateTests.length} missed`}>
           <div className="grid gap-x-10 sm:grid-cols-2 xl:grid-cols-3">
             <AnimatePresence initial={false}>
+              {lateTests.map((d) => (
+                <QuizrrDayRow key={d.test.id} test={d.test} t={t} />
+              ))}
               {late.map((i) => (
                 <Item key={i.id} item={i} t={t} />
               ))}
@@ -155,6 +162,7 @@ export function PlanScreen() {
       <motion.section variants={fadeUp} className="grid border-t border-line lg:grid-cols-7">
         {days.map((d) => {
           const dayItems = items.filter((i) => i.date === d).sort((a, b) => Number(!!a.doneAt) - Number(!!b.doneAt));
+          const dayTests = quizrrOnDay(quizrrDates, d);
           const isToday = d === t;
           const coaching = coachingMinutes(settings.coaching, d) > 0;
           return (
@@ -189,11 +197,14 @@ export function PlanScreen() {
                 />
               )}
               <AnimatePresence initial={false}>
+                {dayTests.map((x) => (
+                  <QuizrrDayRow key={x.id} test={x} t={t} compact />
+                ))}
                 {dayItems.map((i) => (
                   <Item key={i.id} item={i} t={t} compact />
                 ))}
               </AnimatePresence>
-              {!dayItems.length && adding !== d && <p className="pt-2 font-mono text-[11.5px] text-dim">{d < t ? "–" : "free"}</p>}
+              {!dayItems.length && !dayTests.length && adding !== d && <p className="pt-2 font-mono text-[11.5px] text-dim">{d < t ? "–" : "free"}</p>}
             </div>
           );
         })}

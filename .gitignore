@@ -6,6 +6,7 @@ next-env.d.ts
 .env.local
 .DS_Store
 src/data/jee.json
+src/data/quizrr.json
 *.tsbuildinfo
 supabase/.temp
 src/data/excel-snapshot.json

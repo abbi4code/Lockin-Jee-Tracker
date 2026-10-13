@@ -123,6 +123,80 @@ colleges = colleges
 writeFileSync(join(ROOT, "src", "data", "colleges.json"), JSON.stringify(colleges));
 console.log(`src/data/colleges.json: ${colleges.length} college-branches`);
 
+// Quizrr (MathonGo's test platform): QRT and QPT with parsed syllabi and suggested dates; the full tests are
+// listed as "coming soon". A separate file so only the pages that show tests load it.
+writeFileSync(join(ROOT, "src", "data", "quizrr.json"), JSON.stringify(buildQuizrr(new Set(subjects.flatMap((s) => s.chapters.map((c) => c.id))))));
+
+function buildQuizrr(chapterIds) {
+  const map = read("tests/quizrr-map.json");
+  const draft = read("tests/quizrr-schedule.json").dates;
+  const SUBJECT = { physics: "physics", chemistry: "chemistry", maths: "maths", mathematics: "maths" };
+  const lookup = Object.fromEntries(Object.entries(map.names).map(([s, names]) => [s, new Map(Object.entries(names).map(([n, ids]) => [n.toLowerCase(), ids]))]));
+  for (const [s, names] of Object.entries(map.names)) for (const [n, ids] of Object.entries(names)) for (const id of ids) if (!chapterIds.has(id)) throw new Error(`quizrr-map: "${n}" (${s}) → unknown chapter id ${id}`);
+  const unknown = [];
+  const SERIES = [
+    { id: "qrt", files: ["qrt.json"], name: "QRT", title: "revision tests", active: true },
+    { id: "qpt", files: ["qpt.json"], name: "QPT", title: "part tests", active: true },
+    { id: "qft11", files: ["qft-11.json"], name: "QFT 11", title: "full tests · class 11", active: false },
+    { id: "qft", files: ["qft-12.json", "qft-12-2.json"], name: "QFT", title: "full tests · class 11 + 12", active: false },
+  ];
+  const tests = [];
+  for (const s of SERIES) {
+    const raw = s.files.flatMap((f) => read(`tests/${f}`).data.subgroups.flatMap((g) => g.tests.map((x) => x.test)));
+    raw.forEach((t, i) => {
+      // QFT class 11 has no shortTitle; its number is the end of the title.
+      const no = Number((t.shortTitle ?? t.title).match(/(\d+)\s*$/)?.[1] ?? (t.title.match(/(\d+)/g) ?? []).at(-1) ?? i + 1);
+      const id = `${s.id}-${no}`;
+      tests.push({
+        id,
+        series: s.id,
+        no,
+        quizrrId: t._id,
+        questions: t.totalQuestions,
+        minutes: t.totalTime,
+        marks: t.totalMarks,
+        // Release time (UTC; 03:30Z = 9:00 am IST). QRT and QPT 1–10 are already out; QPT 11–13 open on this date.
+        opensAt: s.active ? t.startDate : null,
+        accessEnds: t.endDate ?? null,
+        syllabus: s.active ? parseSyllabus(t.syllabus, id) : { kind: "full", cls: s.id === "qft11" ? 11 : null },
+        suggested: draft[id] ?? null,
+      });
+    });
+  }
+  function parseSyllabus(html, testId) {
+    const whole = html.match(/complete class (11|12)/i);
+    if (whole) return { kind: "class", cls: Number(whole[1]) };
+    const subjects = [];
+    let subject = null;
+    // Two formats: <h2>Physics</h2><ul><li>A</li></ul> (QRT) and <h2>Physics</h2>A<br>B (QPT).
+    for (const part of html.split(/(<h2>.*?<\/h2>)/)) {
+      const h = part.match(/<h2>(.*?)<\/h2>/);
+      if (h) {
+        subject = SUBJECT[h[1].trim().toLowerCase()];
+        if (!subject) throw new Error(`${testId}: unknown subject heading "${h[1]}"`);
+        subjects.push({ subject, items: [] });
+        continue;
+      }
+      if (!subject) continue;
+      for (const name of part.split(/<br\s*\/?>|<\/?li>|<\/?ul>/).map((x) => x.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim()).filter(Boolean)) {
+        const override = map.overrides[testId]?.[subject]?.[name];
+        const ids = override ?? lookup[subject].get(name.toLowerCase());
+        if (!ids) unknown.push(`${testId} · ${subject}: "${name}"`);
+        subjects.at(-1).items.push({ name, ids: ids ?? [] });
+      }
+    }
+    return { kind: "chapters", subjects };
+  }
+  if (unknown.length) throw new Error(`Quizrr chapter names missing from research/tests/quizrr-map.json:\n  ${unknown.join("\n  ")}`);
+  for (const [id, date] of Object.entries(draft)) {
+    const t = tests.find((x) => x.id === id);
+    if (!t) throw new Error(`quizrr-schedule: unknown test ${id}`);
+    if (t.opensAt && date < new Date(t.opensAt).toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" })) throw new Error(`quizrr-schedule: ${id} on ${date} is before it opens`);
+  }
+  console.log(`src/data/quizrr.json: ${tests.length} quizrr tests, ${Object.keys(draft).length} with suggested dates`);
+  return { series: SERIES.map(({ files, ...s }) => s), tests };
+}
+
 const json = JSON.stringify(out);
 writeFileSync(join(ROOT, "src", "data", "jee.json"), json);
 const chapterCount = subjects.reduce((n, s) => n + s.chapters.length, 0);

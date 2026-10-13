@@ -12,6 +12,7 @@ import { studyByDay } from "@/lib/coaching";
 import { liveResults } from "@/lib/tests";
 import { fromTestRow, seriesSummary, type TestResult } from "@/lib/tests";
 import { normalizeStatus } from "@/lib/stages";
+import { fromQuizrrRow, liveAttempts, quizrrScores, type QuizrrAttempt } from "@/lib/quizrr";
 
 /** Re-checks admin rights on the server (the proxy already redirects non-admins; this is defence in depth). */
 export async function requireAdmin() {
@@ -55,12 +56,14 @@ export interface StudentSummary {
 export async function loadStudents(): Promise<{ students: StudentSummary[]; error: string | null }> {
   const admin = createSupabaseAdmin();
   const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
-  const [users, progress, states, sessions, testRows] = await Promise.all([
+  const [users, progress, states, sessions, testRows, quizrrRows] = await Promise.all([
     admin.auth.admin.listUsers({ page: 1, perPage: 500 }),
     admin.from("chapter_progress").select("user_id, chapter_id, data"),
     admin.from("user_state").select("user_id, data"),
     admin.from("study_sessions").select("*").gte("started_at", since).order("started_at"),
     admin.from("test_results").select("*"),
+    // Errors (e.g. the Quizrr migration not applied yet) just mean no Quizrr scores.
+    admin.from("quizrr_attempts").select("*"),
   ]);
   const error = users.error?.message ?? progress.error?.message ?? states.error?.message ?? sessions.error?.message ?? testRows.error?.message ?? null;
   const testsByUser = new Map<string, Record<string, TestResult>>();
@@ -69,6 +72,13 @@ export async function loadStudents(): Promise<{ students: StudentSummary[]; erro
     const t = fromTestRow(r);
     m[t.id] = t;
     testsByUser.set(r.user_id, m);
+  }
+  const quizrrByUser = new Map<string, Record<string, QuizrrAttempt>>();
+  for (const r of quizrrRows.error ? [] : (quizrrRows.data ?? [])) {
+    const m = quizrrByUser.get(r.user_id) ?? {};
+    const a = fromQuizrrRow(r);
+    m[a.id] = a;
+    quizrrByUser.set(r.user_id, m);
   }
 
   const chaptersByUser = new Map<string, Record<string, ChapterProgress>>();
@@ -87,7 +97,7 @@ export async function loadStudents(): Promise<{ students: StudentSummary[]; erro
   }
 
   // Admins (coaches) aren't students: leave them out of the student list.
-  const students = (users.data?.users ?? []).filter((u: User) => !isAdminEmail(u.email)).map((u: User) => summarise(u, chaptersByUser.get(u.id) ?? {}, stateByUser.get(u.id), sessionsByUser.get(u.id) ?? [], testsByUser.get(u.id) ?? {}));
+  const students = (users.data?.users ?? []).filter((u: User) => !isAdminEmail(u.email)).map((u: User) => summarise(u, chaptersByUser.get(u.id) ?? {}, stateByUser.get(u.id), sessionsByUser.get(u.id) ?? [], testsByUser.get(u.id) ?? {}, quizrrByUser.get(u.id) ?? {}));
   students.sort((a, b) => (b.lastActive ?? "").localeCompare(a.lastActive ?? ""));
   return { students, error };
 }
@@ -98,6 +108,7 @@ function summarise(
   state: { settings?: Settings; activity?: string[]; questions?: Record<string, QuestionDay> } | undefined,
   sessions: StudySession[],
   tests: Record<string, TestResult>,
+  quizrr: Record<string, QuizrrAttempt>,
 ): StudentSummary {
   const exam: Exam = state?.settings?.exam ?? "advanced";
   const activity = state?.activity ?? [];
@@ -107,7 +118,7 @@ function summarise(
   const days14 = minutesByDay(sessions, 14);
   const named = (id: string) => ALL_CHAPTERS.find((c) => c.id === id);
   const game = collegeReport(
-    { sessions, tests, questions: state?.questions ?? {}, coaching: state?.settings?.coaching },
+    { sessions, tests, quizrr, questions: state?.questions ?? {}, coaching: state?.settings?.coaching },
     new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" }),
     null,
     1,
@@ -147,20 +158,21 @@ function summarise(
     series: seriesSummary(tests),
     imported: Object.values(tests).some((t) => t.imported),
     study7: studyByDay(sessions, state?.settings?.coaching, 7).reduce((n, d) => n + d.total, 0),
-    questions7: questions7(state?.questions ?? {}, tests),
-    testsGiven: liveResults(tests).length,
+    questions7: questions7(state?.questions ?? {}, tests, quizrr),
+    testsGiven: liveResults(tests).length + liveAttempts(quizrr).length,
     college: { week: weekName(game.week), lastWeek: weekName(game.lastWeek) },
   };
 }
 
 /** Questions logged plus attempted in tests over the last 7 days. */
-function questions7(questions: Record<string, QuestionDay>, tests: Record<string, TestResult>) {
+function questions7(questions: Record<string, QuestionDay>, tests: Record<string, TestResult>, quizrr: Record<string, QuizrrAttempt>) {
   let n = 0;
   for (let i = 0; i < 7; i++) {
     const d = new Date(Date.now() - i * 86_400_000).toLocaleDateString("en-CA");
     const q = questions[d];
     if (q) n += q.physics + q.chemistry + q.maths;
     for (const t of liveResults(tests)) if (t.takenOn === d) n += (t.correct ?? 0) + (t.wrong ?? 0);
+    for (const q of quizrrScores(quizrr)) if (q.date === d) n += q.questions;
   }
   return n;
 }

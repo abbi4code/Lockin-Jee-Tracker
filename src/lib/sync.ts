@@ -7,12 +7,15 @@ import { useProgress, type ChapterProgress, type QuestionDay, type Settings } fr
 import { normalizeStatus } from "./stages";
 import { fromTestRow, toTestRow } from "./tests";
 import { fromPlanRow, toPlanRow, type PlanRow } from "./plan";
+import { fromQuizrrRow, fromScheduleRows, toQuizrrRow } from "./quizrr";
 import { legacyRow, mergeSessions, toSessionRow, type SessionRow } from "./sessions";
 
 // Whether public.plan_items exists (null = not checked yet). Until its migration is applied the planner
 // works locally only; the next full sync after it appears uploads everything.
 let planTable: boolean | null = null;
 const missingTable = (e: { code?: string } | null) => e?.code === "PGRST205" || e?.code === "42P01";
+// Same for the Quizrr tables: scores stay on the device and the draft dates apply until the migration is in.
+let quizrrTable: boolean | null = null;
 // Whether study_sessions has the columns for edits and deletions (null = not known yet). Until the
 // session-edits migration is applied, sessions upload in the old shape and deletions are hard deletes.
 let sessionColumns: boolean | null = null;
@@ -102,7 +105,27 @@ async function pull(userId: string) {
       .filter((i) => i.updatedAt > (remotePlan.get(i.id) ?? -1))
       .map((i) => `plan:${i.id}`);
   }
-  store.markDirty([...toPush, ...testsToPush, ...planToPush, ...sessionsToPush, ...(serverComplete ? [] : ["state"])]);
+  const quizrrToPush = await pullQuizrr();
+  store.markDirty([...toPush, ...testsToPush, ...planToPush, ...sessionsToPush, ...quizrrToPush, ...(serverComplete ? [] : ["state"])]);
+}
+
+/** Quizrr scores (newest copy wins) and the admin's dates (the server's copy replaces ours). Returns ids to upload. */
+async function pullQuizrr() {
+  if (!supabase) return [];
+  const [attempts, schedule] = await Promise.all([supabase.from("quizrr_attempts").select("*"), supabase.from("quizrr_schedule").select("test_id, date")]);
+  if (attempts.error || schedule.error) {
+    if (!missingTable(attempts.error) && !missingTable(schedule.error)) throw attempts.error ?? schedule.error;
+    quizrrTable = false;
+    return [];
+  }
+  quizrrTable = true;
+  const store = useProgress.getState();
+  store.mergeQuizrr((attempts.data ?? []).map(fromQuizrrRow));
+  store.setQuizrrDates(fromScheduleRows(schedule.data ?? []));
+  const remote = new Map((attempts.data ?? []).map((r) => [r.id as string, new Date(r.updated_at).getTime()]));
+  return Object.values(useProgress.getState().quizrr)
+    .filter((a) => a.updatedAt > (remote.get(a.id) ?? -1))
+    .map((a) => `quizrr:${a.id}`);
 }
 
 async function push(userId: string) {
@@ -158,6 +181,13 @@ async function push(userId: string) {
   if (planIds.length && planTable !== false) {
     const { error } = await supabase.from("plan_items").upsert(planIds.map((id) => toPlanRow(s.plan[id.slice(5)], userId)));
     if (missingTable(error)) planTable = false;
+    else if (error) throw error;
+  }
+  const quizrrIds = ids.filter((id) => id.startsWith("quizrr:") && s.quizrr[id.slice(7)]);
+  for (const id of quizrrIds) syncedAt[id] = s.quizrr[id.slice(7)].updatedAt;
+  if (quizrrIds.length && quizrrTable !== false) {
+    const { error } = await supabase.from("quizrr_attempts").upsert(quizrrIds.map((id) => toQuizrrRow(s.quizrr[id.slice(7)], userId)));
+    if (missingTable(error)) quizrrTable = false;
     else if (error) throw error;
   }
   useProgress.getState().markClean(ids, syncedAt);

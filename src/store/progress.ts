@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware";
 import { getChapter, type Exam } from "../data";
 import { isStudied, normalizeStatus, type Status } from "../lib/stages";
 import type { TestResult } from "../lib/tests";
+import type { QuizrrAttempt } from "../lib/quizrr";
 import type { Coaching } from "../lib/coaching";
 import type { Targets } from "../lib/college";
 import type { PlanItem, PlanKind } from "../lib/plan";
@@ -98,7 +99,7 @@ interface State {
   /** Days (YYYY-MM-DD) with any study activity, for streaks. */
   activity: string[];
   stateUpdatedAt: number;
-  /** Chapter ids, "state" and "session:<id>" entries changed since the last successful sync. */
+  /** Chapter ids, "state", "session:<id>", "test:<id>", "plan:<id>" and "quizrr:<id>" entries changed since the last successful sync. */
   dirty: string[];
   /** Supabase user id this local data belongs to (null = not linked yet). */
   owner: string | null;
@@ -114,6 +115,10 @@ interface State {
   questions: Record<string, QuestionDay>;
   /** Planner items by id (soft-deleted rows kept so removals sync). */
   plan: Record<string, PlanItem>;
+  /** Quizrr scores by id (soft-deleted rows kept so removals sync). */
+  quizrr: Record<string, QuizrrAttempt>;
+  /** Quizrr dates an admin set (test id → day, null = unscheduled). Read-only here: sync replaces it. */
+  quizrrDates: Record<string, string | null>;
 
   toggleTopic: (chapterId: string, topic: string, allTopics: string[]) => Status;
   setAllTopics: (chapterId: string, topics: string[], checked: boolean) => void;
@@ -142,6 +147,12 @@ interface State {
   deleteTest: (id: string) => void;
   /** Used by sync: newest version of each test wins. */
   mergeTests: (rows: TestResult[]) => void;
+  saveQuizrr: (a: Omit<QuizrrAttempt, "updatedAt" | "deleted">) => void;
+  deleteQuizrr: (id: string) => void;
+  /** Used by sync: newest version of each attempt wins. */
+  mergeQuizrr: (rows: QuizrrAttempt[]) => void;
+  /** Used by sync: the admin's schedule, as on the server. */
+  setQuizrrDates: (dates: Record<string, string | null>) => void;
   markClean: (ids: string[], syncedAt: Record<string, number>) => void;
   markDirty: (ids: string[]) => void;
   setOwner: (id: string | null) => void;
@@ -199,6 +210,8 @@ const initial = {
   lastMaxScore: null as number | null,
   questions: {} as Record<string, QuestionDay>,
   plan: {} as Record<string, PlanItem>,
+  quizrr: {} as Record<string, QuizrrAttempt>,
+  quizrrDates: {} as Record<string, string | null>,
 };
 
 export const useProgress = create<State>()(
@@ -354,6 +367,28 @@ export const useProgress = create<State>()(
             return { tests };
           }),
 
+        saveQuizrr: (a) =>
+          set((s) => {
+            const now = Date.now();
+            // A test taken counts as a study day, like a MathonGo test.
+            return {
+              quizrr: { ...s.quizrr, [a.id]: { ...a, deleted: false, updatedAt: now } },
+              ...withActivity(s, a.takenOn ?? today(), now, [`quizrr:${a.id}`]),
+            };
+          }),
+
+        deleteQuizrr: (id) =>
+          set((s) => (s.quizrr[id] ? { quizrr: { ...s.quizrr, [id]: { ...s.quizrr[id], deleted: true, updatedAt: Date.now() } }, dirty: [...new Set([...s.dirty, `quizrr:${id}`])] } : s)),
+
+        mergeQuizrr: (rows) =>
+          set((s) => {
+            const quizrr = { ...s.quizrr };
+            for (const r of rows) if (!quizrr[r.id] || r.updatedAt > quizrr[r.id].updatedAt) quizrr[r.id] = r;
+            return { quizrr };
+          }),
+
+        setQuizrrDates: (quizrrDates) => set({ quizrrDates }),
+
         addQuestions: (subject, n) =>
           set((s) => {
             const day = today();
@@ -386,7 +421,9 @@ export const useProgress = create<State>()(
                       ? s.tests[id.slice(5)]?.updatedAt
                       : id.startsWith("plan:")
                         ? s.plan[id.slice(5)]?.updatedAt
-                        : s.chapters[id]?.updatedAt;
+                        : id.startsWith("quizrr:")
+                          ? s.quizrr[id.slice(7)]?.updatedAt
+                          : s.chapters[id]?.updatedAt;
               return current !== syncedAt[id];
             }),
           })),

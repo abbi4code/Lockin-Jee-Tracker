@@ -12,17 +12,18 @@ import { DotBar, DotText, Label, Section } from "./ui";
 
 /** The college report for the signed-in student, from the first day with any data. */
 export function useCollegeReport() {
-  const { sessions, questions, tests, activity, settings } = useProgress();
+  const { sessions, questions, tests, quizrr, activity, settings } = useProgress();
   return useMemo(() => {
     const days = [
       activity[0],
       sessions[0] && new Date(sessions[0].startedAt).toLocaleDateString("en-CA"),
       Object.keys(questions).sort()[0],
       ...Object.values(tests).map((t) => t.takenOn),
+      ...Object.values(quizrr).map((t) => t.takenOn),
     ].filter((d): d is string => !!d);
     const first = days.length ? days.sort()[0] : null;
-    return collegeReport({ sessions, questions, tests, coaching: settings.coaching }, today(), first);
-  }, [sessions, questions, tests, activity, settings.coaching]);
+    return collegeReport({ sessions, questions, tests, quizrr, coaching: settings.coaching }, today(), first);
+  }, [sessions, questions, tests, quizrr, activity, settings.coaching]);
 }
 
 function Name({ college, size = "text-[28px] lg:text-[34px]" }: { college: College; size?: string }) {

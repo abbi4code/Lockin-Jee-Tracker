@@ -1,0 +1,30 @@
+{
+  "about": "Suggested dates (agreed 2026-10-13, then moved a day later because the release goes out that evening): QRT 1-12 from 14 Oct, done by 10 Nov; QPT 1-12 by 20 Nov, interleaved so a QPT with class 11 chapters comes after the QRTs that revise them. QPT 13 only releases on 22 Nov, so it sits on 23 Nov. The admin panel can override any date per student; these apply until it does.",
+  "dates": {
+    "qrt-1": "2026-10-14",
+    "qrt-2": "2026-10-16",
+    "qrt-3": "2026-10-18",
+    "qpt-2": "2026-10-19",
+    "qrt-4": "2026-10-21",
+    "qrt-5": "2026-10-23",
+    "qrt-6": "2026-10-25",
+    "qpt-3": "2026-10-26",
+    "qpt-4": "2026-10-28",
+    "qrt-7": "2026-10-29",
+    "qrt-8": "2026-10-31",
+    "qpt-7": "2026-11-01",
+    "qrt-9": "2026-11-02",
+    "qpt-8": "2026-11-04",
+    "qrt-10": "2026-11-05",
+    "qrt-11": "2026-11-07",
+    "qpt-1": "2026-11-08",
+    "qpt-11": "2026-11-09",
+    "qrt-12": "2026-11-10",
+    "qpt-6": "2026-11-12",
+    "qpt-10": "2026-11-14",
+    "qpt-5": "2026-11-16",
+    "qpt-9": "2026-11-18",
+    "qpt-12": "2026-11-20",
+    "qpt-13": "2026-11-23"
+  }
+}

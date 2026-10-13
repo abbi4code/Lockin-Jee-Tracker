@@ -12,6 +12,7 @@ import { FocusTimer } from "./FocusTimer";
 import { startSync, useSync } from "../lib/sync";
 import { today, useProgress } from "../store/progress";
 import { pending } from "../lib/plan";
+import { dueQuizrr } from "../lib/quizrr";
 
 const NAV = [
   { href: "/today", label: "Today", icon: House, color: "var(--color-fg)" },
@@ -22,16 +23,16 @@ const NAV = [
   { href: "/me", label: "Me", icon: UserRound, color: "var(--color-fg)" },
 ];
 
-/** Scheduled items due today or overdue and not done: drives the Today-tab dot and the app-icon badge. */
-const usePending = () => useProgress((s) => pending(s.plan, today()).length);
+/** Scheduled items (and Quizrr tests) due today or overdue and not done: drives the Today-tab dot and the app-icon badge. */
+const usePending = () => useProgress((s) => pending(s.plan, today()).length + dueQuizrr(s.quizrr, s.quizrrDates, today()).length);
 
 function Nav() {
   const { state } = useSync();
   const due = usePending();
   const pathname = usePathname();
-  // A chapter page lights up its subject's tab.
+  // A chapter page lights up its subject's tab; the Quizrr page (reached from Today) lights Today.
   const chapter = pathname.startsWith("/c/") ? getChapter(pathname.slice(3)) : undefined;
-  const current = chapter ? `/s/${chapter.subject}` : pathname;
+  const current = chapter ? `/s/${chapter.subject}` : pathname.startsWith("/quizrr") ? "/today" : pathname;
 
   return (
     // The strip spans the whole width; it lets clicks through so the chat button, timer pill and page

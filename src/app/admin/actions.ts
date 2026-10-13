@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import snapshot from "@/data/excel-snapshot.json";
 import { ALL_CHAPTERS, getTrack, TRACKS } from "@/data";
 import { requireAdmin } from "@/lib/admin-data";
+import { ACTIVE_TESTS, assignedDate, fromScheduleRows, getQuizrrTest } from "@/lib/quizrr";
 import { isStudied, normalizeStatus } from "@/lib/stages";
 import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import type { ChapterProgress } from "@/store/progress";
@@ -122,4 +123,74 @@ export async function adminImportExcel(form: FormData) {
   }
   revalidatePath(`/admin/u/${userId}`, "layout");
   revalidatePath("/admin");
+}
+
+// ── Quizrr ──────────────────────────────────────────────────────────────
+
+/** Saves the dates a student should take each Quizrr test on. Only changed dates are written; empty = unscheduled. */
+export async function adminSaveQuizrrDates(form: FormData) {
+  const db = await guard();
+  const userId = String(form.get("userId"));
+  const { data: rows, error: readError } = await db.from("quizrr_schedule").select("test_id, date").eq("user_id", userId);
+  if (readError) throw new Error(readError.message);
+  const current = fromScheduleRows(rows ?? []);
+  const now = new Date().toISOString();
+  const changed = ACTIVE_TESTS.flatMap((t) => {
+    const raw = form.get(`date:${t.id}`);
+    if (raw == null) return [];
+    const date = String(raw).trim() || null;
+    if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`Bad date for ${t.id}.`);
+    return date === assignedDate(t, current) ? [] : [{ user_id: userId, test_id: t.id, date, updated_at: now }];
+  });
+  if (changed.length) {
+    const { error } = await db.from("quizrr_schedule").upsert(changed);
+    if (error) throw new Error(error.message);
+  }
+  revalidatePath(`/admin/u/${userId}`, "layout");
+}
+
+/** Drops the admin's dates so the suggested schedule applies again. */
+export async function adminResetQuizrrDates(form: FormData) {
+  const db = await guard();
+  const userId = String(form.get("userId"));
+  const { error } = await db.from("quizrr_schedule").delete().eq("user_id", userId);
+  if (error) throw new Error(error.message);
+  revalidatePath(`/admin/u/${userId}`, "layout");
+}
+
+/** Logs or fixes a Quizrr score for a student (one live row per test). */
+export async function adminSaveQuizrr(form: FormData) {
+  const db = await guard();
+  const userId = String(form.get("userId"));
+  const test = getQuizrrTest(String(form.get("testId")));
+  if (!test) throw new Error("Unknown Quizrr test.");
+  const score = num(form.get("score"));
+  const maxScore = num(form.get("maxScore")) ?? test.marks;
+  if (score == null || Number.isNaN(score) || score > maxScore || score < -maxScore / 4) throw new Error(`Marks must be between ${-maxScore / 4} and ${maxScore}.`);
+  const { data: existing } = await db.from("quizrr_attempts").select("id").eq("user_id", userId).eq("test_id", test.id).eq("deleted", false).maybeSingle();
+  const { error } = await db.from("quizrr_attempts").upsert({
+    id: existing?.id ?? crypto.randomUUID(),
+    user_id: userId,
+    test_id: test.id,
+    taken_on: (form.get("takenOn") as string) || new Date().toLocaleDateString("en-CA"),
+    score,
+    max_score: maxScore,
+    physics: num(form.get("physics")),
+    chemistry: num(form.get("chemistry")),
+    maths: num(form.get("maths")),
+    percentile: num(form.get("percentile")),
+    rank: num(form.get("rank")),
+    deleted: false,
+    updated_at: new Date().toISOString(),
+  });
+  if (error) throw new Error(error.message);
+  revalidatePath(`/admin/u/${userId}`, "layout");
+}
+
+export async function adminDeleteQuizrr(form: FormData) {
+  const db = await guard();
+  const userId = String(form.get("userId"));
+  const { error } = await db.from("quizrr_attempts").update({ deleted: true, updated_at: new Date().toISOString() }).eq("id", String(form.get("id"))).eq("user_id", userId);
+  if (error) throw new Error(error.message);
+  revalidatePath(`/admin/u/${userId}`, "layout");
 }

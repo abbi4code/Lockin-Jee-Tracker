@@ -24,8 +24,9 @@ Without Supabase keys the app runs in local-only mode (no accounts, progress sav
 | `/s/[subject]`, `/c/[chapter]` | Subjects and chapters with topic checklists |
 | `/focus` | Pomodoro / stopwatch focus timer; sessions are logged |
 | `/plan` | Planner: revisions scheduled on days, "plan my week", drag to move |
+| `/quizrr`, `/quizrr/[series]`, `/quizrr/[series]/[no]` | Quizrr (MathonGo's test platform): overview, one page per series (QRT, QPT) in the order he takes them, and one page per test (syllabus, score logging). Full tests "coming soon". Linked from Today |
 | `/me` | Profile, exam scope, sign out, backup |
-| `/admin` | Admin panel: every student's progress, study time and MathonGo scores; log/fix results; one-time Excel import (admins only) |
+| `/admin` | Admin panel: every student's progress, study time, MathonGo and Quizrr scores; log/fix results; set Quizrr dates; one-time Excel import (admins only) |
 
 `src/proxy.ts` sends signed-out visitors to `/login` and keeps non-admins out of `/admin`.
 
@@ -43,6 +44,7 @@ Without Supabase keys the app runs in local-only mode (no accounts, progress sav
 
 - `research/*.json`: source research. `node research/tools.mjs validate` checks it.
 - `scripts/build-data.mjs`: packs it into `src/data/jee.json` (runs before dev/build).
+- `research/tests/*.json`: Quizrr exports. `quizrr-map.json` maps Quizrr chapter names to app chapter ids (the build fails on an unmapped name) and `quizrr-schedule.json` holds the suggested dates; the build packs them into `src/data/quizrr.json`. Dates set in the admin panel (`quizrr_schedule`, read-only for students) override the suggestions; scores sync through `quizrr_attempts` and count in the weekly college score.
 - `research/colleges-*.json`: JoSAA 2025 final-round closing ranks (IITs, NITs, IIITs) and BITSAT 2025 cutoffs. The build packs them into `src/data/colleges.json`, the ladder for the daily/weekly college game (`src/lib/college.ts`).
 
 ## Planner reminders (push notifications)

@@ -1,0 +1,928 @@
+{
+    "success": true,
+    "message": "Pack tests sent successfully",
+    "data": {
+        "count": 13,
+        "hasNextPage": false,
+        "isPackPurchased": true,
+        "defaultPage": null,
+        "subgroups": [
+            {
+                "title": "Quizrr Part Test (with Video Solutions)",
+                "tests": [
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f6ac6984d8f8aa21c9",
+                            "title": "Quizrr Part Test (QPT) - 1",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Units and Dimensions<br>Mathematics in Physics<br>Motion In One Dimension<br>Motion In Two Dimensions<h2>Chemistry</h2>General Organic Chemistry<br>Hydrocarbons<h2>Mathematics</h2>Basic of Mathematics<br>Quadratic Equation<br>Sequences and Series",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-04-19T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-04-19T03:30:00.000Z",
+                            "analysisVideo": "b1112c94a790410bb0d7c1862420fddb",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-05-10T03:30:00.000Z",
+                                    "detailAccessDate": "2026-05-10T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-06-07T03:30:00.000Z",
+                                    "detailAccessDate": "2026-06-07T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 1",
+                                    "shortTitle": "QPT - 1"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-07-19T03:30:00.000Z",
+                                    "detailAccessDate": "2026-07-19T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 1",
+                                    "shortTitle": "QPT - 1"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-08-16T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-16T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 1"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-09-13T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-13T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 1"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-10-11T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-11T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 1"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 1",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "showQsLevelTimer": true,
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f6ac6984d8f8aa21ca",
+                            "title": "Quizrr Part Test (QPT) - 2",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Electrostatics<br>Capacitance<h2>Chemistry</h2>Solutions<br>Electrochemistry<h2>Mathematics</h2>Sets and Relations<br>Functions",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-05-10T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-05-10T03:30:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-05-17T03:30:00.000Z",
+                                    "detailAccessDate": "2026-05-17T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-05-17T03:30:00.000Z",
+                                    "detailAccessDate": "2026-05-17T03:30:00.000Z"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 2",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f6ac6984d8f8aa21cb",
+                            "title": "Quizrr Part Test (QPT) - 3",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Electrostatics<br>Capacitance<br>Current Electricity<h2>Chemistry</h2>Solutions<br>Electrochemistry<br>Chemical Kinetics<h2>Mathematics</h2>Sets and Relations<br>Functions<br>Matrices<br>Determinants<br>Inverse Trigonometry",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-05-31T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-05-31T03:30:00.000Z",
+                            "analysisVideo": "aad52c4a07c641ef811230cb82be7fed",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-05-31T03:30:00.000Z",
+                                    "detailAccessDate": "2026-05-31T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-06-21T03:30:00.000Z",
+                                    "detailAccessDate": "2026-06-21T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 2",
+                                    "shortTitle": "QPT - 2"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-08-02T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-02T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 2",
+                                    "shortTitle": "QPT - 2"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-08-30T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-30T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 2"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-09-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 2"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-10-18T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-18T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 2"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 3",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21cc",
+                            "title": "Quizrr Part Test (QPT) - 4",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Laws of Motion<br>Work Power Energy<h2>Chemistry</h2>Some Basic Concepts of Chemistry<br>Structure of Atom<h2>Mathematics</h2>Complex Number<br>Binomial Theorem",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-06-14T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-06-14T03:30:00.000Z",
+                            "analysisVideo": "e884302edcf640c7bd655bb1a2c06eed",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69d62bfe8c7c25643ed959ef",
+                                    "startDate": "2026-06-21T03:30:00.000Z",
+                                    "detailAccessDate": "2026-06-21T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-06-28T03:30:00.000Z",
+                                    "detailAccessDate": "2026-06-28T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 3",
+                                    "shortTitle": "QPT - 3"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-08-16T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-16T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 3",
+                                    "shortTitle": "QPT - 3"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-09-13T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-13T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 3"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-10-04T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-04T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 3"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 3"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 4",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21cd",
+                            "title": "Quizrr Part Test (QPT) - 5",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Magnetic Effects of Current<br>Magnetic Properties of Matter<h2>Chemistry</h2>Haloalkanes and Haloarenes<br>Alcohols Phenols and Ethers<br>Aldehydes and Ketones<h2>Mathematics</h2>Limits<br>Continuity and Differentiability<br>Application of Derivatives",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-07-05T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-07-05T03:30:00.000Z",
+                            "analysisVideo": "f828d53201d245c4b4634df6c99b73d3",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-07-05T03:30:00.000Z",
+                                    "detailAccessDate": "2026-07-05T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-07-12T03:30:00.000Z",
+                                    "detailAccessDate": "2026-07-12T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 4",
+                                    "shortTitle": "QPT - 4"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-08-30T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-30T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 4",
+                                    "shortTitle": "QPT - 4"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-09-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 4"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-10-11T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-11T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 4"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-10-28T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-28T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 4"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 5",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21ce",
+                            "title": "Quizrr Part Test (QPT) - 6",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Mechanical Properties of Fluids<br>Mechanical Properties of Solids<br>Oscillation<h2>Chemistry</h2>Classification of Elements and Periodicity in Properties<br>Chemical Bonding and Molecular Structure<h2>Mathematics</h2>Permutation Combination<br>Trigonometry<br>Statistics",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-07-26T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-07-26T03:30:00.000Z",
+                            "analysisVideo": "2a9cf7a9fffe48a0aded3e183c185081",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-07-26T03:30:00.000Z",
+                                    "detailAccessDate": "2026-07-26T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-07-26T03:30:00.000Z",
+                                    "detailAccessDate": "2026-07-26T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 5",
+                                    "shortTitle": "QPT - 5"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-09-13T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-13T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 5",
+                                    "shortTitle": "QPT - 5"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-10-11T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-11T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 5"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-10-18T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-18T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 5"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-01T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-01T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 5"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 6",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21cf",
+                            "title": "Quizrr Part Test (QPT) - 7",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Alternating Current<br>Electromagnetic Induction<h2>Chemistry</h2>Carboxylic Acid Derivatives<br>Amines<h2>Mathematics</h2>Indefinite Integration<br>Definite Integration",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-08-16T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-08-16T03:30:00.000Z",
+                            "analysisVideo": "1509d28048a140ef88b6995d5f36b6d1",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-08-16T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-16T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-08-16T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-16T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 6",
+                                    "shortTitle": "QPT - 6"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-09-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 6",
+                                    "shortTitle": "QPT - 6"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 6"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 6"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-04T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-04T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 6"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 7",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d0",
+                            "title": "Quizrr Part Test (QPT) - 8",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Center of Mass Momentum and Collision<br>Rotational Motion<br>Gravitation<h2>Chemistry</h2>Redox Reactions<br>Thermodynamics (C)<h2>Mathematics</h2>Straight Lines<br>Circle",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-08-30T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-08-30T03:30:00.000Z",
+                            "analysisVideo": "c177c57a6e834a469b557aabb3d4020a",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-08-30T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-30T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-08-30T03:30:00.000Z",
+                                    "detailAccessDate": "2026-08-30T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 7",
+                                    "shortTitle": "QPT - 7"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-10-11T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-11T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 7",
+                                    "shortTitle": "QPT - 7"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-01T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-01T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 7"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-01T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-01T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 7"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 7"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 8",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d1",
+                            "title": "Quizrr Part Test (QPT) - 9",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Wave Optics<br>Ray Optics<h2>Chemistry</h2>Biomolecules<br>Coordination Compounds<h2>Mathematics</h2>Area Under Curves<br>Differential Equations<br>Probability",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-09-13T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-09-13T03:30:00.000Z",
+                            "analysisVideo": "f56cc8b6ae0042df853a702d2a433b8a",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-09-13T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-13T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-09-13T03:30:00.000Z",
+                                    "detailAccessDate": "2026-09-13T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 8",
+                                    "shortTitle": "QPT - 8"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 8",
+                                    "shortTitle": "QPT - 8"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 8"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 8"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-11T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-11T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 8"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 9",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d2",
+                            "title": "Quizrr Part Test (QPT) - 10",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Waves and Sound<br>Kinetic Theory of Gases<br>Thermal Properties of Matter<br>Thermodynamics<h2>Chemistry</h2>Chemical Equilibrium<br>Ionic Equilibrium<h2>Mathematics</h2>Parabola<br>Ellipse<br>Hyperbola",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-10-04T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-10-04T03:30:00.000Z",
+                            "analysisVideo": "5330749657f344c3beeecc34aee32570",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-10-04T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-04T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-10-04T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-04T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 9",
+                                    "shortTitle": "QPT - 9"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 9",
+                                    "shortTitle": "QPT - 9"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-15T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-15T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 9"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-15T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-15T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 9"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-15T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-15T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 9"
+                                },
+                                {
+                                    "packId": "6562e485f5d651ac1b8b2f9a",
+                                    "startDate": "2025-12-10T00:00:00.000Z",
+                                    "detailAccessDate": "2025-12-10T00:00:00.000Z"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 10",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d3",
+                            "title": "Quizrr Part Test (QPT) - 11",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Physics</h2>Atomic Physics<br>Dual Nature of Matter<br>Nuclear Physics<br>Semiconductors & EM Waves<h2>Chemistry</h2>d and f Block Elements<br>p Block Elements<br>Practical Chemistry [Qualitative Analysis]<h2>Mathematics</h2>Three Dimensional Geometry<br>Vector Algebra",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-10-25T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-10-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-10-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 10",
+                                    "shortTitle": "QPT - 10"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 10",
+                                    "shortTitle": "QPT - 10"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 10"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 10"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 10"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 11",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d4",
+                            "title": "Quizrr Part Test (QPT) - 12",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Complete Class 12th</h2>",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-11-08T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-11-08T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-08T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 11",
+                                    "shortTitle": "QPT - 11"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-11-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 11",
+                                    "shortTitle": "QPT - 11"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 11"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 11"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-25T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-25T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 11"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 12",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    },
+                    {
+                        "testType": "Quizrr Part Test",
+                        "test": {
+                            "_id": "69c3c6f7ac6984d8f8aa21d5",
+                            "title": "Quizrr Part Test (QPT) - 13",
+                            "description": "Based on Reduced Syllabus (as per NTA)",
+                            "syllabus": "<h2>Complete Class 11th</h2>",
+                            "totalTime": 180,
+                            "totalQuestions": 75,
+                            "totalMarks": 300,
+                            "startDate": "2026-11-22T03:30:00.000Z",
+                            "endDate": "2027-05-31T00:00:00.000Z",
+                            "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                            "analysisVideo": "",
+                            "isVideoSolutionAvailable": false,
+                            "type": "paid",
+                            "packDetails": [
+                                {
+                                    "packId": "69f5bb8e1f95201529260eaa",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z"
+                                },
+                                {
+                                    "packId": "6a1be96afbd39f4e7d6edafa",
+                                    "startDate": "2026-11-22T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-22T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 12",
+                                    "shortTitle": "QPT - 12"
+                                },
+                                {
+                                    "packId": "6a4344042af798e1a202ac75",
+                                    "startDate": "2026-11-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 12",
+                                    "shortTitle": "QPT - 12"
+                                },
+                                {
+                                    "packId": "6a69f053d05d7453dfe4069a",
+                                    "startDate": "2026-11-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 12"
+                                },
+                                {
+                                    "packId": "6a9556b13a2d7a78223d449e",
+                                    "startDate": "2026-11-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 12"
+                                },
+                                {
+                                    "packId": "6abb4a4e5326f75601b9d0ee",
+                                    "startDate": "2026-11-27T03:30:00.000Z",
+                                    "detailAccessDate": "2026-11-27T03:30:00.000Z",
+                                    "title": "Quizrr Part Test (QPT) - 12"
+                                }
+                            ],
+                            "tags": [],
+                            "shortTitle": "QPT - 13",
+                            "isRemoved": false,
+                            "linkedTests": [],
+                            "isTestAttemptedByUser": false,
+                            "isTestInProgress": false,
+                            "attemptedDate": null,
+                            "totalMarkScored": 0,
+                            "otherTestsAttempted": true,
+                            "notes": null,
+                            "timeLeft": "0.00",
+                            "recentTestAttemptsCount": null
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

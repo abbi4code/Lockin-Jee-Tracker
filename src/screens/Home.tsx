@@ -20,8 +20,10 @@ import { activityGrid, chapterFraction, currentFocus, daysBetween, formatMinutes
 import { currentPlan, isScheduled, studyByDay, toggleDay } from "../lib/coaching";
 import { today, useProgress } from "../store/progress";
 import { PlanItemRow } from "../components/PlanItemRow";
-import { live, onDay, overdue } from "../lib/plan";
+import { dayLabel, live, onDay, overdue } from "../lib/plan";
 import { scoreTone, seriesSummary } from "../lib/tests";
+import { QuizrrDayRow } from "../components/Quizrr";
+import { attemptFor, dueQuizrr, nextQuizrr, quizrrOnDay, seriesHref, seriesProgress, testHref, testName } from "../lib/quizrr";
 
 function Header() {
   const { settings, setSettings } = useProgress();
@@ -47,6 +49,43 @@ function Header() {
       </div>
       <Headline />
     </motion.header>
+  );
+}
+
+/** Top of the page, always visible: today's (or a missed) Quizrr test, else the next one, linking to /quizrr. */
+function QuizrrStrip() {
+  const { quizrr, quizrrDates } = useProgress();
+  const t = today();
+  const due = dueQuizrr(quizrr, quizrrDates, t);
+  const head = due.find((d) => d.date === t) ?? due[0];
+  const next = head ? null : nextQuizrr(quizrr, quizrrDates, t);
+  const item = head ?? next;
+  const label = head ? (head.date === t ? "today's test" : "missed test") : next ? "next test" : "quizrr tests";
+  return (
+    // Two targets: the test itself (left), and the whole test section (right), there even on days without a test.
+    <motion.section variants={fadeUp} className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-line py-3">
+      <Link href={item ? testHref(item.test) : "/quizrr"} className="group flex min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-1 py-0.5">
+        <span className={`size-2 shrink-0 rounded-full ${head ? "bg-red" : "bg-dim"}`} aria-hidden />
+        <Label className={head ? "text-red" : ""}>{label}</Label>
+        {item ? (
+          <>
+            <span className="text-[18px] font-semibold tracking-tight group-hover:underline">
+              {item.test.series.toUpperCase()} <DotText>{item.test.no}</DotText>
+            </span>
+            <span className="font-mono text-[12.5px] text-mute">
+              {head && head.date < t ? `was due ${dayLabel(head.date, t)} · ` : next ? `${dayLabel(next.date, t)} · ` : ""}
+              {item.test.questions} q · {item.test.minutes < 120 ? `${item.test.minutes} min` : `${item.test.minutes / 60}h`}
+            </span>
+            {head && <span className="font-mono text-[12.5px] text-fg">log score →</span>}
+          </>
+        ) : (
+          <span className="text-[15px] text-mute">all scheduled tests done</span>
+        )}
+      </Link>
+      <Link href="/quizrr" data-cursor="go" className="flex shrink-0 items-center gap-1.5 rounded-full border border-line-2 px-3.5 py-1.5 font-mono text-[12.5px] text-mute transition hover:border-fg hover:text-fg">
+        all tests <ArrowRight className="size-3.5" />
+      </Link>
+    </motion.section>
   );
 }
 
@@ -319,9 +358,12 @@ function TestSeries() {
 
 /** Today's scheduled chapters (plus anything overdue), and spaced-repetition revisions not planned yet. */
 function TodayPlan() {
-  const { plan, chapters, settings, schedule } = useProgress();
+  const { plan, chapters, settings, schedule, quizrr, quizrrDates } = useProgress();
   const t = today();
   const items = [...overdue(plan, t), ...onDay(plan, t).sort((a, b) => Number(!!a.doneAt) - Number(!!b.doneAt))];
+  // Quizrr tests: missed ones, then today's (taken or not), above the chapters.
+  const tests = [...dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t).map((d) => d.test), ...quizrrOnDay(quizrrDates, t)];
+  const testsDone = tests.filter((x) => attemptFor(x.id, quizrr)).length;
   const planned = new Set(live(plan).filter((i) => !i.doneAt).map((i) => i.chapterId));
   const unplanned = revisionsDue(chapters, settings.exam).filter((d) => !planned.has(d.chapter.id));
   const done = items.filter((i) => i.doneAt).length;
@@ -330,12 +372,15 @@ function TodayPlan() {
       label="today's plan"
       right={
         <Link href="/plan" className="hover:text-fg">
-          {items.length ? `${done}/${items.length} done · ` : ""}planner →
+          {items.length + tests.length ? `${done + testsDone}/${items.length + tests.length} done · ` : ""}planner →
         </Link>
       }
     >
-      {items.length === 0 && <p className="font-mono text-[13px] text-dim">nothing scheduled today. plan revisions on any chapter page or in the planner.</p>}
+      {items.length + tests.length === 0 && <p className="font-mono text-[13px] text-dim">nothing scheduled today. plan revisions on any chapter page or in the planner.</p>}
       <AnimatePresence initial={false}>
+        {tests.map((x) => (
+          <QuizrrDayRow key={x.id} test={x} t={t} />
+        ))}
         {items.map((i) => (
           <PlanItemRow key={i.id} item={i} t={t} />
         ))}
@@ -366,6 +411,47 @@ function TodayPlan() {
   );
 }
 
+/** Quizrr series progress and the next test, linking to /quizrr. */
+function Quizrr() {
+  const { quizrr, quizrrDates } = useProgress();
+  const t = today();
+  const qrt = seriesProgress("qrt", quizrr, quizrrDates);
+  const qpt = seriesProgress("qpt", quizrr, quizrrDates);
+  const next = nextQuizrr(quizrr, quizrrDates, t);
+  return (
+    <Section
+      label="quizrr tests"
+      right={
+        <Link href="/quizrr" className="hover:text-fg">
+          all tests →
+        </Link>
+      }
+    >
+      {[
+        { id: "qrt" as const, name: "QRT", p: qrt },
+        { id: "qpt" as const, name: "QPT", p: qpt },
+      ].map(({ id, name, p }) => (
+        <Link key={name} href={seriesHref(id)} className="group -mx-2 flex items-center gap-3 rounded-lg px-2 py-2.5 transition hover:bg-ink-2">
+          <span className="w-12 font-mono text-[13px]">{name}</span>
+          <div className="flex min-w-0 flex-1 overflow-hidden">
+            <DotBar value={p.done / p.total} dots={p.total} size={5} />
+          </div>
+          <span className="w-12 text-right font-mono text-[12px] text-mute">
+            {p.done}/{p.total}
+          </span>
+          <span className="w-12 text-right font-mono text-[12px]" style={{ color: scoreTone(p.avg) }}>
+            {p.avg != null ? `${Math.round(p.avg)}%` : "–"}
+          </span>
+        </Link>
+      ))}
+      <p className="mt-2 font-mono text-[12px] text-dim">
+        {next ? `next · ${testName(next.test).toLowerCase()} · ${dayLabel(next.date, t)}` : "no more tests scheduled"}
+        {qrt.finishBy && qrt.done < qrt.total ? ` · qrt done by ${dayLabel(qrt.finishBy, t)}` : ""}
+      </p>
+    </Section>
+  );
+}
+
 function UpNext() {
   const { chapters, settings } = useProgress();
   const focusId = currentFocus(chapters, settings.exam)?.chapter.id;
@@ -388,6 +474,7 @@ export function Home() {
   return (
     <Page>
       <Header />
+      <QuizrrStrip />
       <RulesScroll />
       {/* Laptops: what to do on the left, how it's going on the right. Phones: one column. */}
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-14">
@@ -403,6 +490,7 @@ export function Home() {
           <Rhythm />
           <StudyTime />
           <CollegeHistory />
+          <Quizrr />
           <TestSeries />
           <UpNext />
         </div>

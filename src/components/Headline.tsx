@@ -8,6 +8,7 @@ import { moodFor, pickLine, type HeadlineContext, type HeadlineEvent, type Mood 
 import { addDays } from "../lib/plan";
 import { formatMinutes, streak } from "../lib/stats";
 import { pct } from "../lib/tests";
+import { quizrrPct } from "../lib/quizrr";
 import { today, useProgress } from "../store/progress";
 
 // What the headline last reacted to. Module scope, so it survives navigating away and back within the app:
@@ -18,11 +19,11 @@ const EVENT_HOLD_MS = 15 * 60_000;
 
 /** The one line under "lockin." on the home screen. Changes on events (focus session, every 10 questions, a test, a level up) and when the day's state changes. */
 export function Headline() {
-  const { sessions, questions, tests, settings, activity } = useProgress();
+  const { sessions, questions, tests, quizrr, settings, activity } = useProgress();
   const t = today();
 
   const { ctx, counts, latestTestPct } = useMemo(() => {
-    const track = tracker({ sessions, coaching: settings.coaching, questions, tests });
+    const track = tracker({ sessions, coaching: settings.coaching, questions, tests, quizrr });
     const day = track.day(t);
     // The mood reads today against his own goals; the college line is this week's college.
     const goals = settings.targets ?? DEFAULT_TARGETS;
@@ -32,8 +33,10 @@ export function Headline() {
     // Higher = better, so "level up" means a better college this week.
     const level = college ? LADDER.length - ladderPosition(college) + 1 : 0;
     const st = streak(activity);
-    const todaysTests = Object.values(tests)
+    // MathonGo and Quizrr tests both trigger the test good/mid/bad lines.
+    const todaysTests = [...Object.values(tests), ...Object.values(quizrr)]
       .filter((x) => !x.deleted && x.takenOn === t)
+      .map((x) => ({ updatedAt: x.updatedAt, pct: "testId" in x ? quizrrPct(x) : pct(x) }))
       .sort((a, b) => b.updatedAt - a.updatedAt);
     const ctx: HeadlineContext = {
       hour: new Date().getHours(),
@@ -54,9 +57,9 @@ export function Headline() {
       ctx,
       // Only timed sessions are a "focus session done" moment; time added by hand isn't.
       counts: { sessions: sessions.filter((x) => x.source !== "manual" && new Date(x.startedAt).toLocaleDateString("en-CA") === t).length, q: day.questions, tests: todaysTests.length, level },
-      latestTestPct: todaysTests[0] ? pct(todaysTests[0]) : null,
+      latestTestPct: todaysTests[0]?.pct ?? null,
     };
-  }, [sessions, questions, tests, settings.coaching, settings.targets, settings.name, activity, t]);
+  }, [sessions, questions, tests, quizrr, settings.coaching, settings.targets, settings.name, activity, t]);
 
   const [line, setLine] = useState(() => shown?.line ?? "");
 

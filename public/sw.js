@@ -1,7 +1,7 @@
 // lockin. service worker: makes the app open and work offline after the first visit.
 // Bump CACHE whenever the caching rules change: activating a new version deletes the old cache.
-const CACHE = "lockin-v3";
-const SHELL = ["/", "/today", "/manifest.webmanifest", "/icon.svg"];
+const CACHE = "lockin-v4";
+const SHELL = ["/", "/today", "/quizrr", "/quizrr/qrt", "/quizrr/qpt", "/manifest.webmanifest", "/icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
