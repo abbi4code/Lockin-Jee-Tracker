@@ -2,16 +2,19 @@
 
 import { Chess, type Color, type PieceSymbol, type Square } from "chess.js";
 import { AnimatePresence, motion } from "motion/react";
-import { Copy, Flag, FlipVertical2, Globe, Maximize2, Minimize2, RotateCcw, Undo2 } from "lucide-react";
+import { Check, Copy, Flag, FlipVertical2, Globe, Handshake, Maximize2, Minimize2, RotateCcw, RotateCw, Undo2, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
+import { CallButton } from "../components/call/CallButton";
 import { Piece, type PieceSet } from "../components/chess/Piece";
 import { buzz, Segmented } from "../components/Controls";
 import { Page } from "../components/Shell";
 import { fadeUp, Label, Section } from "../components/ui";
+import { material, onlineStatus } from "../lib/chess/display";
 import type { Level } from "../lib/chess/engine";
 import { createGame, myGames, useOnlineGame, type OnlineGame } from "../lib/chess/online";
+import { canClaimAbandoned } from "../lib/chess/rules";
 import { useProgress } from "../store/progress";
 
 type Mode = "two" | "cpu";
@@ -53,10 +56,10 @@ const BOARDS: Record<BoardStyle, { light: string; dark: string; hint: string; mo
 
 const KEY = "lockin-chess";
 const FILES = "abcdefgh";
-const VALUE: Record<PieceSymbol, number> = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 };
-const START: Record<PieceSymbol, number> = { p: 8, n: 2, b: 2, r: 2, q: 1, k: 1 };
 /** The computer never answers faster than this, so its move doesn't land the instant yours does. */
 const MIN_THINK_MS = 400;
+/** The engine stops itself within 2 s; no answer by this point means the worker died or hung. */
+const ENGINE_TIMEOUT_MS = 15_000;
 
 /** The engine runs in a web worker (bundled as its own entry), so searching never freezes the board. */
 function spawnEngine() {
@@ -78,15 +81,6 @@ function persist(s: Saved) {
   }
 }
 
-/** Pieces each side has lost, and the material balance (positive = white ahead). */
-function material(game: Chess) {
-  const left: Record<Color, Record<PieceSymbol, number>> = { w: { p: 0, n: 0, b: 0, r: 0, q: 0, k: 0 }, b: { p: 0, n: 0, b: 0, r: 0, q: 0, k: 0 } };
-  for (const row of game.board()) for (const p of row) if (p) left[p.color][p.type]++;
-  const lost = (c: Color) => (["q", "r", "b", "n", "p"] as PieceSymbol[]).flatMap((t) => Array<PieceSymbol>(Math.max(START[t] - left[c][t], 0)).fill(t));
-  const score = (c: Color) => (Object.keys(left[c]) as PieceSymbol[]).reduce((n, t) => n + left[c][t] * VALUE[t], 0);
-  return { lost: { w: lost("w"), b: lost("b") }, diff: score("w") - score("b") };
-}
-
 function status(game: Chess, mode: Mode, you: Color, thinking: boolean) {
   const name = (c: Color) => (mode === "cpu" ? (c === you ? "you" : "computer") : c === "w" ? "white" : "black");
   if (game.isCheckmate()) {
@@ -101,32 +95,6 @@ function status(game: Chess, mode: Mode, you: Color, thinking: boolean) {
   const check = game.inCheck() ? " check!" : "";
   if (mode === "cpu") return { text: game.turn() === you ? `your move.${check}` : `computer to move.${check}`, over: false };
   return { text: `${name(game.turn())} to move.${check}`, over: false };
-}
-
-/** How a game that just ended should be recorded online (empty while it's still going). */
-function endState(game: Chess): Partial<Pick<OnlineGame, "status" | "result" | "reason">> {
-  if (game.isCheckmate()) return { status: "over", result: game.turn() === "w" ? "0-1" : "1-0", reason: "checkmate" };
-  if (game.isStalemate()) return { status: "over", result: "1/2-1/2", reason: "stalemate" };
-  if (game.isThreefoldRepetition()) return { status: "over", result: "1/2-1/2", reason: "repetition" };
-  if (game.isInsufficientMaterial()) return { status: "over", result: "1/2-1/2", reason: "insufficient material" };
-  if (game.isDraw()) return { status: "over", result: "1/2-1/2", reason: "the 50-move rule" };
-  return {};
-}
-
-function onlineStatus(row: OnlineGame | null, color: Color | null, game: Chess, error: string | null) {
-  if (error) return { text: error, over: true };
-  if (!row) return { text: "connecting…", over: false };
-  const name = (c: Color) => (c === color ? "you" : (c === "w" ? row.white_name : row.black_name) || (c === "w" ? "white" : "black"));
-  if (row.status === "waiting") return { text: color === "w" ? "waiting for your opponent. send them the link." : "joining…", over: false };
-  if (row.status === "over") {
-    if (row.result === "1/2-1/2") return { text: `draw by ${row.reason ?? "agreement"}.`, over: true };
-    const winner: Color = row.result === "1-0" ? "w" : "b";
-    const loser: Color = winner === "w" ? "b" : "w";
-    const win = name(winner) === "you" ? "you win." : `${name(winner)} wins.`;
-    return { text: row.reason === "resignation" ? `${name(loser) === "you" ? "you" : name(loser)} resigned. ${win}` : `checkmate. ${win}`, over: true };
-  }
-  const check = game.inCheck() ? " check!" : "";
-  return { text: game.turn() === color ? `your move.${check}` : `${name(game.turn())} to move.${check}`, over: false };
 }
 
 /** A side's name, the pieces it has captured and its material lead, shown above and below the board. */
@@ -168,6 +136,8 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const [selected, setSelected] = useState<Square | null>(null);
   const [promotion, setPromotion] = useState<{ from: Square; to: Square } | null>(null);
   const [thinking, setThinking] = useState(false);
+  /** The engine worker crashed or never answered: the computer waits for a retry instead of thinking forever. */
+  const [engineStuck, setEngineStuck] = useState(false);
   const [dragging, setDragging] = useState<Square | null>(null);
   const [loaded, setLoaded] = useState(false);
   const worker = useRef<Worker | null>(null);
@@ -181,8 +151,11 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const history = g.history({ verbose: true });
   const last = history.at(-1);
   const ply = history.length;
-  const st = online ? onlineStatus(net.row, net.color, g, net.error) : status(g, mode, you, thinking);
-  const cpuTurn = !online && mode === "cpu" && g.turn() !== you && !st.over;
+  // The real result comes first: a stuck engine only matters while the game is on and the computer is to move.
+  const real = online ? onlineStatus(net.row, net.color, g, net.error) : status(g, mode, you, thinking);
+  const cpuTurn = !online && mode === "cpu" && g.turn() !== you && !real.over;
+  const stuck = engineStuck && cpuTurn;
+  const st = stuck ? { text: "the computer got stuck.", over: false } : real;
 
   // Restore the saved game once, in the browser.
   useEffect(() => {
@@ -246,13 +219,26 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
 
   // The computer's turn: ask the worker, apply its answer unless the game changed meanwhile.
   useEffect(() => {
-    if (!loaded || !cpuTurn) return;
+    if (!loaded || !cpuTurn || engineStuck) return;
     const id = ++request.current;
     const started = performance.now();
     setThinking(true);
+    // A crashed or hung worker is thrown away (the next turn starts a fresh one) and the player gets a retry.
+    const fail = () => {
+      if (id !== request.current) return;
+      window.clearTimeout(watchdog);
+      worker.current?.terminate();
+      worker.current = null;
+      setThinking(false);
+      setEngineStuck(true);
+    };
+    const watchdog = window.setTimeout(fail, ENGINE_TIMEOUT_MS);
     worker.current ??= spawnEngine();
+    worker.current.onerror = fail;
+    worker.current.onmessageerror = fail;
     worker.current.onmessage = (e: MessageEvent<{ id: number; move: { from: string; to: string; promotion?: string } | null }>) => {
       if (e.data.id !== request.current) return;
+      window.clearTimeout(watchdog);
       window.setTimeout(
         () => {
           if (e.data.id !== request.current) return;
@@ -270,15 +256,18 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
         Math.max(0, MIN_THINK_MS - (performance.now() - started)),
       );
     };
-    worker.current.postMessage({ id, fen: game.current.fen(), level });
+    // The positions so far let the engine see repetitions coming.
+    const history = game.current.history({ verbose: true }).map((m) => m.before);
+    worker.current.postMessage({ id, fen: game.current.fen(), level, history });
     // Mode, level or position changed before the answer came: forget it.
     return () => {
+      window.clearTimeout(watchdog);
       if (request.current === id) {
         request.current++;
         setThinking(false);
       }
     };
-  }, [loaded, cpuTurn, ply, level]);
+  }, [loaded, cpuTurn, ply, level, engineStuck, rerender]);
 
   useEffect(() => {
     moveList.current?.scrollTo({ top: moveList.current.scrollHeight, behavior: "smooth" });
@@ -286,7 +275,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
 
   const canMove = (sq: Square) => {
     const p = g.get(sq);
-    if (online) return !!p && p.color === g.turn() && p.color === net.color && net.row?.status === "active" && !promotion;
+    if (online) return !!p && p.color === g.turn() && p.color === net.color && net.row?.status === "active" && !promotion && !net.busy;
     return !!p && p.color === g.turn() && !st.over && !promotion && !thinking && !(mode === "cpu" && p.color !== you);
   };
   const targets = selected ? g.moves({ square: selected, verbose: true }) : [];
@@ -299,12 +288,14 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
       setPromotion({ from, to });
       return true;
     }
+    const before = g.history().length;
     g.move({ from, to, promotion: promo });
     setSelected(null);
     setPromotion(null);
     buzz(g.isCheckmate() ? 30 : 8);
     rerender();
-    if (online) net.send(endState(g));
+    // The server checks the move and decides any result; if it says no, the board goes back.
+    if (online) net.act({ type: "move", ply: before, from, to, ...(promo ? { promotion: promo } : {}) });
     return true;
   };
 
@@ -346,6 +337,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const undo = () => {
     request.current++; // drop any answer the computer is still working on
     setThinking(false);
+    setEngineStuck(false);
     setPromotion(null);
     setSelected(null);
     if (mode === "cpu") {
@@ -359,6 +351,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const newGame = () => {
     request.current++;
     setThinking(false);
+    setEngineStuck(false);
     setPromotion(null);
     setSelected(null);
     g.reset();
@@ -380,7 +373,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
     if (!confirmResign) return setConfirmResign(true);
     setConfirmResign(false);
     buzz(20);
-    net.send({ status: "over", result: net.color === "w" ? "0-1" : "1-0", reason: "resignation" });
+    net.act({ type: "resign" });
   };
   const inviteUrl = gameId && typeof window !== "undefined" ? `${window.location.origin}/extras/chess/${gameId}` : "";
   const copyInvite = async () => {
@@ -401,7 +394,11 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const whiteBottom = (bottomColor === "w") !== flipped;
   const ranks = whiteBottom ? [8, 7, 6, 5, 4, 3, 2, 1] : [1, 2, 3, 4, 5, 6, 7, 8];
   const files = whiteBottom ? [...FILES] : [...FILES].reverse();
-  const mat = material(g);
+  const mat = material(g, history);
+  const myOffer = !!net.color && net.row?.draw_offer === net.color;
+  const theirOffer = !!net.color && !!net.row?.draw_offer && net.row.draw_offer !== net.color;
+  const drawAsk = online && net.row?.status === "active" && theirOffer;
+  const opponent = (net.color === "w" ? net.row?.black_name : net.row?.white_name) || "your opponent";
   const sideLabel = (c: Color) => {
     const colorName = c === "w" ? "white" : "black";
     if (online) {
@@ -443,11 +440,38 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
           <div className={full ? "w-[min(100%,calc(100dvh-130px))]" : ""}>
           {full && (
             <div className="mb-1 flex items-center justify-between gap-3">
-              <span className={`truncate font-mono text-[13px] ${st.over ? "text-red" : "text-mute"}`}>{st.text}</span>
+              {/* The side panel is covered here, so what needs an answer shows up in this row instead. */}
+              {net.notice ? (
+                <span role="alert" className="line-clamp-2 min-w-0 font-mono text-[13px] text-red">
+                  {net.notice}
+                </span>
+              ) : drawAsk ? (
+                <span className="line-clamp-2 min-w-0 font-mono text-[13px] text-fg">{opponent} offers a draw.</span>
+              ) : (
+                <span className={`truncate font-mono text-[13px] ${st.over ? "text-red" : "text-mute"}`}>{st.text}</span>
+              )}
               <div className="flex shrink-0 gap-1.5">
-                <button onClick={undo} disabled={!ply || online} aria-label="undo" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
-                  <Undo2 className="size-4" />
-                </button>
+                {drawAsk && (
+                  <>
+                    <button onClick={() => net.act({ type: "accept-draw" })} disabled={net.busy} aria-label="accept draw" data-cursor="go" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                      <Check className="size-4" />
+                    </button>
+                    <button onClick={() => net.act({ type: "decline-draw" })} disabled={net.busy} aria-label="decline draw" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                      <X className="size-4" />
+                    </button>
+                  </>
+                )}
+                {stuck && (
+                  <button onClick={() => setEngineStuck(false)} aria-label="let the computer try again" data-cursor="go" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg">
+                    <RotateCw className="size-4" />
+                  </button>
+                )}
+                {/* Online games have no takebacks: the dead button would only crowd a phone's row. */}
+                {!online && (
+                  <button onClick={undo} disabled={!ply} aria-label="undo" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                    <Undo2 className="size-4" />
+                  </button>
+                )}
                 <button onClick={() => setFlipped((v) => !v)} aria-label="flip board" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg">
                   <FlipVertical2 className="size-4" />
                 </button>
@@ -529,6 +553,12 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
         </motion.div>
 
         <aside className="mt-6 lg:sticky lg:top-10 lg:col-span-5 lg:mt-0">
+          {online && net.row?.black && net.color && (
+            <Section label="call">
+              <p className="mb-3 text-[14.5px] text-mute">See and hear {opponent} while you play. The call stays open if you leave this page.</p>
+              <CallButton context={`chess:${net.row.id}`} invitees={[{ id: net.color === "w" ? net.row.black : net.row.white, name: opponent }]} />
+            </Section>
+          )}
           {online && (
             <Section label="online game" right={net.row ? net.row.status : undefined}>
               <div className="space-y-4">
@@ -543,15 +573,59 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                     </div>
                   </div>
                 )}
+                {drawAsk && (
+                  <div>
+                    <p className="mb-2 text-[14px] text-fg">{opponent} offers a draw.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button onClick={() => net.act({ type: "accept-draw" })} disabled={net.busy} data-cursor="go" className="rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink disabled:opacity-40">
+                        accept draw
+                      </button>
+                      <button onClick={() => net.act({ type: "decline-draw" })} disabled={net.busy} className="rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                        decline
+                      </button>
+                    </div>
+                  </div>
+                )}
+                {net.row?.status === "active" && net.color && canClaimAbandoned(net.row, net.color, Date.now()) && (
+                  <div>
+                    <p className="mb-2 text-[14px] text-mute">They haven&apos;t moved in 3 days. You can take the win.</p>
+                    <button onClick={() => net.act({ type: "claim-abandoned" })} disabled={net.busy} data-cursor="go" className="rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink disabled:opacity-40">
+                      claim the win
+                    </button>
+                  </div>
+                )}
                 {net.row?.status === "active" && (
-                  <button
-                    onClick={resign}
-                    onBlur={() => setConfirmResign(false)}
-                    data-cursor="danger"
-                    className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-[14px] transition ${confirmResign ? "border-red text-red" : "border-line-2 text-mute hover:border-red hover:text-red"}`}
-                  >
-                    <Flag className="size-3.5" /> {confirmResign ? "tap again to resign" : "resign"}
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      onClick={resign}
+                      onBlur={() => setConfirmResign(false)}
+                      disabled={net.busy}
+                      data-cursor="danger"
+                      className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-[14px] transition disabled:opacity-40 ${confirmResign ? "border-red text-red" : "border-line-2 text-mute hover:border-red hover:text-red"}`}
+                    >
+                      <Flag className="size-3.5" /> {confirmResign ? "tap again to resign" : "resign"}
+                    </button>
+                    {/* Hidden until the chess_server migration adds the column (draw_offer is then null, not missing). */}
+                    {net.row.draw_offer !== undefined && !theirOffer && (
+                      <button
+                        onClick={() => net.act({ type: "offer-draw" })}
+                        disabled={net.busy || myOffer}
+                        className="flex items-center gap-1.5 rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-fg hover:text-fg disabled:opacity-40"
+                      >
+                        <Handshake className="size-3.5" /> {myOffer ? "draw offered" : "offer a draw"}
+                      </button>
+                    )}
+                  </div>
+                )}
+                {net.row?.status === "waiting" && net.color === "w" && (
+                  <button onClick={() => net.act({ type: "cancel" })} disabled={net.busy} data-cursor="danger" className="rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-red hover:text-red disabled:opacity-40">
+                    cancel this game
                   </button>
+                )}
+                {net.notice && (
+                  <p role="alert" className="font-mono text-[12px] text-red">
+                    {net.notice}
+                  </p>
                 )}
                 <div className="flex flex-wrap gap-2">
                   <button onClick={startOnline} data-cursor="go" className="flex items-center gap-1.5 rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink">
@@ -574,7 +648,10 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                 <Segmented<Mode>
                   id="chess-mode"
                   value={mode}
-                  onChange={setMode}
+                  onChange={(m) => {
+                    setMode(m);
+                    setEngineStuck(false); // a new setup gets a fresh engine
+                  }}
                   options={[
                     { value: "two", label: "2 players" },
                     { value: "cpu", label: "computer" },
@@ -589,7 +666,10 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                     <Segmented<Level>
                       id="chess-level"
                       value={level}
-                      onChange={setLevel}
+                      onChange={(l) => {
+                        setLevel(l);
+                        setEngineStuck(false);
+                      }}
                       options={[
                         { value: "easy", label: "easy" },
                         { value: "medium", label: "medium" },
@@ -602,7 +682,10 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                     <Segmented<Color>
                       id="chess-side"
                       value={you}
-                      onChange={setYou}
+                      onChange={(c) => {
+                        setYou(c);
+                        setEngineStuck(false);
+                      }}
                       options={[
                         { value: "w", label: "white" },
                         { value: "b", label: "black" },
@@ -660,6 +743,14 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                   <Maximize2 className="size-3.5" /> full screen
                 </button>
               </div>
+              {stuck && (
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="font-mono text-[12px] text-red">the computer stopped answering.</p>
+                  <button onClick={() => setEngineStuck(false)} data-cursor="go" className="rounded-full border border-line-2 px-3.5 py-1.5 font-mono text-[12px] text-mute transition hover:border-fg hover:text-fg">
+                    let it try again
+                  </button>
+                </div>
+              )}
               {!online && onlineMsg && <p className="font-mono text-[12px] text-mute">{onlineMsg}</p>}
               {pieces === "classic" && <p className="font-mono text-[11px] text-dim">classic pieces by Colin M.L. Burnett (cburnett), BSD licence.</p>}
             </div>

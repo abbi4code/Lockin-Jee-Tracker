@@ -20,6 +20,11 @@ export interface Position {
   castling: number;
   /** En passant target square (mailbox index) or 0. */
   ep: number;
+  /** Halfmove clock: plies since the last capture or pawn move (50-move rule at 100). */
+  half: number;
+  /** Zobrist hash as two 32-bit halves (no BigInt in the hot path). */
+  hi: number;
+  lo: number;
 }
 
 export interface Move {
@@ -30,11 +35,38 @@ export interface Move {
   capture: number;
 }
 
+// Zobrist keys from a fixed-seed PRNG so hashes are stable across runs. Layout: piece-square at (piece+6)*120+sq,
+// then 16 castling-rights keys, 120 en passant keys and the black-to-move key.
+const CAS = 13 * 120, EPK = CAS + 16, BLACK = EPK + 120;
+const ZH = new Int32Array(BLACK + 1), ZL = new Int32Array(BLACK + 1);
+{
+  let x = 0x9e3779b9;
+  const rnd = () => ((x ^= x << 13), (x ^= x >>> 17), (x ^= x << 5), x | 0); // xorshift32
+  for (let i = 0; i <= BLACK; i++) (ZH[i] = rnd()), (ZL[i] = rnd());
+}
+const zx = (p: Position, k: number) => {
+  p.hi ^= ZH[k];
+  p.lo ^= ZL[k];
+};
+const pieceKey = (piece: number, s: number) => (piece + 6) * 120 + s;
+// The ep square only counts when a pawn of the side to move could take there (as in chess.js FENs); otherwise the
+// same position after a double push and after a quiet move would hash differently.
+const epLive = (b: Int8Array, ep: number, side: number) => ep !== 0 && (b[ep + 9 * side] === P * side || b[ep + 11 * side] === P * side);
+
+function hashOf(p: Position) {
+  p.hi = p.lo = 0;
+  for (let s = 21; s <= 98; s++) if (p.board[s] && p.board[s] !== OFF) zx(p, pieceKey(p.board[s], s));
+  zx(p, CAS + p.castling);
+  if (epLive(p.board, p.ep, p.side)) zx(p, EPK + p.ep);
+  if (p.side === -1) zx(p, BLACK);
+}
+
 const sq = (name: string) => 21 + (name.charCodeAt(0) - 97) + (8 - Number(name[1])) * 10;
 const name = (s: number) => String.fromCharCode(97 + ((s - 21) % 10)) + (8 - Math.floor((s - 21) / 10));
 
+/** Parses a FEN (the fullmove number is ignored). */
 export function fromFen(fen: string): Position {
-  const [placement, turn, castle, ep] = fen.split(" ");
+  const [placement, turn, castle, ep, half] = fen.split(" ");
   const board = new Int8Array(120).fill(OFF);
   for (let r = 0; r < 8; r++) for (let f = 0; f < 8; f++) board[21 + r * 10 + f] = 0;
   const types: Record<string, number> = { p: P, n: N, b: B, r: R, q: Q, k: K };
@@ -54,7 +86,9 @@ export function fromFen(fen: string): Position {
   if (castle.includes("Q")) castling |= CASTLE_WQ;
   if (castle.includes("k")) castling |= CASTLE_BK;
   if (castle.includes("q")) castling |= CASTLE_BQ;
-  return { board, side: turn === "w" ? 1 : -1, castling, ep: ep && ep !== "-" ? sq(ep) : 0 };
+  const p: Position = { board, side: turn === "w" ? 1 : -1, castling, ep: ep && ep !== "-" ? sq(ep) : 0, half: Number(half) || 0, hi: 0, lo: 0 };
+  hashOf(p);
+  return p;
 }
 
 /** Is `s` attacked by `by` (1 white, -1 black)? */
@@ -141,6 +175,9 @@ interface Undo {
   castling: number;
   ep: number;
   capturedAt: number;
+  half: number;
+  hi: number;
+  lo: number;
 }
 
 /** Plays a move in place. Returns undo info, or null (and leaves the position unchanged) if it leaves the king in check. */
@@ -149,21 +186,30 @@ function make(p: Position, m: Move): Undo | null {
   const side = p.side;
   const piece = b[m.from];
   const type = piece * side;
-  const undo: Undo = { captured: b[m.to], castling: p.castling, ep: p.ep, capturedAt: m.to };
+  const undo: Undo = { captured: b[m.to], castling: p.castling, ep: p.ep, capturedAt: m.to, half: p.half, hi: p.hi, lo: p.lo };
+  // The hash is updated incrementally: XOR out what leaves, XOR in what arrives.
+  if (epLive(b, p.ep, side)) zx(p, EPK + p.ep);
+  zx(p, CAS + p.castling);
   // En passant: the captured pawn sits behind the target square.
   if (type === P && m.to === p.ep) {
     undo.capturedAt = m.to + 10 * side;
     undo.captured = b[undo.capturedAt];
     b[undo.capturedAt] = 0;
   }
+  if (undo.captured) zx(p, pieceKey(undo.captured, undo.capturedAt));
   b[m.to] = m.promo ? m.promo * side : piece;
   b[m.from] = 0;
+  zx(p, pieceKey(piece, m.from));
+  zx(p, pieceKey(b[m.to], m.to));
   if (type === K && Math.abs(m.to - m.from) === 2) {
     const [rookFrom, rookTo] = m.to > m.from ? [m.from + 3, m.from + 1] : [m.from - 4, m.from - 1];
     b[rookTo] = b[rookFrom];
     b[rookFrom] = 0;
+    zx(p, pieceKey(b[rookTo], rookFrom));
+    zx(p, pieceKey(b[rookTo], rookTo));
   }
   p.ep = type === P && Math.abs(m.to - m.from) === 20 ? (m.from + m.to) / 2 : 0;
+  p.half = type === P || undo.captured ? 0 : p.half + 1;
   // Castling rights vanish when the king or a rook moves, or a rook is captured on its corner.
   for (const s of [m.from, m.to]) {
     if (s === 95) p.castling &= ~(CASTLE_WK | CASTLE_WQ);
@@ -174,6 +220,9 @@ function make(p: Position, m: Move): Undo | null {
     if (s === 21) p.castling &= ~CASTLE_BQ;
   }
   p.side = (-side) as 1 | -1;
+  zx(p, CAS + p.castling);
+  zx(p, BLACK);
+  if (epLive(b, p.ep, p.side)) zx(p, EPK + p.ep);
   if (attacked(b, kingSquare(b, side), p.side)) {
     unmake(p, m, undo);
     return null;
@@ -196,6 +245,9 @@ function unmake(p: Position, m: Move, u: Undo) {
   }
   p.castling = u.castling;
   p.ep = u.ep;
+  p.half = u.half;
+  p.hi = u.hi;
+  p.lo = u.lo;
 }
 
 /** Legal moves only. */
@@ -257,7 +309,11 @@ class Timeout extends Error {}
 /** Captures first, most valuable victim first; promotions count as captures of a queen. */
 const order = (moves: Move[]) => moves.sort((a, c) => c.capture * 10 + (c.promo ? 900 : 0) - (a.capture * 10 + (a.promo ? 900 : 0)));
 
-function search(p: Position, deadline: number) {
+/**
+ * `hi`/`lo` hold the hashes of the game so far, then one slot per search ply: index `base + ply` is the node at
+ * that ply (the root sits at `base`).
+ */
+function search(p: Position, deadline: number, hi: Int32Array, lo: Int32Array, base: number) {
   let nodes = 0;
   const tick = () => {
     if (++nodes % 2048 === 0 && performance.now() > deadline) throw new Timeout();
@@ -279,8 +335,33 @@ function search(p: Position, deadline: number) {
     return alpha;
   };
 
+  // Draw if this position already occurred, in the game or earlier on the search path. One earlier occurrence is
+  // enough: if repeating was good once it will be again, so treat it as the threefold it can become. Only
+  // positions since the last capture or pawn move (`half` plies) can match, and only with the same side to move.
+  const repeated = (ply: number) => {
+    const i = base + ply;
+    hi[i] = p.hi;
+    lo[i] = p.lo;
+    for (let j = i - 2, stop = Math.max(0, i - p.half); j >= stop; j -= 2) if (hi[j] === p.hi && lo[j] === p.lo) return true;
+    return false;
+  };
+
+  const hasLegal = () => {
+    for (const m of generate(p)) {
+      const u = make(p, m);
+      if (!u) continue;
+      unmake(p, m, u);
+      return true;
+    }
+    return false;
+  };
+
+  // Not used by quiescence: captures and promotions reset the clock and can't repeat a position.
   const negamax = (depth: number, alpha: number, beta: number, ply: number): number => {
     tick();
+    if (repeated(ply)) return 0;
+    // 50-move rule, except that a move which gives checkmate still wins. Not in check means not mated.
+    if (p.half >= 100) return inCheck(p) && !hasLegal() ? -MATE + ply : 0;
     if (depth === 0) return quiesce(alpha, beta);
     let legal = 0;
     for (const m of order(generate(p))) {
@@ -326,14 +407,28 @@ const LIMITS: Record<Level, { depth: number; ms: number; slack: number }> = {
   hard: { depth: 8, ms: 2000, slack: 0 },
 };
 
-/** The engine's move for a FEN, as { from, to, promotion } squares, or null if there's no legal move. */
-export function bestMove(fen: string, level: Level): { from: string; to: string; promotion?: string } | null {
+/**
+ * The engine's move for a FEN, as { from, to, promotion } squares, or null if there's no legal move.
+ * `history` is the FEN of every earlier position in the game, oldest first (not including `fen`), so the engine
+ * can see repetition draws: it steers into them when losing and away from them when winning.
+ */
+export function bestMove(fen: string, level: Level, history: string[] = []): { from: string; to: string; promotion?: string } | null {
   const p = fromFen(fen);
   const legal = order(legalMoves(p));
   if (!legal.length) return null;
   const { depth, ms, slack } = LIMITS[level];
   const deadline = performance.now() + ms;
-  const s = search(p, deadline);
+  // Positions before the last irreversible move can't repeat, so only the last `half` of the history matters.
+  const past = history.slice(Math.max(0, history.length - p.half));
+  const hi = new Int32Array(past.length + depth + 1), lo = new Int32Array(hi.length);
+  past.forEach((f, i) => {
+    const q = fromFen(f);
+    hi[i] = q.hi;
+    lo[i] = q.lo;
+  });
+  hi[past.length] = p.hi;
+  lo[past.length] = p.lo;
+  const s = search(p, deadline, hi, lo, past.length);
   let best = [{ move: legal[0], score: 0 }];
   // Iterative deepening: each finished depth refines the answer; a timeout keeps the last finished one.
   for (let d = 1; d <= depth; d++) {

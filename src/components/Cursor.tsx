@@ -80,7 +80,7 @@ export function Cursor() {
     const follow = () => {
       rx += (x - rx) * (still ? 1 : 0.28);
       ry += (y - ry) * (still ? 1 : 0.28);
-      g.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+      g.style.translate = `${rx}px ${ry}px`;
       raf = Math.abs(x - rx) + Math.abs(y - ry) > 0.1 ? requestAnimationFrame(follow) : 0;
     };
     const move = (e: PointerEvent) => {
@@ -94,7 +94,9 @@ export function Cursor() {
         shown = true;
         r.dataset.hidden = "false";
       }
-      d.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      // `translate`, not `transform`: the press feedback uses `scale`, which the browser applies after `transform`
+      // (so it would scale the position too, flinging the cursor toward the corner) but before `translate`.
+      d.style.translate = `${x}px ${y}px`;
       if (!raf) raf = requestAnimationFrame(follow);
     };
     const over = (e: PointerEvent) => {

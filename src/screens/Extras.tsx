@@ -5,10 +5,14 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Piece } from "../components/chess/Piece";
 import { Page } from "../components/Shell";
+import { SketchGlyph } from "../components/skribbl/parts";
 import { fadeUp, Label } from "../components/ui";
 
 /** Hidden corner of the app (reached from the dot at the end of the nav bar): things for breaks. */
-const EXTRAS = [{ href: "/extras/chess", title: "chess", body: "Two players on one screen, or against the computer (easy, medium, hard).", icon: <Piece type="n" color="w" className="size-9" /> }];
+const EXTRAS = [
+  { href: "/extras/chess", title: "chess", body: "Two players on one screen, the computer (easy, medium, hard), or a friend online with a link.", icon: <Piece type="n" color="w" className="size-9" /> },
+  { href: "/extras/skribbl", title: "skribbl", body: "One draws, everyone guesses. Make a room, send the link to your friends.", icon: <SketchGlyph className="size-9" /> },
+];
 
 export function ExtrasScreen() {
   return (
