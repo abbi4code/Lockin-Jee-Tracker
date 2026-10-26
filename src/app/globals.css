@@ -90,6 +90,46 @@ html[data-theme="sepia"] {
   --color-math: #c84d15;
 }
 
+/* skribbl (/extras/skribbl): the drawing palette (0 is the paper, the eraser paints with it) and the players' dot
+   colours. The same in every theme, so a drawing looks the same to everyone. Plain variables, not @theme: they're
+   read from script (lib/skribbl/canvas.ts) and inline styles, not as utilities. */
+:root {
+  --color-sketch-0: #fbf8f0;
+  --color-sketch-1: #1a1a1a;
+  --color-sketch-2: #7d7d7d;
+  --color-sketch-3: #c9c9c9;
+  --color-sketch-4: #ffffff;
+  --color-sketch-5: #e8372c;
+  --color-sketch-6: #8f1d17;
+  --color-sketch-7: #f58a1f;
+  --color-sketch-8: #8a5a2b;
+  --color-sketch-9: #f7d038;
+  --color-sketch-10: #f3c6a0;
+  --color-sketch-11: #8fd14f;
+  --color-sketch-12: #2f9e44;
+  --color-sketch-13: #1fb5a6;
+  --color-sketch-14: #6ec6f5;
+  --color-sketch-15: #2463eb;
+  --color-sketch-16: #1b2a6b;
+  --color-sketch-17: #7b4fd6;
+  --color-sketch-18: #c3a6f2;
+  --color-sketch-19: #f06fb0;
+  --color-sketch-20: #b0217a;
+  --color-sketch-21: #4a2e17;
+  --color-sketch-hue-0: #ff6b5a;
+  --color-sketch-hue-1: #ffb340;
+  --color-sketch-hue-2: #d9c23a;
+  --color-sketch-hue-3: #7fd35a;
+  --color-sketch-hue-4: #2fbf8f;
+  --color-sketch-hue-5: #3cc4e6;
+  --color-sketch-hue-6: #5b8cff;
+  --color-sketch-hue-7: #9d7bff;
+  --color-sketch-hue-8: #e07bff;
+  --color-sketch-hue-9: #ff6fae;
+  --color-sketch-hue-10: #c9a27a;
+  --color-sketch-hue-11: #9aa5b1;
+}
+
 /* Text weight (set on /me): Tailwind's font-* utilities read these variables, so every weight steps up together. */
 html[data-weight="medium"] {
   --font-weight-normal: 500;
@@ -178,7 +218,7 @@ html.has-cursor * {
   left: 0;
   z-index: 100;
   pointer-events: none;
-  will-change: transform;
+  will-change: translate;
 }
 .cursor-dot {
   width: 6px;

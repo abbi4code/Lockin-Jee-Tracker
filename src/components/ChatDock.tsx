@@ -10,7 +10,9 @@ import { useChatUser, useThread, useUnread, type Message } from "../lib/chat";
 import { coachName, listThreads, type ThreadSummary } from "../lib/chat-actions";
 import { lastSeenLabel, startPresence, useOnlineIds, useOtherStatus } from "../lib/presence";
 import { currentSubscription, enablePush, isInstalled, isIOS, pushSupported } from "../lib/push-client";
+import { setChatOpen } from "../lib/overlay";
 import { supabase } from "../lib/supabase/client";
+import { CallButton } from "./call/CallButton";
 import { buzz } from "./Controls";
 import { Label } from "./ui";
 
@@ -645,6 +647,11 @@ export function ChatDock({ placement = "app", openStudentId, openStudentName = "
   const drag = useDragControls();
   const unread = useUnread(user?.id ?? null, isAdmin);
   const [open, setOpen] = useState(false);
+  // The call window keeps clear of the open sheet.
+  useEffect(() => {
+    setChatOpen(open);
+    return () => setChatOpen(false);
+  }, [open]);
   const [picked, setPicked] = useState<{ id: string; name: string } | null>(null);
   // The student's header shows the coaches (any admin); an admin's shows the picked student.
   const status = useOtherStatus(user?.id ?? null, isAdmin ? (picked?.id ?? null) : null);
@@ -757,6 +764,8 @@ export function ChatDock({ placement = "app", openStudentId, openStudentName = "
                     {statusText ?? (isAdmin ? (picked ? "student" : "messages") : "your coach")}
                   </Label>
                 </div>
+                {/* Student and coach can talk face to face too: the call keeps going after the chat closes. */}
+                {studentId && <CallButton variant="icon" context={`coach:${studentId}`} invitees={isAdmin ? [{ id: studentId, name: title }] : []} label={`video call ${title}`} />}
                 <button onClick={close} aria-label="close chat" className="grid size-8 place-items-center rounded-full text-mute hover:bg-ink-2 hover:text-fg">
                   <X className="size-5" />
                 </button>

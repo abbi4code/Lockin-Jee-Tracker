@@ -1,12 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { Atom, FlaskConical, House, Sigma, Timer, UserRound } from "lucide-react";
+import { Atom, CalendarDays, FlaskConical, House, Sigma, Timer, UserRound } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import { getChapter } from "../data";
 import { Cursor } from "./Cursor";
+import { CallProvider } from "./call/CallProvider";
 import { ChatDock } from "./ChatDock";
 import { FocusTimer } from "./FocusTimer";
 import { startSync, useSync } from "../lib/sync";
@@ -16,6 +17,8 @@ import { dueQuizrr } from "../lib/quizrr";
 
 const NAV = [
   { href: "/today", label: "Today", icon: House, color: "var(--color-fg)" },
+  // Laptops only: on phones seven tabs crowd the pill, and the planner is a tap away from Today.
+  { href: "/plan", label: "Plan", icon: CalendarDays, color: "var(--color-fg)", desktopOnly: true },
   { href: "/s/physics", label: "Phy", icon: Atom, color: "var(--color-phy)" },
   { href: "/s/chemistry", label: "Chem", icon: FlaskConical, color: "var(--color-chem)" },
   { href: "/s/maths", label: "Math", icon: Sigma, color: "var(--color-math)" },
@@ -44,10 +47,10 @@ function Nav() {
         transition={{ type: "spring", stiffness: 200, damping: 22, delay: 0.3 }}
         className="pointer-events-auto flex items-center gap-1 rounded-full border border-line-2 bg-ink-2/85 p-1.5 shadow-[0_20px_60px_-12px_rgb(0_0_0/0.45)] backdrop-blur-xl lg:gap-2 lg:p-2"
       >
-        {NAV.map(({ href, label, icon: Icon, color }) => {
+        {NAV.map(({ href, label, icon: Icon, color, desktopOnly }) => {
           const isActive = current === href;
           return (
-            <Link key={href} href={href} className="relative">
+            <Link key={href} href={href} className={`relative ${desktopOnly ? "hidden lg:block" : ""}`}>
               <motion.div whileTap={{ scale: 0.88 }} className={`relative flex items-center gap-1.5 rounded-full px-3 py-2.5 text-[15px] font-medium transition-colors lg:gap-2 lg:px-5 ${isActive ? "text-ink" : "text-mute hover:text-fg"}`}>
                 {isActive && (
                   <motion.span
@@ -138,9 +141,12 @@ export function Providers({ children }: { children: ReactNode }) {
 
   return (
     <MotionConfig reducedMotion="user">
-      {/* App pages depend on progress saved in this browser, so they render once it has loaded. */}
-      {(ready || instant) && children}
-      {ready && <AppChrome />}
+      {/* Calls live above the pages, so one keeps going while you move between them. */}
+      <CallProvider>
+        {/* App pages depend on progress saved in this browser, so they render once it has loaded. */}
+        {(ready || instant) && children}
+        {ready && <AppChrome />}
+      </CallProvider>
       <Cursor />
     </MotionConfig>
   );
