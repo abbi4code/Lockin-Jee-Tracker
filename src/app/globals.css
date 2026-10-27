@@ -130,6 +130,14 @@ html[data-theme="sepia"] {
   --color-sketch-hue-11: #9aa5b1;
 }
 
+/* tanks (/extras/tanks): the two tanks and the blasts. The same in every theme. Read from script
+   (components/tanks/Field.tsx) and inline styles. */
+:root {
+  --color-tank-0: #5b8cff;
+  --color-tank-1: #ff6b5a;
+  --color-blast: #ffb340;
+}
+
 /* Text weight (set on /me): Tailwind's font-* utilities read these variables, so every weight steps up together. */
 html[data-weight="medium"] {
   --font-weight-normal: 500;
