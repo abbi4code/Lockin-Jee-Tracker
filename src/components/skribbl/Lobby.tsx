@@ -4,9 +4,9 @@ import { Copy } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { activePlayers, CUSTOM_MIN, DRAW_TIMES, LIMITS, type Settings } from "../../lib/skribbl/rules";
 import type { Skribbl } from "../../lib/skribbl/room";
-import { Check, Segmented } from "../Controls";
+import { Check, Segmented, Stepper } from "../Controls";
 import { Section } from "../ui";
-import { range, Stepper } from "./parts";
+import { range } from "./parts";
 
 /** Copies the room link (or opens the share sheet on phones). */
 export function InviteLink({ code }: { code: string }) {

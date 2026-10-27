@@ -1,7 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { contextKind, endReason, nameList, othersIn, pickIncoming, pickRejoin, type MemberRow } from "./calls";
-import type { MeshWire } from "./mesh";
-import { channelSignal } from "./signal";
+import { contextKind, endReason, nameList, othersIn, pickIncoming, pickRejoin, present, type MemberRow } from "./calls";
 
 const NOW = Date.parse("2026-10-26T12:00:00Z");
 const ago = (s: number) => new Date(NOW - s * 1000).toISOString();
@@ -55,6 +53,22 @@ describe("endReason", () => {
   });
 });
 
+describe("present", () => {
+  it("joined with a recent heartbeat, or away (reloading) for under 20 s; never after a hang-up", () => {
+    expect(present(row({ state: "joined", seen_at: ago(30) }), NOW)).toBe(true);
+    expect(present(row({ state: "joined", seen_at: ago(100) }), NOW)).toBe(false);
+    expect(present(row({ state: "away", updated_at: ago(10) }), NOW)).toBe(true);
+    expect(present(row({ state: "away", updated_at: ago(21) }), NOW)).toBe(false);
+    expect(present(row({ state: "left", updated_at: ago(1) }), NOW)).toBe(false);
+  });
+
+  it("an away person keeps the call going for the others, a hang-up doesn't", () => {
+    const me = row({ state: "joined", invited_by: null, seen_at: ago(1) });
+    expect(endReason([me, row({ user_id: "anu", state: "away", updated_at: ago(5) })], "me", true, NOW)).toBeNull();
+    expect(endReason([me, row({ user_id: "anu", state: "left", updated_at: ago(5) })], "me", true, NOW)).toBe("left");
+  });
+});
+
 describe("labels", () => {
   it("contextKind and nameList", () => {
     expect(contextKind("chess:abc")).toBe("chess");
@@ -64,46 +78,5 @@ describe("labels", () => {
     expect(nameList(["anu", "", "abhi"])).toBe("anu and abhi");
     expect(nameList(["a", "b", "c"])).toBe("a, b and c");
     expect(nameList(["a", "b", "c", "d", "e"])).toBe("a, b and 3 more");
-  });
-});
-
-describe("channelSignal", () => {
-  function fakeChannel() {
-    let handler: (m: { payload: unknown }) => void = () => {};
-    let status: (s: string) => void = () => {};
-    const sends: { payload: MeshWire }[] = [];
-    const ch = {
-      on: (_t: string, _f: unknown, h: typeof handler) => ((handler = h), ch),
-      subscribe: (cb: typeof status) => ((status = cb), ch),
-      send: async (m: { payload: MeshWire }) => (sends.push(m), "ok"),
-    };
-    return { ch, sends, receive: (payload: unknown) => handler({ payload }), status: (s: string) => status(s) };
-  }
-  const hello: MeshWire = { from: "a", user: "u", kind: "hello", name: "a", mic: true, cam: true };
-
-  it("holds messages until the channel is joined, then sends them in order", () => {
-    const f = fakeChannel();
-    const s = channelSignal(f.ch as never);
-    s.send(hello);
-    s.send({ from: "a", user: "u", kind: "bye" });
-    expect(f.sends).toEqual([]);
-    f.status("SUBSCRIBED");
-    s.send(hello);
-    expect(f.sends.map((m) => m.payload.kind)).toEqual(["hello", "bye", "hello"]);
-    expect(f.sends[0]).toMatchObject({ type: "broadcast", event: "call" });
-  });
-
-  it("passes on call messages only, until unsubscribed", () => {
-    const f = fakeChannel();
-    const s = channelSignal(f.ch as never);
-    const got: MeshWire[] = [];
-    const stop = s.listen((m) => got.push(m));
-    f.receive(hello);
-    f.receive({ hello: 1 });
-    f.receive({ from: "a", kind: "bye" }); // no user
-    f.receive(null);
-    stop();
-    f.receive(hello);
-    expect(got).toEqual([hello]);
   });
 });

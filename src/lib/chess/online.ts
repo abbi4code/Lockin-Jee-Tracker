@@ -3,6 +3,7 @@
 import type { Chess, Color } from "chess.js";
 import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 import { supabase } from "../supabase/client";
+import { fresh, type TimeControl } from "./clock";
 import type { Action, OnlineGame } from "./rules";
 
 // Online games live in public.chess_games. The row holds the PGN; each client replays it with chess.js. Players
@@ -16,13 +17,17 @@ async function userId() {
   return data.session?.user.id ?? null;
 }
 
-/** Creates a game with you as white. Returns its id (the link is /extras/chess/<id>). */
-export async function createGame(name: string) {
+/** Creates a game with you as white, with a clock if `tc` is given. Returns its id (the link is /extras/chess/<id>). */
+export async function createGame(name: string, tc: TimeControl | null = null) {
   if (!supabase) throw new Error("Accounts aren't set up, so online games aren't available.");
   const me = await userId();
   if (!me) throw new Error("Sign in to play online.");
-  const { data, error } = await supabase.from("chess_games").insert({ white: me, white_name: name.slice(0, 40) }).select("id").single();
-  if (error) throw error;
+  const base = { white: me, white_name: name.slice(0, 40) };
+  const clock = tc ? { time_base: tc.base, time_inc: tc.inc, white_ms: fresh(tc).w, black_ms: fresh(tc).b } : {};
+  let { data, error } = await supabase.from("chess_games").insert({ ...base, ...clock }).select("id").single();
+  // Before the chess_clock migration there are no clock columns: the game is untimed.
+  if (error?.code === "PGRST204" && tc) ({ data, error } = await supabase.from("chess_games").insert(base).select("id").single());
+  if (error || !data) throw error ?? new Error("Couldn't create the game.");
   return data.id as string;
 }
 
@@ -58,6 +63,16 @@ export function useOnlineGame(id: string | undefined, name: string, game: RefObj
   const [notice, setNotice] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const latest = useRef<OnlineGame | null>(null);
+  // The server's clock, estimated from the answer with the shortest round trip: the chess clocks count with it.
+  const offset = useRef(0);
+  const bestRtt = useRef(Infinity);
+  const sync = useCallback((sent: number, server: unknown) => {
+    const back = Date.now();
+    if (typeof server !== "number" || back - sent > bestRtt.current) return;
+    bestRtt.current = back - sent;
+    offset.current = server - (sent + back) / 2;
+  }, []);
+  const now = useCallback(() => Date.now() + offset.current, []);
 
   const apply = useCallback(
     (next: OnlineGame) => {
@@ -97,6 +112,11 @@ export function useOnlineGame(id: string | undefined, name: string, game: RefObj
       if (cancelled) return;
       if (!data) return setError("This game doesn't exist, or two players are already in it.");
       apply(data as OnlineGame);
+      const sent = Date.now();
+      fetch(`/api/chess/${id}`)
+        .then((r) => r.json())
+        .then((b: { now?: number }) => sync(sent, b.now))
+        .catch(() => {});
       channel = sb
         .channel(`chess:${id}`)
         .on("postgres_changes", { event: "UPDATE", schema: "public", table: "chess_games", filter: `id=eq.${id}` }, (p) => apply(p.new as OnlineGame))
@@ -125,25 +145,31 @@ export function useOnlineGame(id: string | undefined, name: string, game: RefObj
     async (action: Action) => {
       const current = latest.current;
       if (!current) return false;
-      setBusy(true);
+      // Reporting a fallen flag is the app's own business: no busy state, no notice if it was a moment early.
+      const quiet = action.type === "flag";
+      if (!quiet) setBusy(true);
       let message = "couldn't reach the server. your move wasn't sent. try again.";
       let answered = false;
       try {
+        const sent = Date.now();
         const res = await fetch(`/api/chess/${current.id}`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(action) });
-        const body = (await res.json().catch(() => ({}))) as { game?: OnlineGame; error?: string };
+        const body = (await res.json().catch(() => ({}))) as { game?: OnlineGame; error?: string; now?: number };
+        sync(sent, body.now);
         if (body.game) {
           answered = true;
           apply(body.game);
         }
         if (res.ok && body.game) {
-          setNotice(null);
+          if (!quiet) setNotice(null);
           setBusy(false);
           return true;
         }
         if (body.error) message = body.error;
+        if (quiet) return false;
       } catch {
         // Offline, or the request died: the message above says so.
       }
+      if (quiet) return false; // the app reports it again in a moment
       // No game in the answer: the write may still have landed (only the response got lost), so check first.
       if (!answered) {
         try {
@@ -164,9 +190,9 @@ export function useOnlineGame(id: string | undefined, name: string, game: RefObj
       setNotice(message);
       return false;
     },
-    [game, apply, refresh, onChange],
+    [game, apply, refresh, onChange, sync],
   );
 
   const color: Color | null = row && me ? (row.white === me ? "w" : row.black === me ? "b" : null) : null;
-  return { row, me, color, error, notice, busy, act, refresh };
+  return { row, me, color, error, notice, busy, act, refresh, now };
 }

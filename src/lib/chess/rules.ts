@@ -1,4 +1,5 @@
 import { Chess, type Color } from "chess.js";
+import { afterMove, timeLeft, timeoutResult, type Clocks, type TimeControl } from "./clock";
 
 // The server's referee for online chess. Players can't write public.chess_games themselves
 // (20261026000000_chess_server.sql); every move, resignation, draw offer and claim goes through
@@ -20,6 +21,12 @@ export interface OnlineGame {
   draw_offer?: Color | null;
   /** When the game last moved (or started). Absent before the chess_server migration; updated_at stands in. */
   moved_at?: string | null;
+  /** The time control: seconds each and seconds added per move. Null base: no clock. Absent before the chess_clock migration. */
+  time_base?: number | null;
+  time_inc?: number | null;
+  /** Each side's time left, in ms, as of `moved_at` (the side to move has been using its time since then). */
+  white_ms?: number | null;
+  black_ms?: number | null;
   updated_at: string;
 }
 
@@ -30,9 +37,10 @@ export type Action =
   | { type: "accept-draw" }
   | { type: "decline-draw" }
   | { type: "claim-abandoned" }
+  | { type: "flag" }
   | { type: "cancel" };
 
-export type Patch = Partial<Pick<OnlineGame, "pgn" | "ply" | "status" | "result" | "reason" | "draw_offer" | "moved_at">>;
+export type Patch = Partial<Pick<OnlineGame, "pgn" | "ply" | "status" | "result" | "reason" | "draw_offer" | "moved_at" | "white_ms" | "black_ms">>;
 
 /** A side that hasn't moved on its turn for this long has abandoned the game: the other side may claim it. */
 export const ABANDON_MS = 3 * 86_400_000;
@@ -62,6 +70,12 @@ export function endOf(c: Chess): Pick<OnlineGame, "result" | "reason"> | null {
 /** When the side to move started waiting: the last move, or the start of the game. */
 export const waitingSince = (g: Pick<OnlineGame, "moved_at" | "updated_at">) => new Date(g.moved_at ?? g.updated_at).getTime();
 
+/** The game's time control and clocks, or null for an untimed game. */
+export function clockOf(g: OnlineGame): { tc: TimeControl; clocks: Clocks } | null {
+  if (g.time_base == null || g.white_ms == null || g.black_ms == null) return null;
+  return { tc: { base: g.time_base, inc: g.time_inc ?? 0 }, clocks: { w: g.white_ms, b: g.black_ms } };
+}
+
 /** Whether `me` may claim the game because the other side has gone quiet on its turn. */
 export function canClaimAbandoned(g: OnlineGame, me: Color, now: number) {
   return g.status === "active" && g.ply % 2 === (me === "w" ? 1 : 0) && now - waitingSince(g) >= ABANDON_MS;
@@ -89,6 +103,14 @@ export function decide(g: OnlineGame, user: string, action: Action, now = Date.n
         return { error: "this game's record is broken." };
       }
       if (c.turn() !== me) return { error: "it's not your move." };
+      // Timed game: the time you took comes off your clock, then the increment goes on. Too late, and the
+      // move doesn't count: you've lost on time (or drawn, if they couldn't have mated).
+      const clock = clockOf(g);
+      const clocks = clock && afterMove(clock.clocks, clock.tc, me, g.ply, waitingSince(g), now);
+      if (clock && !clocks) {
+        const out = timeoutResult(c, me);
+        return { patch: { status: "over", result: out.result, reason: out.reason, draw_offer: null, ...timeAt(clock.clocks, me, 0) } };
+      }
       try {
         c.move({ from: action.from, to: action.to, promotion: action.promotion });
       } catch {
@@ -96,7 +118,26 @@ export function decide(g: OnlineGame, user: string, action: Action, now = Date.n
       }
       const end = endOf(c);
       // A move answers any draw offer: an offer from the other side is declined, and your own is withdrawn.
-      return { patch: { pgn: c.pgn(), ply: c.history().length, draw_offer: null, moved_at: at, ...(end ? { status: "over", ...end } : {}) } };
+      return {
+        patch: {
+          pgn: c.pgn(),
+          ply: c.history().length,
+          draw_offer: null,
+          moved_at: at,
+          ...(clocks ? { white_ms: Math.round(clocks.w), black_ms: Math.round(clocks.b) } : {}),
+          ...(end ? { status: "over", ...end } : {}),
+        },
+      };
+    }
+    case "flag": {
+      // Either player's app reports a clock that has hit zero; the server checks it on its own clock.
+      const clock = clockOf(g);
+      if (!clock) return { error: "this game has no clock." };
+      const c = replay(g.pgn);
+      const side = c.turn();
+      if (timeLeft(clock.clocks, side, g.ply, waitingSince(g), now)[side] > 0) return { error: "not yet." };
+      const out = timeoutResult(c, side);
+      return { patch: { status: "over", result: out.result, reason: out.reason, draw_offer: null, ...timeAt(clock.clocks, side, 0) } };
     }
     case "resign":
       return { patch: { status: "over", result: winFor(other(me)), reason: "resignation", draw_offer: null } };
@@ -115,6 +156,9 @@ export function decide(g: OnlineGame, user: string, action: Action, now = Date.n
   }
 }
 
+/** The clock columns with `side`'s time set to `ms`. */
+const timeAt = (c: Clocks, side: Color, ms: number) => ({ white_ms: side === "w" ? ms : c.w, black_ms: side === "b" ? ms : c.b });
+
 /** Checks a request body is an Action (it comes from the network). */
 export function parseAction(x: unknown): Action | null {
   if (!x || typeof x !== "object") return null;
@@ -130,6 +174,7 @@ export function parseAction(x: unknown): Action | null {
     case "accept-draw":
     case "decline-draw":
     case "claim-abandoned":
+    case "flag":
     case "cancel":
       return { type: a.type };
     default:

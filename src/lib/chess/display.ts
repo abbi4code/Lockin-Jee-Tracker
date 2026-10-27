@@ -27,12 +27,18 @@ export function onlineStatus(row: OnlineGame | null, color: Color | null, game: 
   if (row.status === "waiting") return { text: color === "w" ? "waiting for your opponent. send them the link." : "joining…", over: false };
   if (row.status === "over") {
     if (!row.result) return { text: "game cancelled.", over: true };
+    // On time with nothing to mate with: the side that ran out is the one to move.
+    if (row.result === "1/2-1/2" && row.reason?.startsWith("timeout")) {
+      const flagged = game.turn();
+      return { text: `${name(flagged)} ran out of time, but ${name(flagged === "w" ? "b" : "w")} can't mate. draw.`, over: true };
+    }
     if (row.result === "1/2-1/2") return { text: `draw by ${row.reason ?? "agreement"}.`, over: true };
     const winner: Color = row.result === "1-0" ? "w" : "b";
     const loser: Color = winner === "w" ? "b" : "w";
     const win = name(winner) === "you" ? "you win." : `${name(winner)} wins.`;
     if (row.reason === "resignation") return { text: `${name(loser)} resigned. ${win}`, over: true };
     if (row.reason === "abandonment") return { text: `${name(loser)} left the game. ${win}`, over: true };
+    if (row.reason === "time") return { text: `${name(loser)} ran out of time. ${win}`, over: true };
     return { text: `checkmate. ${win}`, over: true };
   }
   const check = game.inCheck() ? " check!" : "";

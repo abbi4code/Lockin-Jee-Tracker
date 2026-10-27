@@ -1,5 +1,6 @@
 "use client";
 
+import { Minus, Plus } from "lucide-react";
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
@@ -54,5 +55,28 @@ export function Check({ checked, onToggle, label }: { checked: boolean; onToggle
         <motion.path d="M5 12.5l4.5 4.5L19 7.5" initial={false} animate={{ pathLength: checked ? 1 : 0, opacity: checked ? 1 : 0 }} transition={{ duration: 0.2 }} />
       </svg>
     </motion.button>
+  );
+}
+
+/** − value + over a fixed list of values. */
+export function Stepper({ values, value, onChange, format = String, disabled = false, label }: { values: readonly number[]; value: number; onChange: (v: number) => void; format?: (v: number) => string; disabled?: boolean; label: string }) {
+  const i = Math.max(0, values.indexOf(value));
+  const step = (d: number) => {
+    const next = values[i + d];
+    if (next == null) return;
+    buzz();
+    onChange(next);
+  };
+  if (disabled) return <span className="font-mono text-[13px] text-fg">{format(value)}</span>;
+  return (
+    <div className="inline-flex items-center rounded-full border border-line-2">
+      <button onClick={() => step(-1)} disabled={i === 0} aria-label={`fewer ${label}`} className="grid size-8 place-items-center rounded-full text-mute transition hover:text-fg disabled:opacity-30">
+        <Minus className="size-3.5" />
+      </button>
+      <span className="min-w-14 text-center font-mono text-[13px] text-fg">{format(value)}</span>
+      <button onClick={() => step(1)} disabled={i === values.length - 1} aria-label={`more ${label}`} className="grid size-8 place-items-center rounded-full text-mute transition hover:text-fg disabled:opacity-30">
+        <Plus className="size-3.5" />
+      </button>
+    </div>
   );
 }

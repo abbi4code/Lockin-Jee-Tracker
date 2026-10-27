@@ -1,23 +1,31 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { CallRow, Invitee, MemberRow, MemberState } from "./calls";
-import type { MeshWire } from "./mesh";
+import type { CallTransport, Peer, TransportEvents } from "./transport";
 import { CallSession, type CallBackend, type SessionState } from "./session";
 
-// A call's lifecycle on this device, against an in-memory database. Real media and connections are covered by the
-// browser test (.claude/context.md §9); here nobody's peer connection ever comes up, which is all this layer needs.
+// A call's lifecycle on this device, against an in-memory database and a fake media connection. The real LiveKit
+// connection is covered by the browser test (.claude/context.md §9).
 
-class FakePeer {
-  connectionState = "new";
-  signalingState = "stable";
-  onnegotiationneeded = null;
-  onicecandidate = null;
-  ontrack = null;
-  onconnectionstatechange = null;
-  addTrack() {}
-  getSenders() {
-    return [];
+/** Stands in for LiveKit: records what the session asks of it; the test fires its events. */
+class FakeTransport implements CallTransport {
+  connected = false;
+  media: [boolean, boolean][] = [];
+  peers: Peer[] = [];
+  constructor(
+    readonly events: TransportEvents,
+    private failWith: string | null,
+  ) {}
+  async connect() {
+    if (this.failWith) throw new Error(this.failWith);
+    this.connected = true;
   }
-  close() {}
+  setMedia(mic: boolean, cam: boolean) {
+    this.media.push([mic, cam]);
+  }
+  leaves = 0;
+  leave() {
+    this.leaves++;
+  }
 }
 
 function stream(kinds: ("audio" | "video")[] = ["audio", "video"]) {
@@ -32,7 +40,12 @@ const now = () => new Date().toISOString();
 class FakeDb implements CallBackend {
   calls = new Map<string, { call: CallRow; members: MemberRow[] }>();
   watchers = new Map<string, Set<() => void>>();
-  sent: MeshWire[] = [];
+  transports: FakeTransport[] = [];
+  /** The newest media connection. */
+  get tx() {
+    return this.transports.at(-1)!;
+  }
+  connectError: string | null = null;
   notified: string[] = [];
   heartbeats = 0;
   startError: string | null = null;
@@ -70,16 +83,10 @@ class FakeDb implements CallBackend {
     this.watchers.set(call, set);
     return () => void set.delete(onChange);
   }
-  private hear: ((m: MeshWire) => void) | null = null;
-  signal() {
-    return { send: (m: MeshWire) => void this.sent.push(m), listen: (cb: (m: MeshWire) => void) => ((this.hear = cb), () => {}), close: () => {} };
-  }
-  /** A message from someone else on the call's channel. */
-  deliver(m: MeshWire) {
-    this.hear?.(m);
-  }
-  async iceServers() {
-    return [];
+  transport(_call: CallRow, _local: MediaStream, events: TransportEvents) {
+    const t = new FakeTransport(events, this.connectError);
+    this.transports.push(t);
+    return t;
   }
   notify(call: string) {
     this.notified.push(call);
@@ -124,7 +131,6 @@ const ANU = { id: "anu", name: "anu" };
 
 beforeEach(() => {
   vi.useFakeTimers();
-  vi.stubGlobal("RTCPeerConnection", FakePeer);
 });
 afterEach(() => {
   vi.useRealTimers();
@@ -138,40 +144,28 @@ describe("starting a call", () => {
     expect(state()).toMatchObject({ phase: "calling", busy: false });
     expect(db.member("call1", "anu")?.state).toBe("ringing");
     expect(db.notified).toEqual(["call1"]);
-    expect(db.sent.map((m) => m.kind)).toEqual(["hello"]);
+    expect(db.transports.length).toBe(1);
+    expect(db.tx.connected).toBe(true);
   });
 
-  it("they pick up: live; they hang up: it ends for you too", async () => {
+  it("they pick up: live; they hang up: it ends for you too, at once", async () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
     db.put("call1", "anu", "joined");
     await flush();
     expect(state().phase).toBe("live");
-    db.put("call1", "anu", "left");
-    // The roster changed but no goodbye came: it gives the goodbye a moment, then ends.
-    await vi.advanceTimersByTimeAsync(1600);
+    db.put("call1", "anu", "left"); // a hang-up
+    await flush();
     expect(state()).toMatchObject({ phase: "idle", notice: "left", local: null });
     expect(db.member("call1", ME)?.state).toBe("left");
   });
 
-  it("a hang-up (their goodbye says so) ends it at once", async () => {
+  it("their page reloads ('away'): the call waits for them, and they come back", async () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
     db.put("call1", "anu", "joined");
     await flush();
-    db.deliver({ from: "s-anu", user: "anu", kind: "bye" });
-    db.put("call1", "anu", "left");
-    await flush();
-    expect(state()).toMatchObject({ phase: "idle", notice: "left" });
-  });
-
-  it("their page reloads: the call waits for them, and they come back", async () => {
-    const { db, s, state } = setup();
-    await s.start("chess:g", [ANU]);
-    db.put("call1", "anu", "joined");
-    await flush();
-    db.put("call1", "anu", "left"); // the roster can even beat the goodbye
-    db.deliver({ from: "s-anu", user: "anu", kind: "bye", away: true });
+    db.put("call1", "anu", "away");
     await vi.advanceTimersByTimeAsync(5000);
     expect(state().phase).toBe("live");
     db.put("call1", "anu", "joined");
@@ -179,25 +173,20 @@ describe("starting a call", () => {
     expect(state().phase).toBe("live");
   });
 
-  it("each departure gets its own wait for the goodbye (not just the first one)", async () => {
+  it("every reload gets the grace (not just the first one)", async () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
     db.put("call1", "anu", "joined");
     await flush();
-    // First reload: roster first, then the goodbye; they come back.
-    db.put("call1", "anu", "left");
-    db.deliver({ from: "s1", user: "anu", kind: "bye", away: true });
-    await vi.advanceTimersByTimeAsync(2000);
+    db.put("call1", "anu", "away");
+    await vi.advanceTimersByTimeAsync(5000);
     db.put("call1", "anu", "joined");
-    await flush();
-    // Second reload, same order: still waited for, still held open.
     await vi.advanceTimersByTimeAsync(1000);
-    db.put("call1", "anu", "left");
-    await flush();
+    db.put("call1", "anu", "away");
+    await vi.advanceTimersByTimeAsync(15_000);
     expect(state().phase).toBe("live");
-    db.deliver({ from: "s2", user: "anu", kind: "bye", away: true });
-    await vi.advanceTimersByTimeAsync(2000);
-    expect(state().phase).toBe("live");
+    await vi.advanceTimersByTimeAsync(6000);
+    expect(state()).toMatchObject({ phase: "idle", notice: "left" });
   });
 
   it("your other tab or device joins: this one steps aside without leaving the roster", async () => {
@@ -206,32 +195,31 @@ describe("starting a call", () => {
     db.put("call1", "anu", "joined");
     await flush();
     const local = state().local!;
-    db.deliver({ from: "my-phone", user: ME, kind: "hello", name: "me", mic: true, cam: true });
+    db.tx.events.onMoved();
     await flush();
     expect(state()).toMatchObject({ phase: "idle", notice: "moved" });
     expect(db.member("call1", ME)?.state).toBe("joined");
     expect(local.getTracks().every((t) => (t.stop as ReturnType<typeof vi.fn>).mock.calls.length > 0)).toBe(true);
   });
 
-  it("someone in the roster with no connection to us: announces again (rate-limited)", async () => {
-    const { db, s } = setup();
+  it("can't connect (e.g. calls not set up on the server): says why and marks you out", async () => {
+    const { db, s, state } = setup();
+    db.connectError = "calls aren't set up on this server yet.";
     await s.start("chess:g", [ANU]);
-    const hellos = () => db.sent.filter((m) => m.kind === "hello").length;
-    expect(hellos()).toBe(1);
-    db.put("call1", "anu", "joined"); // in by the roster, but their hello never reached us
-    await vi.advanceTimersByTimeAsync(5100);
-    expect(hellos()).toBe(2);
-    await vi.advanceTimersByTimeAsync(5100);
-    expect(hellos()).toBe(3);
+    await flush();
+    expect(state()).toMatchObject({ phase: "idle", error: "calls aren't set up on this server yet." });
+    expect(db.member("call1", ME)?.state).toBe("left");
   });
 
-  it("only people in the roster are connected to (the channel's user ids are self-declared)", async () => {
+  it("the connection is gone for good: ends with a note", async () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
-    db.deliver({ from: "intruder", user: "stranger", kind: "hello", name: "x", mic: true, cam: true });
+    db.put("call1", "anu", "joined");
     await flush();
-    expect(state().peers).toEqual([]);
-    expect(db.sent.filter((m) => m.kind === "hello" && m.to === "intruder")).toEqual([]);
+    db.tx.events.onFailed();
+    await flush();
+    expect(state()).toMatchObject({ phase: "idle", notice: "failed" });
+    expect(db.member("call1", ME)?.state).toBe("left");
   });
 
   it("their page closed and they don't come back: ends after the grace", async () => {
@@ -239,8 +227,7 @@ describe("starting a call", () => {
     await s.start("chess:g", [ANU]);
     db.put("call1", "anu", "joined");
     await flush();
-    db.deliver({ from: "s-anu", user: "anu", kind: "bye", away: true });
-    db.put("call1", "anu", "left");
+    db.put("call1", "anu", "away");
     await vi.advanceTimersByTimeAsync(19_000);
     expect(state().phase).toBe("live");
     await vi.advanceTimersByTimeAsync(2000);
@@ -278,7 +265,7 @@ describe("starting a call", () => {
     await flush();
     expect(state().phase).toBe("live");
     db.put("call1", "abhi", "left");
-    await vi.advanceTimersByTimeAsync(1600);
+    await flush();
     expect(state()).toMatchObject({ phase: "idle", notice: "left" });
   });
 
@@ -431,14 +418,13 @@ describe("in a call", () => {
     expect(db.heartbeats).toBe(2);
   });
 
-  it("mic and camera switches: tracks go quiet and the others are told", async () => {
+  it("mic and camera switches go to the connection (which tells the others)", async () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
     s.toggleMic();
     s.toggleCam();
     expect(state()).toMatchObject({ mic: false, cam: false });
-    expect(state().local!.getTracks().every((t) => !t.enabled)).toBe(true);
-    expect(db.sent.at(-1)).toMatchObject({ kind: "media", mic: false, cam: false });
+    expect(db.tx.media.at(-1)).toEqual([false, false]);
   });
 
   it("no camera: mic only, and the camera switch does nothing", async () => {
@@ -454,7 +440,7 @@ describe("in a call", () => {
     await s.start("chess:g", [ANU]);
     const local = state().local!;
     expect(s.pageHidden()).toBe("call1");
-    expect(db.sent.at(-1)).toMatchObject({ kind: "bye", away: true });
+    expect(db.tx.leaves).toBe(1);
     expect(db.beacons).toEqual(["call1"]);
     expect(state().phase).toBe("idle");
     expect(local.getTracks().every((t) => (t.stop as ReturnType<typeof vi.fn>).mock.calls.length > 0)).toBe(true);
@@ -464,7 +450,7 @@ describe("in a call", () => {
     const { db, s, state } = setup();
     await s.start("chess:g", [ANU]);
     await s.leave();
-    expect(db.sent.at(-1)?.kind).toBe("bye");
+    expect(db.tx.leaves).toBe(1);
     expect(db.member("call1", ME)?.state).toBe("left");
     expect(state()).toMatchObject({ phase: "idle", notice: null });
   });

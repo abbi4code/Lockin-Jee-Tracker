@@ -121,3 +121,49 @@ describe("parseAction", () => {
     }
   });
 });
+
+describe("clocks", () => {
+  const timed = (over: Partial<OnlineGame> = {}) => ({ time_base: 180, time_inc: 2, white_ms: 180_000, black_ms: 180_000, ...over });
+  /** A timed game after these moves, last moved at NOW. */
+  const timedAfter = (sans: string[], over: Partial<OnlineGame> = {}) => ({ ...after(...sans), ...timed(over) });
+
+  it("the first move of each side is free", () => {
+    const p = ok(decide({ ...game(), ...timed() }, W, { type: "move", ply: 0, from: "e2", to: "e4" }, NOW + 60_000));
+    expect(p.white_ms).toBe(180_000);
+  });
+
+  it("takes the time used off the mover and adds the increment", () => {
+    const p = ok(decide(timedAfter(["e4", "e5"]), W, { type: "move", ply: 2, from: "g1", to: "f3" }, NOW + 10_000));
+    expect(p.white_ms).toBe(172_000);
+    expect(p.black_ms).toBe(180_000);
+    expect(p.moved_at).toBe(new Date(NOW + 10_000).toISOString());
+  });
+
+  it("a move after your time ran out loses on time instead", () => {
+    const p = ok(decide(timedAfter(["e4", "e5"], { white_ms: 5_000 }), W, { type: "move", ply: 2, from: "g1", to: "f3" }, NOW + 6_000));
+    expect(p).toMatchObject({ status: "over", result: "0-1", reason: "time", white_ms: 0 });
+    expect(p.pgn).toBeUndefined();
+  });
+
+  it("either player can report a flag, but only once it has really fallen", () => {
+    const g = timedAfter(["e4", "e5"], { white_ms: 5_000 });
+    expect(decide(g, B, { type: "flag" }, NOW + 4_000)).toEqual({ error: "not yet." });
+    expect(ok(decide(g, B, { type: "flag" }, NOW + 5_000))).toMatchObject({ status: "over", result: "0-1", reason: "time" });
+    expect(ok(decide(g, W, { type: "flag" }, NOW + 5_000))).toMatchObject({ result: "0-1" });
+    expect(decide(after("e4", "e5"), B, { type: "flag" }, NOW + 5_000)).toEqual({ error: "this game has no clock." });
+  });
+
+  it("running out against a bare king is a draw", () => {
+    const g: OnlineGame = { ...game({ pgn: "", ply: 40 }), ...timed({ white_ms: 1_000 }) };
+    // Rebuild the game from a position: white (to move) has a rook, black only a king.
+    const c = new Chess("4k3/8/8/8/8/8/8/R3K3 w - - 0 1");
+    const flagged = { ...g, pgn: c.pgn() };
+    expect(ok(decide(flagged, B, { type: "flag" }, NOW + 2_000))).toMatchObject({ result: "1/2-1/2", reason: "timeout vs insufficient material" });
+  });
+
+  it("untimed games are unchanged", () => {
+    const p = ok(decide(after("e4", "e5"), W, { type: "move", ply: 2, from: "g1", to: "f3" }, NOW + 999_000));
+    expect(p.white_ms).toBeUndefined();
+    expect(parseAction({ type: "flag" })).toEqual({ type: "flag" });
+  });
+});
