@@ -25,7 +25,7 @@ create table if not exists public.call_members (
   call        uuid not null references public.calls (id) on delete cascade,
   user_id     uuid not null references auth.users (id) on delete cascade,
   name        text not null default '',                   -- display only; whoever invites picks it
-  state       text not null default 'ringing' check (state in ('ringing', 'joined', 'left', 'declined', 'missed')),
+  state       text not null default 'ringing' check (state in ('ringing', 'joined', 'away', 'left', 'declined', 'missed')),
   invited_by  uuid references auth.users (id) on delete set null,
   seen_at     timestamptz,                                -- heartbeat while joined
   updated_at  timestamptz not null default now(),         -- a ring lasts 60 s from here
@@ -33,6 +33,10 @@ create table if not exists public.call_members (
 );
 -- "Is anyone ringing me?" and the call history.
 create index if not exists call_members_user on public.call_members (user_id, updated_at desc);
+-- 'away': the page closed mid-call without hanging up (most likely a reload). The others hold the call open for a
+-- little while in case they're back; 'left' is a hang-up. (Re-stated so a database made before 'away' gets it too.)
+alter table public.call_members drop constraint if exists call_members_state_check;
+alter table public.call_members add constraint call_members_state_check check (state in ('ringing', 'joined', 'away', 'left', 'declined', 'missed'));
 
 alter table public.calls enable row level security;
 alter table public.call_members enable row level security;
@@ -287,7 +291,7 @@ begin
   on conflict (call, user_id) do update
      set state = 'ringing', updated_at = now(),
          invited_by = case when m.state = 'ringing' then m.invited_by else excluded.invited_by end
-   where m.state in ('ringing', 'left', 'declined', 'missed');
+   where m.state in ('ringing', 'away', 'left', 'declined', 'missed');
 
   if (select count(*) from public.call_members m where m.call = v_call and m.state in ('ringing', 'joined')) > 8 then
     raise exception 'a call can have at most 8 people.';
@@ -311,7 +315,7 @@ declare
   v_ended    timestamptz;
   v_context  text;
 begin
-  if p_state is null or p_state not in ('joined', 'left', 'declined') then
+  if p_state is null or p_state not in ('joined', 'away', 'left', 'declined') then
     raise exception 'unknown call state.';
   end if;
   -- Lock the call so two people hanging up at once can't both think the other is still there.
@@ -326,11 +330,13 @@ begin
     raise exception 'you''re not in this call.';
   end if;
 
+  -- 'away' (the page closing) only applies to someone who's in the call: a closing page that was only ringing
+  -- someone, or already hung up, changes nothing.
   update public.call_members m
      set state = p_state, updated_at = now(),
          seen_at = case when p_state = 'joined' then now() else m.seen_at end,
          name = coalesce(nullif(left(trim(p_name), 40), ''), m.name)
-   where m.call = p_call and m.user_id = v_me;
+   where m.call = p_call and m.user_id = v_me and (p_state <> 'away' or m.state = 'joined');
 
   if not exists (select 1 from public.call_members m where m.call = p_call and m.state = 'joined') then
     update public.calls set ended_at = now() where id = p_call and ended_at is null;

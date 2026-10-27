@@ -8,13 +8,15 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
 import { CallButton } from "../components/call/CallButton";
 import { Piece, type PieceSet } from "../components/chess/Piece";
-import { buzz, Segmented } from "../components/Controls";
+import { buzz, Segmented, Stepper } from "../components/Controls";
 import { Page } from "../components/Shell";
-import { fadeUp, Label, Section } from "../components/ui";
+import { DotText, fadeUp, Label, Section } from "../components/ui";
+import { afterMove, formatClock, fresh, INCREMENTS, label, LOW_MS, MINUTES, parseTc, running, timeLeft, timeoutResult, type Clocks, type TimeControl } from "../lib/chess/clock";
 import { material, onlineStatus } from "../lib/chess/display";
 import type { Level } from "../lib/chess/engine";
 import { createGame, myGames, useOnlineGame, type OnlineGame } from "../lib/chess/online";
-import { canClaimAbandoned } from "../lib/chess/rules";
+import { canClaimAbandoned, clockOf, waitingSince } from "../lib/chess/rules";
+import { moveSound, playSound, setSoundOn, soundOn, unlockSound } from "../lib/chess/sound";
 import { useProgress } from "../store/progress";
 
 type Mode = "two" | "cpu";
@@ -27,7 +29,20 @@ interface Saved {
   flipped: boolean;
   pieces: PieceSet;
   board: BoardStyle;
+  /** The chosen time control ("none", or minutes + seconds added per move like "10+5"), for new games. */
+  tc?: string;
+  /** This device's game clock (time left as of the last move; it waits while the page is closed). */
+  clock?: { tc: TimeControl | null; c: Clocks; flagged: Color | null };
 }
+
+/** A local game's clock. `since`: when the side to move's clock started. */
+interface LocalClock {
+  tc: TimeControl | null;
+  c: Clocks;
+  since: number;
+  flagged: Color | null;
+}
+const noClock = (tc: TimeControl | null): LocalClock => ({ tc, c: tc ? fresh(tc) : { w: 0, b: 0 }, since: Date.now(), flagged: null });
 
 /** Square colours, move hints and coordinate colours per board. "app" follows the night / paper / sepia theme. */
 const BOARDS: Record<BoardStyle, { light: string; dark: string; hint: string; move: string; coord: [onLight: string, onDark: string] }> = {
@@ -81,8 +96,13 @@ function persist(s: Saved) {
   }
 }
 
-function status(game: Chess, mode: Mode, you: Color, thinking: boolean) {
+function status(game: Chess, mode: Mode, you: Color, thinking: boolean, flagged: Color | null) {
   const name = (c: Color) => (mode === "cpu" ? (c === you ? "you" : "computer") : c === "w" ? "white" : "black");
+  if (flagged) {
+    const out = timeoutResult(game, flagged);
+    if (!out.winner) return { text: `${name(flagged)} ran out of time, but ${name(flagged === "w" ? "b" : "w")} can't mate. draw.`, over: true };
+    return { text: `${name(flagged)} ran out of time. ${mode === "cpu" && out.winner === you ? "you win." : `${name(out.winner)} wins.`}`, over: true };
+  }
   if (game.isCheckmate()) {
     const winner = game.turn() === "w" ? "b" : "w";
     return { text: mode === "cpu" ? (winner === you ? "checkmate. you win." : "checkmate. computer wins.") : `checkmate. ${name(winner)} wins.`, over: true };
@@ -97,10 +117,19 @@ function status(game: Chess, mode: Mode, you: Color, thinking: boolean) {
   return { text: `${name(game.turn())} to move.${check}`, over: false };
 }
 
-/** A side's name, the pieces it has captured and its material lead, shown above and below the board. */
-function PlayerStrip({ label, captured, capturedColor, lead, active, set }: { label: string; captured: PieceSymbol[]; capturedColor: Color; lead: number; active: boolean; set: PieceSet }) {
+/** A clock reading in dot-matrix digits; the decimal point of the last ten seconds as a solid dot, so "8.8" can't read as "88". */
+function ClockText({ text }: { text: string }) {
   return (
-    <div className="flex h-8 items-center gap-3">
+    <>
+      {text.split(/(\.)/).map((part, i) => (part === "." ? <span key={i} className="mx-[0.1em] inline-block size-[0.16em] rounded-full bg-current align-baseline" /> : <DotText key={i}>{part}</DotText>))}
+    </>
+  );
+}
+
+/** A side's name, the pieces it has captured and its material lead, shown above and below the board. */
+function PlayerStrip({ label, captured, capturedColor, lead, active, set, clock }: { label: string; captured: PieceSymbol[]; capturedColor: Color; lead: number; active: boolean; set: PieceSet; clock?: { ms: number; running: boolean } }) {
+  return (
+    <div className="flex h-9 items-center gap-3">
       <span className={`size-1.5 rounded-full ${active ? "bg-red" : "bg-dot-off"}`} />
       <span className={`font-mono text-[13px] ${active ? "text-fg" : "text-mute"}`}>{label}</span>
       <div className="flex min-w-0 items-center">
@@ -109,6 +138,17 @@ function PlayerStrip({ label, captured, capturedColor, lead, active, set }: { la
         ))}
       </div>
       {lead > 0 && <span className="font-mono text-[12px] text-mute">+{lead}</span>}
+      {clock && (
+        // The running clock is lit (red in its last ten seconds); the waiting one is dim.
+        <span
+          className={`ml-auto rounded-md border px-2 py-0.5 text-[19px] leading-none tabular-nums transition-colors lg:text-[21px] ${
+            clock.running ? (clock.ms < LOW_MS ? "border-red text-red" : "border-fg text-fg") : clock.ms < LOW_MS ? "border-line-2 text-red/70" : "border-line-2 text-mute"
+          }`}
+          aria-label={`${label}: ${formatClock(clock.ms)} left`}
+        >
+          <ClockText text={formatClock(clock.ms)} />
+        </span>
+      )}
     </div>
   );
 }
@@ -140,6 +180,11 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const [engineStuck, setEngineStuck] = useState(false);
   const [dragging, setDragging] = useState<Square | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [tcId, setTcId] = useState<string>("none");
+  const [clock, setClock] = useState<LocalClock>(() => noClock(null));
+  const [sound, setSound] = useState(true);
+  /** Re-renders the clocks while one is running. */
+  const [, setTick] = useState(0);
   const worker = useRef<Worker | null>(null);
   const request = useRef(0);
   const board = useRef<HTMLDivElement>(null);
@@ -152,7 +197,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const last = history.at(-1);
   const ply = history.length;
   // The real result comes first: a stuck engine only matters while the game is on and the computer is to move.
-  const real = online ? onlineStatus(net.row, net.color, g, net.error) : status(g, mode, you, thinking);
+  const real = online ? onlineStatus(net.row, net.color, g, net.error) : status(g, mode, you, thinking, clock.flagged);
   const cpuTurn = !online && mode === "cpu" && g.turn() !== you && !real.over;
   const stuck = engineStuck && cpuTurn;
   const st = stuck ? { text: "the computer got stuck.", over: false } : real;
@@ -172,7 +217,13 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
       setFlipped(!!saved.flipped);
       setPieces(saved.pieces ?? "dots");
       setBoardStyle(saved.board ?? "app");
+      setTcId(saved.tc ?? "none");
+      // The local clock waits while the page is closed: it picks up from the last move. A board saved before
+      // clocks existed (or not started yet) takes the chosen clock.
+      if (!gameId && saved.clock) setClock({ ...saved.clock, since: Date.now() });
+      else if (!gameId && !game.current.history().length) setClock(noClock(parseTc(saved.tc)));
     }
+    setSound(soundOn());
     setLoaded(true);
     rerender();
     if (!gameId) myGames().then(setGames);
@@ -184,9 +235,13 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
     // An online game lives on the server: only the look is saved here, and the local game is left alone.
     if (gameId) {
       const saved = load();
-      persist({ pgn: saved?.pgn ?? "", mode: saved?.mode ?? "two", level: saved?.level ?? "medium", you: saved?.you ?? "w", flipped: saved?.flipped ?? false, pieces, board: boardStyle });
-    } else persist({ pgn: game.current.pgn(), mode, level, you, flipped, pieces, board: boardStyle });
-  }, [loaded, gameId, version, mode, level, you, flipped, pieces, boardStyle]);
+      persist({ pgn: saved?.pgn ?? "", mode: saved?.mode ?? "two", level: saved?.level ?? "medium", you: saved?.you ?? "w", flipped: saved?.flipped ?? false, pieces, board: boardStyle, tc: tcId, clock: saved?.clock });
+    } else {
+      const c = timeLeft(clock.c, game.current.turn(), game.current.history().length, clock.since, Date.now(), !clock.tc || !!clock.flagged);
+      persist({ pgn: game.current.pgn(), mode, level, you, flipped, pieces, board: boardStyle, tc: tcId, clock: { tc: clock.tc, c, flagged: clock.flagged } });
+    }
+    // The clock is saved with each move (and setting), not on every tick.
+  }, [loaded, gameId, version, mode, level, you, flipped, pieces, boardStyle, tcId, clock.flagged, clock.tc]);
 
   // Full screen: the board fills the window (and the browser goes full screen where it can; iPhones can't,
   // so there it's just the in-app layout). Esc or the button exits; "f" toggles on a keyboard.
@@ -245,7 +300,10 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
           setThinking(false);
           if (e.data.move) {
             try {
+              const mover = game.current.turn();
+              const before = game.current.history().length;
               game.current.move(e.data.move);
+              recordMove(mover, before);
               buzz(8);
             } catch {
               // The engine and chess.js disagreed; leave the position for the player.
@@ -281,6 +339,16 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const targets = selected ? g.moves({ square: selected, verbose: true }) : [];
   const targetSquares = new Set(targets.map((m) => m.to));
 
+  /** A move on this device: the mover's time comes off and the increment goes on; too late, and their flag falls. */
+  const recordMove = (mover: Color, before: number) => {
+    const now = Date.now();
+    setClock((k) => {
+      if (!k.tc || k.flagged) return k;
+      const next = afterMove(k.c, k.tc, mover, before, k.since, now);
+      return next ? { ...k, c: next, since: now } : { ...k, c: { ...k.c, [mover]: 0 }, flagged: mover };
+    });
+  };
+
   const play = (from: Square, to: Square, promo?: PieceSymbol) => {
     const options = g.moves({ square: from, verbose: true }).filter((m) => m.to === to);
     if (!options.length) return false;
@@ -289,7 +357,9 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
       return true;
     }
     const before = g.history().length;
+    const mover = g.turn();
     g.move({ from, to, promotion: promo });
+    if (!online) recordMove(mover, before);
     setSelected(null);
     setPromotion(null);
     buzz(g.isCheckmate() ? 30 : 8);
@@ -345,6 +415,8 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
       do g.undo();
       while (g.history().length && g.turn() !== you);
     } else g.undo();
+    // The clocks keep the time they had; the side now to move starts using its time from here.
+    setClock((k) => ({ ...k, since: Date.now() }));
     buzz();
     rerender();
   };
@@ -355,6 +427,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
     setPromotion(null);
     setSelected(null);
     g.reset();
+    setClock(noClock(parseTc(tcId)));
     buzz(12);
     rerender();
   };
@@ -362,7 +435,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const startOnline = async () => {
     setOnlineMsg("creating game…");
     try {
-      const id = await createGame(myName);
+      const id = await createGame(myName, parseTc(tcId));
       setOnlineMsg(null);
       router.push(`/extras/chess/${id}`);
     } catch (e) {
@@ -411,13 +484,121 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
   const top: Color = whiteBottom ? "b" : "w";
   const bottom: Color = whiteBottom ? "w" : "b";
   const strip = (c: Color) => (
-    <PlayerStrip label={sideLabel(c)} captured={mat.lost[c === "w" ? "b" : "w"]} capturedColor={c === "w" ? "b" : "w"} lead={c === "w" ? mat.diff : -mat.diff} active={!st.over && g.turn() === c} set={pieces} />
+    <PlayerStrip label={sideLabel(c)} captured={mat.lost[c === "w" ? "b" : "w"]} capturedColor={c === "w" ? "b" : "w"} lead={c === "w" ? mat.diff : -mat.diff} active={!st.over && g.turn() === c} set={pieces} clock={clockFor(c)} />
   );
   const checkSquare = g.inCheck() ? g.board().flat().find((p) => p?.type === "k" && p.color === g.turn())?.square : undefined;
   const look = BOARDS[boardStyle];
   // Classic black pieces would vanish on the app's near-black squares: give them a faint light edge there.
   const pieceEdge = (c: Color) => (pieces === "classic" && c === "b" && boardStyle === "app" ? { filter: "drop-shadow(0 0 1px var(--color-mute))" } : undefined);
   const pairs = Array.from({ length: Math.ceil(history.length / 2) }, (_, i) => [history[i * 2], history[i * 2 + 1]]);
+
+  // The clocks. Online they're the server's (counted on its clock, turn by its saved ply, so a move you've just
+  // made doesn't start your opponent's clock before the server has it); on this device, our own.
+  const onlineClock = online && net.row ? clockOf(net.row) : null;
+  const clocks: { c: Clocks; toMove: Color; running: boolean; tc: TimeControl } | null = onlineClock
+    ? (() => {
+        const row = net.row!;
+        const toMove: Color = row.ply % 2 === 0 ? "w" : "b";
+        const over = row.status !== "active";
+        return { c: timeLeft(onlineClock.clocks, toMove, row.ply, waitingSince(row), net.now(), over), toMove, running: running(row.ply, over), tc: onlineClock.tc };
+      })()
+    : !online && clock.tc
+      ? { c: timeLeft(clock.c, g.turn(), ply, clock.since, Date.now(), real.over), toMove: g.turn(), running: running(ply, real.over), tc: clock.tc }
+      : null;
+  const clockFor = (c: Color) => (clocks ? { ms: clocks.c[c], running: clocks.running && clocks.toMove === c } : undefined);
+
+  // A running clock redraws ten times a second.
+  const ticking = !!clocks?.running;
+  useEffect(() => {
+    if (!ticking) return;
+    const t = window.setInterval(() => setTick((n) => n + 1), 100);
+    return () => window.clearInterval(t);
+  }, [ticking]);
+
+  // A clock hit zero. On this device that ends the game; online, the server decides: either player's app tells it,
+  // and if it's a moment early (the clocks are a little apart) asks again a second later.
+  const flagFell = !!clocks && clocks.running && clocks.c[clocks.toMove] <= 0;
+  useEffect(() => {
+    if (!flagFell || !clocks) return;
+    const side = clocks.toMove;
+    if (!online) {
+      setClock((k) => (k.flagged ? k : { ...k, c: { ...k.c, [side]: 0 }, flagged: side }));
+      return;
+    }
+    let t = 0;
+    const report = async () => {
+      if (!(await net.act({ type: "flag" }))) t = window.setTimeout(report, 1000);
+    };
+    report();
+    return () => window.clearTimeout(t);
+    // Only the moment the flag falls matters; `clocks` and `net` are read then.
+  }, [flagFell]);
+
+  // Sounds, so you know the other side has moved without watching the board: every move (capture, check and
+  // checkmate each sound different), the end of the game, and the opponent arriving in an online game.
+  const heard = useRef<{ ply: number; over: boolean; status?: string } | null>(null);
+  useEffect(() => {
+    if (!loaded || (online && !net.row)) return;
+    const prev = heard.current;
+    heard.current = { ply, over: st.over, status: net.row?.status };
+    if (!prev) return;
+    if (ply === prev.ply + 1 && last) playSound(moveSound(g, !!last.captured));
+    else if (st.over && !prev.over) playSound(g.isCheckmate() ? "mate" : "end");
+    if (online && prev.status === "waiting" && net.row?.status === "active") playSound("start");
+  }, [loaded, ply, st.over, net.row?.status]);
+
+  // A short warning when your clock (on this device: the clock that's running) drops under ten seconds.
+  const warned = useRef<Record<Color, boolean>>({ w: false, b: false });
+  const watched = online ? net.color : clocks?.toMove;
+  const watchedMs = clocks && watched ? clocks.c[watched] : null;
+  useEffect(() => {
+    if (!watched || watchedMs == null) return;
+    if (watchedMs >= LOW_MS) warned.current[watched] = false;
+    else if (watchedMs > 0 && clocks?.running && clocks.toMove === watched && !warned.current[watched]) {
+      warned.current[watched] = true;
+      playSound("low");
+      buzz(15);
+    }
+  });
+
+  // Browsers only play sound once the page has been touched.
+  useEffect(() => {
+    window.addEventListener("pointerdown", unlockSound, { once: true });
+    window.addEventListener("keydown", unlockSound, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", unlockSound);
+      window.removeEventListener("keydown", unlockSound);
+    };
+  }, []);
+
+  // Online, in another tab: the tab's title says when it's your move.
+  const yourTurn = online && net.row?.status === "active" && !!net.color && (net.row.ply % 2 === 0 ? "w" : "b") === net.color;
+  useEffect(() => {
+    if (!online) return;
+    const base = document.title;
+    const update = () => {
+      document.title = yourTurn && document.hidden ? "● your move · chess" : base;
+    };
+    update();
+    document.addEventListener("visibilitychange", update);
+    return () => {
+      document.removeEventListener("visibilitychange", update);
+      document.title = base;
+    };
+  }, [online, yourTurn]);
+
+  const chosenTc = parseTc(tcId);
+  const tcHint = chosenTc
+    ? `${chosenTc.base / 60} min each, ${chosenTc.inc ? `+${chosenTc.inc}s added after every move` : "nothing added per move"} · clocks start after each side's first move`
+    : "no clock: take as long as you like";
+  // Turning the clock off and on again keeps the seconds per move you'd picked.
+  const lastInc = useRef(0);
+  if (chosenTc) lastInc.current = chosenTc.inc;
+  const pickTc = (id: string) => {
+    setTcId(id);
+    // A fresh board takes the new clock at once; a game in progress keeps its own.
+    if (!ply) setClock(noClock(parseTc(id)));
+  };
 
   return (
     <Page>
@@ -435,9 +616,9 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
       <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-14">
         <motion.div
           variants={fadeUp}
-          className={full ? "fixed inset-0 z-[60] flex items-center justify-center bg-ink px-3 py-3" : "mx-auto w-full lg:col-span-7 lg:max-w-[min(100%,calc(100dvh-230px))]"}
+          className={full ? "fixed inset-0 z-[60] flex items-center justify-center bg-ink px-3 py-3" : "mx-auto w-full lg:col-span-7 lg:max-w-[min(100%,calc(100dvh-290px))]"}
         >
-          <div className={full ? "w-[min(100%,calc(100dvh-130px))]" : ""}>
+          <div className={full ? "w-[min(100%,calc(100dvh-150px))]" : ""}>
           {full && (
             <div className="mb-1 flex items-center justify-between gap-3">
               {/* The side panel is covered here, so what needs an answer shows up in this row instead. */}
@@ -468,7 +649,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                 )}
                 {/* Online games have no takebacks: the dead button would only crowd a phone's row. */}
                 {!online && (
-                  <button onClick={undo} disabled={!ply} aria-label="undo" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                  <button onClick={undo} disabled={!ply || !!clock.flagged} aria-label="undo" className="grid size-9 place-items-center rounded-full border border-line-2 text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
                     <Undo2 className="size-4" />
                   </button>
                 )}
@@ -560,7 +741,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
             </Section>
           )}
           {online && (
-            <Section label="online game" right={net.row ? net.row.status : undefined}>
+            <Section label="online game" right={net.row ? `${onlineClock ? label(onlineClock.tc) : "no clock"} · ${net.row.status}` : undefined}>
               <div className="space-y-4">
                 {net.color === "w" && (
                   <div>
@@ -694,6 +875,47 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                   </div>
                 </>
               )}
+              {!online && (
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <span className="text-[15px]">
+                      clock <span className="font-mono text-[11.5px] text-dim">min each</span>
+                    </span>
+                    <Segmented<string>
+                      id="chess-clock"
+                      value={chosenTc ? String(chosenTc.base / 60) : "off"}
+                      onChange={(v) => pickTc(v === "off" ? "none" : `${v}+${lastInc.current}`)}
+                      options={[{ value: "off", label: "off" }, ...MINUTES.map((m) => ({ value: String(m), label: String(m) }))]}
+                    />
+                  </div>
+                  {chosenTc && (
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                      <span className="text-[15px]">added per move</span>
+                      <Stepper label="seconds added per move" values={INCREMENTS} value={chosenTc.inc} onChange={(sec) => pickTc(`${chosenTc.base / 60}+${sec}`)} format={(sec) => (sec ? `+${sec}s` : "off")} />
+                    </div>
+                  )}
+                  <p className="mt-1.5 font-mono text-[11.5px] leading-relaxed text-dim">
+                    {tcHint}
+                    {ply > 0 && (chosenTc ? label(chosenTc) : null) !== (clock.tc ? label(clock.tc) : null) ? " · from your next new game" : ""}
+                  </p>
+                </div>
+              )}
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <span className="text-[15px]">sound</span>
+                <Segmented<"on" | "off">
+                  id="chess-sound"
+                  value={sound ? "on" : "off"}
+                  onChange={(v) => {
+                    setSound(v === "on");
+                    setSoundOn(v === "on");
+                    if (v === "on") playSound("move");
+                  }}
+                  options={[
+                    { value: "on", label: "on" },
+                    { value: "off", label: "off" },
+                  ]}
+                />
+              </div>
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="text-[15px]">pieces</span>
                 <Segmented<PieceSet>
@@ -732,7 +954,7 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                 </button>
                 )}
                 {!online && (
-                <button onClick={undo} disabled={!ply} className="flex items-center gap-1.5 rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
+                <button onClick={undo} disabled={!ply || !!clock.flagged} className="flex items-center gap-1.5 rounded-full border border-line-2 px-4 py-2 text-[14px] text-mute transition hover:border-fg hover:text-fg disabled:opacity-40">
                   <Undo2 className="size-3.5" /> undo
                 </button>
                 )}
@@ -764,7 +986,10 @@ export function ChessScreen({ gameId }: { gameId?: string } = {}) {
                   <Link key={x.id} href={`/extras/chess/${x.id}`} className="group -mx-2 flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-ink-2">
                     <span className={`size-1.5 rounded-full ${x.status === "active" ? "bg-red" : "bg-dot-off"}`} />
                     <span className="min-w-0 flex-1 truncate text-[15px]">{opp ? `vs ${opp}` : "waiting for an opponent"}</span>
-                    <span className="font-mono text-[12px] text-dim">{x.status === "over" ? (x.result ?? "over") : x.status === "waiting" ? "open" : `move ${Math.floor(x.ply / 2) + 1}`}</span>
+                    <span className="font-mono text-[12px] text-dim">
+                      {x.time_base ? `${x.time_base / 60}+${x.time_inc ?? 0} · ` : ""}
+                      {x.status === "over" ? (x.result ?? "over") : x.status === "waiting" ? "open" : `move ${Math.floor(x.ply / 2) + 1}`}
+                    </span>
                   </Link>
                 );
               })}

@@ -1,21 +1,18 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { CallRow, Invitee, MemberRow } from "./calls";
+import { liveKitTransport } from "./livekit";
 import type { CallBackend } from "./session";
-import { channelSignal } from "./signal";
-import { STUN } from "./stun";
 
 // CallBackend on Supabase: the security definer functions of 20261026180000_calls.sql for every write, plain
-// selects (row-level security: members only) for reads, Realtime for the roster and the signaling channel.
+// selects (row-level security: members only) for reads, Realtime for the roster and rings. The media itself goes
+// over LiveKit (livekit.ts), with tokens from /api/call/[id]/token.
 
-/** The ICE servers from /api/call/ice (a TURN relay when configured); public STUN if that's slow or fails. */
-async function iceServers(): Promise<RTCIceServer[]> {
-  try {
-    const res = await fetch("/api/call/ice", { signal: AbortSignal.timeout(3000) });
-    const body = (await res.json()) as { iceServers?: RTCIceServer[] };
-    return res.ok && body.iceServers?.length ? body.iceServers : STUN;
-  } catch {
-    return STUN;
-  }
+/** A LiveKit token for a call you're in. Throws with the server's words (e.g. "calls aren't set up on this server yet."). */
+async function callToken(call: string) {
+  const res = await fetch(`/api/call/${call}/token`, { method: "POST" });
+  const body = (await res.json().catch(() => ({}))) as { url?: string; token?: string; error?: string };
+  if (!res.ok || !body.url || !body.token) throw new Error(body.error || "couldn't connect the call. try again.");
+  return { url: body.url, token: body.token };
 }
 
 /** Errors from the database functions carry a message meant for the user ("you can't call yourself."). */
@@ -49,11 +46,9 @@ export function supabaseBackend(sb: SupabaseClient, token: () => string | null):
         .subscribe((status) => status === "SUBSCRIBED" && onChange());
       return () => void sb.removeChannel(ch);
     },
-    signal(call) {
-      const ch = sb.channel(`call:${call.id}:${call.key}`, { config: { broadcast: { self: false } } });
-      return { ...channelSignal(ch), close: () => void sb.removeChannel(ch) };
+    transport(call, local, events) {
+      return liveKitTransport({ ...events, local, token: () => callToken(call.id) });
     },
-    iceServers,
     beacon(call) {
       const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
       const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -64,7 +59,7 @@ export function supabaseBackend(sb: SupabaseClient, token: () => string | null):
         method: "POST",
         keepalive: true,
         headers: { apikey: key, authorization: `Bearer ${t}`, "content-type": "application/json" },
-        body: JSON.stringify({ p_call: call, p_state: "left" }),
+        body: JSON.stringify({ p_call: call, p_state: "away" }),
       }).catch(() => {});
     },
     async mine(me) {

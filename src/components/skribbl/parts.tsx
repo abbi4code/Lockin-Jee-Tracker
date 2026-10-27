@@ -2,10 +2,9 @@
 
 import confetti from "canvas-confetti";
 import { AnimatePresence, motion } from "motion/react";
-import { Check, Minus, Pencil, Plus, X } from "lucide-react";
+import { Check, Pencil, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { activePlayers, HUES, type Player, type Room } from "../../lib/skribbl/rules";
-import { buzz } from "../Controls";
 import { DotText } from "../ui";
 
 // Small pieces of the skribbl screens (/extras/skribbl), in the app's own look.
@@ -61,29 +60,6 @@ export function CountUp({ value, start: initial }: { value: number; start?: numb
 
 export function Avatar({ hue, size = 10, dim = false }: { hue: number; size?: number; dim?: boolean }) {
   return <span className="inline-block shrink-0 rounded-full" style={{ width: size, height: size, background: hueColor(hue), opacity: dim ? 0.35 : 1 }} />;
-}
-
-/** − value + over a fixed list of values. */
-export function Stepper({ values, value, onChange, format = String, disabled = false, label }: { values: readonly number[]; value: number; onChange: (v: number) => void; format?: (v: number) => string; disabled?: boolean; label: string }) {
-  const i = Math.max(0, values.indexOf(value));
-  const step = (d: number) => {
-    const next = values[i + d];
-    if (next == null) return;
-    buzz();
-    onChange(next);
-  };
-  if (disabled) return <span className="font-mono text-[13px] text-fg">{format(value)}</span>;
-  return (
-    <div className="inline-flex items-center rounded-full border border-line-2">
-      <button onClick={() => step(-1)} disabled={i === 0} aria-label={`fewer ${label}`} className="grid size-8 place-items-center rounded-full text-mute transition hover:text-fg disabled:opacity-30">
-        <Minus className="size-3.5" />
-      </button>
-      <span className="min-w-14 text-center font-mono text-[13px] text-fg">{format(value)}</span>
-      <button onClick={() => step(1)} disabled={i === values.length - 1} aria-label={`more ${label}`} className="grid size-8 place-items-center rounded-full text-mute transition hover:text-fg disabled:opacity-30">
-        <Plus className="size-3.5" />
-      </button>
-    </div>
-  );
 }
 
 export const range = (lo: number, hi: number) => Array.from({ length: hi - lo + 1 }, (_, i) => lo + i);

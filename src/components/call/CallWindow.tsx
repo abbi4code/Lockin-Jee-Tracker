@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Maximize2, Mic, MicOff, Minimize2, PhoneOff, Video, VideoOff } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent } from "react";
 import { nameList, othersIn, type MemberRow, type Notice } from "../../lib/call/calls";
-import type { Peer } from "../../lib/call/mesh";
+import type { Peer } from "../../lib/call/transport";
 import { useChatOpen, useWide } from "../../lib/overlay";
 import { buzz } from "../Controls";
 import type { CallApi } from "./CallProvider";
