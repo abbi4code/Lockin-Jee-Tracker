@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { StudySession } from "../store/progress";
-import { fromSessionRow, legacyRow, liveSessionRows, mergeSessions, overlaps, toSessionRow, type Removed, type SessionRow } from "./sessions";
+import { fromSessionRow, legacyRow, liveSessionRows, mergeSessions, overlaps, toSessionRow, withoutQuestions, type Removed, type SessionRow } from "./sessions";
 
 const SINCE = "2026-06-01T00:00:00.000Z";
 const iso = (ms: number) => new Date(ms).toISOString();
@@ -103,6 +103,24 @@ describe("mergeSessions", () => {
   it("returns sessions sorted by start, whatever the timestamp format", () => {
     const m = mergeSessions([session("late", { startedAt: "2026-10-10T12:00:00.000Z" })], {}, [row("early", { started_at: "2026-10-10T09:00:00+00:00" })], SINCE);
     expect(m.sessions.map((s) => s.id)).toEqual(["early", "late"]);
+  });
+});
+
+describe("question columns", () => {
+  it("round-trip aim and solved, default to null on older rows, and can be left out", () => {
+    const r = toSessionRow(session("q", { aim: 10, solved: 7 }), "u1");
+    expect(r).toMatchObject({ questions_aim: 10, questions_solved: 7 });
+    expect(fromSessionRow(r)).toMatchObject({ aim: 10, solved: 7 });
+    expect(fromSessionRow(row("old"))).toMatchObject({ aim: null, solved: null });
+    const bare = withoutQuestions(r);
+    expect("questions_aim" in bare || "questions_solved" in bare).toBe(false);
+    expect(bare).toMatchObject({ id: "q", updated_at: r.updated_at, deleted: false });
+  });
+
+  it("merging keeps the newer copy's answer (said on another device)", () => {
+    const local = [session("q", { aim: 10, solved: null, updatedAt: 1000 })];
+    const remote = [row("q", { questions_aim: 10, questions_solved: 9, updated_at: iso(2000) })];
+    expect(mergeSessions(local, {}, remote, SINCE).sessions[0]).toMatchObject({ solved: 9 });
   });
 });
 

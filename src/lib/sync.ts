@@ -7,8 +7,8 @@ import { useProgress, type ChapterProgress, type QuestionDay, type Settings } fr
 import { normalizeStatus } from "./stages";
 import { fromTestRow, toTestRow } from "./tests";
 import { fromPlanRow, toPlanRow, type PlanRow } from "./plan";
-import { fromQuizrrRow, fromScheduleRows, toQuizrrRow } from "./quizrr";
-import { legacyRow, mergeSessions, toSessionRow, type SessionRow } from "./sessions";
+import { fromQuizrrRow, mergeSchedule, toQuizrrRow, type ScheduleRow } from "./quizrr";
+import { legacyRow, mergeSessions, toSessionRow, withoutQuestions, type SessionRow } from "./sessions";
 
 // Whether public.plan_items exists (null = not checked yet). Until its migration is applied the planner
 // works locally only; the next full sync after it appears uploads everything.
@@ -19,7 +19,23 @@ let quizrrTable: boolean | null = null;
 // Whether study_sessions has the columns for edits and deletions (null = not known yet). Until the
 // session-edits migration is applied, sessions upload in the old shape and deletions are hard deletes.
 let sessionColumns: boolean | null = null;
+// Whether it has the focus-question columns (20261125150000_session_questions), which came later. Without them a
+// session still syncs, just without its questions (they stay on the device that has them).
+let questionColumns: boolean | null = null;
 const missingColumn = (e: { code?: string } | null) => e?.code === "PGRST204" || e?.code === "42703";
+// Whether the analysis column exists on test_results and quizrr_attempts (null = not known yet). Until the
+// 20261125120000 migration is applied, results upload without it and analyses stay on this device.
+let analysisColumn: boolean | null = null;
+// Whether the student may write his own Quizrr dates (same migration). Until then his picks stay on this
+// device and are retried on the next full sync.
+let datesWritable: boolean | null = null;
+const denied = (e: { code?: string } | null) => e?.code === "42501";
+
+/** Results the server has without an analysis that this device has one for (uploaded before the column existed). */
+function analysisBehind(rows: Record<string, unknown>[], local: Record<string, { analysis?: unknown; updatedAt: number }>) {
+  if (!rows.length || !("analysis" in rows[0])) return [];
+  return rows.filter((r) => r.analysis == null && local[r.id as string]?.analysis && local[r.id as string].updatedAt === new Date(r.updated_at as string).getTime()).map((r) => r.id as string);
+}
 
 // Local-first sync: progress lives in localStorage and is pushed to Supabase whenever the user
 // is signed in. Conflicts resolve per chapter by updatedAt (newest wins); streak days are merged.
@@ -51,12 +67,18 @@ async function pull(userId: string) {
   store.mergeTests((testRows ?? []).map(fromTestRow));
   // Upload local test results the server doesn't have yet (or has an older copy of).
   const remoteTests = new Map((testRows ?? []).map((r) => [r.id as string, new Date(r.updated_at).getTime()]));
-  const testsToPush = Object.values(useProgress.getState().tests)
-    .filter((t) => t.updatedAt > (remoteTests.get(t.id) ?? -1))
-    .map((t) => `test:${t.id}`);
+  const testsToPush = [
+    ...Object.values(useProgress.getState().tests)
+      .filter((t) => t.updatedAt > (remoteTests.get(t.id) ?? -1))
+      .map((t) => `test:${t.id}`),
+    ...analysisBehind(testRows ?? [], useProgress.getState().tests).map((id) => `test:${id}`),
+  ];
   // Sessions: newest copy of each wins, deletions included. Read the store fresh: edits may have happened during the fetch.
   const now = useProgress.getState();
-  if ((sessionRows ?? []).length) sessionColumns = "updated_at" in (sessionRows![0] as object);
+  if ((sessionRows ?? []).length) {
+    sessionColumns = "updated_at" in (sessionRows![0] as object);
+    questionColumns = "questions_aim" in (sessionRows![0] as object);
+  }
   const merged = mergeSessions(now.sessions, now.removedSessions, (sessionRows ?? []) as SessionRow[], since);
   store.replaceSessions(merged.sessions, merged.removed);
   const sessionsToPush = merged.push.map((id) => `session:${id}`);
@@ -109,10 +131,13 @@ async function pull(userId: string) {
   store.markDirty([...toPush, ...testsToPush, ...planToPush, ...sessionsToPush, ...quizrrToPush, ...(serverComplete ? [] : ["state"])]);
 }
 
-/** Quizrr scores (newest copy wins) and the admin's dates (the server's copy replaces ours). Returns ids to upload. */
+/**
+ * Quizrr scores (newest copy wins) and dates: the server's copy, except where the student picked a date after the
+ * server's row was written and it hasn't gone up yet. Returns ids to upload.
+ */
 async function pullQuizrr() {
   if (!supabase) return [];
-  const [attempts, schedule] = await Promise.all([supabase.from("quizrr_attempts").select("*"), supabase.from("quizrr_schedule").select("test_id, date")]);
+  const [attempts, schedule] = await Promise.all([supabase.from("quizrr_attempts").select("*"), supabase.from("quizrr_schedule").select("*")]);
   if (attempts.error || schedule.error) {
     if (!missingTable(attempts.error) && !missingTable(schedule.error)) throw attempts.error ?? schedule.error;
     quizrrTable = false;
@@ -121,11 +146,29 @@ async function pullQuizrr() {
   quizrrTable = true;
   const store = useProgress.getState();
   store.mergeQuizrr((attempts.data ?? []).map(fromQuizrrRow));
-  store.setQuizrrDates(fromScheduleRows(schedule.data ?? []));
+  // Read the picks now, not before the fetch: one made while it was in flight must survive.
+  const { dates, by, edits } = mergeSchedule((schedule.data ?? []) as ScheduleRow[], useProgress.getState().quizrrDateEdits);
+  store.setQuizrrDates(dates, by, edits);
   const remote = new Map((attempts.data ?? []).map((r) => [r.id as string, new Date(r.updated_at).getTime()]));
-  return Object.values(useProgress.getState().quizrr)
-    .filter((a) => a.updatedAt > (remote.get(a.id) ?? -1))
-    .map((a) => `quizrr:${a.id}`);
+  return [
+    ...Object.values(useProgress.getState().quizrr)
+      .filter((a) => a.updatedAt > (remote.get(a.id) ?? -1))
+      .map((a) => `quizrr:${a.id}`),
+    ...analysisBehind(attempts.data ?? [], useProgress.getState().quizrr).map((id) => `quizrr:${id}`),
+    ...Object.keys(edits).map((id) => `qdate:${id}`),
+  ];
+}
+
+/** Upserts result rows; without the analysis column (migration not applied yet) they go up without it. */
+async function upsertResults(table: "test_results" | "quizrr_attempts", rows: Record<string, unknown>[]) {
+  if (!supabase) return { error: null };
+  if (analysisColumn !== false) {
+    const res = await supabase.from(table).upsert(rows);
+    if (!res.error) analysisColumn = true;
+    if (!missingColumn(res.error)) return res;
+    analysisColumn = false;
+  }
+  return supabase.from(table).upsert(rows.map(({ analysis: _, ...r }) => r));
 }
 
 async function push(userId: string) {
@@ -173,7 +216,7 @@ async function push(userId: string) {
       return toTestRow(t, userId);
     });
   if (testRows.length) {
-    const { error } = await supabase.from("test_results").upsert(testRows);
+    const { error } = await upsertResults("test_results", testRows);
     if (error) throw error;
   }
   const planIds = ids.filter((id) => id.startsWith("plan:") && s.plan[id.slice(5)]);
@@ -186,9 +229,24 @@ async function push(userId: string) {
   const quizrrIds = ids.filter((id) => id.startsWith("quizrr:") && s.quizrr[id.slice(7)]);
   for (const id of quizrrIds) syncedAt[id] = s.quizrr[id.slice(7)].updatedAt;
   if (quizrrIds.length && quizrrTable !== false) {
-    const { error } = await supabase.from("quizrr_attempts").upsert(quizrrIds.map((id) => toQuizrrRow(s.quizrr[id.slice(7)], userId)));
+    const { error } = await upsertResults("quizrr_attempts", quizrrIds.map((id) => toQuizrrRow(s.quizrr[id.slice(7)], userId)));
     if (missingTable(error)) quizrrTable = false;
     else if (error) throw error;
+  }
+  const picks = ids.filter((id) => id.startsWith("qdate:")).flatMap((id) => {
+    const e = s.quizrrDateEdits[id.slice(6)];
+    syncedAt[id] = e?.at ?? 0;
+    return e ? [{ testId: id.slice(6), ...e }] : [];
+  });
+  if (picks.length && quizrrTable !== false && datesWritable !== false) {
+    const { error } = await supabase
+      .from("quizrr_schedule")
+      .upsert(picks.map((p) => ({ user_id: userId, test_id: p.testId, date: p.date, set_by: "student", updated_at: new Date(p.at).toISOString() })));
+    if (!error) {
+      datesWritable = true;
+      useProgress.getState().confirmQuizrrDates(Object.fromEntries(picks.map((p) => [p.testId, p.at])));
+    } else if (missingTable(error) || missingColumn(error) || denied(error)) datesWritable = false;
+    else throw error;
   }
   useProgress.getState().markClean(ids, syncedAt);
 }
@@ -197,8 +255,17 @@ async function push(userId: string) {
 export async function pushSessions(rows: SessionRow[]) {
   if (!supabase) return;
   if (sessionColumns !== false) {
-    const { error } = await supabase.from("study_sessions").upsert(rows);
-    if (!error) return void (sessionColumns = true);
+    let full = questionColumns !== false;
+    let { error } = await supabase.from("study_sessions").upsert(full ? rows : rows.map(withoutQuestions));
+    // Only the question columns are missing: keep edits and soft deletes, drop just the questions.
+    if (full && missingColumn(error) && /questions_/.test(error?.message ?? "")) {
+      questionColumns = full = false;
+      ({ error } = await supabase.from("study_sessions").upsert(rows.map(withoutQuestions)));
+    }
+    if (!error) {
+      if (full) questionColumns = true;
+      return void (sessionColumns = true);
+    }
     if (!missingColumn(error)) throw error;
     sessionColumns = false;
   }

@@ -3,6 +3,7 @@ import { adminDeleteQuizrr, adminResetQuizrrDates, adminSaveQuizrr, adminSaveQui
 import type { StudentDetail } from "@/lib/admin-student";
 import { ACTIVE_TESTS, assignedDate, attemptFor, quizrrPct, seriesProgress, testName, type QuizrrTest } from "@/lib/quizrr";
 import { scoreTone } from "@/lib/tests";
+import { analysisLine } from "./AnalysisLine";
 import { Block, fmtDay, Tile, Tiles } from "./StudentParts";
 
 const label = "font-mono text-[11px] tracking-[0.16em] text-mute uppercase";
@@ -26,7 +27,7 @@ function Syllabus({ t }: { t: QuizrrTest }) {
 
 /** Quizrr in the admin panel: the dates (only admins can set them) and the scores, with a form to log or fix one. */
 export function QuizrrAdmin({ s }: { s: StudentDetail }) {
-  const rows = ACTIVE_TESTS.map((t) => ({ t, date: assignedDate(t, s.quizrrDates), moved: t.id in s.quizrrDates, a: attemptFor(t.id, s.quizrr) })).sort(
+  const rows = ACTIVE_TESTS.map((t) => ({ t, date: assignedDate(t, s.quizrrDates), by: t.id in s.quizrrDates ? s.quizrrDateBy[t.id] : undefined, a: attemptFor(t.id, s.quizrr) })).sort(
     (x, y) => (x.date ?? "9999").localeCompare(y.date ?? "9999") || x.t.series.localeCompare(y.t.series) || x.t.no - y.t.no,
   );
   const qrt = seriesProgress("qrt", s.quizrr, s.quizrrDates);
@@ -50,28 +51,29 @@ export function QuizrrAdmin({ s }: { s: StudentDetail }) {
         </p>
       )}
 
-      <Block title="quizrr · dates" className="mt-6" right={`only admins can change these · ${s.name} sees them on today, /quizrr and the planner`}>
+      <Block title="quizrr · dates" className="mt-6" right={`you and ${s.name} can both move these · the newest change wins`}>
         <form action={adminSaveQuizrrDates}>
           <input type="hidden" name="userId" value={s.id} />
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] text-left text-[14px]">
+            <table className="w-full min-w-[760px] text-left text-[14px]">
               <thead className="font-mono text-[11px] text-dim uppercase">
                 <tr>
                   <th className="py-2 font-normal">test</th>
                   <th className="py-2 font-normal">syllabus</th>
                   <th className="w-44 py-2 font-normal">date</th>
-                  <th className="w-36 py-2 text-right font-normal">result</th>
+                  <th className="w-44 py-2 text-right font-normal">result · analysis</th>
                 </tr>
               </thead>
               <tbody>
-                {rows.map(({ t, date, moved, a }) => {
+                {rows.map(({ t, date, by, a }) => {
                   const p = a ? quizrrPct(a) : null;
                   const late = !a && date && date < s.today;
                   return (
                     <tr key={t.id} className="border-t border-line/60 align-top">
                       <td className="py-2.5 pr-3 whitespace-nowrap">
                         {testName(t)}
-                        {moved && <span className="ml-2 font-mono text-[10.5px] text-dim">set by you</span>}
+                        {by === "admin" && <span className="ml-2 font-mono text-[10.5px] text-dim">set by you</span>}
+                        {by === "student" && <span className="ml-2 font-mono text-[10.5px] text-fg">picked by {s.name}</span>}
                       </td>
                       <td className="py-2.5 pr-3 text-[13px] leading-relaxed">
                         <Syllabus t={t} />
@@ -83,6 +85,7 @@ export function QuizrrAdmin({ s }: { s: StudentDetail }) {
                         {a ? (
                           <>
                             {a.score}/{a.maxScore} {p != null && <span style={{ color: scoreTone(p) }}>{Math.round(p)}%</span>}
+                            <span className="block text-[11px]">{analysisLine(a, s.today)}</span>
                           </>
                         ) : late ? (
                           <span className="text-red">missed</span>

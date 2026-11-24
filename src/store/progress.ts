@@ -3,10 +3,13 @@ import { persist } from "zustand/middleware";
 import { getChapter, type Exam } from "../data";
 import { isStudied, normalizeStatus, type Status } from "../lib/stages";
 import type { TestResult } from "../lib/tests";
-import type { QuizrrAttempt } from "../lib/quizrr";
+import type { DateSetBy, QuizrrAttempt } from "../lib/quizrr";
+import type { Analysis } from "../lib/analysis";
+import { extendBreak, newBreak, type BreakTimer } from "../lib/breaks";
 import type { Coaching } from "../lib/coaching";
 import type { Targets } from "../lib/college";
 import type { PlanItem, PlanKind } from "../lib/plan";
+import { clampAim, clampSolved } from "../lib/focus";
 import { clampMinutes, dayOf, type Removed } from "../lib/sessions";
 
 export type { Status };
@@ -76,6 +79,10 @@ export interface StudySession {
   source?: "timer" | "manual";
   /** Changed by hand after the timer logged it. */
   edited?: boolean;
+  /** Questions planned for this session (set before starting), null = none planned (theory, a lecture). */
+  aim?: number | null;
+  /** Questions actually solved, null = not said yet. Counts toward the day's questions. */
+  solved?: number | null;
 }
 
 export type TimerMode = "stopwatch" | "pomodoro";
@@ -91,6 +98,8 @@ export interface Timer {
   banked: number;
   /** When the session first started (ms), null when idle. */
   sessionStart: number | null;
+  /** Questions planned for this session (null = none). Kept for the next session, like the chapter. */
+  aim?: number | null;
 }
 
 interface State {
@@ -99,7 +108,7 @@ interface State {
   /** Days (YYYY-MM-DD) with any study activity, for streaks. */
   activity: string[];
   stateUpdatedAt: number;
-  /** Chapter ids, "state", "session:<id>", "test:<id>", "plan:<id>" and "quizrr:<id>" entries changed since the last successful sync. */
+  /** Chapter ids, "state", "session:<id>", "test:<id>", "plan:<id>", "quizrr:<id>" and "qdate:<test id>" entries changed since the last successful sync. */
   dirty: string[];
   /** Supabase user id this local data belongs to (null = not linked yet). */
   owner: string | null;
@@ -117,8 +126,14 @@ interface State {
   plan: Record<string, PlanItem>;
   /** Quizrr scores by id (soft-deleted rows kept so removals sync). */
   quizrr: Record<string, QuizrrAttempt>;
-  /** Quizrr dates an admin set (test id → day, null = unscheduled). Read-only here: sync replaces it. */
+  /** Quizrr dates set by an admin or picked by the student (test id → day, null = unscheduled); tests without one use the draft. */
   quizrrDates: Record<string, string | null>;
+  /** Who set each date in quizrrDates. */
+  quizrrDateBy: Record<string, DateSetBy>;
+  /** Dates the student picked that the server hasn't confirmed yet (`at` = when, ms). Sync keeps them over older server rows. */
+  quizrrDateEdits: Record<string, { date: string | null; at: number }>;
+  /** The break countdown on the focus page (this device only). */
+  breakTimer: BreakTimer | null;
 
   toggleTopic: (chapterId: string, topic: string, allTopics: string[]) => Status;
   setAllTopics: (chapterId: string, topics: string[], checked: boolean) => void;
@@ -151,21 +166,34 @@ interface State {
   deleteQuizrr: (id: string) => void;
   /** Used by sync: newest version of each attempt wins. */
   mergeQuizrr: (rows: QuizrrAttempt[]) => void;
-  /** Used by sync: the admin's schedule, as on the server. */
-  setQuizrrDates: (dates: Record<string, string | null>) => void;
+  /** Used by sync: the schedule as on the server, with the student's unconfirmed picks laid over it. */
+  setQuizrrDates: (dates: Record<string, string | null>, by: Record<string, DateSetBy>, edits: Record<string, { date: string | null; at: number }>) => void;
+  /** The student picks dates (null = no date). */
+  pickQuizrrDates: (entries: { testId: string; date: string | null }[]) => void;
+  /** Used by sync: these picks reached the server (test id → the `at` that was uploaded). */
+  confirmQuizrrDates: (uploaded: Record<string, number>) => void;
+  /** Saves (or with null clears) the analysis of a MathonGo test or a Quizrr attempt. */
+  saveAnalysis: (kind: "test" | "quizrr", id: string, analysis: Analysis | null) => void;
+  breakStart: (minutes: number) => void;
+  breakExtend: (minutes: number) => void;
+  /** The end was rung (or found too late to ring). */
+  breakHandled: () => void;
+  breakEnd: () => void;
   markClean: (ids: string[], syncedAt: Record<string, number>) => void;
   markDirty: (ids: string[]) => void;
   setOwner: (id: string | null) => void;
   /** Used by sync: the merged result of lib/sessions mergeSessions. */
   replaceSessions: (sessions: StudySession[], removed: Record<string, Removed>) => void;
   /** Adds time studied without the timer. */
-  addSession: (s: { chapterId: string | null; startedAt: string; minutes: number }) => StudySession;
-  /** Fixes a logged session: chapter, start or length. */
-  editSession: (id: string, patch: Partial<Pick<StudySession, "chapterId" | "startedAt" | "minutes">>) => void;
+  addSession: (s: { chapterId: string | null; startedAt: string; minutes: number; aim?: number | null; solved?: number | null }) => StudySession;
+  /** Fixes a logged session: chapter, start, length, or its questions. */
+  editSession: (id: string, patch: Partial<Pick<StudySession, "chapterId" | "startedAt" | "minutes" | "aim" | "solved">>) => void;
+  /** How many questions a session solved (null = not said). Asked when a session with an aim ends. */
+  setSolved: (id: string, solved: number | null) => void;
   deleteSession: (id: string) => void;
-  timerStart: (opts?: Partial<Pick<Timer, "mode" | "target" | "chapterId">>) => void;
+  timerStart: (opts?: Partial<Pick<Timer, "mode" | "target" | "chapterId" | "aim">>) => void;
   timerPause: () => void;
-  timerSet: (patch: Partial<Pick<Timer, "mode" | "target" | "chapterId">>) => void;
+  timerSet: (patch: Partial<Pick<Timer, "mode" | "target" | "chapterId" | "aim">>) => void;
   /** Ends the session and logs it if it lasted at least a minute. Returns the logged session. */
   timerStop: () => StudySession | null;
   reset: () => void;
@@ -174,7 +202,10 @@ interface State {
 /** Elapsed ms of the current timer session. */
 export const timerElapsed = (t: Timer, now = Date.now()) => t.banked + (t.runningSince ? now - t.runningSince : 0);
 
-const idleTimer = (t?: Timer): Timer => ({ mode: t?.mode ?? "pomodoro", target: t?.target ?? 25, chapterId: t?.chapterId ?? null, runningSince: null, banked: 0, sessionStart: null });
+const idleTimer = (t?: Timer): Timer => ({ mode: t?.mode ?? "pomodoro", target: t?.target ?? 25, chapterId: t?.chapterId ?? null, aim: t?.aim ?? null, runningSince: null, banked: 0, sessionStart: null });
+
+/** An aim of 0 means none. */
+const aimOrNull = (n: number | null | undefined) => (n == null ? null : clampAim(n) || null);
 
 export const today = () => new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD in local time
 
@@ -212,6 +243,9 @@ const initial = {
   plan: {} as Record<string, PlanItem>,
   quizrr: {} as Record<string, QuizrrAttempt>,
   quizrrDates: {} as Record<string, string | null>,
+  quizrrDateBy: {} as Record<string, DateSetBy>,
+  quizrrDateEdits: {} as Record<string, { date: string | null; at: number }>,
+  breakTimer: null as BreakTimer | null,
 };
 
 export const useProgress = create<State>()(
@@ -372,7 +406,7 @@ export const useProgress = create<State>()(
             const now = Date.now();
             // A test taken counts as a study day, like a MathonGo test.
             return {
-              quizrr: { ...s.quizrr, [a.id]: { ...a, deleted: false, updatedAt: now } },
+              quizrr: { ...s.quizrr, [a.id]: { ...s.quizrr[a.id], ...a, deleted: false, updatedAt: now } },
               ...withActivity(s, a.takenOn ?? today(), now, [`quizrr:${a.id}`]),
             };
           }),
@@ -387,7 +421,44 @@ export const useProgress = create<State>()(
             return { quizrr };
           }),
 
-        setQuizrrDates: (quizrrDates) => set({ quizrrDates }),
+        setQuizrrDates: (quizrrDates, quizrrDateBy, quizrrDateEdits) => set({ quizrrDates, quizrrDateBy, quizrrDateEdits }),
+
+        pickQuizrrDates: (entries) =>
+          set((s) => {
+            if (!entries.length) return s;
+            const now = Date.now();
+            const quizrrDates = { ...s.quizrrDates };
+            const quizrrDateBy = { ...s.quizrrDateBy };
+            const quizrrDateEdits = { ...s.quizrrDateEdits };
+            for (const { testId, date } of entries) {
+              quizrrDates[testId] = date;
+              quizrrDateBy[testId] = "student";
+              quizrrDateEdits[testId] = { date, at: now };
+            }
+            return { quizrrDates, quizrrDateBy, quizrrDateEdits, dirty: [...new Set([...s.dirty, ...entries.map((e) => `qdate:${e.testId}`)])] };
+          }),
+
+        confirmQuizrrDates: (uploaded) =>
+          set((s) => {
+            const quizrrDateEdits = { ...s.quizrrDateEdits };
+            // Picked again while the upload was in flight: that newer pick still has to go up.
+            for (const [id, at] of Object.entries(uploaded)) if (quizrrDateEdits[id]?.at === at) delete quizrrDateEdits[id];
+            return { quizrrDateEdits };
+          }),
+
+        saveAnalysis: (kind, id, analysis) =>
+          set((s) => {
+            const now = Date.now();
+            // Going through a test is study: it counts for today's streak.
+            if (kind === "test")
+              return s.tests[id] ? { tests: { ...s.tests, [id]: { ...s.tests[id], analysis, updatedAt: now } }, ...withActivity(s, today(), now, [`test:${id}`]) } : s;
+            return s.quizrr[id] ? { quizrr: { ...s.quizrr, [id]: { ...s.quizrr[id], analysis, updatedAt: now } }, ...withActivity(s, today(), now, [`quizrr:${id}`]) } : s;
+          }),
+
+        breakStart: (minutes) => set({ breakTimer: newBreak(minutes, Date.now()) }),
+        breakExtend: (minutes) => set((s) => (s.breakTimer ? { breakTimer: extendBreak(s.breakTimer, minutes, Date.now()) } : s)),
+        breakHandled: () => set((s) => (s.breakTimer && !s.breakTimer.rung ? { breakTimer: { ...s.breakTimer, rung: true } } : s)),
+        breakEnd: () => set({ breakTimer: null }),
 
         addQuestions: (subject, n) =>
           set((s) => {
@@ -423,7 +494,10 @@ export const useProgress = create<State>()(
                         ? s.plan[id.slice(5)]?.updatedAt
                         : id.startsWith("quizrr:")
                           ? s.quizrr[id.slice(7)]?.updatedAt
-                          : s.chapters[id]?.updatedAt;
+                          : id.startsWith("qdate:")
+                            ? // Confirmed picks are gone from the edits: nothing left to upload.
+                              (s.quizrrDateEdits[id.slice(6)]?.at ?? syncedAt[id])
+                            : s.chapters[id]?.updatedAt;
               return current !== syncedAt[id];
             }),
           })),
@@ -434,7 +508,7 @@ export const useProgress = create<State>()(
 
         replaceSessions: (sessions, removedSessions) => set({ sessions, removedSessions }),
 
-        addSession: ({ chapterId, startedAt, minutes }) => {
+        addSession: ({ chapterId, startedAt, minutes, aim, solved }) => {
           const now = Date.now();
           const session: StudySession = {
             id: crypto.randomUUID(),
@@ -445,6 +519,8 @@ export const useProgress = create<State>()(
             minutes: clampMinutes(minutes),
             updatedAt: now,
             source: "manual",
+            aim: aimOrNull(aim),
+            solved: solved == null ? null : clampSolved(solved),
           };
           set((s) => ({
             sessions: sortSessions([...s.sessions, session]),
@@ -459,18 +535,36 @@ export const useProgress = create<State>()(
             if (!prev) return s;
             const now = Date.now();
             const chapterId = patch.chapterId !== undefined ? patch.chapterId : prev.chapterId;
+            const minutes = clampMinutes(patch.minutes ?? prev.minutes);
+            // "Edited" flags time changed by hand (the admin panel shows it); fixing only the questions isn't that.
+            const timeChanged = minutes !== prev.minutes || (patch.startedAt ?? prev.startedAt) !== prev.startedAt || chapterId !== prev.chapterId;
             const next: StudySession = {
               ...prev,
               ...patch,
               chapterId,
               subject: chapterId ? (getChapter(chapterId)?.subject ?? null) : null,
-              minutes: clampMinutes(patch.minutes ?? prev.minutes),
+              minutes,
+              aim: patch.aim !== undefined ? aimOrNull(patch.aim) : (prev.aim ?? null),
+              solved: patch.solved !== undefined ? (patch.solved == null ? null : clampSolved(patch.solved)) : (prev.solved ?? null),
               updatedAt: now,
-              edited: prev.source !== "manual" || prev.edited,
+              edited: prev.edited || (prev.source !== "manual" && timeChanged),
             };
             return {
               sessions: sortSessions(s.sessions.map((x) => (x.id === id ? next : x))),
               ...withActivity(s, dayOf(next.startedAt), now, [`session:${id}`]),
+            };
+          }),
+
+        setSolved: (id, solved) =>
+          set((s) => {
+            const prev = s.sessions.find((x) => x.id === id);
+            const value = solved == null ? null : clampSolved(solved);
+            if (!prev || (prev.solved ?? null) === value) return s;
+            const now = Date.now();
+            return {
+              sessions: s.sessions.map((x) => (x.id === id ? { ...x, solved: value, updatedAt: now } : x)),
+              // Solving questions counts as studying that day (streaks), like the home counter.
+              ...withActivity(s, dayOf(prev.startedAt), now, [`session:${id}`]),
             };
           }),
 
@@ -493,6 +587,8 @@ export const useProgress = create<State>()(
             const fresh = !s.timer.sessionStart;
             return {
               timer: { ...(fresh ? idleTimer(s.timer) : s.timer), ...opts, runningSince: now, sessionStart: s.timer.sessionStart ?? now },
+              // Back to work: the break is over.
+              breakTimer: null,
               // Starting a focus session counts as studying today.
               activity: s.activity.includes(day) ? s.activity : [...s.activity, day],
               stateUpdatedAt: s.activity.includes(day) ? s.stateUpdatedAt : now,
@@ -523,6 +619,9 @@ export const useProgress = create<State>()(
               minutes: clampMinutes(minutes),
               updatedAt: Date.now(),
               source: "timer",
+              // What it set out to solve; how many it did is asked next (lib/focus.ts sessionToAsk).
+              aim: aimOrNull(timer.aim),
+              solved: null,
             };
           }
           set((s) => ({

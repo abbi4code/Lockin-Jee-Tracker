@@ -4,11 +4,13 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ALL_CHAPTERS, chapterInScope, getChapter, SUBJECT_COLOR, SUBJECTS } from "../data";
+import { focusDay, formatPace, MAX_AIM, MAX_SOLVED, pace, questionLabel, questionStatus } from "../lib/focus";
 import { addDays, dayLabel } from "../lib/plan";
 import { dayOf, EDITABLE_DAYS, endOf, MAX_SESSION_MIN, overlaps } from "../lib/sessions";
 import { formatMinutes } from "../lib/stats";
 import { timerElapsed, today, useProgress, type StudySession } from "../store/progress";
 import { buzz } from "./Controls";
+import { Stepper } from "./FocusQuestions";
 import { DotText, Label, Section, Tag } from "./ui";
 
 const PRESETS = [25, 50, 60, 90, 120, 180];
@@ -57,16 +59,20 @@ interface Draft {
   chapterId: string | null;
   time: string;
   minutes: number;
+  /** 0 = none planned. */
+  aim: number;
+  /** null = not said. */
+  solved: number | null;
 }
 
 /** Add or fix one session. Blocks times in the future and overlaps, so nothing gets counted twice. */
 function Editor({ day, session, notice, onDone }: { day: string; session: StudySession | null; notice: string | null; onDone: () => void }) {
   const { sessions, timer, addSession, editSession, deleteSession } = useProgress();
   const [draft, setDraft] = useState<Draft>(() => {
-    if (session) return { chapterId: session.chapterId, time: hhmm(new Date(session.startedAt)), minutes: session.minutes };
+    if (session) return { chapterId: session.chapterId, time: hhmm(new Date(session.startedAt)), minutes: session.minutes, aim: session.aim ?? 0, solved: session.solved ?? null };
     // New: an hour ending now (today, not before midnight), or 6 pm on an earlier day.
     const start = new Date(Date.now() - 60 * 60_000);
-    return { chapterId: timer.chapterId, time: day === today() ? (dayOf(start.toISOString()) === day ? hhmm(start) : "00:00") : "18:00", minutes: 60 };
+    return { chapterId: timer.chapterId, time: day === today() ? (dayOf(start.toISOString()) === day ? hhmm(start) : "00:00") : "18:00", minutes: 60, aim: 0, solved: null };
   });
   const [confirmDelete, setConfirmDelete] = useState(false);
   useEffect(() => {
@@ -75,7 +81,9 @@ function Editor({ day, session, notice, onDone }: { day: string; session: StudyS
     return () => clearTimeout(t);
   }, [confirmDelete]);
 
-  const start = at(day, draft.time);
+  // The field holds minutes, the session seconds: unchanged, keep the exact start (or every save would count as a
+  // time change: "edited", and checked for overlaps again).
+  const start = session && draft.time === hhmm(new Date(session.startedAt)) ? new Date(session.startedAt) : at(day, draft.time);
   const end = new Date(start.getTime() + draft.minutes * 60_000);
   const timeChanged = !session || session.minutes !== draft.minutes || new Date(session.startedAt).getTime() !== start.getTime();
   // The running timer counts too: time typed in over it would be logged twice when it stops.
@@ -98,8 +106,9 @@ function Editor({ day, session, notice, onDone }: { day: string; session: StudyS
   const save = () => {
     if (error) return;
     buzz(12);
-    if (session) editSession(session.id, { chapterId: draft.chapterId, startedAt: start.toISOString(), minutes: draft.minutes });
-    else addSession({ chapterId: draft.chapterId, startedAt: start.toISOString(), minutes: draft.minutes });
+    const questions = { aim: draft.aim || null, solved: draft.solved };
+    if (session) editSession(session.id, { chapterId: draft.chapterId, startedAt: start.toISOString(), minutes: draft.minutes, ...questions });
+    else addSession({ chapterId: draft.chapterId, startedAt: start.toISOString(), minutes: draft.minutes, ...questions });
     onDone();
   };
 
@@ -152,6 +161,25 @@ function Editor({ day, session, notice, onDone }: { day: string; session: StudyS
           ))}
         </div>
 
+        {/* Questions: what this session was for, and how many got done (both optional). */}
+        <div className="mt-5 border-t border-line pt-4">
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="font-mono text-[12px] text-mute">questions</span>
+            {draft.solved != null && draft.solved > 0 && <span className="font-mono text-[12px] text-dim">{formatPace(pace(draft.minutes, draft.solved)!)}</span>}
+          </div>
+          <div className="mt-2 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+            <div className="flex items-center gap-2.5">
+              <span className="w-11 font-mono text-[12px] text-dim">aim</span>
+              <Stepper value={draft.aim} onChange={(n) => setDraft((d) => ({ ...d, aim: n ?? 0 }))} max={MAX_AIM} label="questions aimed for" />
+            </div>
+            <div className="flex items-center gap-2.5">
+              <span className="w-11 font-mono text-[12px] text-dim">solved</span>
+              <Stepper value={draft.solved} onChange={(n) => setDraft((d) => ({ ...d, solved: n }))} max={MAX_SOLVED} label="questions solved" nullable />
+            </div>
+          </div>
+          {draft.aim > 0 && draft.solved == null && <p className="mt-2 font-mono text-[11.5px] text-dim">how many did you solve? fill it in to count them for the day.</p>}
+        </div>
+
         {error && <p className="mt-3 font-mono text-[12px] text-red">{error}</p>}
 
         <div className="mt-4 flex items-center gap-2">
@@ -178,6 +206,18 @@ function Editor({ day, session, notice, onDone }: { day: string; session: StudyS
         </div>
       </div>
     </motion.div>
+  );
+}
+
+/** Solved / aimed in a log row: red when short, dim "?/10" while unanswered, nothing for a session without questions. */
+function QuestionCell({ session }: { session: StudySession }) {
+  const label = questionLabel(session);
+  const status = questionStatus(session);
+  const tone = status === "short" ? "text-red" : status === "pending" ? "text-dim" : status === "hit" ? "text-fg" : "text-mute";
+  return (
+    <span className={`w-14 shrink-0 text-right font-mono text-[12.5px] ${tone}`} title={status === "pending" ? "not answered yet: tap to fill in" : undefined}>
+      {label ? `${label} q` : ""}
+    </span>
   );
 }
 
@@ -210,6 +250,10 @@ export function SessionLog({ open }: { open: OpenRequest | null }) {
 
   const list = sessions.filter((s) => dayOf(s.startedAt) === day);
   const total = list.reduce((n, s) => n + s.minutes, 0);
+  const q = focusDay(sessions, day);
+  const answered = q.hit + q.short;
+  // Rows keep a column for questions when any session that day has some, so the lengths stay aligned.
+  const withQuestions = list.some((s) => questionLabel(s) != null);
   const go = (n: number) => {
     setEditing(null);
     setDay((d) => addDays(d, n));
@@ -241,6 +285,32 @@ export function SessionLog({ open }: { open: OpenRequest | null }) {
         </button>
       </div>
 
+      {/* How the day's sessions went against their aims: time management at a glance. */}
+      {(q.solved > 0 || answered > 0 || q.pending > 0) && (
+        <p data-testid="focus-day" className="mb-2 font-mono text-[12px] leading-relaxed text-mute">
+          {answered > 0 ? (
+            <>
+              <span className="text-fg">
+                {q.aimSolved} of {q.aim}
+              </span>{" "}
+              solved
+              {q.short > 0 ? (
+                <>
+                  {" "}· <span className="text-red">short in {q.short} of {answered}</span>
+                </>
+              ) : (
+                ` · every aim hit`
+              )}
+              {q.solved > q.aimSolved ? ` · ${q.solved} in all` : ""}
+            </>
+          ) : (
+            q.solved > 0 && <span className="text-fg">{q.solved} solved</span>
+          )}
+          {q.pace ? ` · ${formatPace(q.pace)}` : ""}
+          {q.pending > 0 ? `${answered > 0 || q.solved > 0 ? " · " : ""}${q.pending} to answer` : ""}
+        </p>
+      )}
+
       <AnimatePresence initial={false}>{editing === "new" && editor(null)}</AnimatePresence>
 
       {list.length === 0 && editing !== "new" && (
@@ -267,6 +337,7 @@ export function SessionLog({ open }: { open: OpenRequest | null }) {
                   {clock(new Date(s.startedAt))} – {clock(endOf(s))}
                 </span>
                 <span className="font-mono text-[12px] text-dim sm:hidden">{clock(new Date(s.startedAt))}</span>
+                {withQuestions && <QuestionCell session={s} />}
                 <span className="w-16 text-right font-mono text-[13px] text-mute">{formatMinutes(s.minutes)}</span>
               </button>
               <AnimatePresence initial={false}>{open && editor(s)}</AnimatePresence>

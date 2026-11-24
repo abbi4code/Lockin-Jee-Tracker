@@ -2,11 +2,13 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { Plus } from "lucide-react";
-import { useState, type ChangeEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type ReactNode } from "react";
 import { getChapter, getTrack, tracksForChapter, type Track } from "../data";
+import { analysisError, emptyAnalysis, lostOf, needsAnalysis, type Analysis } from "../lib/analysis";
 import { celebrate } from "../lib/celebrate";
 import { pct, scoreTone, trackProgress, type TestResult } from "../lib/tests";
 import { today, useProgress } from "../store/progress";
+import { AnalysisToggle } from "./Analysis";
 import { buzz } from "./Controls";
 import { Label, Section } from "./ui";
 
@@ -24,9 +26,11 @@ function Field({ label, children, className = "" }: { label: string; children: R
   );
 }
 
-/** Inline form to log or edit one test. */
-function Editor({ slot, existing, onClose }: { slot: Slot; existing?: TestResult; onClose: () => void }) {
+/** Inline form to log or edit one test, with its analysis. `analyse` opens the analysis right away (from Today's "analyse" link). */
+function Editor({ slot, existing, onClose, analyse = false }: { slot: Slot; existing?: TestResult; onClose: () => void; analyse?: boolean }) {
   const { saveTest, deleteTest, lastMaxScore, tests } = useProgress();
+  const [analysed, setAnalysed] = useState(!!existing?.analysis || analyse);
+  const [an, setAn] = useState<Analysis>(() => existing?.analysis ?? emptyAnalysis(today()));
   const [f, setF] = useState({
     score: existing?.score?.toString() ?? "",
     max: (existing?.maxScore ?? lastMaxScore ?? "").toString(),
@@ -40,9 +44,11 @@ function Editor({ slot, existing, onClose }: { slot: Slot; existing?: TestResult
   const score = num(f.score);
   const max = num(f.max);
   const invalid = (score != null && Number.isNaN(score)) || (max != null && (Number.isNaN(max) || max <= 0)) || (score != null && max != null && score > max);
+  const lost = lostOf({ wrong: num(f.wrong), unattempted: num(f.unattempted) });
+  const analysisProblem = analysed ? analysisError(an, lost) : null;
 
   const save = () => {
-    if (invalid) return;
+    if (invalid || analysisProblem) return;
     buzz(12);
     const track = getTrack(slot.trackId);
     const before = trackDone(slot.trackId, tests);
@@ -58,6 +64,7 @@ function Editor({ slot, existing, onClose }: { slot: Slot; existing?: TestResult
       wrong: num(f.wrong),
       unattempted: num(f.unattempted),
       timeMin: num(f.time),
+      analysis: analysed ? { ...an, on: existing?.analysis?.on ?? today() } : null,
     });
     // Finished the whole MathonGo chapter: small celebration.
     if (!existing && slot.kind === "chapterwise" && track && before + 1 === track.tests) {
@@ -105,9 +112,11 @@ function Editor({ slot, existing, onClose }: { slot: Slot; existing?: TestResult
             <input inputMode="numeric" value={f.time} onChange={set("time")} placeholder="–" className={input} />
           </Field>
         </div>
+        <AnalysisToggle id={`${slot.trackId}-${slot.kind}-${slot.testNo}`} done={analysed} onDone={setAnalysed} value={an} onChange={setAn} lost={lost} />
         {invalid && <p className="mt-3 font-mono text-[12px] text-red">marks can&apos;t be more than the max, and max must be above 0.</p>}
+        {!invalid && analysisProblem && <p className="mt-3 font-mono text-[12px] text-red">{analysisProblem}</p>}
         <div className="mt-4 flex items-center gap-2">
-          <motion.button whileTap={{ scale: 0.96 }} onClick={save} disabled={invalid} className="rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink disabled:opacity-40">
+          <motion.button whileTap={{ scale: 0.96 }} onClick={save} disabled={invalid || !!analysisProblem} className="rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink disabled:opacity-40">
             save
           </motion.button>
           <button onClick={onClose} className="rounded-full px-3 py-2 text-[14px] text-mute hover:text-fg">
@@ -136,24 +145,26 @@ function trackDone(trackId: string, tests: Record<string, TestResult>) {
   return new Set(Object.values(tests).filter((t) => !t.deleted && t.trackId === trackId && t.kind === "chapterwise").map((t) => t.testNo)).size;
 }
 
-/** One numbered square per test. Filled = done, shaded by score; imported-without-score shows a tick. */
+/** One numbered square per test. Filled = done, shaded by score; imported-without-score shows a tick; a red corner dot = analysis pending. */
 function SlotButton({ n, result, active, onClick }: { n: number; result?: TestResult; active: boolean; onClick: () => void }) {
   const p = result ? pct(result) : null;
   const done = !!result;
+  const pending = !!result && needsAnalysis(result, today());
   return (
     <motion.button
       whileTap={{ scale: 0.9 }}
       onClick={onClick}
-      aria-label={`test ${n}${done ? (p != null ? `, ${Math.round(p)}%` : ", done") : ", not taken"}`}
+      aria-label={`test ${n}${done ? (p != null ? `, ${Math.round(p)}%` : ", done") : ", not taken"}${pending ? ", analysis pending" : ""}`}
       className={`relative grid size-9 place-items-center rounded-md border font-mono text-[12px] transition-colors ${active ? "ring-2 ring-fg ring-offset-2 ring-offset-ink" : ""}`}
       style={
         done
           ? { background: p != null ? scoreTone(p) : "var(--color-dim)", borderColor: "transparent", color: "var(--color-ink)" }
           : { borderColor: "var(--color-line-2)", color: "var(--color-dim)" }
       }
-      title={done ? (p != null ? `${result!.score}/${result!.maxScore} (${Math.round(p)}%)` : "done (imported, no score)") : "not taken"}
+      title={done ? (p != null ? `${result!.score}/${result!.maxScore} (${Math.round(p)}%)${pending ? " · analysis pending" : result!.analysis ? " · analysed" : ""}` : "done (imported, no score)") : "not taken"}
     >
       {done && p == null ? "✓" : n}
+      {pending && <span className="absolute -top-1 -right-1 size-2.5 rounded-full border-2 border-ink bg-red" aria-hidden />}
     </motion.button>
   );
 }
@@ -161,14 +172,28 @@ function SlotButton({ n, result, active, onClick }: { n: number; result?: TestRe
 function TrackBlock({ track, chapterId }: { track: Track; chapterId: string }) {
   const tests = useProgress((s) => s.tests);
   const [open, setOpen] = useState<Slot | null>(null);
+  const [analyse, setAnalyse] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const prog = trackProgress(track, tests);
+  // Today's "analyse" link: /c/<chapter>#test-<result id> opens that test with its analysis.
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.slice(1)).replace(/^test-/, "");
+    const r = useProgress.getState().tests[id];
+    if (!window.location.hash.startsWith("#test-") || !r || r.deleted || r.trackId !== track.id) return;
+    setOpen({ trackId: r.trackId, kind: r.kind, testNo: r.testNo });
+    setAnalyse(true);
+    requestAnimationFrame(() => ref.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }, [track.id]);
   const byNo = new Map(prog.chapterwise.map((t) => [t.testNo, t]));
   const shared = track.chapterIds.filter((id) => id !== chapterId).map((id) => getChapter(id)?.name).filter(Boolean);
   const existing = open ? (open.kind === "pyq" ? prog.pyq.find((t) => t.testNo === open.testNo) : byNo.get(open.testNo)) : undefined;
-  const toggle = (slot: Slot) => setOpen((o) => (o && o.trackId === slot.trackId && o.kind === slot.kind && o.testNo === slot.testNo ? null : slot));
+  const toggle = (slot: Slot) => {
+    setAnalyse(false);
+    setOpen((o) => (o && o.trackId === slot.trackId && o.kind === slot.kind && o.testNo === slot.testNo ? null : slot));
+  };
 
   return (
-    <div className="mb-6 last:mb-0">
+    <div ref={ref} className="mb-6 scroll-mt-6 last:mb-0">
       <div className="mb-2.5 flex flex-wrap items-baseline justify-between gap-x-3">
         <span className="text-[15px]">{track.name}</span>
         <span className="font-mono text-[12px] text-mute">
@@ -194,7 +219,7 @@ function TrackBlock({ track, chapterId }: { track: Track; chapterId: string }) {
           <Plus className="size-3.5" />
         </button>
       </div>
-      <AnimatePresence>{open && <Editor key={`${open.kind}-${open.testNo}`} slot={open} existing={existing} onClose={() => setOpen(null)} />}</AnimatePresence>
+      <AnimatePresence>{open && <Editor key={`${open.kind}-${open.testNo}`} slot={open} existing={existing} analyse={analyse} onClose={() => setOpen(null)} />}</AnimatePresence>
     </div>
   );
 }
@@ -211,7 +236,7 @@ export function TestSeriesPanel({ chapterId }: { chapterId: string }) {
       {tracks.map((t) => (
         <TrackBlock key={t.id} track={t} chapterId={chapterId} />
       ))}
-      <p className="mt-4 font-mono text-[11px] text-dim">tap a square to log a test · colour = score (red &lt;40%, grey 40–70%, solid &gt;70%)</p>
+      <p className="mt-4 font-mono text-[11px] text-dim">tap a square to log a test · colour = score (red &lt;40%, grey 40–70%, solid &gt;70%) · red dot = analysis pending</p>
     </Section>
   );
 }

@@ -6,10 +6,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import { ScoreLine } from "../components/admin/Charts";
+import { AnalysisPanel, AnalysisState } from "../components/Analysis";
 import { formatLine, QuizrrEditor, QuizrrListRow, Readiness, ScoreBlock, SyllabusList, useTestStatus } from "../components/Quizrr";
+import { Replan, TestDate } from "../components/QuizrrDates";
 import { Page } from "../components/Shell";
 import { DotBar, DotText, fadeUp, Label, Section, Tag } from "../components/ui";
 import { SUBJECT_COLOR, type SubjectId } from "../data";
+import { mistakeTotals, REASONS } from "../lib/analysis";
 import { dayLabel } from "../lib/plan";
 import {
   ACTIVE_SERIES,
@@ -204,7 +207,35 @@ function Summary() {
         ))}
         <p className="mt-2 font-mono text-[12px] text-dim">from the subject marks you log</p>
       </Section>
+      <Mistakes />
     </>
+  );
+}
+
+/** Where the marks go, over every analysed test. */
+function Mistakes() {
+  const { quizrr } = useProgress();
+  const m = mistakeTotals(Object.values(quizrr));
+  const top = Math.max(...REASONS.map((r) => m.totals[r.id]), 1);
+  return (
+    <Section label="where marks go" right={m.tests ? `${m.tests} analysed` : undefined}>
+      {m.sum ? (
+        <>
+          {REASONS.map((r) => (
+            <div key={r.id} className="flex items-center gap-3 py-1.5">
+              <span className="w-24 shrink-0 text-[14.5px]">{r.label}</span>
+              <div className="flex min-w-0 flex-1 overflow-hidden">
+                <DotBar value={m.totals[r.id] / top} dots="auto" size={4} color={m.totals[r.id] === top ? "var(--color-red)" : "var(--color-fg)"} />
+              </div>
+              <span className="w-12 shrink-0 text-right font-mono text-[12.5px] text-mute">{m.totals[r.id]}</span>
+            </div>
+          ))}
+          <p className="mt-2 font-mono text-[12px] text-dim">questions lost, from your analyses</p>
+        </>
+      ) : (
+        <p className="font-mono text-[12.5px] text-dim">analyse a test after you log it: this shows what costs you the most marks.</p>
+      )}
+    </Section>
   );
 }
 
@@ -224,11 +255,15 @@ export function QuizrrScreen() {
           <Tag>test series</Tag>
         </div>
         <h1 className="mt-4 text-[30px] leading-[1.08] font-semibold tracking-tight sm:text-[38px] lg:text-[48px]">quizrr tests</h1>
-        <p className="mt-3 max-w-2xl text-[15px] text-mute">Take each one on Quizrr on its day, then log the marks here. QRT first (class 11 revision), QPT mixed in. Dates are set by your bro; ask him to move one.</p>
+        <p className="mt-3 max-w-2xl text-[15px] text-mute">
+          Take each one on Quizrr on its day, log the marks here, then analyse what you lost. QRT first (class 11 revision), QPT mixed in. Pick your own days: move one test from its page, or re-plan
+          everything left below. Your bro sees what you change.
+        </p>
       </motion.header>
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-14">
         <div className="min-w-0 lg:col-span-8">
           <UpNext />
+          <Replan />
           <SeriesCards />
           <ComingSoon />
         </div>
@@ -303,9 +338,10 @@ export function QuizrrSeriesScreen({ seriesId }: { seriesId: SeriesId }) {
           <div className="lg:sticky lg:top-10">
             <Section label="how it works">
               <ul className="space-y-2 text-[14.5px] text-mute">
-                <li>one test on the day shown. open it to see the syllabus.</li>
+                <li>one test on the day shown. open it to see the syllabus, or pick another day.</li>
                 <li>take it on quizrr, then log marks, subject marks and percentile.</li>
-                <li>missed one? it stays red here and on today until you log it.</li>
+                <li>then analyse it: sort what you lost into silly, concept, not studied, time.</li>
+                <li>missed one? it stays red until you log it. re-plan everything left from the quizrr page.</li>
               </ul>
             </Section>
             <Section label="other series">
@@ -331,7 +367,7 @@ export function QuizrrTestScreen({ series, no }: { series: SeriesId; no: number 
   const test = findTest(series, no)!;
   const meta = getActiveSeries(series)!;
   const quizrrDates = useProgress((s) => s.quizrrDates);
-  const { t, attempt, date, state, later } = useTestStatus(test);
+  const { t, attempt, state, later } = useTestStatus(test);
   const [editing, setEditing] = useState(false);
   // Before/after in the order he takes them.
   const order = scheduleOrder(series, quizrrDates);
@@ -355,10 +391,7 @@ export function QuizrrTestScreen({ series, no }: { series: SeriesId; no: number 
         <h1 className="mt-4 text-[40px] leading-none font-semibold tracking-tight lg:text-[56px]">
           <Name test={test} />
         </h1>
-        <p className={`mt-3 font-mono text-[13px] ${urgent ? "text-red" : "text-mute"}`}>
-          {date ? (state === "done" ? `set for ${dayLabel(date, t)}` : state === "overdue" ? `was due ${dayLabel(date, t)}` : `take it ${dayLabel(date, t)}`) : "no date yet"}
-          {later && ` · opens ${fmtRelease(test.opensAt!)} ist`}
-        </p>
+        <TestDate test={test} />
       </motion.header>
 
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-14">
@@ -393,6 +426,13 @@ export function QuizrrTestScreen({ series, no }: { series: SeriesId; no: number 
               )}
               <AnimatePresence>{editing && <QuizrrEditor test={test} existing={attempt} onClose={() => setEditing(false)} />}</AnimatePresence>
             </Section>
+            {attempt && !editing && (
+              <div id="analysis" className="scroll-mt-6">
+                <Section label="analysis" right={<AnalysisState result={attempt} />}>
+                  <AnalysisPanel key={attempt.id} kind="quizrr" id={attempt.id} result={attempt} />
+                </Section>
+              </div>
+            )}
             <Section label="in order">
               <div className="grid grid-cols-2 gap-4">
                 {prev ? <NearTest test={prev} dir="before" /> : <span />}
