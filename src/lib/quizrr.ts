@@ -1,11 +1,12 @@
 import raw from "../data/quizrr.json";
 import { ALL_CHAPTERS, type SubjectId } from "../data";
 import { isStudied, type Status } from "./stages";
+import { parseAnalysis, type Analysis } from "./analysis";
 
 // Quizrr: MathonGo's test platform (QRT revision tests, QPT part tests, QFT full tests). The tests themselves
 // are static data (research/tests → src/data/quizrr.json). What the student scored syncs per row like
-// MathonGo results (public.quizrr_attempts); the dates he should take them on are set by an admin
-// (public.quizrr_schedule, read-only for students) and fall back to the agreed draft until then.
+// MathonGo results (public.quizrr_attempts); the dates he should take them on are set by an admin or picked
+// by the student himself (public.quizrr_schedule, set_by says which) and fall back to the agreed draft until then.
 
 export type SeriesId = "qrt" | "qpt" | "qft11" | "qft";
 
@@ -55,6 +56,8 @@ export interface QuizrrAttempt {
   wrong: number | null;
   unattempted: number | null;
   timeMin: number | null;
+  /** Why marks were lost, once he's gone through the test (null = not yet). */
+  analysis?: Analysis | null;
   deleted: boolean;
   updatedAt: number;
 }
@@ -182,6 +185,7 @@ export function toQuizrrRow(a: QuizrrAttempt, userId: string) {
     wrong: a.wrong,
     unattempted: a.unattempted,
     time_min: a.timeMin,
+    analysis: a.analysis ?? null,
     deleted: a.deleted,
     updated_at: new Date(a.updatedAt).toISOString(),
   };
@@ -205,6 +209,7 @@ export function fromQuizrrRow(r: Record<string, unknown>): QuizrrAttempt {
     wrong: num(r.wrong),
     unattempted: num(r.unattempted),
     timeMin: num(r.time_min),
+    analysis: parseAnalysis(r.analysis),
     deleted: !!r.deleted,
     updatedAt: new Date(r.updated_at as string).getTime(),
   };
@@ -212,3 +217,87 @@ export function fromQuizrrRow(r: Record<string, unknown>): QuizrrAttempt {
 
 /** Schedule rows → { testId: date | null }. */
 export const fromScheduleRows = (rows: { test_id: string; date: string | null }[]) => Object.fromEntries(rows.map((r) => [r.test_id, r.date])) as Record<string, string | null>;
+
+/** Who set each date: rows from before the student could pick dates have no set_by, and those were the admin's. */
+export const scheduleSetBy = (rows: { test_id: string; set_by?: string | null }[]) =>
+  Object.fromEntries(rows.map((r) => [r.test_id, r.set_by === "student" ? "student" : "admin"])) as Record<string, DateSetBy>;
+
+export type DateEdit = { date: string | null; at: number };
+export type ScheduleRow = { test_id: string; date: string | null; set_by?: string | null; updated_at: string };
+
+/**
+ * The server's dates with the student's picks laid over them. A pick stays (and still has to go up) only if
+ * it's newer than the server's row; otherwise the admin changed that date since, or reset the schedule after
+ * the pick went up, and the server's copy wins.
+ */
+export function mergeSchedule(rows: ScheduleRow[], picks: Record<string, DateEdit>) {
+  const dates = fromScheduleRows(rows);
+  const by = scheduleSetBy(rows);
+  const serverAt = new Map(rows.map((r) => [r.test_id, new Date(r.updated_at).getTime()]));
+  const edits: Record<string, DateEdit> = {};
+  for (const [id, e] of Object.entries(picks))
+    if (e.at > (serverAt.get(id) ?? -1)) {
+      edits[id] = e;
+      dates[id] = e.date;
+      by[id] = "student";
+    }
+  return { dates, by, edits };
+}
+
+// ── Picking dates ───────────────────────────────────────────────────────
+// The student picks his own dates too (one test at a time, or re-planning everything left in one go). His
+// dates go to the same table as the admin's, marked set_by = 'student', so the admin panel shows what he moved.
+
+export type DateSetBy = "admin" | "student";
+
+/** The day (on this device) a test is released, or null for tests that are open from the start. */
+export const releaseDay = (t: QuizrrTest) => (t.opensAt ? new Date(t.opensAt).toLocaleDateString("en-CA") : null);
+
+/** Why `date` won't do for test `t`, or null if it's fine. */
+export function dateProblem(t: QuizrrTest, date: string, today: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) return "pick a day.";
+  if (date < today) return "pick today or a later day.";
+  const r = releaseDay(t);
+  if (r && date < r) return `${testName(t)} only opens on ${r.slice(8)}/${r.slice(5, 7)}.`;
+  return null;
+}
+
+/** Every test not taken yet, in the order he'd take them: by current date (undated last), QRT before QPT on a tie. */
+export function untakenInOrder(attempts: Record<string, QuizrrAttempt>, dates: Record<string, string | null>) {
+  const rank = (t: QuizrrTest) => ACTIVE_SERIES.findIndex((s) => s.id === t.series);
+  return ACTIVE_TESTS.filter((t) => !attemptFor(t.id, attempts)).sort(
+    (a, b) => (assignedDate(a, dates) ?? "9999").localeCompare(assignedDate(b, dates) ?? "9999") || rank(a) - rank(b) || a.no - b.no,
+  );
+}
+
+function nextDay(date: string) {
+  const d = new Date(`${date}T12:00`);
+  d.setDate(d.getDate() + 1);
+  return d.toLocaleDateString("en-CA");
+}
+
+/**
+ * Re-plan: puts every test not taken yet on its own day, from `start`, one every `gap` days, in the order
+ * they're in now. A day `skip` rejects (a coaching day) moves to the next one; a test that isn't out yet
+ * waits for its release while the ones that are out fill the earlier days.
+ */
+export function replan(opts: { attempts: Record<string, QuizrrAttempt>; dates: Record<string, string | null>; start: string; gap: number; skip?: (day: string) => boolean }) {
+  const { attempts, dates, start, gap } = opts;
+  const queue = untakenInOrder(attempts, dates);
+  const out: { test: QuizrrTest; from: string | null; to: string }[] = [];
+  let day = start;
+  while (queue.length) {
+    // Never skip a whole week: with coaching every day, skipping would never end.
+    for (let n = 0; n < 7 && opts.skip?.(day); n++) day = nextDay(day);
+    let i = queue.findIndex((t) => (releaseDay(t) ?? "") <= day);
+    if (i < 0) {
+      // Nothing left is out yet: jump to the earliest release.
+      day = queue.map((t) => releaseDay(t)!).sort()[0];
+      continue;
+    }
+    const [test] = queue.splice(i, 1);
+    out.push({ test, from: assignedDate(test, dates), to: day });
+    for (i = 0; i < gap; i++) day = nextDay(day);
+  }
+  return out;
+}

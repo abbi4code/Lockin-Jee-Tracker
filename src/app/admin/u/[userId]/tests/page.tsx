@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ScoreLine } from "@/components/admin/Charts";
+import { analysisLine } from "@/components/admin/AnalysisLine";
 import { QuizrrAdmin } from "@/components/admin/QuizrrAdmin";
 import { Block, Empty, fmtDay, MeterRow, SUBJECT_NAME, Tile, Tiles } from "@/components/admin/StudentParts";
 import { getTrack, SUBJECT_COLOR, SUBJECTS, TRACKS } from "@/data";
 import { loadStudent, testInsights } from "@/lib/admin-student";
+import { mistakeTotals, REASONS } from "@/lib/analysis";
 import { pct, scoreTone, trackProgress } from "@/lib/tests";
 import { adminDeleteTest, adminImportExcel, adminSaveTest } from "../../../actions";
 
@@ -23,11 +25,22 @@ export default async function Tests({ params }: PageProps<"/admin/u/[userId]/tes
     return { id: sub.id, n: scored.length, avg: scored.length ? scored.reduce((a, t) => a + pct(t)!, 0) / scored.length : null };
   });
   const recent = [...x.scored].reverse();
+  // Both series: what his analyses say costs him the most.
+  const mistakes = mistakeTotals([...Object.values(s.tests), ...Object.values(s.quizrr)]);
+  const topMistake = Math.max(...REASONS.map((r) => mistakes.totals[r.id]), 1);
 
   return (
     <>
       <h2 className="pb-4 text-[22px] font-semibold tracking-tight">quizrr · test series</h2>
       <QuizrrAdmin s={s} />
+
+      <Block title="where marks go · from his analyses" right={mistakes.tests ? `${mistakes.tests} tests analysed · quizrr + mathongo` : "nothing analysed yet"}>
+        {mistakes.sum ? (
+          REASONS.map((r) => <MeterRow key={r.id} label={`${r.label} · ${r.hint}`} fraction={mistakes.totals[r.id] / topMistake} value={`${mistakes.totals[r.id]} q · ${Math.round((mistakes.totals[r.id] / mistakes.sum) * 100)}%`} />)
+        ) : (
+          <Empty>once {s.name} analyses a test (silly / concept / not studied / time), the split of lost questions shows here.</Empty>
+        )}
+      </Block>
 
       <h2 className="mt-4 border-t border-line pt-8 pb-4 text-[22px] font-semibold tracking-tight">mathongo · chapter tests</h2>
       <Tiles>
@@ -68,6 +81,7 @@ export default async function Tests({ params }: PageProps<"/admin/u/[userId]/tes
                     <th className="py-2 font-normal">chapter</th>
                     <th className="py-2 font-normal">test</th>
                     <th className="py-2 text-right font-normal">score</th>
+                    <th className="py-2 pl-3 text-right font-normal">analysis</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -84,6 +98,7 @@ export default async function Tests({ params }: PageProps<"/admin/u/[userId]/tes
                         <td className="py-2 text-right font-mono text-[13px]">
                           {t.score}/{t.maxScore} <span style={{ color: scoreTone(pct(t)) }}>{Math.round(pct(t)!)}%</span>
                         </td>
+                        <td className="py-2 pl-3 text-right font-mono text-[11.5px]">{analysisLine(t, s.today)}</td>
                       </tr>
                     );
                   })}

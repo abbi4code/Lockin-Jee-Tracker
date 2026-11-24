@@ -1,4 +1,5 @@
 import { TRACKS, type Track } from "../data";
+import { parseAnalysis, type Analysis } from "./analysis";
 
 /** One MathonGo test taken (or imported from the old Excel, where scores weren't recorded). */
 export interface TestResult {
@@ -14,6 +15,8 @@ export interface TestResult {
   unattempted: number | null;
   timeMin: number | null;
   imported: boolean;
+  /** Why marks were lost, once he's gone through the test (null = not yet). */
+  analysis?: Analysis | null;
   deleted: boolean;
   updatedAt: number;
 }
@@ -77,6 +80,7 @@ export function toTestRow(t: TestResult, userId: string) {
     unattempted: t.unattempted,
     time_min: t.timeMin,
     imported: t.imported,
+    analysis: t.analysis ?? null,
     deleted: t.deleted,
     updated_at: new Date(t.updatedAt).toISOString(),
   };
@@ -98,6 +102,7 @@ export function fromTestRow(r: Record<string, unknown>): TestResult {
     unattempted: num(r.unattempted),
     timeMin: num(r.time_min),
     imported: !!r.imported,
+    analysis: parseAnalysis(r.analysis),
     deleted: !!r.deleted,
     updatedAt: new Date(r.updated_at as string).getTime(),
   };

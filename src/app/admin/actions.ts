@@ -140,10 +140,12 @@ export async function adminSaveQuizrrDates(form: FormData) {
     if (raw == null) return [];
     const date = String(raw).trim() || null;
     if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error(`Bad date for ${t.id}.`);
-    return date === assignedDate(t, current) ? [] : [{ user_id: userId, test_id: t.id, date, updated_at: now }];
+    return date === assignedDate(t, current) ? [] : [{ user_id: userId, test_id: t.id, date, set_by: "admin", updated_at: now }];
   });
   if (changed.length) {
-    const { error } = await db.from("quizrr_schedule").upsert(changed);
+    let { error } = await db.from("quizrr_schedule").upsert(changed);
+    // Before the 20261125120000 migration there's no set_by column: every date is the admin's anyway.
+    if (error?.code === "PGRST204" || error?.code === "42703") ({ error } = await db.from("quizrr_schedule").upsert(changed.map(({ set_by: _, ...r }) => r)));
     if (error) throw new Error(error.message);
   }
   revalidatePath(`/admin/u/${userId}`, "layout");

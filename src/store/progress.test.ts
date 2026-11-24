@@ -85,6 +85,71 @@ describe("timer limits", () => {
   });
 });
 
+describe("questions in focus sessions", () => {
+  it("the aim set before starting goes on the logged session, unanswered; it's kept for the next session", () => {
+    s().timerSet({ aim: 12, chapterId: CHAPTER });
+    s().timerStart({ mode: "pomodoro", target: 25 });
+    vi.advanceTimersByTime(25 * 60_000);
+    const logged = s().timerStop()!;
+    expect(logged).toMatchObject({ aim: 12, solved: null, subject: "physics" });
+    expect(s().timer.aim).toBe(12);
+  });
+
+  it("no aim (or an aim of 0) logs none", () => {
+    s().timerSet({ aim: 0 });
+    s().timerStart({ mode: "stopwatch" });
+    vi.advanceTimersByTime(10 * 60_000);
+    expect(s().timerStop()!.aim).toBeNull();
+  });
+
+  it("setSolved records the answer, clamps it, marks the day studied and queues the session", () => {
+    s().timerSet({ aim: 10 });
+    s().timerStart({ mode: "stopwatch" });
+    vi.advanceTimersByTime(30 * 60_000);
+    const logged = s().timerStop()!;
+    useProgress.setState({ dirty: [], activity: [] });
+    vi.advanceTimersByTime(1000);
+    s().setSolved(logged.id, 8);
+    expect(s().sessions[0]).toMatchObject({ solved: 8, aim: 10 });
+    expect(s().sessions[0].updatedAt).toBeGreaterThan(logged.updatedAt!);
+    // Answering isn't changing the time: not "edited".
+    expect(s().sessions[0].edited).toBeFalsy();
+    expect(s().dirty).toEqual(expect.arrayContaining([`session:${logged.id}`, "state"]));
+    expect(s().activity).toEqual([today()]);
+    s().setSolved(logged.id, 9999);
+    expect(s().sessions[0].solved).toBe(500);
+    s().setSolved(logged.id, null);
+    expect(s().sessions[0].solved).toBeNull();
+  });
+
+  it("setting the same answer again changes nothing (no sync)", () => {
+    const added = s().addSession({ chapterId: null, startedAt: new Date().toISOString(), minutes: 30, aim: 5, solved: 5 });
+    useProgress.setState({ dirty: [] });
+    s().setSolved(added.id, 5);
+    expect(s().dirty).toEqual([]);
+  });
+
+  it("fixing only the questions of a timer session doesn't mark it edited; fixing its time does", () => {
+    s().timerSet({ aim: 10 });
+    s().timerStart({ mode: "stopwatch" });
+    vi.advanceTimersByTime(30 * 60_000);
+    const logged = s().timerStop()!;
+    s().editSession(logged.id, { aim: 15, solved: 11 });
+    expect(s().sessions[0]).toMatchObject({ aim: 15, solved: 11 });
+    expect(s().sessions[0].edited).toBeFalsy();
+    s().editSession(logged.id, { minutes: 20 });
+    expect(s().sessions[0]).toMatchObject({ minutes: 20, edited: true, aim: 15, solved: 11 });
+    // An aim of 0 is none.
+    s().editSession(logged.id, { aim: 0 });
+    expect(s().sessions[0].aim).toBeNull();
+  });
+
+  it("time added by hand can carry its questions", () => {
+    const added = s().addSession({ chapterId: CHAPTER, startedAt: new Date().toISOString(), minutes: 60, aim: 20, solved: 17 });
+    expect(added).toMatchObject({ aim: 20, solved: 17, source: "manual" });
+  });
+});
+
 describe("markClean", () => {
   it("clears a synced session, but keeps it dirty if it changed again during the upload", () => {
     const a = s().addSession({ chapterId: null, startedAt: new Date().toISOString(), minutes: 30 });

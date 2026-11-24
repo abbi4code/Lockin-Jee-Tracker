@@ -169,11 +169,11 @@ files/JEE_Chapter_Tracker (1).xlsx   the original Excel the app replaced
 ### 5.1 Today (`screens/Home.tsx`)
 On laptops it's a 12-column grid: what to do on the left (7 columns), how it's going on the right (5 columns). Phones get one column. Sections from top to bottom:
 - **Header**: `lockin.`, AdminLink (admins only), ThemeSwitcher, Main / Main+Adv segmented switch, and the **Headline** (§5.9).
-- **QuizrrStrip**: always visible. It shows today's or a missed test (red) or the next one, and an "all tests" link. It was added because the student couldn't find tests below the rules scroll.
+- **QuizrrStrip**: always visible. It shows today's or a missed test (red) or the next one, and an "all tests" link (which becomes "re-plan N missed" → `/quizrr#replan` once 2+ tests are missed). It was added because the student couldn't find tests below the rules scroll.
 - **RulesScroll**: announcements (§5.10).
 - **Left column**:
   - **Countdown** to JEE Main (rolling Doto digits, red seconds), then boards and advanced days, then **Olympiads**: three NSE countdowns, each hidden once its day has passed.
-  - **TodayPlan**: Quizrr tests (missed, then today's), overdue plus today's plan items, and "due for revision · not planned" with a "+ today" button.
+  - **TodayPlan**: Quizrr tests (the 2 oldest missed ones, then today's; the rest of the missed ones collapse into one `MoreMissed` line → re-plan), overdue plus today's plan items, **"analyse · while you still remember"** (`pendingAnalyses`, §5.7), and "due for revision · not planned" with a "+ today" button.
   - **WeekCollege** (§5.8).
   - **Now**: the current focus chapter, its next topic as a one-tap checkbox, and a focus button.
   - **Syllabus**: a dot bar per subject.
@@ -218,7 +218,7 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
 - `freeMarks`: the highest-weight unstarted chapters. `currentFocus`: the most recently touched `working` chapter, otherwise the best free-marks chapter.
 
 ### 5.4 Focus timer and study log
-- **Timer** state (`store.timer`): `mode` (pomodoro/stopwatch), `target` (25/50/90), `chapterId`, `runningSince`, `banked`, `sessionStart`. Elapsed time is `banked + (now − runningSince)`, so it survives reloads and backgrounding.
+- **Timer** state (`store.timer`): `mode` (pomodoro/stopwatch), `target` (25/50/90), `chapterId`, `aim` (questions planned, see below), `runningSince`, `banked`, `sessionStart`. Elapsed time is `banked + (now − runningSince)`, so it survives reloads and backgrounding.
 - **Pomodoro**:
   - `FocusTimer` in the shell finishes it at its length, even if the app was backgrounded. It never counts more than the length.
   - At the end it plays a chime (`lib/chime.ts`, Web Audio), vibrates, shows a notification, and fires confetti.
@@ -232,6 +232,20 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
   - Deletion is a soft tombstone in `removedSessions` until it has synced.
   - Merge logic is in `lib/sessions.ts` (`mergeSessions`, tested).
   - The admin study tab tags sessions as "added by hand" or "edited".
+  - The editor keeps the session's exact start when the time field wasn't changed (the field holds minutes, sessions seconds). Otherwise every save looked like a time change: "edited", and re-checked for overlaps.
+- **Break timer** (`lib/breaks.ts` pure + tested, `lib/alarm.ts` sound, UI in `screens/Focus.tsx`, ringing in `FocusTimer`):
+  - `store.breakTimer = {startedAt, endsAt, minutes, rung}` | null. Device-local like the timer, survives reloads. `timerStart` clears it.
+  - Started from the "break" tab of the Focus segmented control (a view only; `timer.mode` stays pomodoro/stopwatch; lengths 5/10/15/20), from the break chips offered after any session ≥20 min (`suggestedBreak`: 5, 10 after 50+, 15 after 90+ or every 4th pomodoro of the day), or "taking a break? set a 5 min timer" while a session is paused.
+  - While on: the DotRing drains, "+2 min" / "end break". When over: the ring turns red, the clock counts the overrun ("+01:23"), and the buttons are "start 25m" (or "resume" for a paused session) / "+5 min" / "done". "end break" goes back to the study timer, not the break picker.
+  - **Ringing** lives in the shell (`FocusTimer`), so it rings on any page: the alarm (`playAlarm`: triangle beeps 880/1175 Hz ×3, three rounds ≈8 s), vibration, a notification if the tab is hidden, and the tab title "● break over · lockin.". Any tap or key silences it (`silenceAlarm`). Phones only play sound from an AudioContext a tap started, so "start break" calls `unlockAlarm()` and the alarm reuses that context. A break found over by more than 2 min (app was closed) shows as over without ringing; one over by more than an hour is dropped. `rung` plus a localStorage claim (`lockin-break-rang` = endsAt) stops reloads and other tabs ringing again. A one-shot timeout at `endsAt` plus a visibility check cover throttled background tabs. A phone with the app fully backgrounded can't ring (no reliable web API for that); it rings as soon as the app is opened if within 2 min.
+  - The alarm on/off switch (`lockin-break-sound`) sits in the header in break views; switching it on plays a preview.
+  - The pill shows "break mm:ss", then red "+mm:ss · break over · back to it".
+- **Questions in focus sessions** (`lib/focus.ts` pure + tested, `components/FocusQuestions.tsx` UI):
+  - Before starting, "questions to solve": `timer.aim` (presets none/5/10/15/20/30 + a stepper; none = theory or a lecture, never asked). For a pomodoro it shows the pace needed ("≈ 2.5 min a question"). The aim is kept for the next session, like the chapter.
+  - Each session stores `aim` (null = none) and `solved` (null = not said yet); `setSolved(id, n)` answers. Answering or fixing only the questions doesn't mark a timer session `edited` (that flag is for time changed by hand).
+  - **Asking:** `sessionToAsk` = the latest timed session with an aim and no answer, ended within 12 h, not put off with "later" on this tab (sessionStorage `lockin-focus-later`). The Focus screen asks right under the ring (the length chips and aim picker wait until it's answered), then shows the result ("2 short · 8 of 10 · 3.1 min a question") and only then the break offer. On other pages, `FocusTimer` asks in a card where the pill sits. Unanswered sessions show "?/10" in the log and can be filled in there.
+  - **Log:** each row shows solved/aim (red when short), and the day gets a summary (`focusDay`): "18 of 25 solved · short in 2 of 4 · 3.1 min a question · 1 to answer".
+  - **Counting:** solved questions count toward the day's questions (college tracker `day().focusQuestions`), so they reach TodayLog ("· 18 from focus"), the headline, the college game and the admin panel. The home counter is for questions done outside focus sessions; it says so when there are focus questions that day.
 
 ### 5.5 Coaching (`lib/coaching.ts`)
 - `settings.coaching = { plans: [{from, days[], hours}], overrides: {date: bool} }`.
@@ -247,14 +261,14 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
   - Spread over 7 days starting today, at most 2 a day, 1 on coaching days. Already-scheduled chapters are skipped.
   - The action can be undone.
 - Ticking a **revision** item also logs a revision on the chapter, and unticking it removes that revision.
-- Quizrr tests appear on their days but are moved only by the admin.
+- Quizrr tests appear on their days. They're moved from the test's own page or re-planned together on /quizrr (§5.7). The overdue section lists the 3 oldest missed tests plus a `MoreMissed` line.
 - Chapter page **ScheduleBlock** gives one-tap dates: today, tomorrow, in 3 days, weekend, next week, or a date pill.
 
 ### 5.7 Tests: MathonGo chapter-wise and Quizrr
 **MathonGo** (`lib/tests.ts`, `components/TestSeries.tsx`):
 - 81 tracks, each covering one or more app chapters (`tracksForChapter`), with N chapterwise tests plus PYQ tests.
 - A `TestResult` has `score`, `maxScore`, and optional `correct`, `wrong`, `unattempted`, `timeMin`. `imported` rows come from the Excel import and have no score.
-- The chapter page shows numbered squares per test (filled = done, shaded by score) and an inline editor.
+- The chapter page shows numbered squares per test (filled = done, shaded by score; a red corner dot = analysis pending) and an inline editor with the analysis toggle. `/c/<chapter>#test-<result id>` opens that test's editor with the analysis open (Today's "analyse" link).
 - `lastMaxScore` pre-fills the next test's max. Score tone: red <40 %, muted 40–70 %, full ink ≥70 % (`scoreTone`).
 
 **Quizrr** is MathonGo's test platform (`lib/quizrr.ts`, `screens/Quizrr.tsx`, `components/Quizrr.tsx`):
@@ -263,13 +277,20 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
   - **QFT 11** and **QFT** are listed as "coming soon".
   - That makes 63 tests in total (QRT 12, QPT 13, QFT 11 8, QFT 30).
 - `opensAt`: QPT 11/12/13 release 25 Oct, 8 Nov, and 22 Nov at 9:00 IST. Everything else is already out.
-- **Dates**:
-  - The admin sets them per student (`quizrr_schedule`, read-only for students).
-  - When no date is set, the date falls back to `suggested` from `quizrr-schedule.json`.
-  - `null` means taken off the schedule (`assignedDate`).
-  - The student was told only the coach changes dates.
+- **Dates** (`quizrr_schedule`, since `test_dates_analysis` both sides write it; `set_by` = admin | student):
+  - The admin sets them in the panel; **the student picks his own too** (the owner's call, 2026-11-25, after a month of missed tests). Newest change wins.
+  - When no date is set, the date falls back to `suggested` from `quizrr-schedule.json`. `null` means taken off the schedule (`assignedDate`).
+  - **One test** (`components/QuizrrDates.tsx` `TestDate`): under the test's name, "change" / "pick a new day" opens quick days (`quickDates`), a date field, and "no date". `dateProblem` refuses past days and days before the test is out (`releaseDay`). It warns when another untaken test is on that day. It shows who set the date: "suggested" / "set by your bro" / "picked by you". A taken test has no picker.
+  - **Re-plan** (`Replan`, on /quizrr, `#replan` opens it): every untaken test (`untakenInOrder`: current date order, QRT before QPT on a tie, undated last) gets its own day from a start day, one every 1/2/3 days (default 2), optionally skipping coaching days (`isScheduled`). `replan()` holds an unreleased test back while released ones fill the earlier days, and never skips more than a week. A preview ("25 tests · today → sat, 19 dec · 25 moved") lists the first 6 (or all), then "use these dates", with **undo** (puts each `from` date back).
+  - Picks go through `pickQuizrrDates` → `quizrrDates` + `quizrrDateBy` + `quizrrDateEdits` (unconfirmed, `{date, at}`), dirty as `qdate:<test id>`. See §7.2 for the merge.
 - `testState`: soon / done / today / overdue / planned / open.
 - The student logs total and per-subject marks, Quizrr's percentile and rank, and the correct/wrong/unattempted/time split. Marks can be negative (JEE +4/−1, so the minimum is −¼ of the max). If total is empty and every subject is filled, total = sum.
+- **Analysis** (`lib/analysis.ts` pure + tested, `components/Analysis.tsx`), on both kinds of test. The owner's brother asked for a yes/no "analysis done?" box; a bare tick is easy to fake and says nothing, so "done" means sorting the lost questions (wrong + skipped, `lostOf`) into **silly / concept / not studied / time** with −/+ counters (typed counts too), plus a "next time I'll…" note (≤500 chars). Stored as `analysis` jsonb `{on, silly, concept, unstudied, time, note}` on the result; null = not done.
+  - The score forms have "analysis: not yet / done" (done opens the fields). `analysisError` blocks more sorted than lost, and "+" stops once everything is sorted.
+  - The Quizrr test page has an "analysis" section (`#analysis`): a nudge while pending, then `AnalysisSummary` (the biggest reason in red, with one line of advice for it, a dot bar per reason, and the note; tap to edit or remove).
+  - **Pending** (`needsAnalysis`): scored, not imported, taken in the last 14 days, no analysis. Only these are nagged (Today, the red square dot, admin "not analysed yet"); older tests are left alone.
+  - "Where marks go": totals over analysed tests (`mistakeTotals`) on /quizrr (Quizrr only) and in the admin tests tab (both kinds).
+  - Saving an analysis counts as an activity day (today) and syncs with the result row.
 - **Readiness**: studied chapters out of the chapters the test covers. Syllabus chapters link to the app's chapter pages with stage dots.
 - The three page levels exist because the owner found a single page "scattered".
 
@@ -282,7 +303,7 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
 - **Weekly only**: calendar weeks Monday to Sunday. There is no daily college.
 - **Pillars**, each a daily average over the week:
   - **hours/day**: focus sessions plus coaching
-  - **questions/day**: the counter plus test questions
+  - **questions/day**: the counter plus test questions plus questions solved in focus sessions
   - **tests**: average % over the **28 days** before the week's last counted day
 - **BENCHMARKS** are anchors that map each pillar to a "like rank" on a log scale:
   - rank 100 ≈ 12 h, 150 questions, 90 %
@@ -394,12 +415,12 @@ On laptops it's a 12-column grid: what to do on the left (7 columns), how it's g
   - **overview**: tiles and "attention" (overdue plan items, open weak spots, shaky chapters, inactive days, revisions due)
   - **study**: 30-day chart, by subject and chapter, last 25 sessions with tags
   - **questions**
-  - **tests**: MathonGo log/fix/delete, the one-time Excel import, and **QuizrrAdmin** for dates and scores
+  - **tests**: QuizrrAdmin (dates marked "set by you" / "picked by <name>", scores with each test's analysis line), "where marks go · from his analyses" (both kinds), MathonGo log/fix/delete with an analysis column, and the one-time Excel import
   - **college**
   - **chapters**
   - **plan**
   - **notes**
-- Server actions are in `app/admin/actions.ts`: `adminSaveTest`, `adminDeleteTest`, `adminImportExcel` (idempotent, merges stages, skips test numbers already logged), `adminSaveQuizrrDates` (writes only changed dates; empty = unscheduled), `adminResetQuizrrDates`, `adminSaveQuizrr`, `adminDeleteQuizrr`. Each ends with `revalidatePath(..., "layout")`.
+- Server actions are in `app/admin/actions.ts`: `adminSaveTest`, `adminDeleteTest`, `adminImportExcel` (idempotent, merges stages, skips test numbers already logged), `adminSaveQuizrrDates` (writes only changed dates, `set_by = 'admin'`, and retries without `set_by` before the migration; empty = unscheduled), `adminResetQuizrrDates`, `adminSaveQuizrr`, `adminDeleteQuizrr`. Each ends with `revalidatePath(..., "layout")`.
 - **Charts** (`components/admin/Charts.tsx`) are dependency-free and use token colours. Every chart has a **hover readout line in words**, so nothing depends on colour or hover alone. Bars are capped at 24 px with 4 px rounded tops, and there's an optional labelled reference hairline. `ScoreLine` draws a 2 px line with ringed dots and 40/70 % guides. Averages use `windowDays` (days since joining, capped).
 - Admin layout `AdminShell`: `lockin.` plus a red mono title, a "back" link, and the ChatDock in the corner.
 
@@ -554,9 +575,10 @@ State:
 - `timer`
 - `tests`, `lastMaxScore`
 - `plan`
-- `quizrr`, `quizrrDates` (read-only, replaced by sync)
+- `quizrr`, `quizrrDates` (admin's and the student's dates), `quizrrDateBy` (who set each), `quizrrDateEdits` (the student's picks not yet confirmed by the server)
+- `breakTimer` (device-local)
 - `owner`: the Supabase user id the local data belongs to
-- **`dirty`**: a list of sync keys: `<chapterId>`, `"state"`, `session:<id>`, `test:<id>`, `plan:<id>`, `quizrr:<id>`
+- **`dirty`**: a list of sync keys: `<chapterId>`, `"state"`, `session:<id>`, `test:<id>`, `plan:<id>`, `quizrr:<id>`, `qdate:<test id>`
 
 Every user action stamps `updatedAt = Date.now()`, adds today to `activity` (via `edit()` / `withActivity`), and marks the item dirty.
 
@@ -567,7 +589,8 @@ Every user action stamps `updatedAt = Date.now()`, adds today to `activity` (via
   - **Activity**: the union of both sides.
   - **Questions**: per day, the newer `at` wins.
   - **Settings**: the newer `stateUpdatedAt` wins as a whole.
-  - **quizrrDates**: the server copy replaces the local one.
+  - **quizrrDates**: the server copy, except the student's picks in `quizrrDateEdits` newer than the server row's `updated_at` (`mergeSchedule`, tested). Those stay and are uploaded (`set_by = 'student'`, `updated_at` = the pick's time); `confirmQuizrrDates` drops them once they're up. An admin change after the pick wins, and so does an admin reset of picks that already went up. Before the migration the upload is refused (42501 / missing column): picks stay on the device, `datesWritable = false`, and they're retried on the next full sync.
+  - **analysis**: part of the result row (newest row wins). Before the migration `upsertResults` retries without the column (`analysisColumn = false`). Once the column exists, a pull re-uploads rows where the server has no analysis but this device does at the same `updated_at` (`analysisBehind`).
 - Sessions are pulled only for the last 120 days.
 - **Soft deletes** (`deleted = true`) are used everywhere so removals reach every device.
 - `markClean(ids, syncedAt)` keeps an id dirty if it changed again while its upload was in flight.
@@ -578,8 +601,8 @@ Every user action stamps `updatedAt = Date.now()`, adds today to `activity` (via
 |---|---|
 | `chapter_progress` | (user_id, chapter_id), `data` jsonb = ChapterProgress |
 | `user_state` | user_id, `data` = {settings, activity, questions, updatedAt} |
-| `study_sessions` | id. Has updated_at, deleted, source, edited (session_edits migration). `minutes ≤ 720` (constraint added `not valid`). |
-| `test_results` | MathonGo. Soft delete, `imported` flag. |
+| `study_sessions` | id. Has updated_at, deleted, source, edited (session_edits migration). `minutes ≤ 720` (constraint added `not valid`). `questions_aim` (1–200 or null) and `questions_solved` (0–500 or null) from session_questions; until that migration is applied, `pushSessions` drops just those two columns and keeps the rest. |
+| `test_results` | MathonGo. Soft delete, `imported` flag. `analysis` jsonb (object or null) from test_dates_analysis. |
 | `plan_items` | soft delete |
 | `push_subscriptions` | endpoint PK |
 | `reminder_log` | (user, day, slot). No policies, so it's server only. |
@@ -587,15 +610,15 @@ Every user action stamps `updatedAt = Date.now()`, adds today to `activity` (via
 | `messages` | student_id thread, sender_id, body (1–4000), chapter_id, reply_to, reactions jsonb, read_at, delivered_at. Column-level grants: insert only the basic columns, update only `read_at`. In the Realtime publication. |
 | `chat_presence` | last_seen |
 | `chess_games` | PGN, ply, status, result, reason, draw_offer, moved_at. Players may insert an empty game and select their own; **no update grants** (the `/api/chess/[id]` route writes with the secret key). In the Realtime publication. |
-| `quizrr_attempts` | soft delete. percentile 0–100, rank > 0 checks. |
-| `quizrr_schedule` | (user, test) → date/null. Students can **only select**; the admin writes with the secret key. |
+| `quizrr_attempts` | soft delete. percentile 0–100, rank > 0 checks. `analysis` jsonb (object or null) from test_dates_analysis. |
+| `quizrr_schedule` | (user, test) → date/null, `set_by` admin\|student (default admin, so older rows count as the admin's). Students select their rows and may insert/update their own **only with `set_by = 'student'`**; no delete (the admin's "reset" stays admin-only). The admin writes with the secret key. |
 
 RPCs: `react_to_message`, `mark_delivered`, `mark_read(student)`, `message_in_thread`, `join_chess_game`. Execute is revoked from `public`/`anon` and granted to `authenticated`.
 
 | `calls` | id, `key` (names the signaling channel), created_by, `context`, ended_at. Members-only select; no direct writes. In the Realtime publication. |
 | `call_members` | (call, user_id), name, `state`, invited_by, `seen_at`. Members-only select; no direct writes (RPCs `start_call`, `set_call_state`, `call_heartbeat`). In the Realtime publication. |
 
-Migrations, in order: `init` → `test_results` → `chat` → `chess` → `plan_reminders` → `chat_reactions` → `session_edits` → `chat_status` (also fixes the recursion bug) → `quizrr` → `chess_server` → `skribbl` → `calls`.
+Migrations, in order: `init` → `test_results` → `chat` → `chess` → `plan_reminders` → `chat_reactions` → `session_edits` → `chat_status` (also fixes the recursion bug) → `quizrr` → `chess_server` → `skribbl` → `calls` → `chess_clock` → `tanks` → `test_dates_analysis` (20261125120000) → `session_questions` (20261125150000).
 
 **Applying them:** the project is now linked (`supabase link --project-ref habfudmxxcpoalwjbcgl`). The remote migration history was empty because everything up to `quizrr` was pasted into the SQL editor by hand; mark those as applied once (`supabase migration repair --status applied <the 9 versions>`) and `supabase db push` then applies only the new ones.
 
@@ -610,6 +633,8 @@ Migrations, in order: `init` → `test_results` → `chat` → `chess` → `plan
 | `lockin-chat-notify-dismissed` | the chat's push prompt was dismissed |
 | `lockin-call-corner` | which corner the call window sits in |
 | `lockin-call-dropped` (sessionStorage) | the call this tab was in when it closed or reloaded, for "rejoin" |
+| `lockin-break-sound` | the break alarm switch |
+| `lockin-break-rang` | endsAt of the last break any tab rang for (so it rings once) |
 
 Wrap localStorage access in try/catch, because private mode can throw.
 
@@ -631,7 +656,7 @@ Research workflow: from 2026-10-01, the owner prefers Claude Code to research di
 
 ## 9. Testing
 
-- Unit tests (vitest, node) live next to the code: `college`, `quizrr`, `sessions`, `sync`, `presence`, `announcements`, `store/progress`, `chess/engine` (perft + draw awareness), `chess/rules`, `chess/display`, `call/calls`, `call/session` (fake backend, fake timers, stand-in peer connection), and the routes `app/api/chess/[id]` and `app/api/call/notify` (mocked Supabase clients). Pure logic belongs in `src/lib` and should be tested.
+- Unit tests (vitest, node) live next to the code: `college`, `quizrr`, `sessions`, `sync`, `presence`, `announcements`, `store/progress`, `chess/engine` (perft + draw awareness), `chess/rules`, `chess/display`, `call/calls`, `call/session` (fake backend, fake timers, stand-in peer connection), `focus` (focus-session questions), `analysis` (test analysis), `breaks` (break timer), `schedule` (date picks, re-plan, schedule merge), `admin-student` (question insights, `server-only` mocked), and the routes `app/api/chess/[id]` and `app/api/call/notify` (mocked Supabase clients). Pure logic belongs in `src/lib` and should be tested.
 - **E2E approach that worked**: Playwright from the **scratchpad** (not the repo) against `next dev` with **blank Supabase env vars** (local-only mode), seeding store and timer state in localStorage under `lockin-v1`. **Don't fast-forward the Playwright clock**, because it stalls motion's exit animations.
 - **SQL**: test migrations and policies with **PGlite** in the scratchpad. Stub the `auth` schema (`auth.uid()`, `auth.jwt()`, `auth.users`), run every migration in order, and act as roles via `set role authenticated` plus `request.jwt.claims`.
 - **Calls (real WebRTC)**: Chromium with `--use-fake-ui-for-media-stream --use-fake-device-for-media-stream`. Two layers:

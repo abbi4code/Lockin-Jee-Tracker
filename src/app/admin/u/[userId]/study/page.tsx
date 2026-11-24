@@ -6,6 +6,7 @@ import { Block, Empty, fmtDay, hours, MeterRow, SUBJECT_NAME, Tile, Tiles } from
 import { getChapter, SUBJECT_COLOR } from "@/data";
 import { DEFAULT_TARGETS } from "@/lib/college";
 import { loadStudent, studyInsights } from "@/lib/admin-student";
+import { questionLabel, questionStatus } from "@/lib/focus";
 
 export const metadata: Metadata = { title: "Study time", robots: { index: false } };
 
@@ -67,6 +68,7 @@ export default async function Study({ params }: PageProps<"/admin/u/[userId]/stu
                   <th className="py-2 font-normal">when</th>
                   <th className="py-2 font-normal">chapter</th>
                   <th className="hidden py-2 font-normal sm:table-cell">mode</th>
+                  <th className="py-2 pr-3 text-right font-normal">questions</th>
                   <th className="py-2 text-right font-normal">length</th>
                 </tr>
               </thead>
@@ -87,6 +89,8 @@ export default async function Study({ params }: PageProps<"/admin/u/[userId]/stu
                         )}
                       </td>
                       <td className="hidden py-2 pr-3 font-mono text-[12px] text-mute sm:table-cell">{r.source === "manual" ? "manual" : r.mode}</td>
+                      {/* Solved / aimed: red when short, "?" when he hasn't said yet. */}
+                      <td className={`py-2 pr-3 text-right font-mono text-[12.5px] whitespace-nowrap ${questionStatus(r) === "short" ? "text-red" : questionStatus(r) === "pending" ? "text-dim" : "text-mute"}`}>{questionLabel(r) ?? "–"}</td>
                       <td className="py-2 text-right font-mono text-[13px] whitespace-nowrap">{hours(r.minutes)}</td>
                     </tr>
                   );

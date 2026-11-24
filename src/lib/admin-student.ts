@@ -10,8 +10,9 @@ import { revisionsDue, streak, subjectStats } from "@/lib/stats";
 import { createSupabaseAdmin } from "@/lib/supabase/admin";
 import { fromTestRow, liveResults, pct, type TestResult } from "@/lib/tests";
 import type { ChapterProgress, QuestionDay, Settings, StudySession } from "@/store/progress";
+import { focusQuestionStats, focusQuestionsByDay } from "@/lib/focus";
 import { liveSessionRows, type SessionRow } from "@/lib/sessions";
-import { fromQuizrrRow, fromScheduleRows, quizrrScores, type QuizrrAttempt } from "@/lib/quizrr";
+import { fromQuizrrRow, fromScheduleRows, quizrrScores, scheduleSetBy, type DateSetBy, type QuizrrAttempt } from "@/lib/quizrr";
 
 // Everything the admin panel shows about one student, loaded once per request (the layout and the tab page
 // share it through React's cache) and only for that student.
@@ -34,8 +35,10 @@ export interface StudentDetail {
   /** False until the planner migration has been applied. */
   planAvailable: boolean;
   quizrr: Record<string, QuizrrAttempt>;
-  /** Dates set in the admin panel (test id → day or null); tests without a row use the suggested date. */
+  /** Dates set in the admin panel or picked by the student (test id → day or null); tests without a row use the suggested date. */
   quizrrDates: Record<string, string | null>;
+  /** Who set each of those dates. */
+  quizrrDateBy: Record<string, DateSetBy>;
   /** False until the Quizrr migration has been applied. */
   quizrrAvailable: boolean;
   today: string;
@@ -57,7 +60,7 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
     admin.from("test_results").select("*").eq("user_id", id),
     admin.from("plan_items").select("id, chapter_id, date, kind, done_at, deleted, updated_at").eq("user_id", id).eq("deleted", false),
     admin.from("quizrr_attempts").select("*").eq("user_id", id).eq("deleted", false),
-    admin.from("quizrr_schedule").select("test_id, date").eq("user_id", id),
+    admin.from("quizrr_schedule").select("*").eq("user_id", id),
   ]);
   const chapters: Record<string, ChapterProgress> = {};
   for (const r of progress.data ?? []) chapters[r.chapter_id] = { ...(r.data as ChapterProgress), status: normalizeStatus((r.data as ChapterProgress).status) };
@@ -94,6 +97,7 @@ export const loadStudent = cache(async (id: string): Promise<StudentDetail | nul
     planAvailable: !plan.error,
     quizrr: quizrrMap,
     quizrrDates: quizrrSchedule.error ? {} : fromScheduleRows(quizrrSchedule.data ?? []),
+    quizrrDateBy: quizrrSchedule.error ? {} : scheduleSetBy(quizrrSchedule.data ?? []),
     quizrrAvailable: !quizrr.error && !quizrrSchedule.error,
     today: new Date().toLocaleDateString("en-CA"),
     joinedDay: new Date(u.created_at).toLocaleDateString("en-CA"),
@@ -144,14 +148,18 @@ export function questionInsights(s: StudentDetail) {
   const testQs = new Map<string, number>();
   for (const t of liveResults(s.tests)) if (t.takenOn) testQs.set(t.takenOn, (testQs.get(t.takenOn) ?? 0) + (t.correct ?? 0) + (t.wrong ?? 0));
   for (const q of quizrrScores(s.quizrr)) testQs.set(q.date, (testQs.get(q.date) ?? 0) + q.questions);
+  // Solved in focus sessions (said when each ended), per day and per subject (by the session's chapter).
+  const focusQs = focusQuestionsByDay(s.sessions);
+  const focusBySubject = (id: string) => sum(s.sessions.filter((x) => x.subject === id).map((x) => x.solved ?? 0));
   const day = (date: string) => {
     const q = s.questions[date];
     const logged = { physics: q?.physics ?? 0, chemistry: q?.chemistry ?? 0, maths: q?.maths ?? 0 };
     const fromTests = testQs.get(date) ?? 0;
-    return { date, ...logged, fromTests, total: logged.physics + logged.chemistry + logged.maths + fromTests };
+    const fromFocus = focusQs.get(date) ?? 0;
+    return { date, ...logged, fromTests, fromFocus, total: logged.physics + logged.chemistry + logged.maths + fromTests + fromFocus };
   };
   const days30 = range(s.today, 30).map(day);
-  const allDates = [...new Set([...Object.keys(s.questions), ...testQs.keys()])];
+  const allDates = [...new Set([...Object.keys(s.questions), ...testQs.keys(), ...focusQs.keys()])];
   const all = allDates.map(day);
   const target = s.settings?.targets?.questions ?? DEFAULT_TARGETS.questions;
   const window = windowDays(s, 30);
@@ -162,8 +170,10 @@ export function questionInsights(s: StudentDetail) {
     week: sum(days30.slice(-7).map((d) => d.total)),
     month: sum(days30.map((d) => d.total)),
     allTime: sum(all.map((d) => d.total)),
-    bySubject: SUBJECTS.map((id) => ({ id, count: sum(all.map((d) => d[id])) })),
+    bySubject: SUBJECTS.map((id) => ({ id, count: sum(all.map((d) => d[id])) + focusBySubject(id) })),
     fromTests: sum(all.map((d) => d.fromTests)),
+    fromFocus: sum(all.map((d) => d.fromFocus)),
+    focus: focusQuestionStats(s.sessions, range(s.today, 30)),
     best: [...all].sort((a, b) => b.total - a.total)[0] ?? null,
     target,
     daysOnTarget30: days30.slice(-window).filter((d) => d.total >= target).length,

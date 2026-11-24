@@ -7,6 +7,7 @@ import { DatePill } from "../components/ChapterPlan";
 import { buzz } from "../components/Controls";
 import { PlanItemRow as Item } from "../components/PlanItemRow";
 import { QuizrrDayRow } from "../components/Quizrr";
+import { MoreMissed } from "../components/QuizrrDates";
 import { dueQuizrr, quizrrOnDay } from "../lib/quizrr";
 import { Page } from "../components/Shell";
 import { fadeUp, Label, Section } from "../components/ui";
@@ -61,8 +62,10 @@ export function PlanScreen() {
   const days = Array.from({ length: 7 }, (_, i) => addDays(monday, i));
   const items = live(plan);
   const late = overdue(plan, t);
-  // Quizrr tests are placed by an admin: shown on their days, moved only from the admin panel.
-  const lateTests = dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t);
+  // Quizrr tests sit on their days; they're moved from the test's page or re-planned together on /quizrr.
+  // Only the oldest few missed ones are listed here.
+  const lateAll = dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t);
+  const lateTests = lateAll.slice(0, 3);
   const weekLabel = `${new Date(`${days[0]}T00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" })} – ${new Date(`${days[6]}T00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}`.toLowerCase();
 
   // "Plan my week": revisions due in the next 7 days first (soonest first), then studied chapters with open
@@ -145,7 +148,7 @@ export function PlanScreen() {
       </motion.div>
 
       {late.length + lateTests.length > 0 && (
-        <Section label="overdue" right={`${late.length + lateTests.length} missed`}>
+        <Section label="overdue" right={`${late.length + lateAll.length} missed`}>
           <div className="grid gap-x-10 sm:grid-cols-2 xl:grid-cols-3">
             <AnimatePresence initial={false}>
               {lateTests.map((d) => (
@@ -156,6 +159,7 @@ export function PlanScreen() {
               ))}
             </AnimatePresence>
           </div>
+          <MoreMissed count={lateAll.length - lateTests.length} />
         </Section>
       )}
 

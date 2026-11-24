@@ -20,9 +20,11 @@ import {
   type QuizrrAttempt,
   type QuizrrTest,
 } from "../lib/quizrr";
+import { analysisError, emptyAnalysis, lostOf, type Analysis } from "../lib/analysis";
 import { isStudied, stageLabel } from "../lib/stages";
 import { scoreTone } from "../lib/tests";
 import { today, useProgress } from "../store/progress";
+import { AnalysisToggle } from "./Analysis";
 import { buzz } from "./Controls";
 import { DotBar, DotText, Label, StatusDot, Tag } from "./ui";
 
@@ -47,9 +49,11 @@ function Field({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-/** Inline form to log (or fix) a Quizrr score: total, per subject, Quizrr's percentile/rank, and the split. */
+/** Inline form to log (or fix) a Quizrr score: total, per subject, Quizrr's percentile/rank, the split, and the analysis if it's done. */
 export function QuizrrEditor({ test, existing, onClose }: { test: QuizrrTest; existing?: QuizrrAttempt; onClose: () => void }) {
   const { saveQuizrr, deleteQuizrr } = useProgress();
+  const [analysed, setAnalysed] = useState(!!existing?.analysis);
+  const [an, setAn] = useState<Analysis>(() => existing?.analysis ?? emptyAnalysis(today()));
   const str = (v: number | null | undefined) => (v == null ? "" : String(v));
   const [f, setF] = useState({
     score: str(existing?.score),
@@ -84,6 +88,7 @@ export function QuizrrEditor({ test, existing, onClose }: { test: QuizrrTest; ex
     (bad(percentile) || (percentile != null && (percentile < 0 || percentile > 100))) && "percentile is 0–100.",
     (bad(rank) || (rank != null && (rank < 1 || !Number.isInteger(rank)))) && "rank is a whole number from 1.",
     !f.date && "pick the day you took it.",
+    analysed && analysisError(an, lostOf({ wrong: num(f.wrong), unattempted: num(f.unattempted) })),
   ].filter(Boolean) as string[];
   const mismatch = allParts && num(f.score) != null && parts.reduce((a, b) => a! + b!, 0) !== num(f.score);
 
@@ -105,6 +110,7 @@ export function QuizrrEditor({ test, existing, onClose }: { test: QuizrrTest; ex
       wrong: num(f.wrong),
       unattempted: num(f.unattempted),
       timeMin: num(f.time),
+      analysis: analysed ? { ...an, on: existing?.analysis?.on ?? today() } : null,
     });
     onClose();
   };
@@ -160,7 +166,8 @@ export function QuizrrEditor({ test, existing, onClose }: { test: QuizrrTest; ex
             <input inputMode="numeric" value={f.unattempted} onChange={set("unattempted")} placeholder="–" className={input} />
           </Field>
         </div>
-        {errors.length > 0 && (f.score || f.physics || f.chemistry || f.maths) ? <p className="mt-3 font-mono text-[12px] text-red">{errors[0]}</p> : null}
+        <AnalysisToggle id={test.id} done={analysed} onDone={setAnalysed} value={an} onChange={setAn} lost={lostOf({ wrong: num(f.wrong), unattempted: num(f.unattempted) })} />
+        {errors.length > 0 && (f.score || f.physics || f.chemistry || f.maths || analysed) ? <p className="mt-3 font-mono text-[12px] text-red">{errors[0]}</p> : null}
         {mismatch && !errors.length && <p className="mt-3 font-mono text-[12px] text-mute">heads up: phy + chem + math don&apos;t add up to the total.</p>}
         <div className="mt-4 flex items-center gap-2">
           <motion.button whileTap={{ scale: 0.96 }} onClick={save} disabled={errors.length > 0} data-cursor="go" className="rounded-full bg-fg px-4 py-2 text-[14px] font-medium text-ink disabled:opacity-40">

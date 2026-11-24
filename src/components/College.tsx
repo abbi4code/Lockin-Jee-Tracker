@@ -172,11 +172,17 @@ export function TodayLog() {
   return (
     <Section label="today" right="vs your goals">
       <Goal label="hours" value={`${formatMinutes(r.today.minutes)} / ${goalMinutes / 60}h`} fraction={r.today.minutes / goalMinutes} />
-      <Goal label="questions" value={`${r.today.questions} / ${goals.questions}${r.today.testQuestions ? ` · ${r.today.testQuestions} from tests` : ""}`} fraction={r.today.questions / goals.questions} />
+      {/* Questions solved in focus sessions and tests are already in the total: the counter below is for the rest. */}
+      <Goal
+        label="questions"
+        value={`${r.today.questions} / ${goals.questions}${r.today.focusQuestions ? ` · ${r.today.focusQuestions} from focus` : ""}${r.today.testQuestions ? ` · ${r.today.testQuestions} from tests` : ""}`}
+        fraction={r.today.questions / goals.questions}
+      />
       <p className="mt-1 font-mono text-[11.5px] text-dim">{r.today.streak ? `streak day ✓ (${STREAK_HOURS}h+)` : `${formatMinutes(Math.max(0, STREAK_HOURS * 60 - r.today.minutes))} more for a streak day`}</p>
 
       <div className="mt-5">
         <Label className="mb-1">questions solved today</Label>
+        {r.today.focusQuestions > 0 && <p className="mb-1 font-mono text-[11.5px] text-dim">{r.today.focusQuestions} from focus sessions are already counted. add only the rest here.</p>}
         {SUBJECTS.map((s) => (
           <div key={s.id} className="flex items-center gap-3 py-1.5">
             <span className="size-1.5 rounded-full" style={{ background: SUBJECT_COLOR[s.id] }} />

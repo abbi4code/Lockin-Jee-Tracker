@@ -94,6 +94,21 @@ describe("streak bonus", () => {
   });
 });
 
+describe("questions solved in focus sessions", () => {
+  it("count toward the day's questions, on the day the session started", () => {
+    const input: Inputs = {
+      sessions: [{ ...session(day(0), 50), aim: 20, solved: 18 }, { ...session(day(0), 25), aim: 10, solved: null }, { ...session(day(1), 30), solved: 6 }],
+      coaching: undefined,
+      questions: { [day(0)]: { physics: 5, chemistry: 0, maths: 0, at: 1 } },
+      tests: {},
+    };
+    const t = tracker(input);
+    expect(t.day(day(0))).toMatchObject({ questions: 23, focusQuestions: 18, testQuestions: 0 });
+    expect(t.day(day(1))).toMatchObject({ questions: 6, focusQuestions: 6 });
+    expect(t.day(day(2))).toMatchObject({ questions: 0, focusQuestions: 0 });
+  });
+});
+
 describe("calendar week", () => {
   it("weeks start on Monday", () => {
     expect(weekStart("2026-10-11")).toBe("2026-10-05"); // Sunday

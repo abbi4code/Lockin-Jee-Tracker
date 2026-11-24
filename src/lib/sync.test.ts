@@ -66,6 +66,32 @@ describe("pushSessions", () => {
     expect(useProgress.getState().removedSessions).toEqual({});
   });
 
+  it("a database without the question columns yet: keeps edits and soft deletes, drops only the questions", async () => {
+    vi.resetModules();
+    const fresh = await import("./sync");
+    const q = (id: string, deleted = false): SessionRow => ({ ...row(id, deleted), questions_aim: 10, questions_solved: 7 });
+    upsertError = (rows) => ("questions_aim" in rows[0] ? { code: "PGRST204", message: "Could not find the 'questions_aim' column of 'study_sessions' in the schema cache" } : null);
+    await fresh.pushSessions([q("a"), q("b", true)]);
+    expect(calls.map((c) => c.op)).toEqual(["upsert", "upsert"]);
+    expect(calls[1].rows!.map((r) => [r.id, r.deleted, "questions_aim" in r, "updated_at" in r])).toEqual([
+      ["a", false, false, true],
+      ["b", true, false, true],
+    ]);
+    // Remembered: the next upload goes without them straight away.
+    calls.length = 0;
+    await fresh.pushSessions([q("c")]);
+    expect(calls).toHaveLength(1);
+    expect("questions_aim" in calls[0].rows![0]).toBe(false);
+  });
+
+  it("a migrated database gets the questions", async () => {
+    vi.resetModules();
+    const fresh = await import("./sync");
+    await fresh.pushSessions([{ ...row("a"), questions_aim: 10, questions_solved: 7 }]);
+    expect(calls).toHaveLength(1);
+    expect(calls[0].rows![0]).toMatchObject({ questions_aim: 10, questions_solved: 7 });
+  });
+
   it("surfaces other database errors", async () => {
     // A fresh module instance, so the fallback flag from the previous test doesn't apply.
     vi.resetModules();

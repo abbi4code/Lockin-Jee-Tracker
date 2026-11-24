@@ -27,6 +27,9 @@ export interface SessionRow {
   deleted?: boolean | null;
   source?: string | null;
   edited?: boolean | null;
+  // Added by the 20261125120000_session_questions migration; absent on older databases.
+  questions_aim?: number | null;
+  questions_solved?: number | null;
 }
 
 export const clampMinutes = (m: number) => Math.min(MAX_SESSION_MIN, Math.max(1, Math.round(m)));
@@ -46,6 +49,8 @@ export function fromSessionRow(r: SessionRow): StudySession & { deleted: boolean
     updatedAt: r.updated_at ? new Date(r.updated_at).getTime() : 0,
     source: r.source === "manual" ? "manual" : "timer",
     edited: !!r.edited,
+    aim: r.questions_aim ?? null,
+    solved: r.questions_solved ?? null,
     deleted: !!r.deleted,
   };
 }
@@ -63,11 +68,19 @@ export function toSessionRow(s: StudySession, userId: string, deleted = false): 
     deleted,
     source: s.source ?? "timer",
     edited: !!s.edited,
+    questions_aim: s.aim ?? null,
+    questions_solved: s.solved ?? null,
   };
 }
 
 /** The row without the columns older databases don't have. */
 export const legacyRow = (r: SessionRow): SessionRow => ({ id: r.id, user_id: r.user_id, chapter_id: r.chapter_id, subject: r.subject, mode: r.mode, started_at: r.started_at, minutes: r.minutes });
+
+/** The row without the question columns, for a database that has the edit columns but not those yet. */
+export function withoutQuestions(r: SessionRow): SessionRow {
+  const { questions_aim: _aim, questions_solved: _solved, ...rest } = r;
+  return rest;
+}
 
 /** A row's session without the deleted flag. */
 const live = (r: StudySession & { deleted: boolean }): StudySession => ({
@@ -80,6 +93,8 @@ const live = (r: StudySession & { deleted: boolean }): StudySession => ({
   updatedAt: r.updatedAt,
   source: r.source,
   edited: r.edited,
+  aim: r.aim,
+  solved: r.solved,
 });
 
 /** Live sessions only, from rows that may include soft-deleted ones (the admin panel). */

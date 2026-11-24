@@ -20,10 +20,12 @@ import { activityGrid, chapterFraction, currentFocus, daysBetween, formatMinutes
 import { currentPlan, isScheduled, studyByDay, toggleDay } from "../lib/coaching";
 import { today, useProgress } from "../store/progress";
 import { PlanItemRow } from "../components/PlanItemRow";
-import { dayLabel, live, onDay, overdue } from "../lib/plan";
+import { addDays, dayLabel, live, onDay, overdue } from "../lib/plan";
 import { scoreTone, seriesSummary } from "../lib/tests";
 import { QuizrrDayRow } from "../components/Quizrr";
+import { MoreMissed } from "../components/QuizrrDates";
 import { attemptFor, dueQuizrr, nextQuizrr, quizrrOnDay, seriesHref, seriesProgress, testHref, testName } from "../lib/quizrr";
+import { pendingAnalyses } from "../lib/analysis";
 
 function Header() {
   const { settings, setSettings } = useProgress();
@@ -61,6 +63,8 @@ function QuizrrStrip() {
   const next = head ? null : nextQuizrr(quizrr, quizrrDates, t);
   const item = head ?? next;
   const label = head ? (head.date === t ? "today's test" : "missed test") : next ? "next test" : "quizrr tests";
+  // Several missed: one tap to give them all new days.
+  const missed = due.filter((d) => d.date < t).length;
   return (
     // Two targets: the test itself (left), and the whole test section (right), there even on days without a test.
     <motion.section variants={fadeUp} className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-y border-line py-3">
@@ -82,8 +86,12 @@ function QuizrrStrip() {
           <span className="text-[15px] text-mute">all scheduled tests done</span>
         )}
       </Link>
-      <Link href="/quizrr" data-cursor="go" className="flex shrink-0 items-center gap-1.5 rounded-full border border-line-2 px-3.5 py-1.5 font-mono text-[12.5px] text-mute transition hover:border-fg hover:text-fg">
-        all tests <ArrowRight className="size-3.5" />
+      <Link
+        href={missed > 1 ? "/quizrr#replan" : "/quizrr"}
+        data-cursor="go"
+        className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-mono text-[12.5px] transition hover:border-fg hover:text-fg ${missed > 1 ? "border-red/50 text-fg" : "border-line-2 text-mute"}`}
+      >
+        {missed > 1 ? `re-plan ${missed} missed` : "all tests"} <ArrowRight className="size-3.5" />
       </Link>
     </motion.section>
   );
@@ -389,13 +397,20 @@ function TestSeries() {
   );
 }
 
+const SHOW_MISSED = 2;
+
 /** Today's scheduled chapters (plus anything overdue), and spaced-repetition revisions not planned yet. */
 function TodayPlan() {
-  const { plan, chapters, settings, schedule, quizrr, quizrrDates } = useProgress();
+  const { plan, chapters, settings, schedule, quizrr, quizrrDates, tests: results } = useProgress();
   const t = today();
   const items = [...overdue(plan, t), ...onDay(plan, t).sort((a, b) => Number(!!a.doneAt) - Number(!!b.doneAt))];
-  // Quizrr tests: missed ones, then today's (taken or not), above the chapters.
-  const tests = [...dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t).map((d) => d.test), ...quizrrOnDay(quizrrDates, t)];
+  // Tests logged in the last two weeks that still need their analysis.
+  const analyses = pendingAnalyses(results, quizrr, t);
+  // Quizrr tests: missed ones, then today's (taken or not), above the chapters. Only the two oldest missed ones
+  // are listed; a month behind would otherwise bury the day under 20 red rows.
+  const missed = dueQuizrr(quizrr, quizrrDates, t).filter((d) => d.date < t).map((d) => d.test);
+  const tests = [...missed.slice(0, SHOW_MISSED), ...quizrrOnDay(quizrrDates, t)];
+  const moreMissed = missed.length - Math.min(missed.length, SHOW_MISSED);
   const testsDone = tests.filter((x) => attemptFor(x.id, quizrr)).length;
   const planned = new Set(live(plan).filter((i) => !i.doneAt).map((i) => i.chapterId));
   const unplanned = revisionsDue(chapters, settings.exam).filter((d) => !planned.has(d.chapter.id));
@@ -405,7 +420,7 @@ function TodayPlan() {
       label="today's plan"
       right={
         <Link href="/plan" className="hover:text-fg">
-          {items.length + tests.length ? `${done + testsDone}/${items.length + tests.length} done · ` : ""}planner →
+          {items.length + tests.length ? `${done + testsDone}/${items.length + tests.length + moreMissed} done · ` : ""}planner →
         </Link>
       }
     >
@@ -418,6 +433,30 @@ function TodayPlan() {
           <PlanItemRow key={i.id} item={i} t={t} />
         ))}
       </AnimatePresence>
+      <MoreMissed count={moreMissed} />
+      {analyses.length > 0 && (
+        <div className="mt-3 border-t border-line/60 pt-3">
+          <Label className="mb-1">analyse · while you still remember</Label>
+          {analyses.slice(0, 4).map((x) => (
+            <Link key={x.key} href={x.href} className="group flex items-start gap-2.5 py-2">
+              <span className="mt-0.5 grid size-[18px] shrink-0 place-items-center rounded-[4px] border border-dashed border-mute font-mono text-[10px] text-mute" aria-hidden>
+                a
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-[14.5px] leading-snug group-hover:underline">{x.name}</span>
+                <span className={`mt-1 block font-mono text-[11px] ${x.takenOn < addDays(t, -2) ? "text-red" : "text-dim"}`}>
+                  taken {dayLabel(x.takenOn, t)}
+                  {x.lost != null ? ` · ${x.lost} wrong + skipped` : ""}
+                </span>
+              </span>
+              <span className="flex shrink-0 items-center gap-1 pt-0.5 font-mono text-[12px] text-mute group-hover:text-fg">
+                analyse <ArrowRight className="size-3.5" />
+              </span>
+            </Link>
+          ))}
+          {analyses.length > 4 && <p className="mt-1 font-mono text-[12px] text-dim">+{analyses.length - 4} more</p>}
+        </div>
+      )}
       {unplanned.length > 0 && (
         <div className="mt-3 border-t border-line/60 pt-3">
           <Label className="mb-1">due for revision · not planned</Label>

@@ -1,6 +1,7 @@
 import raw from "../data/colleges.json";
 import type { QuestionDay, StudySession } from "../store/progress";
 import { coachingMinutes, type Coaching } from "./coaching";
+import { focusQuestionsByDay } from "./focus";
 import { pct, type TestResult } from "./tests";
 import { quizrrScores, type QuizrrAttempt } from "./quizrr";
 
@@ -153,9 +154,11 @@ export interface DayTotals {
   date: string;
   /** Focus sessions + coaching. */
   minutes: number;
-  /** Logged with the counter, plus questions attempted in tests that day. */
+  /** Logged with the counter, plus questions attempted in tests and solved in focus sessions that day. */
   questions: number;
   testQuestions: number;
+  /** Solved in focus sessions (said when each session ended). */
+  focusQuestions: number;
   streak: boolean;
 }
 
@@ -198,6 +201,8 @@ export function tracker(input: Inputs) {
     const d = new Date(s.startedAt).toLocaleDateString("en-CA");
     focus.set(d, (focus.get(d) ?? 0) + s.minutes);
   }
+  // Questions solved in focus sessions count like the counter's (the counter is for questions done outside them).
+  const focusQs = focusQuestionsByDay(input.sessions);
   const scored: { date: string; pct: number }[] = [];
   const testQs = new Map<string, number>();
   for (const t of Object.values(input.tests)) {
@@ -215,7 +220,8 @@ export function tracker(input: Inputs) {
     const minutes = (focus.get(date) ?? 0) + coachingMinutes(input.coaching, date);
     const q = input.questions[date];
     const testQuestions = testQs.get(date) ?? 0;
-    return { date, minutes, questions: (q ? q.physics + q.chemistry + q.maths : 0) + testQuestions, testQuestions, streak: minutes >= STREAK_HOURS * 60 };
+    const focusQuestions = focusQs.get(date) ?? 0;
+    return { date, minutes, questions: (q ? q.physics + q.chemistry + q.maths : 0) + testQuestions + focusQuestions, testQuestions, focusQuestions, streak: minutes >= STREAK_HOURS * 60 };
   };
 
   /** Streak days in the full week starting `monday` (for the week-in-a-row bonus). */

@@ -20,16 +20,17 @@ export function studyColumns(days: { date: string; focus: number; coaching: numb
 }
 
 export const QUESTION_SERIES: Series[] = [
-  { name: "logged", color: "var(--color-fg)" },
+  { name: "counter", color: "var(--color-fg)" },
+  { name: "focus sessions", color: "var(--color-mute)" },
   { name: "from tests", color: "var(--color-dim)" },
 ];
 
-export function questionColumns(days: { date: string; physics: number; chemistry: number; maths: number; fromTests: number; total: number }[], today: string, every = 5): Column[] {
+export function questionColumns(days: { date: string; physics: number; chemistry: number; maths: number; fromTests: number; fromFocus: number; total: number }[], today: string, every = 5): Column[] {
   return days.map((d, i) => ({
     key: d.date,
     tick: d.date === today || (days.length - 1 - i) % every === 0 ? tickDay(d.date) : "",
-    parts: [d.physics + d.chemistry + d.maths, d.fromTests],
-    tip: `${fmtDay(d.date)} · ${d.total} questions (phy ${d.physics}, chem ${d.chemistry}, maths ${d.maths}${d.fromTests ? `, tests ${d.fromTests}` : ""})`,
+    parts: [d.physics + d.chemistry + d.maths, d.fromFocus, d.fromTests],
+    tip: `${fmtDay(d.date)} · ${d.total} questions (phy ${d.physics}, chem ${d.chemistry}, maths ${d.maths}${d.fromFocus ? `, focus ${d.fromFocus}` : ""}${d.fromTests ? `, tests ${d.fromTests}` : ""})`,
     current: d.date === today,
   }));
 }
